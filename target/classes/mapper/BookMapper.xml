@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="design.princessdreamland.onlinemall.mapper.BookMapper">
+    <resultMap id="bookMap" type="Book">
+        <id property="book_id" column="book_id" javaType="Integer" jdbcType="INTEGER"/>
+
+        <association property="seller" columnPrefix="s_">
+            <id property="user_id" column="user_id"/>
+
+        </association>
+    </resultMap>
+
+    <sql id="cols">
+        b.book_id bookId,
+        b.name,
+        b.price,
+        b.author,
+        b.amount,
+        b.txt,
+        u.userId s_user_id,
+        u.account s_account,
+        u.password s_password,
+        u.name s_name,
+        u.age s_age,
+        u.sex s_sex,
+        u.type s_type
+    </sql>
+
+
+    <select id="queryList" resultMap="bookMap" >
+        select
+            <include refid="cols"/>
+        from book b
+        left join user u On b.seller_id = u.userId
+        <where>
+            <if test="bookId!=null and bookId!=''">
+                AND b.book_id = #{bookId}
+            </if>
+            <if test="name!=null and name!=''">
+                AND b.name LIKE CONCAT('%',#{name},'%')
+            </if>
+            <if test="price!=null and price!=''">
+                AND b.price =#{price}
+            </if>
+            <if test="author!=null and author!=''">
+                AND b.author LIKE CONCAT('%',#{author},'%')
+            </if>
+            <if test="amount!=null and amount!=''">
+                AND b.amount =#{amount}
+            </if>
+            <if test="txt!=null and txt!=''">
+                AND b.txt LIKE CONCAT('%',#{txt},'%')
+            </if>
+            <if test="bookIds!=null and bookIds!=''">
+                AND b.book_id IN
+                <foreach collection="bookIds" item="item" open="(" close=")" separator=",">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        ORDER BY b.book_id DESC
+    </select>
+
+    <insert id="insertBook">
+        insert into book (name,price,author,amount,txt)
+        values (#{name},#{price},#{author},#{amount},#{txt})
+    </insert>
+
+    <update id="">
+
+    </update>
+</mapper>

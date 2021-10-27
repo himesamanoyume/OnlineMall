@@ -1,0 +1,108 @@
+span{
+    white-space: pre-wrap;
+}
+#top{				/*头部导航栏*/
+    height: 50px;
+    background-color: snow;
+}
+#topLogin{
+    margin-right: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 30px;
+    float: right;
+    height: 30px;
+    width: 60px;
+    color: black;
+    font-size: 15px;
+    background: snow;
+    border: 0;
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 0px 1px #66ccff;
+}
+#topLogin:hover{
+    background: #66ccff;
+    color: snow;
+}
+body{				/*正文*/
+    margin: 0px;
+    padding: 0px;
+    background-color: snow;
+    text-align: center;
+}
+.divBox{
+    display: block;
+}
+#indexBackground{				/*主页背景外层*/
+    background-color: snow;
+    display: inline-flex;
+    max-width: 1680px;
+    text-align: center;
+    margin:20px auto;
+    flex-wrap: wrap;
+}
+.divLine{				/*左div块，用于存放左边的div*/
+    width: 460px;
+    display: inline;
+    background: snow;
+    margin: 0 40px 0 40px;
+}
+#title{				/*导航栏下方标题*/
+    background: snow;
+    text-align: center;
+    height: 300px;
+    margin: 0px;
+    font-size: 50px;
+    line-height: 300px;
+    font-family:"微软雅黑";
+    user-select: none;
+}
+
+#divFooter{
+    height: 200px;
+    /* background: rgba(240,248,255,0.9); */
+    background-color: #f2f2f2;
+    line-height: 200px;
+    width: 100%;
+    margin-top: 50px;
+}
+#select{
+    width: 350px;
+}
+@keyframes divSpaceButtonBarHover {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 80%;
+    }
+}
+h5{				/*5号标题*/
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-family:"微软雅黑";
+    margin: 0px;
+}
+p{				/*段落*/
+    padding: 0px 10px;
+}
+@keyframes divHover{				/*标签悬停动画 边框变金*/
+    0%{
+        border: 1px solid;
+    }
+    100%{
+        border: 1px solid rgb(220, 170, 20);
+        box-shadow: rgb(255, 170, 0) 0px 0px 2px 1px;
+    }
+}
+@keyframes divHoverNormal{				/*标签顶部标题背景变色动画 金色*/
+    0%{
+        background-color: rgb(190, 147, 18);
+    }
+    100%{
+        background-color: rgb(218, 140, 5);
+        color: rgb(243, 218, 24);
+    }
+}
+

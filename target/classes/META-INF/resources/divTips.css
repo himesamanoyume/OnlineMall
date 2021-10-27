@@ -1,0 +1,102 @@
+.divTips{				/*div中的每一个标签*/
+    display: block;
+    transition-duration: 0.2s;
+    width: 400px;
+    position: absolute;
+    /*height: 400px;*/
+    margin: 20px 10px 10px 10px;
+    text-align: left;
+    background-color: WhiteSmoke;
+    font-size: 15px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*z-index: 2;*/
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-shadow: 0px 0px 0 1px lightgray ;
+}
+
+.divTipsMore{			/*标签底部更改按钮样式*/
+    width: 70px;
+    height: 20px;
+    margin-left: 7px;
+    font-size: 15px;
+    color: orange;
+    display: block;
+    margin-top: 140px;
+    font-weight:bold ;
+    font-family: "微软雅黑";
+}
+.divTipsImg{
+    height: 200px;
+    width: 100%;
+    /* position: relative; */
+    /* float: left; */
+    float: right;
+    background: aquamarine;
+    /* z-index: 1;
+     */
+}
+.divPrice{
+     position: relative;
+    /* bottom: 0; */
+    /*width: 100%;*/
+    height: 100%;
+    display: inline;
+    /* height: 60%; */
+     background-color: #66ccff;
+}
+.divTipsAuthor{
+    margin: 5px 10px 5px 10px;
+    /*background-color: red;*/
+    width: 380px;
+}
+.divTipsCount{
+    margin: 5px 10px 5px 10px;
+    /*background-color: gray;*/
+    width: 380px;
+}
+.divTipsTxt{
+    /*background-color: aqua;*/
+    position: relative;
+    /*padding: 5px 0px 5px 10px;*/
+    width: 380px;
+    margin: 5px 3px 5px 10px;
+    /*display: inline-block;*/
+}
+.divTipsTitle{				/*标签顶部标题*/
+    width: 100%;
+    /* position: relative; */
+    word-break: break-all;
+    float: right;
+    background-color:rgba(190, 190, 190, 0.2);
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    font-family:"微软雅黑";
+    margin: 0px 0 0 0;
+    padding: 0px;
+    transition-duration: 0.5s;
+}
+.spanPrice{
+    /*background-color: #66ccff;*/
+    color: red;
+    padding: 0 20px 0 20px;
+    font-size: 50px;
+}
+.spanDes{
+    /*padding: 0px 0 5px 0;*/
+    width: 100%;
+    word-break: break-all;
+}
+.divTips:hover > .divTipsTitle{				/*标签顶部标题背景变色动画 深蓝色 应用*/
+    background-color: rgba(102,204,255,0.8);
+    /* color: #fff; */
+}
+.divTips:hover{				/*标签悬停动画 边框变 应用*/
+    box-shadow: 0px 0px 0 2px #66ccff ;
+}

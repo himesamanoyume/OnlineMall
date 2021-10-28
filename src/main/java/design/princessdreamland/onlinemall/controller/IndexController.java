@@ -3,6 +3,8 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +29,12 @@ public class IndexController {
 
         Book book = new Book();
 //        book.setBookId(2);
-        book.setBookIds(Arrays.asList(1,2));
-        List<Book> bookList = bookMapper.queryList(book);
-        model.addAttribute("bookList",bookList);
+//        book.setBookIds(Arrays.asList(1,2));
+        Page<Book> page = new Page<Book>();
+        page.setCurrent(1);
+        page.setSize(2);
+        IPage<Book> bookPage = bookMapper.queryPage(page,book);
+        model.addAttribute("bookList",bookPage.getRecords());
 
 
 //        List<Phone> phoneList = phoneService.list();
@@ -53,11 +58,15 @@ public class IndexController {
 
     @GetMapping("/queryBook")
     @ResponseBody
-    public List<Book> queryBook(){
+    public IPage<Book> queryBook(){
         Book book = new Book();
-        List<Book> bookList = bookMapper.queryList(book);
 
-        return bookList;
+        Page<Book> page = new Page<Book>();
+        page.setCurrent(1);
+        page.setSize(3);
+        IPage<Book> bookPage = bookMapper.queryPage(page,book);
+
+        return bookPage;
     }
 
 

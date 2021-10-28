@@ -57,6 +57,9 @@
         <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:3.1" />
         <element id="library" level="project" name="Maven: cn.hutool:hutool-all:5.7.15" />
         <element id="javaee-facet-resources" facet="OnlineMall/web/Web" />
+        <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-jasper:9.0.54" />
+        <element id="library" level="project" name="Maven: org.eclipse.jdt:ecj:3.18.0" />
+        <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
       </element>
     </root>
   </artifact>

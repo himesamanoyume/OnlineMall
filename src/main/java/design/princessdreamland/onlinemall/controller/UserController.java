@@ -1,6 +1,7 @@
 package design.princessdreamland.onlinemall.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.mapper.UserMapper;
 import design.princessdreamland.onlinemall.service.UserService;
@@ -52,7 +53,7 @@ public class UserController {
     @ResponseBody
     public User updateOneUser(){
         User user = new User();
-        user.setUserId(3);
+        user.setUser_id(3);
         user.setName("test4");
 
         userService.updateById(user);
@@ -68,7 +69,7 @@ public class UserController {
 
     @GetMapping("/queryUser")
     @ResponseBody
-    public List<User> query() {
+    public List<User> queryUser() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
 //        queryWrapper.eq("account","test");  //=
 //        queryWrapper.lt("age",25); //<
@@ -81,5 +82,10 @@ public class UserController {
         return userService.list(queryWrapper);
     }
 
+    @GetMapping("/queryWithBooks")
+    @ResponseBody
+    public List<User> queryWithBooks(){
+        return userService.queryWithBooks();
+    }
 
 }

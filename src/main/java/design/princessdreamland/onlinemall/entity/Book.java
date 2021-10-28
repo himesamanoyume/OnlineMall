@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Book {
     @TableId(type = IdType.AUTO)
-    private Integer bookId;
+    private Integer book_id;
     private String name;
     private BigDecimal price;
     private String author;
@@ -24,7 +24,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "bookId=" + bookId +
+                "book_id=" + book_id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", author='" + author + '\'' +
@@ -43,28 +43,28 @@ public class Book {
 
         Book book = (Book) o;
 
-        if (!bookId.equals(book.bookId)) return false;
-        if (!name.equals(book.name)) return false;
-        if (!price.equals(book.price)) return false;
-        if (!author.equals(book.author)) return false;
-        if (!amount.equals(book.amount)) return false;
-        if (!bookIds.equals(book.bookIds)) return false;
-        if (!sellerName.equals(book.sellerName)) return false;
-        if (!seller.equals(book.seller)) return false;
-        return txt.equals(book.txt);
+        if (book_id != null ? !book_id.equals(book.book_id) : book.book_id != null) return false;
+        if (name != null ? !name.equals(book.name) : book.name != null) return false;
+        if (price != null ? !price.equals(book.price) : book.price != null) return false;
+        if (author != null ? !author.equals(book.author) : book.author != null) return false;
+        if (amount != null ? !amount.equals(book.amount) : book.amount != null) return false;
+        if (bookIds != null ? !bookIds.equals(book.bookIds) : book.bookIds != null) return false;
+        if (sellerName != null ? !sellerName.equals(book.sellerName) : book.sellerName != null) return false;
+        if (seller != null ? !seller.equals(book.seller) : book.seller != null) return false;
+        return txt != null ? txt.equals(book.txt) : book.txt == null;
     }
 
     @Override
     public int hashCode() {
-        int result = bookId.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + price.hashCode();
-        result = 31 * result + author.hashCode();
-        result = 31 * result + amount.hashCode();
-        result = 31 * result + bookIds.hashCode();
-        result = 31 * result + sellerName.hashCode();
-        result = 31 * result + seller.hashCode();
-        result = 31 * result + txt.hashCode();
+        int result = book_id != null ? book_id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (amount != null ? amount.hashCode() : 0);
+        result = 31 * result + (bookIds != null ? bookIds.hashCode() : 0);
+        result = 31 * result + (sellerName != null ? sellerName.hashCode() : 0);
+        result = 31 * result + (seller != null ? seller.hashCode() : 0);
+        result = 31 * result + (txt != null ? txt.hashCode() : 0);
         return result;
     }
 
@@ -92,14 +92,12 @@ public class Book {
         this.bookIds = bookIds;
     }
 
-
-
-    public Integer getBookId() {
-        return bookId;
+    public Integer getBook_id() {
+        return book_id;
     }
 
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
+    public void setBook_id(Integer book_id) {
+        this.book_id = book_id;
     }
 
     public String getName() {

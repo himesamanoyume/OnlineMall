@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="design.princessdreamland.onlinemall.mapper.UserMapper">
+    <resultMap id="userMap" type="User">
+        <id property="user_id" column="user_id"/>
+
+        <collection property="bookList" columnPrefix="b_" javaType="java.util.ArrayList" ofType="Book">
+            <id property="book_id" column="book_id"/>
+
+        </collection>
+
+    </resultMap>
+    <select id="queryWithBooks">
+        select
+        u.user_id,
+        u.account,
+        u.password,
+        u.name,
+        u.age,
+        u.sex,
+        u.type,
+        b.book_id b_book_id,
+        b.name b_name,
+        b.price b_price,
+        b.author b_author,
+        b.amount b_amount,
+        b.txt b_txt
+        from user u
+        left join book b ON  b.seller_id = u.user_id
+
+    </select>
+
+
+</mapper>

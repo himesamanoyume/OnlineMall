@@ -3,6 +3,7 @@
     transition-duration: 0.2s;
     width: 400px;
     position: absolute;
+    border-radius: 4px;
     /*height: 400px;*/
     margin: 20px 10px 10px 10px;
     text-align: left;
@@ -33,6 +34,7 @@
 .divTipsImg{
     height: 200px;
     width: 100%;
+    border-radius: 4px 4px 0px 0px;
     /* position: relative; */
     /* float: left; */
     float: right;

@@ -6,6 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \static\MyIndexJS.js
  */
+
 window.onscroll=function(){
     
     var topScroll = get_scrollTop_of_body();//滚动的距离,距离顶部的距离
@@ -14,43 +15,64 @@ window.onscroll=function(){
         divSpace.style.top = '0px';
         divSpace.style.width = '100%';
         divSpace.style.zIndex = '9999';
+        // divSpace.style.position = 'sticky';
         divSpace.style.boxShadow = '0px 3px 7px Gainsboro';
     }else{
         divSpace.style.boxShadow = '0px 0px 0px Gainsboro';
     }
-}
-window.onload = function(){
-    changeMaxWidth();
-}
-window.onresize = function(){
-    changeMaxWidth();
-}
-function changeMaxWidth(){
-    var indexBackground = document.getElementById("indexBackground");
-    var webWidth = document.body.clientWidth;
-    // console.log(webWidth);
-    if(webWidth>=1680){
-        indexBackground.style.maxWidth = 1680 +"px";
-        // console.log(1);
-    }else if(webWidth>=1260 && webWidth <1680){
-        indexBackground.style.maxWidth = 1260 +"px";
-        // console.log(2);
-    }else if(webWidth>=840 && webWidth <1260){
-        indexBackground.style.maxWidth = 840 +"px";
-        // console.log(3);
-    }else if(webWidth>=420 && webWidth <840){
-        indexBackground.style.maxWidth = 420 +"px";
-        // console.log(4);
+
+    function get_scrollTop_of_body(){
+        var scrollTop;
+        if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离
+            scrollTop = window.pageYOffset;
+        }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')        {
+            scrollTop = document.documentElement.scrollTop;
+        }else if(typeof document.body != 'undefined'){
+            scrollTop = document.body.scrollTop;
+        }
+        return scrollTop;
     }
-}
-function get_scrollTop_of_body(){
-    var scrollTop;
-    if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离
-        scrollTop = window.pageYOffset;
-    }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')        {
-        scrollTop = document.documentElement.scrollTop;
-    }else if(typeof document.body != 'undefined'){
-        scrollTop = document.body.scrollTop;
+    $(function (){
+        // console.log("haha");
+        changeMaxWidth();
+        changeFontSize();
+    })
+    // window.onload = function(){
+    //
+    // }
+    window.onresize = function(){
+        changeFontSize();
+        changeMaxWidth();
     }
-    return scrollTop;
+    function changeFontSize(){
+        if(document.body.clientWidth>=600){
+
+            $(".divSpaceButton").css("font-size",30);
+        }else{
+            // alert("2");
+            $(".divSpaceButton").css("font-size",20);
+        }
+    }
+    function changeMaxWidth(){
+        var indexBackground = document.getElementById("indexBackground");
+        var webWidth = document.body.clientWidth;
+
+        // console.log(webWidth);
+        if(webWidth>=1680){
+            indexBackground.style.maxWidth = 1680 +'px';
+            // console.log(1);
+        }else if(webWidth>=1260 && webWidth <1680){
+            indexBackground.style.maxWidth = 1260 +'px';
+            // console.log(2);
+        }else if(webWidth>=840 && webWidth <1260){
+            indexBackground.style.maxWidth = 840 +'px';
+            // console.log(3);
+        }else if(webWidth>=420 && webWidth <840){
+            indexBackground.style.maxWidth = 420 +'px';
+            // $(".divSpaceButton").style.fontSize = 20+'px';
+            // console.log(4);
+        }
+    }
+
+
 }

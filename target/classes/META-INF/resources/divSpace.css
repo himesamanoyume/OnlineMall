@@ -1,19 +1,35 @@
 
 #divSpace{
-    background-color: snow;
+    background-color: rgba(255,250,250,0.85);
+    backdrop-filter: blur(4px);
     text-align: center;
+    /*background: inherit;*/
     animation-duration: 0.1s;
     transition-duration: 0.1s;
     padding-top: 20px;
+    margin: 0 auto;
     width: 100%;
+    justify-content: center;
     top: 0px;
-    /* display: inline-block; */
+    display: inline-flex;
     position: sticky;
 }
+
 .divSpaceButton{
     font-size: 30px;
     text-align: center;
-    background: snow;
+    color: inherit;
+    cursor: pointer;
+    border: 0;
+    padding: 0 10px 0 10px;
+    transition-duration: 0.4s;
+    position: relative;
+}
+.divSpaceButtonLittle{
+    font-size: 20px;
+    text-align: center;
+    color: inherit;
+    cursor: pointer;
     border: 0;
     padding: 0 10px 0 10px;
     transition-duration: 0.4s;
@@ -26,6 +42,7 @@
     height: 4px;
     width: 0px;
     margin: 5px auto 10px auto;
+    backdrop-filter: blur(2px);
     /*margin-top: 5px;*/
     background: rgba(102,204,255,0) ;
     transition-duration: 0.4s;

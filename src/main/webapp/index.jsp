@@ -21,6 +21,8 @@
         @import "divTips.css";
     </style>
     <script src="MyIndexJS.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
 </head>
 <body>
 <div id="top">
@@ -31,21 +33,21 @@
 </div>
 
 <div id="divSpace" role="tablist">
-    <button type="button"  class="divSpaceButton"><span>手机</span>
+    <a class="divSpaceButton">手机
         <div class="divSpaceButtonBar"></div>
-    </button>
-    <button type="button"  class="divSpaceButton"><span>电脑</span>
+    </a>
+    <a class="divSpaceButton">电脑
         <div class="divSpaceButtonBar"></div>
-    </button>
-    <button type="button"  class="divSpaceButton"><span>大电视</span>
+    </a>
+    <a class="divSpaceButton">大电视
         <div class="divSpaceButtonBar"></div>
-    </button>
-    <button type="button"  class="divSpaceButton"><span>日常用品</span>
+    </a>
+    <a class="divSpaceButton">日常用品
         <div class="divSpaceButtonBar"></div>
-    </button>
-    <button type="button"  class="divSpaceButton"><span>食品超市</span>
+    </a>
+    <a class="divSpaceButton">食品超市
         <div class="divSpaceButtonBar"></div>
-    </button>
+    </a>
 </div>
 
 <div id="indexBackground">

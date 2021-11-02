@@ -2,11 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="design.princessdreamland.onlinemall.mapper.UserMapper">
-    <resultMap id="userMap" type="User">
+    <resultMap id="userMap" type="design.princessdreamland.onlinemall.entity.User">
         <id property="user_id" column="user_id"/>
+            <association property="create_user" columnPrefix="cu_">
+                <id column="user_id" property="user_id"/>
+            </association>
 
-        <association property="seller" columnPrefix="su_">
-            <id property="book_id" column="book_id"/>
+
+        <association property="update_user" columnPrefix="uu_">
+            <id column="user_id" property="user_id"/>
         </association>
 
     </resultMap>

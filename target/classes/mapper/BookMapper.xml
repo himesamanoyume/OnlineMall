@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="design.princessdreamland.onlinemall.mapper.BookMapper">
-    <resultMap id="bookMap" type="Book">
-        <id property="book_id" column="book_id" javaType="Integer" jdbcType="INTEGER"/>
+    <resultMap id="bookMap" type="design.princessdreamland.onlinemall.entity.Book">
+        <id property="book_id" column="book_id"/>
 
         <association property="seller" columnPrefix="su_">
             <id property="user_id" column="user_id"/>
@@ -27,11 +27,11 @@
         b.seller_id,
         b.stock,
         b.publisher,
-        b.publish_date,
+        b.publish_time,
         b.status,
         b.deleted,
         b.create_user_id,
-        b.create_date,
+	    b.create_time,
         b.update_user_id,
         b.update_time,
 
@@ -51,7 +51,7 @@
         uu.account uu_account,
         uu.name uu_name,
         uu.type uu_type,
-        uu.address uu_address,
+        uu.address uu_address
 
     </sql>
     <sql id="where">
@@ -82,8 +82,8 @@
                 <if test="book.publisher!=null and book.publisher!=''">
                     AND b.publisher LIKE CONCAT('%',#{publisher},'%')
                 </if>
-                <if test="book.publish_date!=null and book.publish_date!=''">
-                    AND b.publish_date LIKE CONCAT('%',#{publish_date},'%')
+                <if test="book.publish_time!=null and book.publish_time!=''">
+                    AND b.publish_time LIKE CONCAT('%',#{publish_time},'%')
                 </if>
                 <if test="book.status!=null and book.status!=''">
                     AND b.status LIKE CONCAT('%',#{status},'%')
@@ -92,30 +92,34 @@
         </where>
     </sql>
 
-    <select id="queryList" resultMap="bookMap" >
-        select
-            <include refid="cols"/>
-        from book b
-        left join user su On su.user_id = b.seller_id and su.deleted = 0
-        left join user cu On cu.user_id = b.create_user_id and cu.deleted = 0
-        left join user uu On uu.user_id = b.update_user_id and uu.deleted = 0
-        where
-            <include refid="where"></include>
+    <select id="queryList" resultMap="bookMap">
+        SELECT
+        <include refid="cols" />
+
+        FROM book b
+        LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
+        LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
+        LEFT JOIN user uu ON uu.user_id = b.update_user_id AND uu.deleted = 0
+
+        <include refid="where" />
+
         ORDER BY book_id DESC
+
     </select>
 
 
     <select id="queryPage" resultMap="bookMap" >
-        select
-        <include refid="cols"/>
-        from book b
+        SELECT
+        <include refid="cols" />
+
+        FROM book b
         LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
         LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
         LEFT JOIN user uu ON uu.user_id = b.update_user_id AND uu.deleted = 0
-        where
-            <include refid="where"/>
-        ORDER BY book_id DESC
 
+        <include refid="where" />
+
+        ORDER BY book_id DESC
     </select>
 
 </mapper>

@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
-    List<User> queryList(User user);
+    List<User> queryList(@Param("user")User user);
 
-    IPage<User> queryPage(Page<User> page,User user);
+    IPage<User> queryPage(Page<User> page,@Param("user")User user);
 }

@@ -13,7 +13,7 @@ import java.util.List;
 public class User extends BaseEntity<User>{
 
     @TableId(type = IdType.AUTO)
-    private Integer user_id;
+    private Integer userId;
     private String account;
     private String password;
     private String name;

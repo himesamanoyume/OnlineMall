@@ -3,14 +3,14 @@
 
 <mapper namespace="design.princessdreamland.onlinemall.mapper.UserMapper">
     <resultMap id="userMap" type="design.princessdreamland.onlinemall.entity.User">
-        <id property="user_id" column="user_id"/>
-            <association property="create_user" columnPrefix="cu_">
-                <id column="user_id" property="user_id"/>
+        <id property="userId" column="user_id"/>
+            <association property="createUser" columnPrefix="cu_">
+                <id column="user_id" property="userId"/>
             </association>
 
 
-        <association property="update_user" columnPrefix="uu_">
-            <id column="user_id" property="user_id"/>
+        <association property="updateUser" columnPrefix="uu_">
+            <id column="user_id" property="userId"/>
         </association>
 
     </resultMap>
@@ -46,8 +46,8 @@
         <where>
             AND u.deleted = 0
             <if test="user!=null and user!='' ">
-                <if test="user.user_id!=null and user.user_id!='' ">
-                    AND u.user_id = #{user.user_id}
+                <if test="user.userId!=null and user.userId!='' ">
+                    AND u.user_id = #{user.userId}
                 </if>
                 <if test="user.account!=null and user.account!='' ">
                     AND u.account LIKE CONCAT('%', #{user.account}, '%')

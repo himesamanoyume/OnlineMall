@@ -11,21 +11,21 @@ import java.math.BigDecimal;
 @Data
 public class Book extends BaseEntity<Book>{
     @TableId(type = IdType.AUTO)
-    private Integer book_id;
+    private Integer bookId;
     private String name;
     private BigDecimal price;
     private String author;
     private Integer amount;
     private String txt;
 
-    private Integer seller_id;
+    private Integer sellerId;
 
     @TableField(exist = false)
     private User seller;
 
     private Integer stock;
     private String publisher;
-    private String publish_time;
+    private String publishTime;
     private Integer status;
 
 

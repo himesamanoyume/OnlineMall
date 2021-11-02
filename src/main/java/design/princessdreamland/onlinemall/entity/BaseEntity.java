@@ -15,20 +15,20 @@ public class BaseEntity<T> {
     @TableLogic
     private Integer deleted;
 
-    private Integer create_user_id;
+    private Integer createUserId;
 
     @TableField(exist = false)
-    private User create_user;
+    private User createUser;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date create_time;
+    private Date createTime;
 
-    private Integer update_user_id;
+    private Integer updateUserId;
     @TableField(exist = false)
-    private User update_user;
+    private User updateUser;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date update_time;
+    private Date updateTime;
 
     @JsonIgnore
     @TableField(exist = false)

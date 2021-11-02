@@ -49,7 +49,7 @@
                     account:account,
                     password:password
                 },function(res){
-                    if(res && res.user_id){
+                    if(res && res.userId){
                         alert('注册成功')
                         location.href = "/view/login"
                     }else{

@@ -37,7 +37,7 @@
                     account:account,
                     password:password
                 },function(res){
-                    if(res && res.user_id){
+                    if(res && res.userId){
                         location.href = "/view/index"
                     }else{
                         alert('登录失败')

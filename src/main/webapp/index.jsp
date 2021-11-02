@@ -16,12 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mall</title>
     <style>
-        @import "MyIndexCSS.css";
-        @import "divSpace.css";
-        @import "divTips.css";
+        @import "/MyIndexCSS.css";
+        @import "/divSpace.css";
+        @import "/divTips.css";
     </style>
-    <script src="MyIndexJS.js"></script>
-    <script src="jquery-3.5.1.min.js"></script>
+    <script src="/MyIndexJS.js"></script>
+    <script src="/jquery-3.5.1.min.js"></script>
 
 </head>
 <body>
@@ -51,45 +51,6 @@
 </div>
 
 <div id="indexBackground">
-
-
-    <c:forEach items="${bookList}" var="item">
-        <div class="divTips">
-            <div class="divTipsImg"></div>
-            <div class="divTipsTitle">${item.name}</div>
-            <div class="divPrice">
-                <span class="spanPrice">${item.price}元</span>
-            </div>
-            <div class="divTipsAuthor">
-                <span class="spanDes">作者：${item.author}</span>
-            </div>
-            <div class="divTipsCount">
-                <span class="spanDes">数量：${item.amount}</span>
-            </div>
-            <div class="divTipsTxt">
-                <span class="spanDes">描述：${item.txt}</span>
-            </div>
-        </div>
-    </c:forEach>
-
-    <c:forEach items="${phoneList}" var="item">
-        <div class="divTips">
-            <div class="divTipsImg"></div>
-            <div class="divTipsTitle">${item.name}</div>
-            <div class="divPrice">
-                <span class="spanPrice">${item.price}元</span>
-            </div>
-            <div class="divTipsAuthor">
-                <span class="spanDes">设计者：${item.designer}</span>
-            </div>
-            <div class="divTipsCount">
-                <span class="spanDes">库存：${item.amount}</span>
-            </div>
-            <div class="divTipsTxt">
-                <span class="spanDes">描述：${item.txt}</span>
-            </div>
-        </div>
-    </c:forEach>
 
     <div class="divTips">
         <div class="divTipsImg"></div>

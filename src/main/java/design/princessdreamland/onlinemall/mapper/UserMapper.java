@@ -1,8 +1,11 @@
 package design.princessdreamland.onlinemall.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import design.princessdreamland.onlinemall.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -10,8 +13,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
-    @Select("select * from user where userId = #{id}")
-    User queryById(Integer id);
+    List<User> queryList(User user);
 
-    List<User> queryWithBooks();
+    IPage<User> queryPage(Page<User> page,User user);
 }

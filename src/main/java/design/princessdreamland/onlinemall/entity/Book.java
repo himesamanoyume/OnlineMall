@@ -4,22 +4,28 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
-import java.math.BigDecimal;
-import java.util.List;
 
-public class Book {
+import java.math.BigDecimal;
+
+
+public class Book extends BaseEntity<Book>{
     @TableId(type = IdType.AUTO)
     private Integer book_id;
     private String name;
     private BigDecimal price;
     private String author;
     private Integer amount;
+    private String txt;
+
+    private Integer seller_id;
+
     @TableField(exist = false)
-    private List<Integer> bookIds;
-    @TableField(exist = false)
-    private String sellerName;
-    @TableField(exist = false)
-    private String seller;
+    private User seller;
+
+    private Integer stock;
+    private String publisher;
+    private String publish_date;
+    private Integer status;
 
     @Override
     public String toString() {
@@ -29,10 +35,13 @@ public class Book {
                 ", price=" + price +
                 ", author='" + author + '\'' +
                 ", amount=" + amount +
-                ", bookIds=" + bookIds +
-                ", sellerName='" + sellerName + '\'' +
-                ", seller='" + seller + '\'' +
                 ", txt='" + txt + '\'' +
+                ", seller_id=" + seller_id +
+                ", seller=" + seller +
+                ", stock=" + stock +
+                ", publisher='" + publisher + '\'' +
+                ", publish_date='" + publish_date + '\'' +
+                ", status=" + status +
                 '}';
     }
 
@@ -43,53 +52,35 @@ public class Book {
 
         Book book = (Book) o;
 
-        if (book_id != null ? !book_id.equals(book.book_id) : book.book_id != null) return false;
-        if (name != null ? !name.equals(book.name) : book.name != null) return false;
-        if (price != null ? !price.equals(book.price) : book.price != null) return false;
-        if (author != null ? !author.equals(book.author) : book.author != null) return false;
-        if (amount != null ? !amount.equals(book.amount) : book.amount != null) return false;
-        if (bookIds != null ? !bookIds.equals(book.bookIds) : book.bookIds != null) return false;
-        if (sellerName != null ? !sellerName.equals(book.sellerName) : book.sellerName != null) return false;
-        if (seller != null ? !seller.equals(book.seller) : book.seller != null) return false;
-        return txt != null ? txt.equals(book.txt) : book.txt == null;
+        if (!book_id.equals(book.book_id)) return false;
+        if (!name.equals(book.name)) return false;
+        if (!price.equals(book.price)) return false;
+        if (!author.equals(book.author)) return false;
+        if (!amount.equals(book.amount)) return false;
+        if (!txt.equals(book.txt)) return false;
+        if (!seller_id.equals(book.seller_id)) return false;
+        if (!seller.equals(book.seller)) return false;
+        if (!stock.equals(book.stock)) return false;
+        if (!publisher.equals(book.publisher)) return false;
+        if (!publish_date.equals(book.publish_date)) return false;
+        return status.equals(book.status);
     }
 
     @Override
     public int hashCode() {
-        int result = book_id != null ? book_id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + (amount != null ? amount.hashCode() : 0);
-        result = 31 * result + (bookIds != null ? bookIds.hashCode() : 0);
-        result = 31 * result + (sellerName != null ? sellerName.hashCode() : 0);
-        result = 31 * result + (seller != null ? seller.hashCode() : 0);
-        result = 31 * result + (txt != null ? txt.hashCode() : 0);
+        int result = book_id.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + price.hashCode();
+        result = 31 * result + author.hashCode();
+        result = 31 * result + amount.hashCode();
+        result = 31 * result + txt.hashCode();
+        result = 31 * result + seller_id.hashCode();
+        result = 31 * result + seller.hashCode();
+        result = 31 * result + stock.hashCode();
+        result = 31 * result + publisher.hashCode();
+        result = 31 * result + publish_date.hashCode();
+        result = 31 * result + status.hashCode();
         return result;
-    }
-
-    public String getSeller() {
-        return seller;
-    }
-
-    public void setSeller(String seller) {
-        this.seller = seller;
-    }
-
-    public String getSellerName() {
-        return sellerName;
-    }
-
-    public void setSellerName(String sellerName) {
-        this.sellerName = sellerName;
-    }
-
-    public List<Integer> getBookIds() {
-        return bookIds;
-    }
-
-    public void setBookIds(List<Integer> bookIds) {
-        this.bookIds = bookIds;
     }
 
     public Integer getBook_id() {
@@ -140,6 +131,51 @@ public class Book {
         this.txt = txt;
     }
 
-    private String txt;
+    public Integer getSeller_id() {
+        return seller_id;
+    }
 
+    public void setSeller_id(Integer seller_id) {
+        this.seller_id = seller_id;
+    }
+
+    public User getSeller() {
+        return seller;
+    }
+
+    public void setSeller(User seller) {
+        this.seller = seller;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getPublish_date() {
+        return publish_date;
+    }
+
+    public void setPublish_date(String publish_date) {
+        this.publish_date = publish_date;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 }

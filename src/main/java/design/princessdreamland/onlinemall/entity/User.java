@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
+
+import java.math.BigDecimal;
 import java.util.List;
+
 
 public class User {
 
@@ -13,12 +16,9 @@ public class User {
     private String account;
     private String password;
     private String name;
-    private Integer age;
-    private Integer sex;
     private Integer type;
-
-    @TableField(exist = false)
-    private List<Book> bookList;
+    private BigDecimal balance;
+    private String address;
 
     @Override
     public String toString() {
@@ -27,10 +27,9 @@ public class User {
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex=" + sex +
                 ", type=" + type +
-                ", bookList=" + bookList +
+                ", balance=" + balance +
+                ", address='" + address + '\'' +
                 '}';
     }
 
@@ -41,35 +40,25 @@ public class User {
 
         User user = (User) o;
 
-        if (user_id != null ? !user_id.equals(user.user_id) : user.user_id != null) return false;
-        if (account != null ? !account.equals(user.account) : user.account != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (age != null ? !age.equals(user.age) : user.age != null) return false;
-        if (sex != null ? !sex.equals(user.sex) : user.sex != null) return false;
-        if (type != null ? !type.equals(user.type) : user.type != null) return false;
-        return bookList != null ? bookList.equals(user.bookList) : user.bookList == null;
+        if (!user_id.equals(user.user_id)) return false;
+        if (!account.equals(user.account)) return false;
+        if (!password.equals(user.password)) return false;
+        if (!name.equals(user.name)) return false;
+        if (!type.equals(user.type)) return false;
+        if (!balance.equals(user.balance)) return false;
+        return address.equals(user.address);
     }
 
     @Override
     public int hashCode() {
-        int result = user_id != null ? user_id.hashCode() : 0;
-        result = 31 * result + (account != null ? account.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (age != null ? age.hashCode() : 0);
-        result = 31 * result + (sex != null ? sex.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (bookList != null ? bookList.hashCode() : 0);
+        int result = user_id.hashCode();
+        result = 31 * result + account.hashCode();
+        result = 31 * result + password.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + type.hashCode();
+        result = 31 * result + balance.hashCode();
+        result = 31 * result + address.hashCode();
         return result;
-    }
-
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
     }
 
     public Integer getUser_id() {
@@ -104,22 +93,6 @@ public class User {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
     public Integer getType() {
         return type;
     }
@@ -128,4 +101,19 @@ public class User {
         this.type = type;
     }
 
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

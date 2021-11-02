@@ -5,10 +5,16 @@
     <resultMap id="bookMap" type="Book">
         <id property="book_id" column="book_id" javaType="Integer" jdbcType="INTEGER"/>
 
-        <association property="seller" columnPrefix="s_">
+        <association property="seller" columnPrefix="su_">
             <id property="user_id" column="user_id"/>
-
         </association>
+        <association property="create_user" columnPrefix="cu_">
+            <id property="user_id" column="user_id"/>
+        </association>
+        <association property="update_user" columnPrefix="uu_">
+            <id property="user_id" column="user_id"/>
+        </association>
+
     </resultMap>
 
     <sql id="cols">
@@ -18,95 +24,98 @@
         b.author,
         b.amount,
         b.txt,
-        u.user_id s_user_id,
-        u.account s_account,
-        u.password s_password,
-        u.name s_name,
-        u.age s_age,
-        u.sex s_sex,
-        u.type s_type
+        b.seller_id,
+        b.stock,
+        b.publisher,
+        b.publish_date,
+        b.status,
+        b.deleted,
+        b.create_user_id,
+        b.create_date,
+        b.update_user_id,
+        b.update_time,
+
+        su.user_id su_user_id,
+        su.account su_account,
+        su.name su_name,
+        su.type su_type,
+        su.address su_address,
+
+        cu.user_id cu_user_id,
+        cu.account cu_account,
+        cu.name cu_name,
+        cu.type cu_type,
+        cu.address cu_address,
+
+        uu.user_id uu_user_id,
+        uu.account uu_account,
+        uu.name uu_name,
+        uu.type uu_type,
+        uu.address uu_address,
+
     </sql>
+    <sql id="where">
+        <where>
+            AND b.deleted = 0
+            <if test="book!=null and book!= ''">
+                <if test="book.book_id!=null and book.book_id!=''">
+                    AND b.book_id = #{book_id}
+                </if>
+                <if test="book.name!=null and book.name!=''">
+                    AND b.name LIKE CONCAT('%',#{name},'%')
+                </if>
+                <if test="book.price!=null and book.price!=''">
+                    AND b.price =#{price}
+                </if>
+                <if test="book.author!=null and book.author!=''">
+                    AND b.author LIKE CONCAT('%',#{author},'%')
+                </if>
+                <if test="book.amount!=null and book.amount!=''">
+                    AND b.amount =#{amount}
+                </if>
+                <if test="book.txt!=null and book.txt!=''">
+                    AND b.txt LIKE CONCAT('%',#{txt},'%')
+                </if>
+                <if test="book.seller_id!=null and book.seller_id!=''">
+                    AND b.seller_id LIKE CONCAT('%',#{seller_id},'%')
+                </if>
+                <if test="book.publisher!=null and book.publisher!=''">
+                    AND b.publisher LIKE CONCAT('%',#{publisher},'%')
+                </if>
+                <if test="book.publish_date!=null and book.publish_date!=''">
+                    AND b.publish_date LIKE CONCAT('%',#{publish_date},'%')
+                </if>
+                <if test="book.status!=null and book.status!=''">
+                    AND b.status LIKE CONCAT('%',#{status},'%')
+                </if>
+            </if>
+        </where>
+    </sql>
+
+    <select id="queryList" resultMap="bookMap" >
+        select
+            <include refid="cols"/>
+        from book b
+        left join user su On su.user_id = b.seller_id and su.deleted = 0
+        left join user cu On cu.user_id = b.create_user_id and cu.deleted = 0
+        left join user uu On uu.user_id = b.update_user_id and uu.deleted = 0
+        where
+            <include refid="where"></include>
+        ORDER BY book_id DESC
+    </select>
 
 
     <select id="queryPage" resultMap="bookMap" >
         select
-            <include refid="cols"/>
-        from book b
-        left join user u On b.seller_id = u.user_id
-        <where>
-            <if test="book.book_id!=null and book.book_id!=''">
-                AND b.book_id = #{book_id}
-            </if>
-            <if test="book.name!=null and book.name!=''">
-                AND b.name LIKE CONCAT('%',#{name},'%')
-            </if>
-            <if test="book.price!=null and book.price!=''">
-                AND b.price =#{price}
-            </if>
-            <if test="book.author!=null and book.author!=''">
-                AND b.author LIKE CONCAT('%',#{author},'%')
-            </if>
-            <if test="book.amount!=null and book.amount!=''">
-                AND b.amount =#{amount}
-            </if>
-            <if test="book.txt!=null and book.txt!=''">
-                AND b.txt LIKE CONCAT('%',#{txt},'%')
-            </if>
-            <if test="book.bookIds!=null and book.bookIds!=''">
-                AND b.book_id IN
-                <foreach collection="book.bookIds" item="item" open="(" close=")" separator=",">
-                    #{item}
-                </foreach>
-            </if>
-        </where>
-        ORDER BY b.book_id DESC
-    </select>
-
-
-    <select id="queryList" resultMap="bookMap" >
-        select
         <include refid="cols"/>
         from book b
-        left join user u On b.seller_id = u.user_id
-        <where>
-            <if test="book.book_id!=null and book.book_id!=''">
-                AND b.book_id = #{book_id}
-            </if>
-            <if test="book.name!=null and book.name!=''">
-                AND b.name LIKE CONCAT('%',#{name},'%')
-            </if>
-            <if test="book.price!=null and book.price!=''">
-                AND b.price =#{price}
-            </if>
-            <if test="book.author!=null and book.author!=''">
-                AND b.author LIKE CONCAT('%',#{author},'%')
-            </if>
-            <if test="book.amount!=null and book.amount!=''">
-                AND b.amount =#{amount}
-            </if>
-            <if test="book.txt!=null and book.txt!=''">
-                AND b.txt LIKE CONCAT('%',#{txt},'%')
-            </if>
-            <if test="book.bookIds!=null and book.bookIds!=''">
-                AND b.book_id IN
-                <foreach collection="book.bookIds" item="item" open="(" close=")" separator=",">
-                    #{item}
-                </foreach>
-            </if>
-        </where>
-        ORDER BY b.book_id DESC
+        LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
+        LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
+        LEFT JOIN user uu ON uu.user_id = b.update_user_id AND uu.deleted = 0
+        where
+            <include refid="where"/>
+        ORDER BY book_id DESC
 
     </select>
 
-
-
-
-    <insert id="insertBook">
-        insert into book (name,price,author,amount,txt)
-        values (#{name},#{price},#{author},#{amount},#{txt})
-    </insert>
-
-    <update id="">
-
-    </update>
 </mapper>

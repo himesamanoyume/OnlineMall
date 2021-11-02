@@ -5,31 +5,89 @@
     <resultMap id="userMap" type="User">
         <id property="user_id" column="user_id"/>
 
-        <collection property="bookList" columnPrefix="b_" javaType="java.util.ArrayList" ofType="Book">
+        <association property="seller" columnPrefix="su_">
             <id property="book_id" column="book_id"/>
-
-        </collection>
+        </association>
 
     </resultMap>
-    <select id="queryWithBooks">
-        select
+
+    <sql id="cols">
         u.user_id,
         u.account,
         u.password,
         u.name,
-        u.age,
-        u.sex,
         u.type,
-        b.book_id b_book_id,
-        b.name b_name,
-        b.price b_price,
-        b.author b_author,
-        b.amount b_amount,
-        b.txt b_txt
-        from user u
-        left join book b ON  b.seller_id = u.user_id
+        u.balance,
+        u.address,
+        u.deleted,
+        u.create_user_id,
+        u.create_time,
+        u.update_user_id,
+        u.update_time,
+
+        cu.user_id cu_user_id,
+        cu.account cu_account,
+        cu.name cu_name,
+        cu.type cu_type,
+        cu.address cu_address,
+
+        uu.user_id uu_user_id,
+        uu.account uu_account,
+        uu.name uu_name,
+        uu.type uu_type,
+        uu.address uu_address
+
+    </sql>
+    <sql id="where">
+        <where>
+            AND u.deleted = 0
+            <if test="user!=null and user!='' ">
+                <if test="user.user_id!=null and user.user_id!='' ">
+                    AND u.user_id = #{user.user_id}
+                </if>
+                <if test="user.account!=null and user.account!='' ">
+                    AND u.account LIKE CONCAT('%', #{user.account}, '%')
+                </if>
+                <if test="user.name!=null and user.name!='' ">
+                    AND u.name LIKE CONCAT('%', #{user.name}, '%')
+                </if>
+                <if test="user.type!=null and user.type!='' ">
+                    AND u.type = #{user.type}
+                </if>
+                <if test="user.address!=null and user.address!='' ">
+                    AND u.address LIKE CONCAT('%', #{user.address}, '%')
+                </if>
+            </if>
+
+        </where>
+
+    </sql>
+
+    <select id="queryList" resultMap="userMap">
+        SELECT
+        <include refid="cols" />
+
+        FROM user u
+        LEFT JOIN user cu ON cu.user_id = u.create_user_id AND cu.deleted = 0
+        LEFT JOIN user uu ON uu.user_id = u.update_user_id AND uu.deleted = 0
+
+        <include refid="where" />
+
+        ORDER BY u.user_id DESC
 
     </select>
+    <select id="queryPage" resultMap="userMap">
+        SELECT
+        <include refid="cols" />
 
+        FROM user u
+        LEFT JOIN user cu ON cu.user_id = u.create_user_id AND cu.deleted = 0
+        LEFT JOIN user uu ON uu.user_id = u.update_user_id AND uu.deleted = 0
+
+        <include refid="where" />
+
+        ORDER BY u.user_id DESC
+
+    </select>
 
 </mapper>

@@ -46,7 +46,7 @@ public class MybatisPlusConfig {
         page.setDialectType("mysql");
         return page;
     }
-    
+
     @Bean
     public MybatisSqlSessionFactoryBean mybatisSqlSessionFactoryBean() {
         MybatisSqlSessionFactoryBean mybatisPlus = new MybatisSqlSessionFactoryBean();
@@ -61,8 +61,8 @@ public class MybatisPlusConfig {
         MybatisConfiguration mc = new MybatisConfiguration();
         mc.setDefaultScriptingLanguage(MybatisXMLLanguageDriver.class);
         mc.setAutoMappingBehavior(AutoMappingBehavior.FULL);
-//        数据库字段设计为驼峰命名，默认开启的驼峰转下划线会报错字段找不到
-        mc.setMapUnderscoreToCamelCase(false);
+        //数据库字段设计为驼峰命名，默认开启的驼峰转下划线会报错字段找不到
+//        mc.setMapUnderscoreToCamelCase(false);
         mybatisPlus.setConfiguration(mc);
         if (this.databaseIdProvider != null) {
             mybatisPlus.setDatabaseIdProvider(this.databaseIdProvider);

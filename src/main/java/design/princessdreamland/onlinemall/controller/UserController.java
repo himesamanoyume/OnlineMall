@@ -1,41 +1,68 @@
 package design.princessdreamland.onlinemall.controller;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.mapper.UserMapper;
 import design.princessdreamland.onlinemall.service.UserService;
+import design.princessdreamland.onlinemall.util.PhoneFormatCheckUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
-@Controller
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/queryUserList")
-    @ResponseBody
-    public List<User> queryList(){
-        User user = new User();
-        return userService.queryList(user);
+    @PostMapping("/reg")
+    public User reg(User user) throws Exception{
+        if (ObjectUtils.isNull(user)){
+            throw new Exception("用户信息不能为空");
+        }
+        if (StrUtil.isEmpty(user.getAccount())){
+            throw new Exception("手机号不能为空");
+        }
+        if (StrUtil.isEmpty(user.getPassword())){
+            throw new Exception("密码不能为空");
+        }
+        if (user.getPassword().length()<6){
+            throw new Exception("密码强度不够");
+        }
+
+        if (!PhoneFormatCheckUtils.isPhoneLegal(user.getAccount())){
+            throw new Exception("手机号格式不正确");
+        }
+
+        user.setPassword(SecureUtil.md5(user.getPassword()));
+        userService.createUser(user);
+        return user;
     }
 
-    @GetMapping("/queryUserPage")
-    @ResponseBody
-    public IPage<User> queryPage(){
-        User user = new User();
-
-        Page<User> page = new Page<User>();
-        page.setCurrent(1);
-        page.setSize(10);
-
-        return userService.queryPage(page, user);
+    @PostMapping("/login")
+    public User login(User user) throws Exception{
+        if (ObjectUtils.isNull(user)){
+            throw new Exception("用户信息不能为空");
+        }
+        if (StrUtil.isEmpty(user.getAccount())){
+            throw new Exception("手机号不能为空");
+        }
+        if (StrUtil.isEmpty(user.getPassword())){
+            throw new Exception("密码不能为空");
+        }
+        if (!PhoneFormatCheckUtils.isPhoneLegal(user.getAccount())){
+            throw new Exception("手机号格式不正确");
+        }
+        return userService.login(user);
     }
 }

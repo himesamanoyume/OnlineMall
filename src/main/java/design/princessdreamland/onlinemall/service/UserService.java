@@ -11,4 +11,13 @@ public interface UserService extends IService<User> {
     List<User> queryList(User user);
 
     IPage<User> queryPage(Page<User> page, User user);
+
+    /**
+     * 新增一个用户
+     * @param user
+     * @return
+     */
+    User createUser(User user) throws Exception;
+
+    User login(User user) throws Exception;
 }

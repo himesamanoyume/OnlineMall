@@ -1,28 +1,25 @@
 package design.princessdreamland.onlinemall.controller;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class IndexController {
+@RequestMapping("/view")
+public class ViewController {
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index(){
         return "/index.jsp";
     }
 
-    @GetMapping("/loginView")
+    @GetMapping("/login")
     public String login(){
         return "/login.jsp";
     }
 
-    @GetMapping("/regView")
+    @GetMapping("/reg")
     public String reg(){
         return "/reg.jsp";
     }
-
 }

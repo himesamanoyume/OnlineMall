@@ -21,12 +21,12 @@
         @import "divTips.css";
     </style>
     <script src="MyIndexJS.js"></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-    </script>
+    <script src="jquery-3.5.1.min.js"></script>
+
 </head>
 <body>
 <div id="top">
-    <button type="button" id="topLogin" onclick="window.location.href = '/'">登录</button>
+    <button type="button" id="topLogin" onclick="window.location.href = '/view/login'">登录</button>
 </div>
 <div id="title">
     网上商城

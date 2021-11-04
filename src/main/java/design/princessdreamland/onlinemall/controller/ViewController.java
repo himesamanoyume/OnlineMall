@@ -22,4 +22,6 @@ public class ViewController {
     public String reg(){
         return "/reg.jsp";
     }
+
+
 }

@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,25 +15,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mall</title>
     <style>
-        @import "/MyIndexCSS.css";
-        @import "/divSpace.css";
-        @import "/divTips.css";
+        @import "/css/MyIndexCSS.css";
+        @import "/css/divSpace.css";
+        @import "/css/divTips.css";
     </style>
-    <script src="/MyIndexJS.js"></script>
-    <script src="/jquery-3.5.1.min.js"></script>
+    <script src="/js/MyIndexJS.js" type="text/javascript"></script>
+    <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
 
 </head>
 <body>
-<div id="top">
-    <c:if test="${sessionScope.user==null}">
-        <button type="button" id="topLogin" onclick="window.location.href = '/view/login'">登录</button>
-    </c:if>
-    <c:if test="${sessionScope.user!=null}">
-        <button type="button" id="topLogin">${sessionScope.user.account}</button>
-    </c:if>
-</div>
+
+<%@include file="./component/title.jsp" %>
+
 <div id="title">
     网上商城
+
 </div>
 
 <div id="divSpace" role="tablist">

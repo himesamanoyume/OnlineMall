@@ -17,16 +17,71 @@ span{
     font-size: 15px;
     background: snow;
     border: 0;
+    cursor: pointer;
     transition-duration: 0.4s;
-    box-shadow: 0px 0px 0px 1px #66ccff;
+    box-shadow: 0 0 0 1px #66ccff;
+}
+#topLoginAfter{
+    margin-right: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 30px;
+    float: right;
+    height: 30px;
+    /*width: 60px;*/
+    color: black;
+    font-size: 15px;
+    background: snow;
+    justify-content: center;
+    border: 0;
+    transition-duration: 0.4s;
+    box-shadow: 0 0 0 1px #66ccff;
+}
+.topLoginInfoLogout{
+    height: 30px;
+    line-height: 30px;
+    color: black;
+    font-size: 15px;
+    transition-duration: 0.3s;
+    display: none;
+    cursor: pointer;
+}
+#userType{
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 30px;
+    float: left;
+    height: 30px;
+    /*width: 60px;*/
+    color: black;
+    font-size: 15px;
+    background: snow;
+    border: 0;
+    transition-duration: 0.4s;
+    box-shadow: 0 0 0 1px #66ccff;
+ }
+#topLoginInfo{
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 30px;
+    width: 130px;
+    height: 0;
+    float: bottom;
+    color: black;
+    font-size: 15px;
+    background: snow;
+    border: 0;
+    transition-duration: 0.4s;
+    /*box-shadow: 0 0 0 1px #66ccff;*/
 }
 #topLogin:hover{
     background: #66ccff;
     color: snow;
 }
 body{				/*正文*/
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background-color: snow;
     text-align: center;
 }
@@ -52,10 +107,9 @@ body{				/*正文*/
     background: snow;
     text-align: center;
     height: 300px;
-    margin: 0px;
+    margin: 0;
     font-size: 50px;
     line-height: 300px;
-    font-family:"微软雅黑";
     user-select: none;
 }
 
@@ -70,40 +124,13 @@ body{				/*正文*/
 #select{
     width: 350px;
 }
-@keyframes divSpaceButtonBarHover {
-    0%{
-        width: 0px;
-    }
-    100%{
-        width: 80%;
-    }
-}
 h5{				/*5号标题*/
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    font-family:"微软雅黑";
-    margin: 0px;
+    margin: 0;
 }
 p{				/*段落*/
-    padding: 0px 10px;
-}
-@keyframes divHover{				/*标签悬停动画 边框变金*/
-    0%{
-        border: 1px solid;
-    }
-    100%{
-        border: 1px solid rgb(220, 170, 20);
-        box-shadow: rgb(255, 170, 0) 0px 0px 2px 1px;
-    }
-}
-@keyframes divHoverNormal{				/*标签顶部标题背景变色动画 金色*/
-    0%{
-        background-color: rgb(190, 147, 18);
-    }
-    100%{
-        background-color: rgb(218, 140, 5);
-        color: rgb(243, 218, 24);
-    }
+    padding: 0 10px;
 }
 

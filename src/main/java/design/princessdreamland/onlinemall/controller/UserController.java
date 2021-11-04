@@ -50,6 +50,12 @@ public class UserController {
         return user;
     }
 
+    @PostMapping("/logout")
+    public Boolean logout(HttpSession session){
+        session.removeAttribute("user");
+        return true;
+    }
+
     @PostMapping("/login")
     public User login(User user, HttpSession session) throws Exception{
         if (ObjectUtils.isNull(user)){

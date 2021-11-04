@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <script src="/jquery-3.5.1.min.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function(){
             $('#submit').click(function (){

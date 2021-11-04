@@ -26,7 +26,12 @@
 </head>
 <body>
 <div id="top">
-    <button type="button" id="topLogin" onclick="window.location.href = '/view/login'">登录</button>
+    <c:if test="${sessionScope.user==null}">
+        <button type="button" id="topLogin" onclick="window.location.href = '/view/login'">登录</button>
+    </c:if>
+    <c:if test="${sessionScope.user!=null}">
+        <button type="button" id="topLogin">${sessionScope.user.account}</button>
+    </c:if>
 </div>
 <div id="title">
     网上商城
@@ -52,9 +57,12 @@
 
 <div id="indexBackground">
 
+
     <div class="divTips">
         <div class="divTipsImg"></div>
-        <div class="divTipsTitle"><span>超级无敌超级无敌超级无敌超级无敌超级无敌超级无敌小氪金</span></div>
+        <div class="divTipsTitle">
+            <span class="spanTitle">超级无敌超级无敌超级无敌超级无敌超级无敌超级无敌小氪金</span>
+        </div>
         <div class="divPrice">
             <span class="spanPrice">6480元</span>
         </div>

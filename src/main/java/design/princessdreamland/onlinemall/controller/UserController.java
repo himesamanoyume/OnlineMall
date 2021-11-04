@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -50,7 +51,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public User login(User user) throws Exception{
+    public User login(User user, HttpSession session) throws Exception{
         if (ObjectUtils.isNull(user)){
             throw new Exception("用户信息不能为空");
         }
@@ -63,6 +64,6 @@ public class UserController {
         if (!PhoneFormatCheckUtils.isPhoneLegal(user.getAccount())){
             throw new Exception("手机号格式不正确");
         }
-        return userService.login(user);
+        return userService.login(user,session);
     }
 }

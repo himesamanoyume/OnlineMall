@@ -11,6 +11,7 @@ import design.princessdreamland.onlinemall.mapper.UserMapper;
 import design.princessdreamland.onlinemall.service.UserService;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service
@@ -39,7 +40,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public User login(User user) throws Exception{
+    public User login(User user, HttpSession session) throws Exception{
         user.setPassword(SecureUtil.md5(user.getPassword()));
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
@@ -50,7 +51,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (loginUser == null){
             throw new Exception("账号或者密码有误");
         }
-
+        session.setAttribute("user",loginUser);
         return loginUser;
     }
 

@@ -34,7 +34,7 @@ window.onscroll=function(){
     }
     $(function (){
         // console.log("haha");
-        changeMaxWidth();
+        // changeMaxWidth();
         changeFontSize();
     })
     // window.onload = function(){
@@ -42,7 +42,7 @@ window.onscroll=function(){
     // }
     window.onresize = function(){
         changeFontSize();
-        changeMaxWidth();
+        // changeMaxWidth();
     }
     function changeFontSize(){
         if(document.body.clientWidth>=600){

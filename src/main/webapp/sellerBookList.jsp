@@ -17,19 +17,14 @@
         @import "/css/divTips.css";
     </style>
 
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"/>
-    <script type="text/javascript" src="js/createBookJS.js"/>
-    <script type="text/javascript" src="js/MyIndexJS.js"/>
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/js/createBookJS.js"></script>
+    <script type="text/javascript" src="/js/MyIndexJS.js"></script>
+
 </head>
 <body>
-<div id="top">
 
-    <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
-        <button type="button" id="userType">商家端</button>
-    </c:if>
-    <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">
-        <button type="button" id="userType">管理员端</button>
-    </c:if>
+<div id="top">
     <select id="searchStatus" class="topItem">
         <option value="" ${status == '' || status == null ? 'selected' : ''}>全部</option>
         <option value="1" ${status == '1' ? 'selected' : ''}>未提交</option>
@@ -37,69 +32,23 @@
         <option value="3" ${status == '3' ? 'selected' : ''}>上架</option>
         <option value="4" ${status == '4' ? 'selected' : ''}>下架</option>
     </select>
-    <select id="searchType" class="topItem">
-        <option value="1">书名</option>
-        <option value="2">出版社</option>
-        <option value="3">简介</option>
-    </select>
 
-    <input type="text" class="topItem"/>
-
-    <button class="topItem" id="searchButton">搜索</button>
-
-    <c:if test="${sessionScope.user==null}">
-        <button type="button" id="topLogin" onclick="window.location.href = '/view/login'">登录</button>
-    </c:if>
-
-    <c:if test="${sessionScope.user!=null}">
-        <button type="button" id="topLoginAfter">${sessionScope.user.account}
-            <div id="topLoginInfo">
-                <a id="topLoginInfoLogout">退出登录</a>
-
-            </div>
-        </button>
-    </c:if>
-
-    <c:if test="${sessionScope.user!=null and sessionScope.user.type == 0}">
-        <button type="button" id="topLogin">我的图书</button>
-        <button type="button" id="topLogin">我的订单</button>
-    </c:if>
-
-    <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
-        <button type="button" id="topLogin">我的订单</button>
-    </c:if>
-
-    <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">
-        <button type="button" id="topLogin">用户列表</button>
-        <button type="button" id="topLogin">图书列表</button>
-    </c:if>
-
-    <c:if test="${sessionScope.user!=null}">
-        <button type="button" id="topLogin" onclick="window.location.href = '/view/index'">首页</button>
-    </c:if>
+    <%@include file="./component/title.jsp" %>
 </div>
 
-<c:forEach items="${bookList}" var="item">
-    <div class="divTips">
-        <div class="divTipsImg"></div>
-        <div class="divTipsTitle">
-            <span class="spanTitle">${item.title}</span>
-        </div>
-        <div class="divPrice">
-            <span class="spanPrice">${item.price}元</span>
-        </div>
-        <div class="divTipsAuthor">
-            <span class="spanDes">作者：${item.author}</span>
-        </div>
-        <div class="divTipsCount">
-            <span class="spanDes">数量：${item.stock}</span>
-        </div>
-        <div class="divTipsTxt">
-            <span class="spanDes">描述：${item.txt}</span>
-        </div>
-    </div>
-</c:forEach>
+
+<div id="title">
+
+    网上商城
+
+</div>
+
+<%@include file="./component/divSpace.jsp" %>
+
+<%@include file="./component/get.jsp" %>
 
 <%@include file="./component/page.jsp" %>
+
+
 </body>
 </html>

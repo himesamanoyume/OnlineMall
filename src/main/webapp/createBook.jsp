@@ -11,11 +11,13 @@
 <html>
 <head>
     <title>Title</title>
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"/>
-    <script type="text/javascript" src="js/createBookJS.js"/>
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/js/createBookJS.js"></script>
 </head>
 <body>
-<%@ include file="./component/title.jsp" %>
+<div id="top">
+    <%@include file="./component/title.jsp" %>
+</div>
 <div style="font-size: 22px; font-weight: bolder;margin-bottom: 30px;">	新增商品	</div>
 
 <div class="input_item">

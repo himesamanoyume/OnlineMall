@@ -24,8 +24,9 @@
     <script src="/js/createBookJS.js" type="text/javascript"></script>
 </head>
 <body>
-
+<div id="top">
 <%@include file="./component/title.jsp" %>
+</div>
 
 <div id="title">
 
@@ -33,48 +34,9 @@
 
 </div>
 
-<div id="divSpace" role="tablist">
-    <a class="divSpaceButton">手机
-        <div class="divSpaceButtonBar"></div>
-    </a>
-    <a class="divSpaceButton">电脑
-        <div class="divSpaceButtonBar"></div>
-    </a>
-    <a class="divSpaceButton">大电视
-        <div class="divSpaceButtonBar"></div>
-    </a>
-    <a class="divSpaceButton">日常用品
-        <div class="divSpaceButtonBar"></div>
-    </a>
-    <a class="divSpaceButton">食品超市
-        <div class="divSpaceButtonBar"></div>
-    </a>
-</div>
+<%@include file="./component/divSpace.jsp" %>
 
-<div id="indexBackground">
-    <c:forEach items="${bookList}" var="item">
-        <div class="divTips">
-            <div class="divTipsImg"></div>
-            <div class="divTipsTitle">
-                <span class="spanTitle">${item.name}</span>
-            </div>
-            <div class="divPrice">
-                <span class="spanPrice">${item.price}元</span>
-            </div>
-            <div class="divTipsAuthor">
-                <span class="spanDes">作者：${item.author}</span>
-            </div>
-            <div class="divTipsCount">
-                <span class="spanDes">数量：${item.stock}</span>
-            </div>
-            <div class="divTipsTxt">
-                <span class="spanDes">描述：${item.txt}</span>
-            </div>
-        </div>
-    </c:forEach>
-
-</div>
-
+<%@include file="./component/get.jsp" %>
 
 <%@include file="./component/page.jsp" %>
 

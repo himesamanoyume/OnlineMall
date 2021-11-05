@@ -31,7 +31,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     @Override
     public IPage<Book> searchPage(String type,String keyword,String currentPage){
         Book book = new Book();
-        book.setStatus(2);
+        book.setStatus(3);//上架
 
         if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
             if("1".equals(type)){

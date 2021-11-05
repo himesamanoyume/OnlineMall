@@ -20,7 +20,14 @@ public class ViewController {
     private BookService bookService;
 
     @GetMapping("/index")
-    public String index(){
+    public String index(String type, String keyword, String currentPage, Model model){
+
+        IPage<Book> bookPage = bookService.searchPage(type,keyword,currentPage);
+        model.addAttribute("bookList",bookPage.getRecords());
+        model.addAttribute("currentPage",bookPage.getCurrent());
+        model.addAttribute("totalPage",bookPage.getPages());
+        model.addAttribute("keyword",keyword);
+
         return "/index.jsp";
     }
 

@@ -9,7 +9,7 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div id="top">
+
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
         <button type="button" id="userType">商家端</button>
@@ -17,6 +17,7 @@
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">
         <button type="button" id="userType">管理员端</button>
     </c:if>
+
 
     <select class="topItem" id="searchType">
         <option value="1">书名</option>
@@ -45,7 +46,7 @@
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
         <button type="button" class="topItem" onclick="window.location.href ='/view/sellerBookList'">我的图书</button>
-        <button type="button" class="topItem">我的订单</button>
+        <button type="button" class="topItem" id="1Sys">我的订单</button>
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">

@@ -11,7 +11,7 @@ window.onscroll=function(){
     
     var topScroll = get_scrollTop_of_body();//滚动的距离,距离顶部的距离
     var divSpace = document.getElementById("divSpace");//获取到导航栏id
-    if(topScroll > 350){
+    if(topScroll > 360){
         divSpace.style.top = '0px';
         divSpace.style.width = '100%';
         divSpace.style.zIndex = '9999';
@@ -91,5 +91,26 @@ window.onload=function(){
                 location.href = "/"
             }
         })
+    })
+
+    $('#prePage').click(function(){
+
+        location.href="/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+
+    })
+
+    $('#nextPage').click(function(){
+
+        location.href="/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
+    })
+
+    $('#searchButton').click(function(){
+
+        location.href="?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() + "&currentPage=1"
     })
 }

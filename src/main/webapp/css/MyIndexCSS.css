@@ -5,7 +5,21 @@ span{
     height: 50px;
     background-color: snow;
 }
-#topLogin{
+.topItem{
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 30px;
+    float: left;
+    height: 30px;
+    /*width: 60px;*/
+    color: black;
+    font-size: 15px;
+    background: snow;
+    border: 0;
+    box-shadow: 0 0 0 1px #66ccff;
+}
+.topLogin{
     margin-right: 30px;
     margin-top: 20px;
     border-radius: 5px;
@@ -67,11 +81,13 @@ span{
     line-height: 30px;
     width: 130px;
     height: 0;
+    position: relative;
     float: bottom;
     color: black;
     font-size: 15px;
     background: snow;
     border: 0;
+    z-index: 3;
     transition-duration: 0.4s;
     /*box-shadow: 0 0 0 1px #66ccff;*/
 }
@@ -106,13 +122,22 @@ body{				/*正文*/
 #title{				/*导航栏下方标题*/
     background: snow;
     text-align: center;
+    justify-content: center;
     height: 300px;
-    margin: 0;
+    width: 100%;
+    margin: 10px 0 0 0;
+    display: inline-block;
     font-size: 50px;
     line-height: 300px;
     user-select: none;
 }
-
+#spanTitle{
+    text-align: center;
+    /*height: 100%;*/
+    /*margin: 0;*/
+    font-size: 50px;
+    /*line-height: 300px;*/
+}
 #divFooter{
     height: 200px;
     /* background: rgba(240,248,255,0.9); */

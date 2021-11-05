@@ -33,12 +33,10 @@
     </c:if>
 
     <c:if test="${sessionScope.user!=null}">
-        <button type="button" id="topLoginAfter">${sessionScope.user.account}
-            <div id="topLoginInfo">
-                <a id="topLoginInfoLogout">退出登录</a>
-
-            </div>
-        </button>
+        <button type="button" id="topLoginAfter">${sessionScope.user.account}</button>
+        <div id="topLoginInfo">
+            <a id="topLoginInfoLogout">退出登录</a>
+        </div>
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 0}">

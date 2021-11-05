@@ -9,17 +9,23 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div style="width: 100%;height:40px;line-height: 40px;display: flex;align-items: center;margin-top:20px;">
-    <div style="flex:1;"></div>
+<div class="page">
+<%--    <div style="flex:1;"></div>--%>
 
     <c:if test="${currentPage>1}">
-        <button class="topItem" id="prePage">上一页</button>
+        <button class="pageItem" id="prePage">上一页</button>
     </c:if>
 
-    <div style="margin-left:8px;" id="currentPage">${currentPage}</div>
+    <c:if test="${currentPage!=null}">
+    <div class="pageItem" id="currentPage">${currentPage}</div>
+    </c:if>
+
+    <c:if test="${currentPage==null}">
+        <div>找不到任何书本</div>
+    </c:if>
 
     <c:if test="${currentPage<totalPages}">
-        <button class="topItem" id="nextPage">下一页</button>
+        <button class="pageItem" id="nextPage">下一页</button>
     </c:if>
 </div>
 

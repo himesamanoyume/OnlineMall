@@ -5,19 +5,53 @@ span{
     height: 50px;
     background-color: snow;
 }
+option{
+    background-color: #66ccff;
+    color: snow;
+}
+body{
+    min-width: 480px;
+}
 .topItem{
     margin-left: 30px;
     margin-top: 20px;
     border-radius: 5px;
     line-height: 30px;
     float: left;
+    justify-content: center;
     height: 30px;
     /*width: 60px;*/
     color: black;
+    transition-duration: 0.4s;
     font-size: 15px;
     background: snow;
     border: 0;
+    cursor: pointer;
     box-shadow: 0 0 0 1px #66ccff;
+}
+.page{
+    width: 100%;
+    height: 50px;
+    background-color: snow;
+    justify-content: center;
+    display: flex;
+}
+.pageItem{
+    border-radius: 5px;
+    line-height: 30px;
+    color: black;
+    min-width: 20px;
+    font-size: 15px;
+    height: 30px;
+    background: snow;
+    border: 0;
+    box-shadow: 0 0 0 1px #66ccff;
+    cursor: pointer;
+
+}
+.topItem:hover{
+    background: #66ccff;
+    color: snow;
 }
 .topLogin{
     margin-right: 30px;
@@ -43,22 +77,33 @@ span{
     float: right;
     height: 30px;
     /*width: 60px;*/
+    z-index: 10;
     color: black;
     font-size: 15px;
     background: snow;
     justify-content: center;
     border: 0;
+    cursor: pointer;
     transition-duration: 0.4s;
     box-shadow: 0 0 0 1px #66ccff;
 }
-.topLoginInfoLogout{
+#topLoginAfter:hover{
+    background: #66ccff;
+    color: snow;
+}
+#topLoginInfoLogout{
     height: 30px;
     line-height: 30px;
-    color: black;
+    color: snow;
     font-size: 15px;
-    transition-duration: 0.3s;
-    display: none;
+    /*display: none;*/
+    color: black;
+    transition-duration: 0.4s;
     cursor: pointer;
+}
+#topLoginInfoLogout:hover{
+    color: coral;
+    /*color: black;*/
 }
 #userType{
     margin-left: 30px;
@@ -76,22 +121,25 @@ span{
     box-shadow: 0 0 0 1px #66ccff;
  }
 #topLoginInfo{
-    margin-top: 20px;
+    top: -50px;
+    right: 20px;
     border-radius: 5px;
     line-height: 30px;
     width: 130px;
     height: 0;
-    position: relative;
-    float: bottom;
+    position: absolute;
     color: black;
     font-size: 15px;
-    background: snow;
+    background-color: snow;
     border: 0;
-    z-index: 3;
+    z-index: 1;
     transition-duration: 0.4s;
-    /*box-shadow: 0 0 0 1px #66ccff;*/
+    box-shadow: 0 0 0 1px #66ccff;
 }
-#topLogin:hover{
+/*#topLoginAfter:hover ~ #topLoginInfo{*/
+/*    top: 50px;*/
+/*}*/
+.topLogin:hover{
     background: #66ccff;
     color: snow;
 }
@@ -128,6 +176,7 @@ body{				/*正文*/
     margin: 10px 0 0 0;
     display: inline-block;
     font-size: 50px;
+    z-index: 0;
     line-height: 300px;
     user-select: none;
 }

@@ -17,9 +17,16 @@
         @import "/css/divTips.css";
     </style>
 
+<<<<<<< Updated upstream
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"/>
     <script type="text/javascript" src="js/createBookJS.js"/>
     <script type="text/javascript" src="js/MyIndexJS.js"/>
+=======
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/js/generalJS.js"></script>
+    <script src="/js/bookListJS.js" type="text/javascript"></script>
+
+>>>>>>> Stashed changes
 </head>
 <body>
 <div id="top">
@@ -43,7 +50,13 @@
         <option value="3">简介</option>
     </select>
 
+<<<<<<< Updated upstream
     <input type="text" class="topItem"/>
+=======
+    <%@include file="./component/title.jsp" %>
+
+</div>
+>>>>>>> Stashed changes
 
     <button class="topItem" id="searchButton">搜索</button>
 
@@ -79,6 +92,7 @@
     </c:if>
 </div>
 
+<<<<<<< Updated upstream
 <c:forEach items="${bookList}" var="item">
     <div class="divTips">
         <div class="divTipsImg"></div>
@@ -101,5 +115,10 @@
 </c:forEach>
 
 <%@include file="./component/page.jsp" %>
+=======
+<div id="divFooter">
+    &nbsp;&nbsp;&nbsp;Copyright 2021©  &nbsp; @姫様の夢 &nbsp;&nbsp;&nbsp;
+</div>
+>>>>>>> Stashed changes
 </body>
 </html>

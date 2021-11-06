@@ -19,9 +19,9 @@
         @import "/css/divSpace.css";
         @import "/css/divTips.css";
     </style>
-    <script src="/js/MyIndexJS.js" type="text/javascript"></script>
+    <script src="/js/generalJS.js" type="text/javascript"></script>
     <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
-    <script src="/js/createBookJS.js" type="text/javascript"></script>
+    <script src="/js/indexJS.js" type="text/javascript"></script>
 </head>
 <body>
 

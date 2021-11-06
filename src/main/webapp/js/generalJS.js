@@ -4,22 +4,27 @@
  * @LastEditTime: 2021-10-23 13:57:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \static\MyIndexJS.js
+ * @FilePath: \static\generalJS.js
  */
 
 window.onscroll=function(){
     
     var topScroll = get_scrollTop_of_body();//滚动的距离,距离顶部的距离
-    var divSpace = document.getElementById("divSpace");//获取到导航栏id
-    if(topScroll > 360){
-        divSpace.style.top = '0px';
-        divSpace.style.width = '100%';
-        divSpace.style.zIndex = '9999';
-        // divSpace.style.position = 'sticky';
-        divSpace.style.boxShadow = '0px 3px 7px Gainsboro';
-    }else{
-        divSpace.style.boxShadow = '0px 0px 0px Gainsboro';
+
+    if($('#divSpace').length>0){
+        var divSpace = document.getElementById("divSpace");//获取到导航栏id
+        if(topScroll > 360){
+            divSpace.style.top = '0px';
+            divSpace.style.width = '100%';
+            divSpace.style.zIndex = '9999';
+            // divSpace.style.position = 'sticky';
+            divSpace.style.boxShadow = '0px 3px 7px Gainsboro';
+        }else{
+            divSpace.style.boxShadow = '0px 0px 0px Gainsboro';
+        }
+
     }
+
     function get_scrollTop_of_body(){
         var scrollTop;
         if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离
@@ -31,28 +36,25 @@ window.onscroll=function(){
         }
         return scrollTop;
     }
-    $(function (){
-        // console.log("haha");
-        // changeMaxWidth();
-        changeFontSize();
-    })
-    // window.onload = function(){
-    //
-    // }
-    window.onresize = function(){
-        changeFontSize();
-        // changeMaxWidth();
-    }
 }
-function changeFontSize(){
-    if(document.body.clientWidth>=600){
 
-        $(".divSpaceButton").css("font-size",30);
-    }else{
-        // alert("2");
-        $(".divSpaceButton").css("font-size",20);
+window.onresize = function(){
+    changeFontSize();
+    // changeMaxWidth();
+}
+
+function changeFontSize(){
+    if($('.divSpaceButton').length>0){
+        if(document.body.clientWidth>=600){
+
+            $(".divSpaceButton").css("font-size",30);
+        }else{
+            // alert("2");
+            $(".divSpaceButton").css("font-size",20);
+        }
     }
 }
+
 function changeMaxWidth(){
     var indexBackground = document.getElementById("indexBackground");
     var webWidth = document.body.clientWidth;
@@ -73,7 +75,62 @@ function changeMaxWidth(){
         // console.log(4);
     }
 }
+
 window.onload=function(){
+
+    if ($('#submit').length>0){
+        console.log("1")
+        $('#submit').click(function(){
+
+            var name = $('#name').val()
+            var price = $('#price').val()
+            var author = $('#author').val()
+            var amount = $('#amount').val()
+            var txt = $('#txt').val()
+            var publisher = $('#publisher').val()
+            var publishTime = $('#publishTime').val()
+            var stock = $('#stock').val()
+
+            name= name.trim()
+            price=parseFloat(price).toFixed(2)
+            author=author.trim()
+            amount=parseInt(amount)
+            txt=txt.trim()
+            publisher=publisher.trim()
+            publishTime=publishTime.trim()
+            stock=parseInt(stock)
+
+
+            if(!name){
+                alert('商品名不能为空')
+                return
+            }
+            if(price <= 0){
+                alert('价格必须为正数')
+                return
+            }
+
+            $.post('/book/createBook',{
+                name: name,
+                price:price,
+                author:author,
+                amount:amount,
+                txt:txt,
+                publisher:publisher,
+                publishTime:publishTime,
+                stock:stock
+            },function(res){
+                if(res && res.bookId){
+                    alert('新增成功')
+                }
+            }).fail(function(res){
+                alert(res.responseJSON.message)
+            })
+
+        })
+    }
+
+    changeFontSize();
 
     $('#topLoginAfter').hover(function (){
         $('#topLoginInfo').css('top','60px');
@@ -81,12 +138,14 @@ window.onload=function(){
         $('#topLoginInfo').css('box-shadow','0 0 0 1px #66ccff');
         // $('#topLoginInfo').css('display','block');
     })
+
     $('#topLoginInfo').mouseleave(function (){
         $('#topLoginInfo').css('top','-50px');
         $('#topLoginInfo').css('height','0')
         $('#topLoginInfo').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
         // $('#topLoginInfo').css('display','none');
     })
+
     $('#topLoginInfoLogout').click(function (){
         $.post('/user/logout',{
         },function (res){
@@ -111,9 +170,4 @@ window.onload=function(){
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
     })
 
-    $('#searchButton').click(function(){
-
-        location.href="?searchType=" + $('#searchType').val() +
-            "&keyword=" + $('#keyword').val() + "&currentPage=1"
-    })
 }

@@ -46,6 +46,11 @@
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
         <button type="button" class="topItem" onclick="window.location.href ='/view/sellerBookList'">我的图书</button>
         <button type="button" class="topItem">我的订单</button>
+<<<<<<< Updated upstream
+=======
+        <button type="button" class="topItem" onclick="window.location.href ='/view/createBook'">新增商品</button>
+
+>>>>>>> Stashed changes
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">

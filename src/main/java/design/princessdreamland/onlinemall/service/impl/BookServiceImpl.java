@@ -1,22 +1,32 @@
 package design.princessdreamland.onlinemall.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import design.princessdreamland.onlinemall.entity.Book;
+import design.princessdreamland.onlinemall.entity.BookImg;
+import design.princessdreamland.onlinemall.mapper.BookImgMapper;
 import design.princessdreamland.onlinemall.mapper.BookMapper;
 import design.princessdreamland.onlinemall.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements BookService {
+//    @Autowired
+//    public BookMapper bookMapper;
+
+//    @Autowired
+//    public BookImgMapper bookImgMapper;
+
     @Autowired
-    public BookMapper bookMapper;
+    private BookImgServiceImpl bookImgServiceImpl;
 
     @Override
     public List<Book> queryList(Book book){
@@ -37,7 +47,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             if("1".equals(type)){
                 book.setName(keyword);
             }else if("2".equals(type)){
-                book.setPublisher(keyword);
+                book.setAuthor(keyword);
             }else if ("3".equals(type)){
                 book.setTxt(keyword);
             }
@@ -45,11 +55,11 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
         Page<Book> page = new Page<Book>();
         if (StrUtil.isNotEmpty(currentPage)){
-            currentPage = "1";
+            page.setCurrent(new Integer(currentPage));
+//            currentPage = "1";
         }
 
-//        page.setCurrent(new Integer(currentPage));
-//        page.setSize(4);
+        page.setSize(12);
 
 
 
@@ -68,7 +78,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             if ("1".equals(type)){
                 book.setName(keyword);
             }else if ("2".equals(type)){
-                book.setPublisher(keyword);
+                book.setAuthor(keyword);
             }else if ("3".equals(type)){
                 book.setTxt(keyword);
             }
@@ -76,11 +86,13 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
         Page<Book> page = new Page<Book>();
         if (StrUtil.isNotEmpty(currentPage)){
-            currentPage = "1";
+            page.setCurrent(new Integer(currentPage));
+//            currentPage = "1";
         }
 
-//        page.setCurrent(new Integer(currentPage));
-//        page.setSize(4);
+
+//
+        page.setSize(12);
 
 
         return baseMapper.queryPage(page, book);
@@ -88,12 +100,22 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    @Transactional(noRollbackFor = Exception.class)
     public Book createBook(Book book, Integer sellerId) {
 
         book.setSellerId(sellerId);
         book.setCreateUserId(sellerId);
         book.setCreateTime(new Date());
         this.save(book);
+
+//        if (CollUtil.isNotEmpty(book.getSrcList())) {
+//            for (String src : book.getSrcList()) {
+//                BookImg bookImg = new BookImg();
+//                bookImg.setBookId(bookImg.getBookImgId());
+//                bookImg.setImgSrc(src);
+//                bookImgServiceImpl.save(bookImg);
+//            }
+//        }
 
         return book;
     }

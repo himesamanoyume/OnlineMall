@@ -53,13 +53,7 @@
         body{
             background: rgb(255,250,250);
         }
-        .divLoginTip{
-            width: 400px;
-            height: 500px;
-            justify-content: center;
-            background: gray;
 
-        }
 
     </style>
     <title>login</title>

@@ -11,6 +11,7 @@
     width: 100%;
     justify-content: center;
     top: 0px;
+    z-index: 9999;
     display: inline-flex;
     position: sticky;
 }

@@ -41,7 +41,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     @Override
     public IPage<Book> searchPage(String type,String keyword,String currentPage){
         Book book = new Book();
-        book.setStatus(2);
+        book.setStatus(3);
 
         if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
             if("1".equals(type)){
@@ -59,8 +59,8 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 //            currentPage = "1";
         }
 
+//        page.setSize(3);
         page.setSize(12);
-
 
 
         return baseMapper.queryPage(page, book);
@@ -90,8 +90,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 //            currentPage = "1";
         }
 
-
-//
+//        page.setSize(3);
         page.setSize(12);
 
 

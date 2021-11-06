@@ -11,14 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-<<<<<<< Updated upstream
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"/>
-    <script type="text/javascript" src="js/createBookJS.js"/>
-</head>
-<body>
-<%@ include file="./component/title.jsp" %>
-<div style="font-size: 22px; font-weight: bolder;margin-bottom: 30px;">	新增商品	</div>
-=======
+
     <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/generalJS.js" type="text/javascript"></script>
 
@@ -38,8 +31,6 @@
     新增商品
 
 </div>
-
->>>>>>> Stashed changes
 
 <div class="input_item">
     <div class="input_label">名字</div>

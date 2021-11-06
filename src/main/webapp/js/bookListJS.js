@@ -39,3 +39,51 @@ window.onload=function(){
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
     })
 }
+
+window.onscroll=function(){
+
+    var topScroll = get_scrollTop_of_body();//滚动的距离,距离顶部的距离
+
+    if($('#divSpace').length>0){
+        var divSpace = document.getElementById("divSpace");//获取到导航栏id
+        if(topScroll > 360){
+            divSpace.style.top = '0px';
+            divSpace.style.width = '100%';
+            divSpace.style.zIndex = '9999';
+            // divSpace.style.position = 'sticky';
+            divSpace.style.boxShadow = '0px 3px 7px Gainsboro';
+        }else{
+            divSpace.style.boxShadow = '0px 0px 0px Gainsboro';
+        }
+
+    }
+
+    function get_scrollTop_of_body(){
+        var scrollTop;
+        if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离
+            scrollTop = window.pageYOffset;
+        }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')        {
+            scrollTop = document.documentElement.scrollTop;
+        }else if(typeof document.body != 'undefined'){
+            scrollTop = document.body.scrollTop;
+        }
+        return scrollTop;
+    }
+}
+
+window.onresize = function(){
+    changeFontSize();
+    // changeMaxWidth();
+}
+
+function changeFontSize(){
+    if($('.divSpaceButton').length>0){
+        if(document.body.clientWidth>=600){
+
+            $(".divSpaceButton").css("font-size",30);
+        }else{
+            // alert("2");
+            $(".divSpaceButton").css("font-size",20);
+        }
+    }
+}

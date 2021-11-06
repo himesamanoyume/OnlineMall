@@ -79,7 +79,7 @@ function changeMaxWidth(){
 window.onload=function(){
 
     if ($('#submit').length>0){
-        console.log("1")
+
         $('#submit').click(function(){
 
             var name = $('#name').val()

@@ -42,6 +42,12 @@
     /* z-index: 1;
      */
 }
+.divTipsImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 0px 0px;
+    /*border: none;*/
+ }
 .divPrice{
      position: relative;
     /* bottom: 0; */

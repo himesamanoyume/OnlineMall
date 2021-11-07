@@ -10,48 +10,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <script src="/js/jquery-3.5.1.min.js"></script>
-    <script>
-        $(document).ready(function (){
-            $('#submit').click(function(){
-                var account = $('input[name=account]').val();
-                var password = $('input[name=password]').val();
+    <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="/js/Funcs.js" type="text/javascript"></script>
+    <script src="/js/login.js" type="text/javascript"></script>
+    <style>
+        @import "/css/MyIndexCSS.css";
+        @import "/css/divSpace.css";
+        @import "/css/divTips.css";
+    </style>
 
-                account = account.trim();
-                password = password.trim();
-
-                if(account == ''){
-                    alert("手机号不能为空");
-                    return;
-                }
-                if(!(/^1([3|4|5|7|8|9])\d{9}$/.test(account))){
-                    alert('手机号不正确');
-                    return
-                }
-                if(password == ''){
-                    alert("密码不能为空");
-                    return;
-                }
-
-                $.post('/user/login',{
-                    account:account,
-                    password:password
-                },function(res){
-                    if(res && res.userId){
-                        location.href = "/view/index"
-                    }else{
-                        alert('登录失败')
-                    }
-                }).fail(function(res){
-                    alert(res.responseJSON.message)
-                })
-            })
-        })
-
-    </script>
     <style>
         body{
             background: rgb(255,250,250);
+            justify-content: center;
         }
 
 
@@ -59,7 +30,13 @@
     <title>login</title>
 </head>
 <body>
-<div style="width:300px;height:300px;background-color: white;z-index: 9;margin-left:50%;border-radius: 10px;padding:15px;">
+<c:set var="urlWhere" value="null"/>
+<div id="top">
+    <%@include file="component/top.jsp" %>
+</div>
+<div style="width:300px;height:300px;background-color: white;z-index: 9;margin-top: 200px;margin-left:38%;border-radius: 10px;padding:15px;">
+
+
     <div style="font-size:20px;font-weight:bold;width:100%;text-align: center;">登录</div>
     <div style="width:100%;height:1px;background-color: #CCC;margin:10px auto;"></div>
 

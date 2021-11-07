@@ -22,12 +22,12 @@ public class ViewController {
     @GetMapping("/index")
     public String index(String type, String keyword, Model model, String currentPage){
 
-        IPage<Book> notebookPage = bookService.searchPage(type, keyword,currentPage);
+        IPage<Book> bookPage = bookService.searchPage(type, keyword,currentPage);
 
-        model.addAttribute("bookList",notebookPage.getRecords());
+        model.addAttribute("bookList",bookPage.getRecords());
         model.addAttribute("keyword",keyword);
-        model.addAttribute("currentPage",notebookPage.getCurrent());
-        model.addAttribute("totalPages",notebookPage.getPages());
+        model.addAttribute("currentPage",bookPage.getCurrent());
+        model.addAttribute("totalPages",bookPage.getPages());
 
         return "/index.jsp";
     }
@@ -47,7 +47,9 @@ public class ViewController {
        User user = (User)session.getAttribute("user");
 
         IPage<Book> bookPage = bookService.searchPage(type, keyword, currentPage,user.getUserId(),status);
+
         model.addAttribute("bookList",bookPage.getRecords());
+        model.addAttribute("keyword",keyword);
         model.addAttribute("currentPage",bookPage.getCurrent());
         model.addAttribute("totalPages",bookPage.getPages());
         model.addAttribute("status",status);

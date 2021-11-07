@@ -60,7 +60,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
 //        page.setSize(3);
-        page.setSize(12);
+        page.setSize(8);
 
 
         return baseMapper.queryPage(page, book);
@@ -91,7 +91,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
 //        page.setSize(3);
-        page.setSize(12);
+        page.setSize(8);
 
 
         return baseMapper.queryPage(page, book);

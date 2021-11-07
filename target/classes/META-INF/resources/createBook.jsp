@@ -12,8 +12,9 @@
 <head>
     <title>Title</title>
 
-    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
-    <script src="/js/generalJS.js" type="text/javascript"></script>
+    <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="/js/Funcs.js" type="text/javascript"></script>
+    <script src="/js/createBook.js" type="text/javascript"></script>
 
     <style>
         @import "/css/MyIndexCSS.css";
@@ -85,7 +86,7 @@
 </head>
 <body>
 <div id="top">
-    <%@include file="./component/title.jsp" %>
+    <%@include file="component/top.jsp" %>
 </div>
 
 <div id="title">

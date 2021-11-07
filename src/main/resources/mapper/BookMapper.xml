@@ -110,7 +110,12 @@
 
     <select id="queryPage" resultMap="bookMap" >
         SELECT
-        <include refid="cols" />
+        <include refid="cols" />,
+        (select img_src from book_img bi
+            where bi.book_id = b.book_id
+            order by bi.book_img_id asc
+            limit 0,1
+        ) img_src
 
         FROM book b
         LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0

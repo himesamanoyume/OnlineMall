@@ -17,12 +17,13 @@
         @import "/css/divTips.css";
     </style>
 
-    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="/js/bookListJS.js"></script>
+    <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="/js/Funcs.js" type="text/javascript"></script>
+    <script src="/js/sellerBookList.js" type="text/javascript" ></script>
 
 </head>
 <body>
-
+<c:set var="urlWhere" value="sellBookList"/>
 <div id="top">
     <select id="searchStatus" class="topItem">
         <option value="" ${status == '' || status == null ? 'selected' : ''}>全部</option>
@@ -32,13 +33,13 @@
         <option value="4" ${status == '4' ? 'selected' : ''}>下架</option>
     </select>
 
-    <%@include file="./component/title.jsp" %>
+    <%@include file="component/top.jsp" %>
 </div>
 
 
 <div id="title">
 
-    网上商城
+    我的图书
 
 </div>
 

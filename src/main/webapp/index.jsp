@@ -19,12 +19,13 @@
         @import "/css/divSpace.css";
         @import "/css/divTips.css";
     </style>
-    <script src="/js/generalJS.js" type="text/javascript"></script>
     <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="/js/Funcs.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
 </head>
 <body>
 
-<%@include file="./component/title.jsp" %>
+<%@include file="component/top.jsp" %>
 
 <div id="title">
 
@@ -35,7 +36,6 @@
 <%@include file="./component/divSpace.jsp" %>
 
 <%@include file="./component/get.jsp" %>
-
 
 <%@include file="./component/page.jsp" %>
 

@@ -31,6 +31,9 @@ public class Book extends BaseEntity<Book>{
     private List<String> srcList;
 
     @TableField(exist = false)
+    private String imgSrc;
+
+    @TableField(exist = false)
     private List<Integer> bookIds;
 
     //用于传参，数据库中并不存在

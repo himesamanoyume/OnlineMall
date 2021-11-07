@@ -110,6 +110,13 @@ window.onload=function(){
                 return
             }
 
+
+            // var imgList = $('.preview_img')
+            // var srcList = []
+            // for( var i=0; i<imgList.length; i++ ){
+            //     srcList.push(imgList.eq(i).attr('src'))
+            // }
+
             $.post('/book/createBook',{
                 name: name,
                 price:price,
@@ -170,4 +177,44 @@ window.onload=function(){
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
     })
 
+    $('#file').change(function(){
+        //获取到的是一个数组，所以要检索第一个元素
+        console.log($(this)[0].files)
+        var file = $(this)[0].files[0];
+        var data = new FormData()
+        data.append("file", file)
+        $.ajax({
+            url:'/uploadFile',
+            data: data,
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            success: function(res){
+                // console.log(res)
+                var img = $(`<div class="img_box">` +
+                    `<img alt="" class="preview_img" src="` + res + `" />` +
+                    `<div class="del_img">x</div>` +
+                    `</div>`)
+                $('#show_box').append(img)
+            }
+        })
+    })
+
+    $('body').on('mouseover', '.img_box', function(){
+        // alert('hello')
+        $(this).find('.del_img').css('display','block')
+
+    })
+
+    $('body').on('mouseleave', '.img_box', function(){
+        // alert('hello')
+        $(this).find('.del_img').css('display','none')
+
+    })
+
+    $('body').on('click', '.del_img', function(){
+        // alert('hello')
+        $(this).parent().remove()
+
+    })
 }

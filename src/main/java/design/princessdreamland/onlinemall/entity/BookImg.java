@@ -19,5 +19,5 @@ public class BookImg {
     private String imgSrc;
 
     @TableLogic
-    private Integer dateled;
+    private Integer deleted;
 }

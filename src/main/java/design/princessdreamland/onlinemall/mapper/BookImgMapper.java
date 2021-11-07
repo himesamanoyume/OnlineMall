@@ -13,7 +13,4 @@ import java.util.List;
 @Mapper
 public interface BookImgMapper extends BaseMapper<BookImg> {
 
-    List<Book> queryList(@Param("book") Book book);
-
-    IPage<Book> queryPage(Page<Book> page, @Param("book") Book book);
 }

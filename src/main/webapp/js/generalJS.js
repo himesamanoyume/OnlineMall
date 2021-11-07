@@ -110,12 +110,11 @@ window.onload=function(){
                 return
             }
 
-
-            // var imgList = $('.preview_img')
-            // var srcList = []
-            // for( var i=0; i<imgList.length; i++ ){
-            //     srcList.push(imgList.eq(i).attr('src'))
-            // }
+            var imgList = $('.preview_img')
+            var srcList = []
+            for( var i=0; i<imgList.length; i++ ){
+                srcList.push(imgList.eq(i).attr('src'))
+            }
 
             $.post('/book/createBook',{
                 name: name,
@@ -125,7 +124,8 @@ window.onload=function(){
                 txt:txt,
                 publisher:publisher,
                 publishTime:publishTime,
-                stock:stock
+                stock:stock,
+                srcList:srcList
             },function(res){
                 if(res && res.bookId){
                     alert('新增成功')

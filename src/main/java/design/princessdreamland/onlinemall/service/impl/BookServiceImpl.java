@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.BookImg;
-//import design.princessdreamland.onlinemall.mapper.BookImgMapper;
+import design.princessdreamland.onlinemall.mapper.BookImgMapper;
 import design.princessdreamland.onlinemall.mapper.BookMapper;
 import design.princessdreamland.onlinemall.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +19,14 @@ import java.util.List;
 
 @Service
 public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements BookService {
-//    @Autowired
-//    public BookMapper bookMapper;
+    @Autowired
+    public BookMapper bookMapper;
 
-//    @Autowired
-//    public BookImgMapper bookImgMapper;
+    @Autowired
+    public BookImgMapper bookImgMapper;
 
-//    @Autowired
-//    private BookImgServiceImpl bookImgServiceImpl;
+    @Autowired
+    private BookImgServiceImpl bookImgServiceImpl;
 
     @Override
     public List<Book> queryList(Book book){
@@ -99,7 +99,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
-    @Transactional(noRollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public Book createBook(Book book, Integer sellerId) {
 
         book.setSellerId(sellerId);
@@ -107,14 +107,14 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         book.setCreateTime(new Date());
         this.save(book);
 
-//        if (CollUtil.isNotEmpty(book.getSrcList())) {
-//            for (String src : book.getSrcList()) {
-//                BookImg bookImg = new BookImg();
-//                bookImg.setBookId(bookImg.getBookImgId());
-//                bookImg.setImgSrc(src);
-//                bookImgServiceImpl.save(bookImg);
-//            }
-//        }
+        if (CollUtil.isNotEmpty(book.getSrcList())) {
+            for (String src : book.getSrcList()) {
+                BookImg bookImg = new BookImg();
+                bookImg.setBookId(book.getBookId());
+                bookImg.setImgSrc(src);
+                bookImgServiceImpl.save(bookImg);
+            }
+        }
 
         return book;
     }

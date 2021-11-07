@@ -7,7 +7,8 @@ import design.princessdreamland.onlinemall.service.BookImgService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BookImgServiceImpl extends ServiceImpl<BookImgMapper, BookImg> implements BookImgService {
+public class BookImgServiceImpl extends ServiceImpl<BookImgMapper, BookImg>
+        implements BookImgService {
 
 
 }

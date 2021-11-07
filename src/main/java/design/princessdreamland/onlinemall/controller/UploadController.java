@@ -16,7 +16,7 @@ public class UploadController {
     @PostMapping("/uploadFile")
     public String uploadFile(MultipartFile file)  throws Exception, IOException {
 
-        System.out.println(file.getOriginalFilename());
+//        System.out.println(file.getOriginalFilename());
 //        return "file";
         String originalFileNameString = file.getOriginalFilename();
         String  typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));

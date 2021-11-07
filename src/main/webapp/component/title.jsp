@@ -55,7 +55,7 @@
         <button type="button" class="topItem">图书列表</button>
     </c:if>
 
-    <c:if test="${sessionScope.user!=null}">
+
         <button type="button" class="topLogin" onclick="window.location.href = '/view/index'">首页</button>
-    </c:if>
+
 </div>

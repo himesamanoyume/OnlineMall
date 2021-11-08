@@ -285,10 +285,26 @@ function IndexSearchButtonFunc(){
             + "&currentPage=1"
     })
 }
-//function YouAreNotLogin(){
-    // console.log($('sessionScope'));
-    // if (where=='null'){
+// function YouAreNotLogin(){
+    // console.log($('sessionScope').);
+    // if ($(sessionScope.user.type)==0){
     //     alert("你没登陆呢");
     //     location.href="/view/index";
     // }
-//}
+// }
+function TipsOpenDetailFunc(){
+    $('.divTips').click(function (){
+        location.href="/view/bookDetail?bookId=" + $(this).attr('data-bookId')
+    })
+}
+
+
+
+
+
+
+
+
+
+
+

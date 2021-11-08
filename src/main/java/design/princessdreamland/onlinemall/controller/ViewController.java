@@ -58,8 +58,16 @@ public class ViewController {
     }
 
     @GetMapping("/createBook")
-    public String createNotebook() {
+    public String createBook() {
         return "/createBook.jsp";
+    }
+
+    @GetMapping("/bookDetail")
+    public String bookDetail(String bookId,Model model) {
+        Book book = bookService.queryById(bookId);
+        model.addAttribute("book",book);
+
+        return "/bookDetail.jsp";
     }
 }
 

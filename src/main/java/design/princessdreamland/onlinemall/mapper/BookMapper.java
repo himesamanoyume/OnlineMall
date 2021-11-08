@@ -18,4 +18,6 @@ public interface BookMapper extends BaseMapper<Book> {
     List<Book> queryList(@Param("book") Book book);
 
     IPage<Book> queryPage(Page<Book> page, @Param("book")Book book);
+
+    Book queryById(String bookId);
 }

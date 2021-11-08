@@ -118,4 +118,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
         return book;
     }
+
+    @Override
+    public Book queryById(String bookId) {
+        return baseMapper.queryById(bookId);
+    }
 }

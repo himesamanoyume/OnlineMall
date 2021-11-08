@@ -3,6 +3,7 @@ window.onload=function(){
     LoginInfoFunc();
     PageFunc();
     IndexSearchButtonFunc();
+    TipsOpenDetailFunc();
 
 }
 window.onscroll=function(){

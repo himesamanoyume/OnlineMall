@@ -161,6 +161,10 @@ body{				/*正文*/
     flex-wrap: wrap;
     justify-content: center;
 }
+.divLine img{
+    width: 100%;
+    height: 100%;
+}
 .divLine{				/*左div块，用于存放左边的div*/
     width: 460px;
     display: inline;

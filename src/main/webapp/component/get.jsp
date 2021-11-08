@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="indexBackground">
     <c:forEach items="${bookList}" var="item">
-        <div class="divTips">
+        <div class="divTips" data-bookId="${item.bookId}">
             <div class="divTipsImg" >
                 <c:if test="${item.imgSrc!=null}">
                 <img src="${item.imgSrc!=null?item.imgSrc:null}"/>
@@ -38,9 +38,26 @@
                 <div class="divTipsCount">
                     <span class="spanDes">库存：${item.stock}</span>
                 </div>
-<%--                <div class="divTipsTxt">--%>
-<%--                    <span class="spanDes">描述：${item.txt}</span>--%>
-<%--                </div>--%>
+                <c:if test="${item.status==1}">
+                    <div class="divTipsTxt">
+                        <span class="spanDes">状态：未提交</span>
+                    </div>
+                </c:if>
+                <c:if test="${item.status==2}">
+                    <div class="divTipsTxt">
+                        <span class="spanDes">状态：未审核</span>
+                    </div>
+                </c:if>
+                <c:if test="${item.status==3}">
+                    <div class="divTipsTxt">
+                        <span class="spanDes">状态：上架</span>
+                    </div>
+                </c:if>
+                <c:if test="${item.status==4}">
+                    <div class="divTipsTxt">
+                        <span class="spanDes">状态：下架</span>
+                    </div>
+                </c:if>
             </c:if>
         </div>
     </c:forEach>

@@ -17,6 +17,23 @@
 
     </resultMap>
 
+    <resultMap id="bookWithImgMap" type="design.princessdreamland.onlinemall.entity.Book">
+        <id property="bookId" column="book_id"/>
+
+        <association property="seller" columnPrefix="su_">
+            <id property="userId" column="user_id"/>
+        </association>
+        <association property="createUser" columnPrefix="cu_">
+            <id property="userId" column="user_id"/>
+        </association>
+        <association property="updateUser" columnPrefix="uu_">
+            <id property="userId" column="user_id"/>
+        </association>
+        <collection property="srcList" columnPrefix="bi_" ofType="BookImg">
+            <id property="bookImgId" column="book_img_id"/>
+        </collection>
+    </resultMap>
+
     <sql id="cols">
         b.book_id,
         b.name,
@@ -94,8 +111,12 @@
 
     <select id="queryList" resultMap="bookMap">
         SELECT
-        <include refid="cols" />
-
+        <include refid="cols" />,
+        (select img_src from book_img bi
+        where bi.book_id = b.book_id
+        order by bi.book_img_id asc
+        limit 0,1
+        ) img_src
         FROM book b
         LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
         LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
@@ -106,7 +127,6 @@
         ORDER BY b.book_id DESC
 
     </select>
-
 
     <select id="queryPage" resultMap="bookMap" >
         SELECT
@@ -127,4 +147,29 @@
         ORDER BY b.book_id DESC
     </select>
 
+    <select id="queryById" resultMap="bookWithImgMap">
+        SELECT
+        <include refid="cols" />,
+        (select img_src from book_img bi
+        where bi.book_id = b.book_id
+        order by bi.book_img_id asc
+        limit 0,1
+        ) img_src,
+        bi.book_img_id bi_book_img_id,
+        bi.book_id bi_book_id,
+        bi.img_src bi_img_src,
+        bi.deleted bi_deleted
+
+        FROM book b
+        LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
+        LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
+        LEFT JOIN user uu ON uu.user_id = b.update_user_id AND uu.deleted = 0
+        LEFT JOIN book_img bi ON bi.book_id = b.book_id AND bi.deleted = 0
+
+
+        WHERE b.book_id = #{bookId}
+
+        ORDER BY b.book_id DESC
+
+    </select>
 </mapper>

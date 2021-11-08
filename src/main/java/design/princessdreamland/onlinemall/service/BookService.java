@@ -19,4 +19,6 @@ public interface BookService extends IService<Book> {
     IPage<Book> searchPage(String type, String keyword, String currentPage,Integer sellerId,String status);
 
     Book createBook(Book book,Integer sellerId);
+
+    Book queryById(String bookId);
 }

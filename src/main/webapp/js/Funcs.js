@@ -62,12 +62,12 @@ function LoginInfoFunc(){
     })
 
 }
-function PageFunc(){
+function Page1Func(){
     $('#prePage').click(function(){
-
         location.href="/view/sellerBookList/?searchType=" + $('#searchType').val() +
             "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+            "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
+            "&status=" + $('#searchStatus').val()
 
     })
 
@@ -75,7 +75,25 @@ function PageFunc(){
 
         location.href="/view/sellerBookList/?searchType=" + $('#searchType').val() +
             "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
+            "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
+            "&status=" + $('#searchStatus').val()
+    })
+}
+function Page2Func(){
+    $('#prePage').click(function(){
+        location.href="/view/adminBookList/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
+            "&status=" + $('#searchStatus').val()
+
+    })
+
+    $('#nextPage').click(function(){
+
+        location.href="/view/adminBookList/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
+            "&status=" + $('#searchStatus').val()
     })
 }
 function SubmitFunc(){
@@ -276,6 +294,17 @@ function SellerBookListSearchButtonFunc(){
             + $('#searchStatus').val()
     })
 }
+function AdminBookListSearchButtonFunc(){
+    $('#searchButton').click(function(){
+        location.href="/view/adminBookList?searchType="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage=1"
+            + "&status="
+            + $('#searchStatus').val()
+    })
+}
 function IndexSearchButtonFunc(){
     $('#searchButton').click(function(){
         location.href="/view/index?searchType="
@@ -285,19 +314,25 @@ function IndexSearchButtonFunc(){
             + "&currentPage=1"
     })
 }
-// function YouAreNotLogin(){
-    // console.log($('sessionScope').);
-    // if ($(sessionScope.user.type)==0){
-    //     alert("你没登陆呢");
-    //     location.href="/view/index";
-    // }
-// }
 function TipsOpenDetailFunc(){
     $('.divTips').click(function (){
         location.href="/view/bookDetail?bookId=" + $(this).attr('data-bookId')
     })
 }
-
+function StockFunc(){
+    $('#count').change(function(){
+        var count = $(this).val();
+        var stock = $('#stock').text();
+        var price = parseFloat($('#price').text());
+        if (count<1){
+            $('#count').val(1);
+        }else if (count>parseInt(stock)){
+            $('#count').val(stock);
+        }else{
+            $('#money').text((count*price).toFixed(2))
+        }
+    })
+}
 
 
 

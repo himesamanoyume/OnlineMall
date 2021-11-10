@@ -69,5 +69,22 @@ public class ViewController {
 
         return "/bookDetail.jsp";
     }
+
+    @GetMapping("/adminBookList")
+    public String adminBookList(String type, String keyword, String currentPage, Model model, HttpSession session,String status){
+        User user = (User)session.getAttribute("user");
+        if(2!=user.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        IPage<Book> bookPage = bookService.searchPage(type, keyword, currentPage,status);
+
+        model.addAttribute("bookList",bookPage.getRecords());
+        model.addAttribute("keyword",keyword);
+        model.addAttribute("currentPage",bookPage.getCurrent());
+        model.addAttribute("totalPages",bookPage.getPages());
+        model.addAttribute("status",status);
+
+        return "/adminBookList.jsp";
+    }
 }
 

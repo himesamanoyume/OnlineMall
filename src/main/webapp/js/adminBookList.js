@@ -1,14 +1,13 @@
-
 window.onload=function(){
     LoginInfoFunc();
-    Page1Func();
-    IndexSearchButtonFunc();
+    Page2Func();
+    AdminBookListSearchButtonFunc();
     TipsOpenDetailFunc();
-
 }
 window.onscroll=function(){
-    ScrollFunc()
+    ScrollFunc();
 }
 window.onresize = function(){
     changeFontSize();
 }
+

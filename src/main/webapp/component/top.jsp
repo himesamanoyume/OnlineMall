@@ -54,7 +54,7 @@
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">
         <button type="button" class="topItem">用户列表</button>
-        <button type="button" class="topItem">图书列表</button>
+        <button type="button" class="topItem" onclick="window.location.href ='/view/adminBookList'">图书列表</button>
     </c:if>
 
 

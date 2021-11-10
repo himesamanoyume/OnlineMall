@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
+@ResponseBody
 @RequestMapping("/book")
 public class BookController {
 
@@ -28,14 +29,12 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping("/queryBookList")
-    @ResponseBody
     public List<Book> queryList(){
         Book book = new Book();
         return bookService.queryList(book);
     }
 
     @GetMapping("/queryBookPage")
-    @ResponseBody
     public IPage<Book> queryPage(){
         Book book = new Book();
 
@@ -47,7 +46,6 @@ public class BookController {
     }
 
     @PostMapping("/createBook")
-    @ResponseBody
     public Book createBook(Book book, HttpSession session) {
 
         if (ObjectUtil.isNull(book)) {
@@ -66,4 +64,32 @@ public class BookController {
 
         return book;
     }
+
+    @PostMapping("/commitBook")
+    public Book commitBook(String bookId,HttpSession session){
+        User user = (User)session.getAttribute("user");
+        return bookService.commitBook(bookId,user.getUserId());
+    }
+
+    @PostMapping("/shelveBook")
+    public Book shelveBook(String bookId,HttpSession session){
+        User user = (User)session.getAttribute("user");
+        return bookService.shelveBook(bookId,user.getUserId());
+    }
+
+    @PostMapping("/shelvesBook")
+    public Book shelvesBook(String bookId,HttpSession session){
+        User user = (User)session.getAttribute("user");
+        return bookService.shelvesBook(bookId,user.getUserId());
+    }
+
+    @PostMapping("/checkBook")
+    public Book checkOkBook(String bookId,String status,HttpSession session){
+        User user = (User)session.getAttribute("user");
+        if (2!=user.getType()){
+            throw new RuntimeException("没有操作权限");
+        }
+        return bookService.checkBook(bookId,status);
+    }
+
 }

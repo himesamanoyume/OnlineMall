@@ -1,6 +1,6 @@
 window.onload=function(){
     LoginInfoFunc();
-    PageFunc();
+    Page1Func();
     SellerBookListSearchButtonFunc();
     TipsOpenDetailFunc();
 }

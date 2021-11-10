@@ -1,7 +1,9 @@
 package design.princessdreamland.onlinemall.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -99,6 +101,38 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    public IPage<Book> searchPage(String type,String keyword,String currentPage,String status){
+        Book book = new Book();
+
+        if (StrUtil.isNotEmpty(status)){
+            book.setStatus(new Integer(status));
+        }
+
+        if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
+            if ("1".equals(type)){
+                book.setName(keyword);
+            }else if ("2".equals(type)){
+                book.setAuthor(keyword);
+            }else if ("3".equals(type)){
+                book.setTxt(keyword);
+            }
+        }
+
+        Page<Book> page = new Page<Book>();
+        if (StrUtil.isNotEmpty(currentPage)){
+            page.setCurrent(new Integer(currentPage));
+//            currentPage = "1";
+        }
+
+//        page.setSize(3);
+        page.setSize(8);
+
+
+        return baseMapper.queryPage(page, book);
+
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public Book createBook(Book book, Integer sellerId) {
 
@@ -123,4 +157,67 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     public Book queryById(String bookId) {
         return baseMapper.queryById(bookId);
     }
+
+    @Override
+    public Book commitBook(String bookId, Integer sellerId) {
+        QueryWrapper<Book> queryWrapper = new QueryWrapper<Book>();
+        queryWrapper.eq("book_id",bookId);
+        queryWrapper.eq("seller_id",sellerId);
+        Book book = this.getOne(queryWrapper);
+
+        if (ObjectUtil.isNull(book)){
+            throw new RuntimeException("图书不存在或者没有操作权限");
+        }
+
+        book.setStatus(2);
+        this.updateById(book);
+        return book;
+    }
+
+    @Override
+    public Book shelveBook(String bookId, Integer sellerId) {
+        QueryWrapper<Book> queryWrapper = new QueryWrapper<Book>();
+        queryWrapper.eq("book_id",bookId);
+        queryWrapper.eq("seller_id",sellerId);
+        Book book = this.getOne(queryWrapper);
+
+        if (ObjectUtil.isNull(book)){
+            throw new RuntimeException("图书不存在或者没有操作权限");
+        }
+
+        book.setStatus(3);
+        this.updateById(book);
+        return book;
+    }
+
+    @Override
+    public Book shelvesBook(String bookId, Integer sellerId) {
+        QueryWrapper<Book> queryWrapper = new QueryWrapper<Book>();
+        queryWrapper.eq("book_id",bookId);
+        queryWrapper.eq("seller_id",sellerId);
+        Book book = this.getOne(queryWrapper);
+
+        if (ObjectUtil.isNull(book)){
+            throw new RuntimeException("图书不存在或者没有操作权限");
+        }
+
+        book.setStatus(3);
+        this.updateById(book);
+        return book;
+    }
+
+    @Override
+    public Book checkBook(String bookId,String status) {
+
+        Book book = this.getById(bookId);
+
+        if (ObjectUtil.isNull(book)){
+            throw new RuntimeException("图书不存在或者没有操作权限");
+        }
+
+        book.setStatus(new Integer(status));
+        this.updateById(book);
+        return book;
+    }
+
 }

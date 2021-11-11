@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import design.princessdreamland.onlinemall.entity.User;
 
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface UserService extends IService<User> {
@@ -21,4 +22,7 @@ public interface UserService extends IService<User> {
     User createUser(User user) throws Exception;
 
     User login(User user, HttpSession session) throws Exception;
+
+    User charge(Integer userId, BigDecimal chargeAmount, String adminPassword);
+
 }

@@ -1,5 +1,6 @@
 package design.princessdreamland.onlinemall.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 
 
 @RestController
@@ -23,8 +25,7 @@ public class UserController {
 
     @PostMapping("/queryPage")
     public IPage<User> queryPage(User user){
-        Page<User> page = new Page<User>();
-        return userService.queryPage(page,user);
+        return userService.queryPage(user.getPage(),user);
     }
 
     @PostMapping("/reg")
@@ -72,5 +73,23 @@ public class UserController {
             throw new Exception("手机号格式不正确");
         }
         return userService.login(user,session);
+    }
+
+    @PostMapping("/queryById")
+    public User queryById(String userId, HttpSession session) {
+        User user = (User)session.getAttribute("user");
+        if(ObjectUtil.isNull(user) || 2 != user.getType()) {
+            throw new RuntimeException("没有访问权限");
+        }
+        return userService.getById(userId);
+    }
+
+    @PostMapping("/charge")
+    public User charge(Integer userId, String chargeAmount, String adminPassword, HttpSession session) {
+        User user = (User)session.getAttribute("user");
+        if(ObjectUtil.isNull(user) || 2 != user.getType()) {
+            throw new RuntimeException("没有访问权限");
+        }
+        return userService.charge(userId, new BigDecimal(chargeAmount), adminPassword);
     }
 }

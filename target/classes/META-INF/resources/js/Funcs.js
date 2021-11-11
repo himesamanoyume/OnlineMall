@@ -112,17 +112,15 @@ function PageAdminBookListFunc(){
 }
 function PageUserListFunc(){
     $('#prePage').click(function(){
-        location.href="/view/userList/?searchType=" + $('#searchType').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+        var current = parseInt($('#currentPage').text()) - 1
+        UserListQueryData(current)
     })
 
     $('#nextPage').click(function(){
-
-        location.href="/view/userList/?searchType=" + $('#searchType').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
+        var current = parseInt($('#currentPage').text()) + 1
+        UserListQueryData(current)
     })
+
 }
 function SubmitFunc(){
     if ($('#submit').length>0){
@@ -335,11 +333,12 @@ function AdminBookListSearchButtonFunc(){
 }
 function UserListSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/userList?searchType="
-            + $('#searchType').val()
-            + "&keyword="
-            + $('#keyword').val()
-            + "&currentPage=1"
+        UserListQueryData(1);
+        // location.href="/view/userList?searchType="
+        //     + $('#searchType').val()
+        //     + "&keyword="
+        //     + $('#keyword').val()
+        //     + "&currentPage=1"
     })
 }
 function IndexSearchButtonFunc(){
@@ -371,28 +370,49 @@ function StockFunc(){
     })
 }
 
-function UserListQueryData(){
-
-    $.post('/user/queryPage',{
-        account:""
-
-    },function (res){
-        var index =0;
-        for(var item of res.records){
-            index++
-            var ele = '<tr><td>'+ index+'</td>'+
-                '<td>'+item.account+'</td>'+
-                '<td>'+item.name+'</td>'+
-                '<td>'+item.type+'</td>'+
-                '<td>'+item.balance+'</td>'+
-                '<td>'+item.address+'</td>'+
-                '<td>'+'<button class="usuallyButton">充值</button>'+'</td></tr>'
-
-            $('#table').append($(ele));
-        }
-    })
-}
-
+// function UserListQueryData(pageNumber){
+//     var type = $('#searchType').val()
+//     var keyword = $('#keyword').val().trim()
+//
+//     var account = ""
+//     var name = ""
+//
+//     if(type == 1){
+//         account = keyword
+//     }else{
+//         name = keyword
+//     }
+//     $.post('/user/queryPage',{
+//         account:account,
+//         name: name,
+//         'page.current': pageNumber,
+//         'page.size': 12,
+//
+//     },function (res){
+//         var index =0;
+//         for(var item of res.records){
+//             index++
+//             var ele = '<tr><td>'+ index+'</td>'+
+//                 '<td>'+item.account+'</td>'+
+//                 '<td>'+(item.name ? item.name : '')+'</td>'+
+//                 '<td>'+typeDic(item.type)+'</td>'+
+//                 '<td>'+item.balance.toFixed(2)+'</td>'+
+//                 '<td>'+(item.address?item.address:'')+'</td>'+
+//                 '<td>'+'<button class="usuallyButton">充值</button>'+'</td></tr>'
+//
+//             $('#table').append($(ele));
+//         }
+//     })
+// }
+// function typeDic(type){
+//     if(type == 0){
+//         return "买家"
+//     }else if(type == 1){
+//         return "卖家"
+//     }else if(type == 2){
+//         return "管理员"
+//     }
+// }
 
 
 

@@ -32,4 +32,6 @@ public interface BookService extends IService<Book> {
 
     Book checkBook(String bookId,String status);
 
+    Book editBook(Book book);
+
 }

@@ -12,6 +12,7 @@ import design.princessdreamland.onlinemall.entity.BookImg;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.mapper.BookImgMapper;
 import design.princessdreamland.onlinemall.mapper.BookMapper;
+import design.princessdreamland.onlinemall.service.BookImgService;
 import design.princessdreamland.onlinemall.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
     @Autowired
     public BookImgMapper bookImgMapper;
+
+    @Autowired
+    private BookImgService bookImgService;
 
     @Autowired
     private BookImgServiceImpl bookImgServiceImpl;
@@ -240,4 +244,55 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         return book;
     }
 
+    @Override
+    @Transactional(rollbackFor=Exception.class)
+    public Book editBook(Book book) {
+        User user = (User)session.getAttribute("user");
+
+        book.setUpdateUserId(user.getUserId());
+        book.setUpdateTime(new Date());
+        this.updateById(book);
+
+
+
+        Book dbBook = this.queryById(book.getBookId().toString());
+        List<String> srcList = dbBook.getSrcList();
+
+        for(String item: srcList) {
+            boolean exists = false;
+            for(String entry : book.getSrcList()) {
+                if(item.equals(entry)) {
+                    exists = true;
+                    break;
+                }
+            }
+            if(!exists) {
+                QueryWrapper<BookImg> queryWrapper = new QueryWrapper<BookImg>();
+                queryWrapper.eq("img_src", item);
+                bookImgService.remove(queryWrapper);
+            }
+
+        }
+
+
+        for(String item: book.getSrcList()) {
+            boolean exists = false;
+            for(String entry : srcList) {
+                if(item.equals(entry)) {
+                    exists = true;
+                    break;
+                }
+            }
+            if(!exists) {
+                BookImg bookImg = new BookImg();
+                bookImg.setBookId(book.getBookId());
+                bookImg.setImgSrc(item);
+                bookImgService.save(bookImg);
+            }
+
+        }
+
+
+        return book;
+    }
 }

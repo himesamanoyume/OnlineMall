@@ -1,6 +1,8 @@
 package design.princessdreamland.onlinemall.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.service.BookService;
@@ -20,6 +22,7 @@ public class ViewController {
     private BookService bookService;
 
     @GetMapping("/index")
+    @RequestLog(action="首页页面")
     public String index(String type, String keyword, Model model, String currentPage){
 
         IPage<Book> bookPage = bookService.searchPage(type, keyword,currentPage);
@@ -89,9 +92,31 @@ public class ViewController {
 
     @GetMapping("/userList")
     public String userList() {
-
-
         return "/userList.jsp";
+    }
+
+    @GetMapping("/orderList")
+    public String orderList() {
+        return "/orderList.jsp";
+    }
+
+    @GetMapping("/editBook")
+    public String editBook(String bookId, Model model, HttpSession session) {
+        User user = (User)session.getAttribute("user");
+
+        Book book = bookService.queryById(bookId);
+
+        if(ObjectUtil.isNull(book)) {
+            throw new RuntimeException("商品信息不存在");
+        }
+
+        if(book.getSellerId() != user.getUserId()) {
+            throw new RuntimeException("没有编辑权限");
+        }
+
+        model.addAttribute("book", book);
+
+        return "/editBook.jsp";
     }
 }
 

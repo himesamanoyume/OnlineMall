@@ -92,4 +92,21 @@ public class BookController {
         return bookService.checkBook(bookId,status);
     }
 
+    @PostMapping("/editBook")
+    @ResponseBody
+    public Book editBook(Book book) {
+        if(ObjectUtil.isNull(book)) {
+            throw new RuntimeException("book参数不能为空");
+        }
+        if(StrUtil.isEmpty(book.getName())) {
+            throw new RuntimeException("书名不能为空");
+        }
+        if(ObjectUtil.isNull(book.getPrice())) {
+            throw new RuntimeException("价格不能为空");
+        }
+
+        bookService.editBook(book);
+
+        return book;
+    }
 }

@@ -1,7 +1,7 @@
 
 window.onload=function(){
     LoginInfoFunc();
-    Page1Func();
+    PageIndexFunc();
     IndexSearchButtonFunc();
     TipsOpenDetailFunc();
 

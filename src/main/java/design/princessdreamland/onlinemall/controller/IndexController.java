@@ -7,13 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class IndexController {
 
     @Autowired
     private BookService bookService;
 
-    @GetMapping("/")
+    @GetMapping("/view")
     public String index(String type, String keyword, String currentPage, Model model){
 
         IPage<Book> bookPage = bookService.searchPage(type,keyword,currentPage);

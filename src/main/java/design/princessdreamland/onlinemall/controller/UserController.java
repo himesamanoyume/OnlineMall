@@ -2,22 +2,17 @@ package design.princessdreamland.onlinemall.controller;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
-import design.princessdreamland.onlinemall.mapper.UserMapper;
 import design.princessdreamland.onlinemall.service.UserService;
 import design.princessdreamland.onlinemall.util.PhoneFormatCheckUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
-import java.util.regex.Pattern;
+
 
 @RestController
 @RequestMapping("/user")
@@ -25,6 +20,12 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @PostMapping("/queryPage")
+    public IPage<User> queryPage(User user){
+        Page<User> page = new Page<User>();
+        return userService.queryPage(page,user);
+    }
 
     @PostMapping("/reg")
     public User reg(User user) throws Exception{

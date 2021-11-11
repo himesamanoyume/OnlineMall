@@ -108,8 +108,8 @@
 <c:set var="urlWhere" value="null"/>
 <div id="top">
     <%@include file="component/top.jsp" %>
-</div>
 
+</div>
 
 <div id="title">
 

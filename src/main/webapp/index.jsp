@@ -24,9 +24,9 @@
     <script src="/js/index.js" type="text/javascript"></script>
 </head>
 <body>
-
+<div id="top">
 <%@include file="component/top.jsp" %>
-
+</div>
 <div id="title">
 
         网上商城

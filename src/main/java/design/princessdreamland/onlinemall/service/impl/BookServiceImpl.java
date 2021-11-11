@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.BookImg;
+import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.mapper.BookImgMapper;
 import design.princessdreamland.onlinemall.mapper.BookMapper;
 import design.princessdreamland.onlinemall.service.BookService;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +31,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
     @Autowired
     private BookImgServiceImpl bookImgServiceImpl;
+
+    @Autowired
+    private HttpSession session;
 
     @Override
     public List<Book> queryList(Book book){
@@ -93,7 +98,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
 //        page.setSize(3);
-        page.setSize(8);
+        page.setSize(16);
 
 
         return baseMapper.queryPage(page, book);
@@ -125,7 +130,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
 //        page.setSize(3);
-        page.setSize(8);
+        page.setSize(16);
 
 
         return baseMapper.queryPage(page, book);
@@ -160,6 +165,8 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
     @Override
     public Book commitBook(String bookId, Integer sellerId) {
+
+
         QueryWrapper<Book> queryWrapper = new QueryWrapper<Book>();
         queryWrapper.eq("book_id",bookId);
         queryWrapper.eq("seller_id",sellerId);
@@ -170,6 +177,10 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
         book.setStatus(2);
+        User user = (User)session.getAttribute("user");
+        book.setUpdateUserId(user.getUserId());
+        book.setUpdateTime(new Date());
+
         this.updateById(book);
         return book;
     }
@@ -186,6 +197,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
         book.setStatus(3);
+        User user = (User)session.getAttribute("user");
+        book.setUpdateUserId(user.getUserId());
+        book.setUpdateTime(new Date());
         this.updateById(book);
         return book;
     }
@@ -202,6 +216,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
         book.setStatus(3);
+        User user = (User)session.getAttribute("user");
+        book.setUpdateUserId(user.getUserId());
+        book.setUpdateTime(new Date());
         this.updateById(book);
         return book;
     }
@@ -216,6 +233,9 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
         book.setStatus(new Integer(status));
+        User user = (User)session.getAttribute("user");
+        book.setUpdateUserId(user.getUserId());
+        book.setUpdateTime(new Date());
         this.updateById(book);
         return book;
     }

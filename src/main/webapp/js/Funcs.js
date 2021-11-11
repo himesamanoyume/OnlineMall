@@ -62,7 +62,21 @@ function LoginInfoFunc(){
     })
 
 }
-function Page1Func(){
+function PageIndexFunc(){
+    $('#prePage').click(function(){
+        location.href="/view/index/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+    })
+
+    $('#nextPage').click(function(){
+
+        location.href="/view/index/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
+    })
+}
+function PageSellerBookListFunc(){
     $('#prePage').click(function(){
         location.href="/view/sellerBookList/?searchType=" + $('#searchType').val() +
             "&keyword=" + $('#keyword').val() +
@@ -79,7 +93,7 @@ function Page1Func(){
             "&status=" + $('#searchStatus').val()
     })
 }
-function Page2Func(){
+function PageAdminBookListFunc(){
     $('#prePage').click(function(){
         location.href="/view/adminBookList/?searchType=" + $('#searchType').val() +
             "&keyword=" + $('#keyword').val() +
@@ -94,6 +108,20 @@ function Page2Func(){
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
             "&status=" + $('#searchStatus').val()
+    })
+}
+function PageUserListFunc(){
+    $('#prePage').click(function(){
+        location.href="/view/userList/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+    })
+
+    $('#nextPage').click(function(){
+
+        location.href="/view/userList/?searchType=" + $('#searchType').val() +
+            "&keyword=" + $('#keyword').val() +
+            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
     })
 }
 function SubmitFunc(){
@@ -305,6 +333,15 @@ function AdminBookListSearchButtonFunc(){
             + $('#searchStatus').val()
     })
 }
+function UserListSearchButtonFunc(){
+    $('#searchButton').click(function(){
+        location.href="/view/userList?searchType="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage=1"
+    })
+}
 function IndexSearchButtonFunc(){
     $('#searchButton').click(function(){
         location.href="/view/index?searchType="
@@ -330,6 +367,28 @@ function StockFunc(){
             $('#count').val(stock);
         }else{
             $('#money').text((count*price).toFixed(2))
+        }
+    })
+}
+
+function UserListQueryData(){
+
+    $.post('/user/queryPage',{
+        account:""
+
+    },function (res){
+        var index =0;
+        for(var item of res.records){
+            index++
+            var ele = '<tr><td>'+ index+'</td>'+
+                '<td>'+item.account+'</td>'+
+                '<td>'+item.name+'</td>'+
+                '<td>'+item.type+'</td>'+
+                '<td>'+item.balance+'</td>'+
+                '<td>'+item.address+'</td>'+
+                '<td>'+'<button class="usuallyButton">充值</button>'+'</td></tr>'
+
+            $('#table').append($(ele));
         }
     })
 }

@@ -86,5 +86,12 @@ public class ViewController {
 
         return "/adminBookList.jsp";
     }
+
+    @GetMapping("/userList")
+    public String userList() {
+
+
+        return "/userList.jsp";
+    }
 }
 

@@ -29,6 +29,26 @@ body{
     cursor: pointer;
     box-shadow: 0 0 0 1px #66ccff;
 }
+.usuallyButton{
+    margin: 0 10px 0 10px;
+    border-radius: 5px;
+    line-height: 30px;
+    float: left;
+    justify-content: center;
+    height: 30px;
+    /*width: 60px;*/
+    color: black;
+    transition-duration: 0.4s;
+    font-size: 15px;
+    background: snow;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #66ccff;
+}
+.usuallyButton:hover{
+    background: #66ccff;
+    color: snow;
+}
 .page{
     width: 100%;
     height: 50px;

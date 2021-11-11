@@ -18,17 +18,27 @@
             <button type="button" id="userType">管理员端</button>
         </c:if>
 
+        <c:if test="${urlWhere !='userList'}">
+            <select class="topItem" id="searchType">
+                <option value="1">书名</option>
+                <option value="2">作者</option>
+                <option value="3">简介</option>
+            </select>
 
-        <select class="topItem" id="searchType">
-            <option value="1">书名</option>
-            <option value="2">作者</option>
-            <option value="3">简介</option>
-        </select>
+            <input type="text" class="topItem" id="keyword" value="${keyword}"/>
 
-        <input type="text" class="topItem" id="keyword" value="${keyword}"/>
+            <button class="topItem" id="searchButton">搜索</button>
+        </c:if>
+        <c:if test="${urlWhere =='userList'}">
+            <select class="topItem" id="searchType">
+                <option value="1">账号</option>
+                <option value="2">用户名</option>
+            </select>
 
-        <button class="topItem" id="searchButton">搜索</button>
+            <input type="text" class="topItem" id="keyword" value="${keyword}"/>
 
+            <button class="topItem" id="searchButton">搜索</button>
+        </c:if>
     </c:if>
 
     <c:if test="${sessionScope.user==null}">
@@ -53,11 +63,11 @@
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2}">
-        <button type="button" class="topItem">用户列表</button>
+        <button type="button" class="topItem" onclick="window.location.href ='/view/userList'">用户列表</button>
         <button type="button" class="topItem" onclick="window.location.href ='/view/adminBookList'">图书列表</button>
     </c:if>
 
 
         <button type="button" class="topLogin" onclick="window.location.href = '/view/index'">首页</button>
 
-</div>
+

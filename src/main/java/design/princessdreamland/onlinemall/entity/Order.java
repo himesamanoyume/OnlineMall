@@ -71,9 +71,5 @@ public class Order extends BaseEntity<Order> {
 	 */
 	private String waybill;
 	
-	
-	
-	
-	
 
 }

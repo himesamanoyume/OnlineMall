@@ -21,10 +21,10 @@ public class UploadController {
         String originalFileNameString = file.getOriginalFilename();
         String  typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
         String fileName = System.currentTimeMillis() + typeStr;
-//
+
         File saveFile = new File(UploadPathConfig.UPLOAD_PATH + fileName);
         file.transferTo(saveFile);
-//
+
         return "/upload/" + fileName;
     }
 }

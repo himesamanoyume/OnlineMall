@@ -258,7 +258,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         Book dbBook = this.queryById(book.getBookId().toString());
         List<String> srcList = dbBook.getSrcList();
 
-        for(String item: srcList) {
+        for(String item : srcList) {
             boolean exists = false;
             for(String entry : book.getSrcList()) {
                 if(item.equals(entry)) {

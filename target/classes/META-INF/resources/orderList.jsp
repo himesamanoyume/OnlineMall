@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
@@ -12,8 +11,7 @@
 <style type="text/css">
 
 *{
-	margin:0;
-	padding: 0;
+
 	box-sizing: border-box;
 }
 
@@ -78,9 +76,14 @@ html, body {
 }
 
 </style>
+	<style>
+		@import "/css/MyIndexCSS.css";
+		@import "/css/divSpace.css";
+		@import "/css/divTips.css";
+	</style>
 
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/common.js"></script>
+	<script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+	<script src="/js/Funcs.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
@@ -95,7 +98,7 @@ function statusDic(status){
 }
 
 function queryData(current){
-	var status = $('#searchStatus').val()
+	var status = $('#searchType').val()
 	var bookName = $('#keyword').val().trim()
 	
 	var userType = $('body').attr('data-userType')
@@ -173,9 +176,9 @@ function queryData(current){
 
 
 
-$(document).ready(function(){
-	queryData(1)
-	
+window.onload=function(){
+	queryData(1);
+	LoginInfoFunc();
 	$('#searchButton').click(function(){
 		queryData(1)
 	})
@@ -312,34 +315,24 @@ $(document).ready(function(){
 	
 	})
 	
-})
+}
 	
 	
 </script>
 
 </head>
 <body data-userType="${sessionScope.user.type}">
+<c:set var="urlWhere" value="orderList"/>
+<div id="top">
+	<%@include file="component/top.jsp" %>
+
+</div>
+<div id="title">
+
+	订单列表
+
+</div>
 <div style="width:100%;height:100%;">
-	
-	<%@ include file="./component/title.jsp" %>
-	
-	<div style="width: 100%;height:50px;position: fixed;top:60px;z-index: 1;zoom:1;overflow: hidden;">
-		<div style="width:1180px;height:50px;margin: 0 auto;display: flex;align-items: center;background-color:#DDD;">
-			<select id="searchStatus" style="margin-left:20px;width:70px;height:30px;font-size: 16px;">
-				<option value="">全部</option>
-				<option value="1">待发货</option>
-				<option value="2">已发货</option>
-				<option value="3">已收货</option>
-			</select>
-			
-			<div style="margin-left: 15px;">商品名称：</div>
-			<input id="keyword" type="text" style="height:30px;line-height:30px;width:300px" />
-			
-			<button id="searchButton" style="width:50px;height:30px;margin-left:15px;">搜索</button>
-			
-		</div>
-	</div>
-	
 	
 	<div style="width:1180px;min-height:100%;margin:0 auto;padding:110px 10px;background-color: #DDD;">
 	
@@ -360,7 +353,7 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="cell" style="width:50px;">1</div>
 				<div class="cell" style="width:150px;">
-					<img src="/img/redStar.jpg" style="width:80px;height:80px;object-fit:cover;" />
+<%--					<img src="/img/redStar.jpg" style="width:80px;height:80px;object-fit:cover;" />--%>
 					<div>红星照耀中国</div>
 				</div>
 				<div class="cell" style="width:120px;">卖家账号</div>
@@ -393,7 +386,7 @@ $(document).ready(function(){
 	
 	<div class="mask" style="display: none;" data-userId="">
 		<div style="width:100%;height:100%;position: relative;display: flex;justify-content: center;align-items: center;">
-			<div id="black_mask" style="width:100%;height:100%;position: absolute;top:1;left:0;background-color: black;opacity: 0.3;z-index: 1000"></div>
+			<div id="black_mask" style="width:100%;height:100%;position: absolute;top:1px;left:0;background-color: black;opacity: 0.3;z-index: 1000"></div>
 			
 			<div id="shipBox" style="width:500px;height:280px;background-color: white;z-index: 1001;padding: 10px;">
 				<div style="margin:10px auto;text-align: center;font-size: 20px;font-weight: bold;">发货</div>

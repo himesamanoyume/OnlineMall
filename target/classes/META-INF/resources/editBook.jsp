@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ page isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
@@ -11,7 +12,8 @@
 <style type="text/css">
 
 *{
-
+	margin:0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -76,17 +78,12 @@ html, body {
 }
 
 </style>
-	<style>
-		@import "/css/MyIndexCSS.css";
-		@import "/css/divSpace.css";
-		@import "/css/divTips.css";
-	</style>
 
-	<script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
-	<script src="/js/Funcs.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
 
 <script type="text/javascript">
-window.onload=function(){
+$(document).ready(function(){
 	
 	$('#submit').click(function(){
 		var name = $('#name').val()
@@ -95,7 +92,7 @@ window.onload=function(){
 		var amount = $('#amount').val()
 		var txt = $('#txt').val()
 		var publisher = $('#publisher').val()
-		var publishTime = $('#publishTime').val()
+		var publishDate = $('#publishDate').val()
 		var stock = $('#stock').val()
 		
 		name = name.trim()
@@ -104,7 +101,7 @@ window.onload=function(){
 		amount = parseInt(amount)
 		txt = txt.trim()
 		publisher = publisher.trim()
-		publishTime = publishTime.trim()
+		publishDate = publishDate.trim()
 		stock = parseInt(stock)
 		
 		if(!name){
@@ -130,7 +127,7 @@ window.onload=function(){
 			amount: amount,
 			txt: txt,
 			publisher: publisher,
-			publishTime: publishTime,
+			publishDate: publishDate,
 			stock: stock,
 			srcList: srcList,
 		}, function(res){
@@ -184,32 +181,23 @@ window.onload=function(){
 	$('body').on('click', '.del_img', function(){
 		$(this).parent().remove()
 	})
-	LoginInfoFunc();
-}
+	
+})
 	
 	
 </script>
 
 </head>
 <body>
-<c:set var="urlWhere" value="null"/>
-<div id="top">
-	<%@include file="component/top.jsp" %>
-
-</div>
-
-<div id="title">
-
-	编辑图书
-
-</div>
 <div style="width:100%;height:100%;">
 	
-
+	<%@ include file="./component/title.jsp" %>
 	
 	<div style="width:1180px;min-height:100%;margin:0 auto;padding:60px 10px;
 		background-color: #DDD;">
-
+		
+		<div style="font-size: 22px;font-weight: bold;margin-bottom: 30px;">编辑图书</div>
+		
 		<div class="input_item">
 			<div class="input_label">书名：</div>
 			<input id="name" type="text" value="${book.name}" />
@@ -242,7 +230,7 @@ window.onload=function(){
 		
 		<div class="input_item">
 			<div class="input_label">出版日期：</div>
-			<input id="publishTime" type="date" value="${book.publishTime}" />
+			<input id="publishDate" type="date" value="${book.publishDate}" />
 		</div>
 		
 		<div class="input_item">

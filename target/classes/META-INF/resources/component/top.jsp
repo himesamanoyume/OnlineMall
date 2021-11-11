@@ -29,18 +29,6 @@
 
             <button class="topItem" id="searchButton">搜索</button>
         </c:if>
-        <c:if test="${urlWhere =='orderList'}">
-            <select class="topItem" id="searchType">
-                <option value="">全部</option>
-                <option value="1">待发货</option>
-                <option value="2">已发货</option>
-                <option value="3">已收货</option>
-            </select>
-
-            <input type="text" class="topItem" id="keyword" value="${keyword}"/>
-
-            <button class="topItem" id="searchButton">搜索</button>
-        </c:if>
         <c:if test="${urlWhere =='userList'}">
             <select class="topItem" id="searchType">
                 <option value="1">账号</option>
@@ -65,12 +53,12 @@
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 0}">
-        <button type="button" class="topItem" onclick="window.location.href ='/view/orderList'">我的订单</button>
+        <button type="button" class="topItem">我的订单</button>
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 1}">
         <button type="button" class="topItem" onclick="window.location.href ='/view/sellerBookList'">我的图书</button>
-        <button type="button" class="topItem" onclick="window.location.href ='/view/orderList'">我的订单</button>
+        <button type="button" class="topItem">我的订单</button>
         <button type="button" class="topItem" onclick="window.location.href ='/view/createBook'">新增图书</button>
     </c:if>
 

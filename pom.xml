@@ -67,11 +67,16 @@
             <artifactId>hutool-all</artifactId>
             <version>5.7.15</version>
         </dependency>
+        <!-- AOP -->
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.7</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjweaver</artifactId>-->
+<!--            <version>1.9.7</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -79,7 +84,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <version>1.4.2.RELEASE</version>-->
+                <version>1.4.2.RELEASE</version>
             </plugin>
         </plugins>
         <resources>

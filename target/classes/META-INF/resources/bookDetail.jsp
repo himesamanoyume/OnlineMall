@@ -100,6 +100,32 @@
 
                 })
             });
+            $('#buyBotton').click(function(){
+                var bookId = $('#title').attr('data-bookId')
+                var amount = parseInt($('#count').val())
+
+                $.post('/order/createOrder', {
+                    bookId: bookId,
+                    amount: amount
+                }, function(res){
+                    if(res && res.ordId){
+                        alert('生成订单成功')
+                        location.href = "/view/orderList"
+                    }else{
+                        alert('生成订单失败')
+                    }
+
+
+                }).fail(function(res){
+                    alert(res.responseJSON.message)
+                })
+
+
+            })
+
+            $('#edit').click(function(){
+                location.href = "/view/editBook?bookId=${book.bookId}"
+            })
         }
     </script>
 
@@ -111,7 +137,7 @@
 
 </div>
 
-<div id="title">
+<div id="title" data-bookId="${book.bookId}">
 
     ${book.name}
 
@@ -172,6 +198,7 @@
     </c:if>
 
     <c:if test="${sessionScope.user!=null && sessionScope.user.type ==1}">
+        <button id="edit" class="topItem">编辑</button>
         <c:if test="${book.status ==1}">
             <button class="topItem" id="submitCheck">提交审核</button>
         </c:if>

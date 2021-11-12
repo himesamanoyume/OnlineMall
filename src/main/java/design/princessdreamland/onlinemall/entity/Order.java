@@ -8,11 +8,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-/**
- * 
- * @author NDZ
- * @version 2021-11-11
- */
+
 @TableName("ord")
 @Data
 public class Order extends BaseEntity<Order> {

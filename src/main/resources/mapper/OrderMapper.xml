@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="design.princessdreamland.onlinemall.OrderMapper">
+<mapper namespace="design.princessdreamland.onlinemall.mapper.OrderMapper">
 
 	<resultMap type="design.princessdreamland.onlinemall.entity.Order" id="orderMap">
 		<id property="ordId" column="ord_id" />
@@ -117,12 +117,12 @@
 	FROM ord o
 	LEFT JOIN book b ON b.book_id = o.book_id AND b.deleted = 0
 	LEFT JOIN user bu ON bu.user_id = o.buyer_id AND bu.deleted = 0
-	LEFT JOIN user su ON su.user_id = o.seller_id AND su.deleted = 0 
+	LEFT JOIN user su ON su.user_id = o.seller_id AND su.deleted = 0
 	LEFT JOIN user cu ON cu.user_id = o.create_user_id AND cu.deleted = 0
 	LEFT JOIN user uu ON uu.user_id = o.update_user_id AND uu.deleted = 0
-	
+
 	<include refid="where" />
-	
+
 	ORDER BY o.ord_id DESC
 
 </select>
@@ -139,12 +139,12 @@
 	FROM ord o
 	LEFT JOIN book b ON b.book_id = o.book_id AND b.deleted = 0
 	LEFT JOIN user bu ON bu.user_id = o.buyer_id AND bu.deleted = 0
-	LEFT JOIN user su ON su.user_id = o.seller_id AND su.deleted = 0 
+	LEFT JOIN user su ON su.user_id = o.seller_id AND su.deleted = 0
 	LEFT JOIN user cu ON cu.user_id = o.create_user_id AND cu.deleted = 0
 	LEFT JOIN user uu ON uu.user_id = o.update_user_id AND uu.deleted = 0
-	
+
 	<include refid="where" />
-	
+
 	ORDER BY o.ord_id DESC
 
 </select>

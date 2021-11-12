@@ -22,11 +22,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 
- * @author NDZ
- * @version 2021-11-11
- */
 
 @Service
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order>

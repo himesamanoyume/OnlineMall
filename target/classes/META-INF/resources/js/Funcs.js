@@ -64,21 +64,21 @@ function LoginInfoFunc(){
 }
 function PageIndexFunc(){
     $('#prePage').click(function(){
-        location.href="/view/index/?searchType=" + $('#searchType').val() +
+        location.href="/view/index/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
     })
 
     $('#nextPage').click(function(){
 
-        location.href="/view/index/?searchType=" + $('#searchType').val() +
+        location.href="/view/index/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
     })
 }
 function PageSellerBookListFunc(){
     $('#prePage').click(function(){
-        location.href="/view/sellerBookList/?searchType=" + $('#searchType').val() +
+        location.href="/view/sellerBookList/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
             "&status=" + $('#searchStatus').val()
@@ -87,7 +87,7 @@ function PageSellerBookListFunc(){
 
     $('#nextPage').click(function(){
 
-        location.href="/view/sellerBookList/?searchType=" + $('#searchType').val() +
+        location.href="/view/sellerBookList/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
             "&status=" + $('#searchStatus').val()
@@ -95,7 +95,7 @@ function PageSellerBookListFunc(){
 }
 function PageAdminBookListFunc(){
     $('#prePage').click(function(){
-        location.href="/view/adminBookList/?searchType=" + $('#searchType').val() +
+        location.href="/view/adminBookList/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
             "&status=" + $('#searchStatus').val()
@@ -104,7 +104,7 @@ function PageAdminBookListFunc(){
 
     $('#nextPage').click(function(){
 
-        location.href="/view/adminBookList/?searchType=" + $('#searchType').val() +
+        location.href="/view/adminBookList/?searchStatus=" + $('#searchStatus').val() +
             "&keyword=" + $('#keyword').val() +
             "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
             "&status=" + $('#searchStatus').val()
@@ -311,8 +311,8 @@ function RegPageFunc(){
 }
 function SellerBookListSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/sellerBookList?searchType="
-            + $('#searchType').val()
+        location.href="/view/sellerBookList?searchStatus="
+            + $('#searchStatus').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"
@@ -322,8 +322,8 @@ function SellerBookListSearchButtonFunc(){
 }
 function AdminBookListSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/adminBookList?searchType="
-            + $('#searchType').val()
+        location.href="/view/adminBookList?searchStatus="
+            + $('#searchStatus').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"
@@ -334,8 +334,8 @@ function AdminBookListSearchButtonFunc(){
 function UserListSearchButtonFunc(){
     $('#searchButton').click(function(){
         UserListQueryData(1);
-        // location.href="/view/userList?searchType="
-        //     + $('#searchType').val()
+        // location.href="/view/userList?searchStatus="
+        //     + $('#searchStatus').val()
         //     + "&keyword="
         //     + $('#keyword').val()
         //     + "&currentPage=1"
@@ -343,8 +343,8 @@ function UserListSearchButtonFunc(){
 }
 function IndexSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/index?searchType="
-            + $('#searchType').val()
+        location.href="/view/index?searchStatus="
+            + $('#searchStatus').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"
@@ -371,7 +371,7 @@ function StockFunc(){
 }
 
 // function UserListQueryData(pageNumber){
-//     var type = $('#searchType').val()
+//     var type = $('#searchStatus').val()
 //     var keyword = $('#keyword').val().trim()
 //
 //     var account = ""

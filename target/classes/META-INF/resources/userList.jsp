@@ -78,7 +78,7 @@
     <script src="/js/userList.js" type="text/javascript"></script>
     <script>
         function UserListQueryData(pageNumber){
-            var type = $('#searchType').val()
+            var type = $('#searchStatus').val()
             var keyword = $('#keyword').val().trim()
 
             var account = ""

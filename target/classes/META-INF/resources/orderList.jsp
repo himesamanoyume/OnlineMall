@@ -98,7 +98,7 @@
 		}
 
 		function queryData(current){
-			var status = $('#searchType').val()
+			var status = $('#searchStatus').val()
 			var bookName = $('#keyword').val().trim()
 
 			var userType = $('body').attr('data-userType')
@@ -128,7 +128,7 @@
 								+ '<div class="cell" style="width:120px;">' +  (item.waybill ? item.waybill : '') + '</div>'
 								+ '<div class="cell" style="width:80px;">' +  statusDic(item.status) + '</div>'
 								+ '<div class="cell" style="width:150px;display: flex;">';
-						//+ '	<button style="height:26px;line-height: 26px;">确认收货</button>'
+						+ '	<button style="height:26px;line-height: 26px;">确认收货</button>'
 
 						if(userType==0){
 							if(item.status == 2){
@@ -168,7 +168,7 @@
 
 
 			}).fail(function(res){
-				alert("res.responseJSON.messagePage")
+				alert(res.responseJSON.messagePage)
 			})
 
 
@@ -210,7 +210,7 @@
 					}
 
 				}).fail(function(res){
-					alert("res.responseJSON.message0")
+					alert(res.responseJSON.message)
 				})
 
 
@@ -237,7 +237,7 @@
 					}
 
 				}).fail(function(res){
-					alert("res.responseJSON.message1")
+					alert(res.responseJSON.message)
 				})
 
 
@@ -258,7 +258,7 @@
 				var waybill = $('#waybill').val().trim()
 
 				if(waybill ==  ''){
-					aler('运单号不能为空')
+					alert('运单号不能为空')
 					return
 				}
 
@@ -279,7 +279,7 @@
 					}
 
 				}).fail(function(res){
-					alert("res.responseJSON.message2")
+					alert(res.responseJSON.message)
 				})
 
 			})
@@ -323,8 +323,8 @@
 <c:set var="urlWhere" value="orderList"/>
 <div id="top">
 	<%@include file="component/top.jsp" %>
-
 </div>
+
 <div id="title">
 
 	订单列表

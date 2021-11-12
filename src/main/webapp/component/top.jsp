@@ -18,8 +18,8 @@
             <button type="button" id="userType">管理员端</button>
         </c:if>
 
-        <c:if test="${urlWhere !='userList'}">
-            <select class="topItem" id="searchType">
+        <c:if test="${urlWhere !='userList' and urlWhere !='orderList'}">
+            <select class="topItem" id="searchStatus">
                 <option value="1">书名</option>
                 <option value="2">作者</option>
                 <option value="3">简介</option>
@@ -29,20 +29,29 @@
 
             <button class="topItem" id="searchButton">搜索</button>
         </c:if>
+
+
+
+
         <c:if test="${urlWhere =='orderList'}">
-            <select class="topItem" id="searchType">
+            <select class="topItem" id="searchStatus">
                 <option value="">全部</option>
                 <option value="1">待发货</option>
                 <option value="2">已发货</option>
                 <option value="3">已收货</option>
             </select>
 
-            <input type="text" class="topItem" id="keyword" value="${keyword}"/>
+            <input type="text" class="topItem" id="keyword"/>
 
             <button class="topItem" id="searchButton">搜索</button>
         </c:if>
+
+
+
+
+
         <c:if test="${urlWhere =='userList'}">
-            <select class="topItem" id="searchType">
+            <select class="topItem" id="searchStatus">
                 <option value="1">账号</option>
                 <option value="2">用户名</option>
             </select>

@@ -21,6 +21,10 @@ public interface UserService extends IService<User> {
      */
     User createUser(User user) throws Exception;
 
+    User saveInfo(User user) throws Exception;
+
+    User savePass(User user) throws Exception;
+
     User login(User user, HttpSession session) throws Exception;
 
     User charge(Integer userId, BigDecimal chargeAmount, String adminPassword);

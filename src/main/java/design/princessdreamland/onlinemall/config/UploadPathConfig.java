@@ -18,6 +18,7 @@ public class UploadPathConfig implements WebMvcConfigurer {
             .getDefaultClassLoader()
             .getResource("")
             .getPath() + "../upload/";
+//    public static final String UPLOAD_PATH = "/www/wwwroot/princessdreamland.design/upload/";
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

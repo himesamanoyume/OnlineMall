@@ -40,14 +40,14 @@ function changeFontSize(){
 function LoginInfoFunc(){
 
     $('#topLoginAfter').hover(function (){
-        $('#topLoginInfo').css('top','60px');
+        $('#topLoginInfo').css('right','20px');
         $('#topLoginInfo').css('height','150px');
         $('#topLoginInfo').css('box-shadow','0 0 0 1px #66ccff');
-        // $('#topLoginInfo').css('display','block');
+        $('#topLoginInfo').css('display','block');
     })
 
     $('#topLoginInfo').mouseleave(function (){
-        $('#topLoginInfo').css('top','-50px');
+        $('#topLoginInfo').css('right','-200px');
         $('#topLoginInfo').css('height','0')
         $('#topLoginInfo').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
         // $('#topLoginInfo').css('display','none');
@@ -60,7 +60,6 @@ function LoginInfoFunc(){
             }
         })
     })
-
 }
 function PageIndexFunc(){
     $('#prePage').click(function(){

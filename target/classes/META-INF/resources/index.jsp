@@ -40,9 +40,7 @@
 <%@include file="./component/page.jsp" %>
 
 
-<div id="divFooter">
-    &nbsp;&nbsp;&nbsp;Copyright 2021©  &nbsp; @姫様の夢 &nbsp;&nbsp;&nbsp;
-</div>
+<%@include file="./component/divFooter.jsp" %>
 </body>
 
 </html>

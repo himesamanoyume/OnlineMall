@@ -65,6 +65,7 @@ public class ViewController {
         return "/createBook.jsp";
     }
 
+
     @GetMapping("/bookDetail")
     public String bookDetail(String bookId,Model model) {
         Book book = bookService.queryById(bookId);
@@ -117,6 +118,14 @@ public class ViewController {
         model.addAttribute("book", book);
 
         return "/editBook.jsp";
+    }
+
+    @GetMapping("/editUser")
+    public String editUser( Model model,HttpSession session) {
+        User user = (User)session.getAttribute("user");
+        model.addAttribute("user",user);
+
+        return "/editUser.jsp";
     }
 }
 

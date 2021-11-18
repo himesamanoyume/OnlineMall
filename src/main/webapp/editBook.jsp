@@ -270,6 +270,8 @@
 	</div>
 
 </div>
+
+<%@include file="./component/divFooter.jsp" %>
 </body>
 </html>
 

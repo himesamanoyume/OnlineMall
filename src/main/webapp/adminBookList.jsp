@@ -49,6 +49,6 @@
 
 <%@include file="./component/page.jsp" %>
 
-
+<%@include file="./component/divFooter.jsp" %>
 </body>
 </html>

@@ -69,8 +69,10 @@
     <c:if test="${sessionScope.user!=null}">
         <button type="button" id="topLoginAfter">${sessionScope.user.account}</button>
         <div id="topLoginInfo">
-            <a id="topLoginInfoLogout">退出登录</a>
+            <div id="topLoginInfoLogout">退出登录</div>
+            <div id="topLoginInfoChangeInfo" onclick="window.location.href ='/view/editUser'">修改个人信息</div>
         </div>
+
     </c:if>
 
     <c:if test="${sessionScope.user!=null and sessionScope.user.type == 0}">

@@ -12,6 +12,7 @@ import design.princessdreamland.onlinemall.mapper.UserMapper;
 import design.princessdreamland.onlinemall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
@@ -43,6 +44,29 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             throw new Exception("账号已被注册");
         }
         this.save(user);
+        return user;
+    }
+
+    @Override
+    @Transactional(rollbackFor=Exception.class)
+    public User saveInfo(User user){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+        queryWrapper.eq("account",user.getAccount());
+//        queryWrapper.eq("name",user.getName());
+//        queryWrapper.eq("address",user.getAddress());
+
+        this.updateById(user);
+        return user;
+    }
+
+    @Override
+    @Transactional(rollbackFor=Exception.class)
+    public User savePass(User user){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
+        queryWrapper.eq("account",user.getAccount());
+//        queryWrapper.eq("password",user.getPassword());
+
+        this.updateById(user);
         return user;
     }
 

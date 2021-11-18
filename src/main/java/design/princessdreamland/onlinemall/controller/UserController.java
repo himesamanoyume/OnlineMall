@@ -52,6 +52,30 @@ public class UserController {
         return user;
     }
 
+    @PostMapping("/saveInfo")
+    @ResponseBody
+    public User saveInfo(User user) throws Exception{
+        if (ObjectUtils.isNull(user.getName())){
+            throw new Exception("用户名不能为空");
+        }
+        userService.saveInfo(user);
+        return user;
+    }
+
+    @PostMapping("/savePass")
+    @ResponseBody
+    public User savePass(User user) throws Exception{
+        if (StrUtil.isEmpty(user.getPassword())){
+            throw new Exception("密码不能为空");
+        }
+        if (user.getPassword().length()<6){
+            throw new Exception("密码强度不够");
+        }
+        user.setPassword(SecureUtil.md5(user.getPassword()));
+        userService.savePass(user);
+        return user;
+    }
+
     @PostMapping("/logout")
     public Boolean logout(HttpSession session){
         session.removeAttribute("user");

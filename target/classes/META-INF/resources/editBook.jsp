@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>新增图书</title>
+	<title>编辑商品${book.name}</title>
 
 	<style type="text/css">
 
@@ -34,6 +34,7 @@
 
 		.input_item {
 			display: flex;
+			justify-content: center;
 			align-items: center;
 			margin-bottom: 15px;
 		}
@@ -200,15 +201,14 @@
 
 <div id="title">
 
-	编辑图书
+	编辑商品
 
 </div>
 <div style="width:100%;height:100%;">
 
 
 
-	<div style="width:1180px;min-height:100%;margin:0 auto;padding:60px 10px;
-		background-color: #DDD;">
+	<div style="width:1180px;min-height:100%;margin:0 auto;padding:60px 10px;">
 
 		<div class="input_item">
 			<div class="input_label">书名：</div>

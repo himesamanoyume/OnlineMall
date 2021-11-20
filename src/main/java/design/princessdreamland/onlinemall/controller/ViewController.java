@@ -6,6 +6,7 @@ import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.service.BookService;
+import design.princessdreamland.onlinemall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

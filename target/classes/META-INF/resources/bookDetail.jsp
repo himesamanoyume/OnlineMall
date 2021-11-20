@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>${book.name}</title>
     <style>
         @import "/css/MyIndexCSS.css";
         @import "/css/divSpace.css";
@@ -176,28 +176,30 @@
     <button class="topItem" id="buyBotton">确认购买</button>
 </c:if>
 <c:if test="${sessionScope.user!=null}">
+
     <c:if test="${book.status==1}">
         <div class="detailInfo">
-            <span class="spanDes">未提交</span>
+            <span class="spanDesGray">未提交</span>
         </div>
     </c:if>
     <c:if test="${book.status==2}">
         <div class="detailInfo">
-            <span class="spanDes">未审核</span>
+            <span class="spanDesGreen">未审核</span>
         </div>
     </c:if>
     <c:if test="${book.status==3}">
         <div class="detailInfo">
-            <span class="spanDes">上架</span>
+            <span class="spanDesBlue">上架</span>
         </div>
     </c:if>
     <c:if test="${book.status==4}">
         <div class="detailInfo">
-            <span class="spanDes">下架</span>
+            <span class="spanDesRed">下架</span>
         </div>
     </c:if>
 
     <c:if test="${sessionScope.user!=null && sessionScope.user.type ==1}">
+<div style="width:100%;display: flex; margin-top:30px;line-height:70px;justify-content: center">
         <button id="edit" class="topItem">编辑</button>
         <c:if test="${book.status ==1}">
             <button class="topItem" id="submitCheck">提交审核</button>
@@ -208,12 +210,15 @@
         <c:if test="${book.status ==4}">
         <button class="topItem" id="shelves">上架</button>
         </c:if>
+</div>
     </c:if>
     <c:if test="${sessionScope.user!=null && sessionScope.user.type ==2}">
+<div style="width:100%;display: flex; margin-top:30px;line-height:70px;justify-content: center">
         <c:if test="${book.status ==2}">
             <button class="topItem" id="checkOK">审核通过</button>
             <button class="topItem" id="checkNoOK">审核不通过</button>
         </c:if>
+</div>
     </c:if>
 </c:if>
 <div class="divLine">

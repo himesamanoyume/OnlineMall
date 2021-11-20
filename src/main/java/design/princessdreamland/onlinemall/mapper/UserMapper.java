@@ -16,4 +16,5 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> queryList(@Param("user")User user);
 
     IPage<User> queryPage(Page<User> page,@Param("user")User user);
+
 }

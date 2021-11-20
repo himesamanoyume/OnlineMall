@@ -40,18 +40,30 @@ function changeFontSize(){
 function LoginInfoFunc(){
 
     $('#topLoginAfter').hover(function (){
-        $('#topLoginInfo').css('right','20px');
+        $('#topLoginInfo').css('top','50px');
         $('#topLoginInfo').css('height','150px');
         $('#topLoginInfo').css('box-shadow','0 0 0 1px #66ccff');
-        $('#topLoginInfo').css('display','block');
+        // $('#topLoginInfo').css('display','block');
     })
-
     $('#topLoginInfo').mouseleave(function (){
-        $('#topLoginInfo').css('right','-200px');
+        $('#topLoginInfo').css('top','-200px');
         $('#topLoginInfo').css('height','0')
         $('#topLoginInfo').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
         // $('#topLoginInfo').css('display','none');
     })
+    // $('#topLoginAfter').hover(function (){
+    //     $('#topLoginInfo').css('right','20px');
+    //     $('#topLoginInfo').css('height','150px');
+    //     $('#topLoginInfo').css('box-shadow','0 0 0 1px #66ccff');
+    //     $('#topLoginInfo').css('display','block');
+    // })
+    //
+    // $('#topLoginInfo').mouseleave(function (){
+    //     $('#topLoginInfo').css('right','-200px');
+    //     $('#topLoginInfo').css('height','0')
+    //     $('#topLoginInfo').css('box-shadow','0 0 0 0 rgba(0,0,0,0)');
+    //     $('#topLoginInfo').css('display','none');
+    // })
     $('#topLoginInfoLogout').click(function (){
         $.post('/user/logout',{
         },function (res){
@@ -369,49 +381,6 @@ function StockFunc(){
     })
 }
 
-// function UserListQueryData(pageNumber){
-//     var type = $('#searchStatus').val()
-//     var keyword = $('#keyword').val().trim()
-//
-//     var account = ""
-//     var name = ""
-//
-//     if(type == 1){
-//         account = keyword
-//     }else{
-//         name = keyword
-//     }
-//     $.post('/user/queryPage',{
-//         account:account,
-//         name: name,
-//         'page.current': pageNumber,
-//         'page.size': 12,
-//
-//     },function (res){
-//         var index =0;
-//         for(var item of res.records){
-//             index++
-//             var ele = '<tr><td>'+ index+'</td>'+
-//                 '<td>'+item.account+'</td>'+
-//                 '<td>'+(item.name ? item.name : '')+'</td>'+
-//                 '<td>'+typeDic(item.type)+'</td>'+
-//                 '<td>'+item.balance.toFixed(2)+'</td>'+
-//                 '<td>'+(item.address?item.address:'')+'</td>'+
-//                 '<td>'+'<button class="usuallyButton">充值</button>'+'</td></tr>'
-//
-//             $('#table').append($(ele));
-//         }
-//     })
-// }
-// function typeDic(type){
-//     if(type == 0){
-//         return "买家"
-//     }else if(type == 1){
-//         return "卖家"
-//     }else if(type == 2){
-//         return "管理员"
-//     }
-// }
 
 
 

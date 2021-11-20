@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="design.princessdreamland.onlinemall.mapper.UserMapper">
-    <resultMap id="userMap" type="User">
+    <resultMap id="userMap" type="design.princessdreamland.onlinemall.entity.User">
         <id property="userId" column="user_id"/>
             <association property="createUser" columnPrefix="cu_">
                 <id column="user_id" property="userId"/>
@@ -14,7 +14,9 @@
         </association>
 
     </resultMap>
-
+    <resultMap id="userIdMap" type="design.princessdreamland.onlinemall.entity.User">
+        <id property="userId" column="user_id"/>
+    </resultMap>
     <sql id="cols">
         u.user_id,
         u.account,
@@ -91,6 +93,23 @@
         <include refid="where" />
 
         ORDER BY u.user_id DESC
+
+    </select>
+
+
+    <select id="queryById" resultMap="userIdMap">
+        SELECT
+            u.user_id,
+            u.account,
+            u.password,
+            u.name,
+            u.type,
+            u.balance,
+            u.address
+ FROM user u
+
+        where u.user_id = #{userId}
+
 
     </select>
 

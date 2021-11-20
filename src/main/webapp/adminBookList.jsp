@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>图书列表</title>
     <style>
         @import "/css/MyIndexCSS.css";
         @import "/css/divSpace.css";

@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mall</title>
+    <title>网上商城</title>
     <style>
         @import "/css/MyIndexCSS.css";
         @import "/css/divSpace.css";

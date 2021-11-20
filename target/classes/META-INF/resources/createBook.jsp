@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>新建商品</title>
 
     <script src="/js/jquery-3.5.1.min.js" type="text/javascript"></script>
     <script src="/js/Funcs.js" type="text/javascript"></script>
@@ -42,6 +42,7 @@
         .input_item {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-bottom: 15px;
         }
 
@@ -97,42 +98,42 @@
 
 <div class="input_item">
     <div class="input_label">名字</div>
-    <input id = "name" type="text" />
+    <input class="topItem" id = "name" type="text" />
 </div>
 
 <div class="input_item">
     <div class="input_label">价格</div>
-    <input id = "price" type="number" />
+    <input class="topItem" id = "price" type="number" />
 </div>
 
 <div class="input_item">
     <div class="input_label">作者</div>
-    <input id = "author" type="text" />
+    <input class="topItem" id = "author" type="text" />
 </div>
 
 <div class="input_item">
     <div class="input_label">总页数</div>
-    <input id = "amount" type="text" />
+    <input class="topItem" id = "amount" type="text" />
 </div>
 
 <div class="input_item">
     <div class="input_label">简介</div>
-    <textarea id = "txt" rows="" cols="" style="width: 250px; min-height: 100px;" ></textarea>
+    <textarea id = "txt" rows="" cols="" style="width: 250px; min-height: 100px; box-shadow: 0 0 0 1px #66ccff;border: 0;" ></textarea>
 </div>
 
 <div class="input_item">
     <div class="input_label">出版社</div>
-    <input id = "publisher" type="text" />
+    <input class="topItem" id = "publisher" type="text" />
 </div>
 
 <div class="input_item">
     <div class="input_label">出版日期</div>
-    <input id = "publishTime" type="date" />
+    <input class="topItem" id = "publishTime" type="date" />
 </div>
 
 <div class="input_item">
     <div class="input_label">库存</div>
-    <input id = "stock" type="number" />
+    <input class="topItem" id = "stock" type="number" />
 </div>
 
 <div class="input_item">
@@ -150,8 +151,9 @@
 <%--    </div>--%>
 
 </div>
-
-<button id = "submit" style=" margin-top: 20px;margin-left: 130px;width: 70px;height: 26px;line-height: 26px">保存商品</button>
+    <div class="input_item">
+        <button id = "submit"  class="topItem">保存商品</button>
+    </div>
 </div>
 
 

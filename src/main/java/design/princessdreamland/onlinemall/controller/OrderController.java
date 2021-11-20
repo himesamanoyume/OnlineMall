@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-11-12 11:30:26
+ * @LastEditTime: 2021-11-20 16:36:20
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \OnlineMall\src\main\java\design\princessdreamland\onlinemall\controller\OrderController.java
+ */
 package design.princessdreamland.onlinemall.controller;
 
 import cn.hutool.core.collection.CollUtil;
@@ -11,11 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * 订单控制器
- * @author NDZ
- * @version 2021-11-11
- */
 
 @RestController
 @RequestMapping("/order")

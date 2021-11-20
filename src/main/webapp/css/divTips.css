@@ -97,8 +97,27 @@
     padding: 0 20px 0 20px;
     font-size: 50px;
 }
-.spanDes{
+.spanDesRed{
     /*padding: 0px 0 5px 0;*/
+    color: red;
+    width: 100%;
+    word-break: break-all;
+}
+.spanDesGreen{
+    /*padding: 0px 0 5px 0;*/
+    color: green;
+    width: 100%;
+    word-break: break-all;
+}
+.spanDesBlue{
+    /*padding: 0px 0 5px 0;*/
+    color: #66ccff;
+    width: 100%;
+    word-break: break-all;
+}
+.spanDesGray{
+    /*padding: 0px 0 5px 0;*/
+    color: gray;
     width: 100%;
     word-break: break-all;
 }

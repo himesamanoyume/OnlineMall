@@ -27,46 +27,43 @@
 
 
     </style>
-    <title>login</title>
+    <title>登陆</title>
 </head>
 <body>
 <c:set var="urlWhere" value="null"/>
 <div id="top">
     <%@include file="component/top.jsp" %>
 </div>
-<div style="width:300px;height:300px;background-color: white;z-index: 9;margin-top: 200px;margin-left:38%;border-radius: 10px;padding:15px;">
-
-
-    <div style="font-size:20px;font-weight:bold;width:100%;text-align: center;">登录</div>
-    <div style="width:100%;height:1px;background-color: #CCC;margin:10px auto;"></div>
-
-    <div style="width:100%;display: flex;margin-top:30px;line-height:30px;">
-        <div style="width:80px;text-align:right;">
-            账号：
-        </div>
-
-        <input type="text" name="account" placeholder="请输入手机号"/>
-    </div>
-
-    <div style="width:100%;display: flex; margin-top:30px;line-height:30px;">
-        <div style="width:80px;text-align:right;">
-            密码：
-        </div>
-
-        <input type="password" name="password" placeholder="请输入密码"/>
-    </div>
-
-    <div style="width:100%;display: flex; margin-top:30px;line-height:30px;">
-        <div style="width:80px;text-align:right;"></div>
-        <div style="flex:1;text-align: center;">
-            <button style="width:60px;margin:0 auto;display: inline-block;" id="submit">确定</button>
-        </div>
-    </div>
+<div style="width:300px;height:330px;background-color: white;z-index: 9;margin-top: 150px;margin-bottom: 150px;margin-left:38%;border-radius: 10px;padding:15px;box-shadow: 0 0 0 1px #66ccff;">
 
     <div>
-        <a href="/view/reg">注册</a>
-    </div>
+        <div style="font-size:20px;font-weight:bold;width:100%;text-align: center;">登录</div>
+        <div style="width:100%;height:1px;background-color: #66ccff;margin:10px auto;"></div>
 
+        <div style="width:100%;display: flex;margin-top:30px;line-height:70px;">
+            <div style="width:80px;text-align:right;">
+                账号：
+            </div>
+
+            <input class="topItem" type="text" name="account" placeholder="请输入手机号"/>
+        </div>
+
+        <div style="width:100%;display: flex; margin-top:30px;line-height:70px;">
+            <div style="width:80px;text-align:right;">
+                密码：
+            </div>
+
+            <input class="topItem" type="password" name="password" placeholder="请输入密码"/>
+        </div>
+
+        <div style="width:100%;display: flex; margin-top:30px;line-height:70px;justify-content: right">
+            <button id="submit" class="topItem">确定</button>
+
+            <button class="topItem" onclick="window.location.href = '/view/reg'">
+                注册
+            </button>
+        </div>
+    </div>
 </div>
 <%@include file="./component/divFooter.jsp" %>
 </body>

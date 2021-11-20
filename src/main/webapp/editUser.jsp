@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>个人信息</title>
+	<title>编辑个人信息</title>
 
 	<style type="text/css">
 
@@ -23,6 +23,7 @@
 			display: flex;
 			align-items: center;
 			margin-bottom: 15px;
+			justify-content: center;
 		}
 
 		.input_item input {
@@ -138,6 +139,7 @@
 				}, function(res){
 					if(res && res.userId){
 						alert('更新信息成功')
+						location.href = "/view/editUser"
 					}
 				}).fail(function(res){
 					alert(res.responseJSON.message)
@@ -174,37 +176,38 @@
 	修改个人信息
 
 </div>
-<div style="width:100%;height:100%;">
+<div style="width:100%;">
 
 
 
-	<div style="width:1180px;min-height:100%;margin:0 auto;padding:60px 10px;
-		background-color: #DDD;">
+	<div style="width:1180px;min-height:100%;margin:0 auto;padding:60px 10px;">
 
 		<div class="input_item">
 			<div class="input_label">昵称：</div>
-			<input name="name" type="text" value="${user.name}" />
+			<input class="topItem" name="name" type="text" value="${sessionScope.user.name}" />
 		</div>
 
 		<div class="input_item">
 			<div class="input_label">地址：</div>
-			<input name="address" type="text" value="${user.address}" />
+			<input class="topItem" name="address" type="text" value="${sessionScope.user.address}" />
 		</div>
 
 
 		<div class="input_item">
 			<div class="input_label">新密码：</div>
-			<input name="password" type="password" value="" placeholder="新密码不少于6位"/>
+			<input class="topItem" name="password" type="password" value="" placeholder="新密码不少于6位"/>
 		</div>
 
 		<div class="input_item">
 			<div class="input_label">确认密码：</div>
-			<input name="confirmPassword" type="password" value="" placeholder="请确认密码"/>
+			<input class="topItem" name="confirmPassword" type="password" value="" placeholder="请确认密码"/>
+		</div>
+		<div class="input_item">
+			<button id="submit"  class="topItem">保存昵称和地址</button>
+			<button id="submit2"  class="topItem">修改密码</button>
 		</div>
 
 
-		<button id="submit" style="margin-left: 130px;width:130px;height:26px;line-height: 26px;margin-top:30px;">保存昵称和地址</button>
-		<button id="submit2" style="margin-left: 130px;width:70px;height:26px;line-height: 26px;margin-top:30px;">修改密码</button>
 	</div>
 
 </div>

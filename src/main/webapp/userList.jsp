@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mall</title>
+    <title>用户列表</title>
     <style>
         @import "/css/MyIndexCSS.css";
         @import "/css/divSpace.css";
@@ -25,18 +25,6 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-        }
-
-        .menu_item {
-            margin-top:5px;
-            margin-bottom: 15px;
-            cursor: pointer;
-        }
-
-        .top_menu {
-            margin-right:25px;
-            color: #333;
-            cursor: pointer;
         }
 
         .cell {
@@ -108,7 +96,7 @@
                         + '<div class="cell" style="width:100px;">' + typeDic(item.type) + '</div>'
                         + '<div class="cell" style="width:100px;">' + item.balance.toFixed(2) + '</div>'
                         + '<div class="cell" style="flex:1;">' + (item.address ? item.address : '') + '</div>'
-                        + '<div class="cell" style="width:250px;display: flex;">'
+                        + '<div class="cell" style="width:250px;display: flex;justify-content: center">'
                         + '		<button class="charge">充值</button>'
                         + '</div>'
                         + '</div>'
@@ -157,9 +145,6 @@
                         $('.mask').css('display', 'block')
                     }
                 })
-
-
-
             })
 
             $('#black_mask').click(function(){
@@ -212,7 +197,7 @@
 
 </div>
 
-<div style="width:1180px;min-height:100%;margin:0 auto;padding:110px 10px;background-color: #DDD;">
+<div style="width:1180px;min-height:100%;margin:0 auto;padding:110px 10px;">
 
     <div style="width:100%;height:35px;line-height: 35px;background-color: #006666;display: flex;color:white;text-align: center;">
         <div class="cell" style="width:50px;">序号</div>
@@ -239,6 +224,7 @@
 
     </div>
 
+    <button id="regUser" class="topItem" onclick="window.location.href = '/view/reg'">新增用户</button>
 
     <div style="width: 100%;height:40px;line-height: 40px;display: flex;align-items: center;margin-top:20px;">
         <div style="flex:1;"></div>
@@ -291,6 +277,7 @@
 
     </div>
 </div>
+
 
 <%@include file="./component/divFooter.jsp" %>
 </body>

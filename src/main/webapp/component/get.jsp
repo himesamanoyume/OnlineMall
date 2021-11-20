@@ -40,22 +40,22 @@
                 </div>
                 <c:if test="${item.status==1}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：未提交</span>
+                        <span class="spanDesGray">状态：未提交</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==2}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：未审核</span>
+                        <span class="spanDesGreen">状态：未审核</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==3}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：上架</span>
+                        <span class="spanDesBlue">状态：上架</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==4}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：下架</span>
+                        <span class="spanDesRed">状态：下架</span>
                     </div>
                 </c:if>
             </c:if>
@@ -63,22 +63,22 @@
             <c:if test="${sessionScope.user!=null and sessionScope.user.type == 2 and urlWhere == 'adminBookList'}">
                 <c:if test="${item.status==1}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：未提交</span>
+                        <span class="spanDesGray">状态：未提交</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==2}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：未审核</span>
+                        <span class="spanDesGreen">状态：未审核</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==3}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：上架</span>
+                        <span class="spanDesBlue">状态：上架</span>
                     </div>
                 </c:if>
                 <c:if test="${item.status==4}">
                     <div class="divTipsTxt">
-                        <span class="spanDes">状态：下架</span>
+                        <span class="spanDesRed">状态：下架</span>
                     </div>
                 </c:if>
             </c:if>

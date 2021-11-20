@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>DuangDuang</title>
+	<title>我的订单</title>
 
 	<style type="text/css">
 
@@ -127,7 +127,7 @@
 								+ '<div class="cell" style="flex:1;">' + (item.address ? item.address : '')  + '</div>'
 								+ '<div class="cell" style="width:120px;">' +  (item.waybill ? item.waybill : '') + '</div>'
 								+ '<div class="cell" style="width:80px;">' +  statusDic(item.status) + '</div>'
-								+ '<div class="cell" style="width:150px;display: flex;">';
+								+ '<div class="cell" style="width:150px;display: flex;justify-content: center">';
 						+ '	<button style="height:26px;line-height: 26px;">确认收货</button>'
 
 						if(userType==0){
@@ -332,7 +332,7 @@
 </div>
 <div style="width:100%;height:100%;">
 
-	<div style="width:1180px;min-height:100%;margin:0 auto;padding:110px 10px;background-color: #DDD;">
+	<div style="width:1180px;min-height:100%;margin:0 auto;padding:110px 10px;">
 
 		<div style="width:100%;height:35px;line-height: 35px;background-color: #006666;display: flex;color:white;text-align: center;">
 			<div class="cell" style="width:50px;">序号</div>

@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>我的商品</title>
     <style>
         @import "/css/MyIndexCSS.css";
         @import "/css/divSpace.css";
@@ -39,7 +39,7 @@
 
 <div id="title">
 
-    我的图书
+    我的商品
 
 </div>
 

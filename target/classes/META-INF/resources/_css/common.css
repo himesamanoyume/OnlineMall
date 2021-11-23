@@ -11,7 +11,6 @@ html, body {
 @media screen and (max-width: 975px){
     .home-container {
         flex-direction: column-reverse;
-
     }
 }
 
@@ -23,6 +22,7 @@ html, body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    /*height: 100%;*/
     max-width: 975px;
 }
 .post-container{
@@ -38,10 +38,13 @@ html, body {
 .info-container{
     padding: 5px 20px 5px 20px;
     /*width: 200px;*/
+    top: 70px;
     height: 100%;
     min-width: 200px;
+    position: sticky;
 }
 .info-container .info{
+
     border: 0;
     background-color: rgb(38,38,38);
     width: 100%;
@@ -52,16 +55,17 @@ html, body {
 }
 
 .info-container .info-link{
+
     border: 0;
     background-color: rgb(38,38,38);
     width: 100%;
     height: 40px;
     border-radius: 3px;
     box-shadow: 0px 0px 0 1px gray ;
-    /*margin-bottom: 10px;*/
 }
 
 .post-container .post{
+    transition-duration: 0.3s;
     background-color: rgb(38,38,38);
     cursor: pointer;
     display: block;
@@ -70,5 +74,18 @@ html, body {
     width: 100%;
     border: 0;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px gray ;
+    box-shadow: 0px 0px 0 1px dimgray;
 }
+
+.post:hover{
+    box-shadow: 0px 0px 0 2px #66ccff;
+}
+
+.topTitle{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(38,38,38);
+}
+

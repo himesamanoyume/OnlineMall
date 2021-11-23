@@ -71,7 +71,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         }
 
 //        page.setSize(3);
-        page.setSize(8);
+        page.setSize(20);
 
 
         return baseMapper.queryPage(page, book);

@@ -9,13 +9,12 @@
     animation-duration: 0.1s;
     transition-duration: 0.1s;
     width: 100%;
-    /*justify-content: center;*/
     z-index: 9999;
-    /*display: inline-flex;*/
     position: sticky;
 }
 .nav{
     display: flex;
+    top: 0;
     height: 60px;
     line-height: 60px;
     color: snow;
@@ -27,5 +26,24 @@
 }
 
 .nav .nav-link{
-    padding: 0 10px 0 10px;
+    padding: 0 15px 0 15px;
+    justify-content: center;
+    transition-duration: 0.3s;
+}
+.nav-link:hover > .hover-bar{
+    width: 100%;
+}
+
+.nav-link:hover{
+    color: #66ccff;
+}
+
+.nav-link .hover-bar{
+    width: 0%;
+    margin: 0 auto;
+    height: 1px;
+    bottom: 0;
+    background-color: #66ccff;
+    float: bottom;
+    transition-duration: 0.3s;
 }

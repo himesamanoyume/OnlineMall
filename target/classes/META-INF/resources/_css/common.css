@@ -1,52 +1,72 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 html, body {
     width: 100%;
     height: 100%;
     background-color: #333333;
 }
+@media screen and (max-width: 975px){
+    .home-container {
+        flex-direction: column-reverse;
 
-.container{
-    margin-top: 30px;
-    /*background-color: red;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*display: inline-flex;*/
-    /*flex-wrap: wrap;*/
+    }
+}
 
+.main{
+    /*margin-top: 30px;*/
+    display: block;
 }
 .home-container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 975px;
 }
 .post-container{
-    width: 700px;
-    min-width: 400px;
+    width: 100%;
+    /*width: 90%;*/
+    /*min-width: 400px;*/
+    height: 100%;
     border: 0;
+    padding: 5px 20px 5px 20px;
     /*margin-left: 20%;*/
     border-radius: 3px;
 }
 .info-container{
-    margin-left: 20px;
-    width: 200px;
+    padding: 5px 20px 5px 20px;
+    /*width: 200px;*/
+    height: 100%;
     min-width: 200px;
 }
 .info-container .info{
     border: 0;
+    background-color: rgb(38,38,38);
     width: 100%;
-    height: 500px;
+    height: 250px;
     border-radius: 3px;
     box-shadow: 0px 0px 0 1px gray ;
+    margin-bottom: 10px;
+}
+
+.info-container .info-link{
+    border: 0;
+    background-color: rgb(38,38,38);
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0 1px gray ;
+    /*margin-bottom: 10px;*/
 }
 
 .post-container .post{
+    background-color: rgb(38,38,38);
     cursor: pointer;
     display: block;
-    margin-bottom: 20px;
-    height: 200px;
+    margin-bottom: 10px;
+    height: 250px;
     width: 100%;
     border: 0;
     border-radius: 3px;

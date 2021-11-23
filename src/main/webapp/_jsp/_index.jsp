@@ -28,22 +28,27 @@
     <header class="header">
         <nav class="nav">
             <div class="blogName">HimeBlog</div>
+            <a class="nav-link">蛤蛤</a>
+            <a class="nav-link">蛤蛤</a>
+            <a class="nav-link">蛤蛤</a>
+            <a class="nav-link">蛤蛤</a>
         </nav>
     </header>
 
-    <div class="container">
+    <main class="main">
         <div class="home-container">
             <div class="post-container">
                 <div class="post"></div>
                 <div class="post"></div>
                 <div class="post"></div>
             </div>
-            <div class="info-container">
+            <aside class="info-container">
                 <div class="info"></div>
-            </div>
+                <div class="info-link"></div>
+            </aside>
         </div>
 
-    </div>
+    </main>
 
 </body>
 </html>

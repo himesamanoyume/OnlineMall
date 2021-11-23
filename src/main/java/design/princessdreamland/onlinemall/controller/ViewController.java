@@ -36,6 +36,13 @@ public class ViewController {
         return "/index.jsp";
     }
 
+    @GetMapping("/_index")
+    @RequestLog(action="首页页面")
+    public String _index(String type,Model model, String currentPage){
+
+        return "/_index.jsp";
+    }
+
     @GetMapping("/login")
     public String login(){
         return "/login.jsp";

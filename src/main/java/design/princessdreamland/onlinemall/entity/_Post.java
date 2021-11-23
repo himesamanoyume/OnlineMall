@@ -1,0 +1,15 @@
+package design.princessdreamland.onlinemall.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
+
+@Data
+public class _Post extends BaseEntity<_Post>{
+    @TableId(type = IdType.AUTO)
+    private Integer postId;
+    private String title;
+    private String article;
+    private Integer type;
+
+}

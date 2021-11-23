@@ -6,7 +6,6 @@ import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
 import design.princessdreamland.onlinemall.service.BookService;
-import design.princessdreamland.onlinemall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,8 +32,16 @@ public class ViewController {
         model.addAttribute("currentPage",bookPage.getCurrent());
         model.addAttribute("totalPages",bookPage.getPages());
 
-        return "/index.jsp";
+        return "index.jsp";
     }
+
+//    @GetMapping("/_index")
+//    @RequestLog(action="首页页面")
+//    public String _index(String type, Model model, String currentPage){
+//
+//
+//        return "_index.jsp";
+//    }
 
     @GetMapping("/login")
     public String login(){

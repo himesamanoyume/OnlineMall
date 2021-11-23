@@ -19,7 +19,7 @@ public class IndexController {
 
     @GetMapping("/")
     public void index(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/view/index");
+        response.sendRedirect("/view/_index");
     }
 
 

@@ -32,14 +32,14 @@ public class ViewController {
         model.addAttribute("currentPage",bookPage.getCurrent());
         model.addAttribute("totalPages",bookPage.getPages());
 
-        return "index.jsp";
+        return "/index.jsp";
     }
 
     @GetMapping("/_index")
     @RequestLog(action="首页页面")
     public String _index(String type,Model model, String currentPage){
 
-        return "/_index.jsp";
+        return "/_jsp/_index.jsp";
     }
 
     @GetMapping("/login")

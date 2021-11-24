@@ -44,12 +44,36 @@ public class ViewController {
     @RequestLog(action="首页页面")
     public String _index(String type,Model model, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchIndexPage(type,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
 
         return "/_jsp/_index.jsp";
+    }
+
+    @GetMapping("/post")
+    @RequestLog(action="文章页面")
+    public String post(String type, Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_post.jsp";
+    }
+
+    @GetMapping("/project")
+    @RequestLog(action="项目页面")
+    public String project(String type,Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_project.jsp";
     }
 
     @GetMapping("/login")

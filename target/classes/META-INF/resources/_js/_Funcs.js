@@ -1,0 +1,23 @@
+function navFunc(){
+    $('#nav-index').click(function(){
+        location.href="/view/_index"
+    })
+    $('#nav-post').click(function(){
+        location.href="/view/post?type=1&currentPage=1"
+    })
+    $('#nav-project').click(function(){
+        location.href="/view/project?type=2&currentPage=1"
+    })
+    $('#nav-note').click(function(){
+        location.href="/view/note?type=3&currentPage=1"
+    })
+    $('#nav-tools').click(function(){
+        location.href="/view/tools?type=4&currentPage=1"
+    })
+    $('#nav-tags').click(function(){
+        location.href="/view/tags?type=5&currentPage=1"
+    })
+    $('#nav-resume').click(function(){
+        location.href="/view/resume"
+    })
+}

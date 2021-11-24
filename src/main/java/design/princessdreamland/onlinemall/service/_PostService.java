@@ -8,5 +8,7 @@ import design.princessdreamland.onlinemall.entity._Post;
 public interface _PostService extends IService<_Post> {
     IPage<_Post> queryPage(Page<_Post> page, _Post post);
 
+    IPage<_Post> searchIndexPage(String type, String currentPage);
+
     IPage<_Post> searchPage(String type, String currentPage);
 }

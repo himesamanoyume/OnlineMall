@@ -18,7 +18,7 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     }
 
     @Override
-    public IPage<_Post> searchPage(String type, String currentPage){
+    public IPage<_Post> searchIndexPage(String type, String currentPage){
         _Post post = new _Post();
 
         Page<_Post> page = new Page<>();
@@ -27,6 +27,24 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
         }
 
         page.setSize(5);
+
+        return baseMapper.queryPage(page,post);
+    }
+
+    @Override
+    public IPage<_Post> searchPage(String type, String currentPage){
+        _Post post = new _Post();
+
+        if (StrUtil.isNotEmpty(type)){
+            post.setTypeId(new Integer(type));
+        }
+
+        Page<_Post> page = new Page<>();
+        if (StrUtil.isNotEmpty(currentPage)){
+            page.setCurrent(new Integer(currentPage));
+        }
+
+        page.setSize(10);
 
         return baseMapper.queryPage(page,post);
     }

@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>HimeBlog</title>
     <style>
         @import "/_css/common.css";
         @import "/_css/header.css";
@@ -23,7 +23,7 @@
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         window.onload=function (){
-
+            navFunc();
         }
         window.onresize=function(){
 
@@ -35,39 +35,14 @@
 </head>
 <body>
     <main class="main">
-        <header class="header">
-            <nav class="nav">
-                <div class="blogName">HimeBlog</div>
-                <div class="nav-container">
-                    <div class="nav-link">主页
-                        <div class="hover-bar"></div>
-                    </div>
-                    <div class="nav-link">简历
-                        <div class="hover-bar"></div>
-                    </div>
-                    <div class="nav-link">项目
-                        <div class="hover-bar"></div>
-                    </div>
-                    <div class="nav-link">笔记
-                        <div class="hover-bar"></div>
-                    </div>
-                    <div class="nav-link">工具
-                        <div class="hover-bar"></div>
-                    </div>
-                    <div class="nav-link">标签
-                        <div class="hover-bar"></div>
-                    </div>
-                </div>
-
-            </nav>
-        </header>
-        <div class="topTitle">
-            HimeBlog
-        </div>
+        <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
                 <div class="main-post">
 
+                </div>
+                <div class="newest-title">
+                    最新文章
                 </div>
                 <div class="post">
                     <img src="/_jsp/test.png">
@@ -80,41 +55,13 @@
 
                     </div>
                 </div>
-                <c:forEach items="${postList}" var="item">
-                    <div class="post">
-                        <img>
-                        <div class="post-txt-container">
-                            <div class="post-txt-container-title">
-                                    ${item.title}
-                            </div>
-                            <div class="post-txt-container-introduction">
-                                    ${item.introduction}
-                            </div>
-                            <div class="post-txt-container-datetime">
-                                    ${item.publishTime}
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-                
+                <%@include file="../_component/_get.jsp" %>
+
             </div>
-            <aside class="info-container">
-                <div class="info-container-inner">
-                    <div class="info">
-                        <img src="/_jsp/usericon.png" class="info-icon">
-                        <div class="info-name">姫様の夢</div>
-                        <div class="info-txt">Princess Dreamland</div>
-                    </div>
-                    <div class="info-link"></div>
-                </div>
-
-            </aside>
+            <%@include file="../_component/_info.jsp" %>
         </div>
 
-        <div class="footer">
-            &nbsp;&nbsp;&nbsp;Copyright 2021©  &nbsp; @姫様の夢 &nbsp;&nbsp;&nbsp;
-            <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008786号</a>
-        </div>
+        <%@include file="../_component/_footer.jsp" %>
     </main>
 
 

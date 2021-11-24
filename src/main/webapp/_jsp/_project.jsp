@@ -38,12 +38,6 @@
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
-                <div class="main-post">
-
-                </div>
-                <div class="newest-title">
-                    最新文章
-                </div>
                 <div class="post">
                     <img src="/_jsp/test.png">
                     <div class="post-txt-container">
@@ -56,7 +50,7 @@
                     </div>
                 </div>
                 <%@include file="../_component/_get.jsp" %>
-
+                <%@include file="../_component/_page.jsp" %>
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>

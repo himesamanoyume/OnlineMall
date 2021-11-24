@@ -10,6 +10,7 @@ public class _Post extends BaseEntity<_Post>{
     private Integer postId;
     private String title;
     private String article;
-    private Integer type;
-
+    private String introduction;
+    private String publishTime;
+    private Integer typeId;
 }

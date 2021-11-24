@@ -9,56 +9,55 @@
 	</resultMap>
 
 <sql id="cols">
-	o.ord_id,
-	o.book_id,
-	o.buyer_id,
-	o.seller_id,
-	o.price,
-	o.amount,
-	o.total,
-	o.status,
-	o.address,
-	o.waybill,
-	o.deleted,
-	o.create_user_id,
-	o.create_time,
-	o.update_user_id,
-	o.update_time,
-
+	post_id,
+	title,
+	article,
+	introduction,
+	publish_time,
+	type_id,
+	deleted,
+	create_user_id,
+	create_time,
+	update_user_id,
+	update_time
 </sql>
 
 
 <sql id="where">
 	<where>
-		<if test="order!=null" >
-			<if test="order.ordId!=null and order.ordId!='' ">
-				AND o.ord_id = #{order.ordId}
-			</if>
-			<if test="order.bookId!=null and order.bookId!='' ">
-				AND o.book_id = #{order.bookId}
-			</if>
-			<if test="order.buyerId!=null and order.buyerId!='' ">
-				AND o.buyer_id = #{order.buyerId}
-			</if>
-			<if test="order.sellerId!=null and order.sellerId!='' ">
-				AND o.seller_id = #{order.sellerId}
-			</if>
-			<if test="order.status!=null and order.status!='' ">
-				AND o.status = #{order.status}
-			</if>
-			
-			<if test="order.book!=null">
-				<if test="order.book.name!=null and order.book.name!='' ">
-					AND b.name LIKE CONCAT('%', #{order.book.name}, '%')
-				</if>
 
+		<if test="_post!=null and _post!='' " >
+			<if test="_post.postId!=null and _post.postId!='' ">
+				AND postId = #{_post.postId}
+			</if>
+			<if test="_post.title!=null and _post.title!='' ">
+				AND title LIKE CONCAT('%',#{_post.title},'%')
+			</if>
+			<if test="_post.article!=null and _post.article!='' ">
+				AND article LIKE CONCAT('%',#{_post.article},'%')
+			</if>
+			<if test="_post.introduction!=null and _post.introduction!='' ">
+				AND introduction LIKE CONCAT('%',#{_post.introduction},'%')
+			</if>
+			<if test="_post.typeId!=null and _post.typeId!='' ">
+				AND type_id = #{_post.typeId}
+			</if>
+			<if test="_post.publishTime!=null and _post.publishTime!='' ">
+				AND _post.publish_time LIKE CONCAT('%',#{_post.publishTime},'%')
 			</if>			
 		</if>
 	
 	</where>
 </sql>
 
+	<select id="queryPage" resultMap="_postMap" >
+		SELECT
+		<include refid="cols" />
+		FROM post
+		<include refid="where" />
 
+		ORDER BY post_id DESC
+	</select>
 
 
 

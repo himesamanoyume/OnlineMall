@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.User;
+import design.princessdreamland.onlinemall.entity._Post;
 import design.princessdreamland.onlinemall.service.BookService;
+import design.princessdreamland.onlinemall.service._PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,9 @@ public class ViewController {
 
     @Autowired
     private BookService bookService;
+
+    @Autowired
+    private _PostService postService;
 
     @GetMapping("/index")
     @RequestLog(action="首页页面")
@@ -38,6 +43,11 @@ public class ViewController {
     @GetMapping("/_index")
     @RequestLog(action="首页页面")
     public String _index(String type,Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
 
         return "/_jsp/_index.jsp";
     }

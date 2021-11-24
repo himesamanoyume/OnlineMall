@@ -80,32 +80,23 @@
 
                     </div>
                 </div>
-                <div class="post">
-                    <img>
-                    <div class="post-txt-container">
-                        <div class="post-txt-container-title">
-
+                <c:forEach items="${postList}" var="item">
+                    <div class="post">
+                        <img>
+                        <div class="post-txt-container">
+                            <div class="post-txt-container-title">
+                                    ${item.title}
+                            </div>
+                            <div class="post-txt-container-introduction">
+                                    ${item.introduction}
+                            </div>
+                            <div class="post-txt-container-datetime">
+                                    ${item.publishTime}
+                            </div>
                         </div>
-                        <div class="post-txt-container-introduction">
-
-                        </div>
-                        <div class="post-txt-container-datetime">
-
-                        </div>
-
                     </div>
-                </div>
-                <div class="post">
-
-                </div>
-                <div class="post">
-
-                </div>
-                <div class="post"></div>
-                <div class="post"></div>
-                <div class="post"></div>
-                <div class="post"></div>
-                <div class="post"></div>
+                </c:forEach>
+                
             </div>
             <aside class="info-container">
                 <div class="info-container-inner">

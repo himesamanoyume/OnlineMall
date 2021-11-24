@@ -136,13 +136,14 @@ html, body {
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
-    min-height: 300px;
+    min-height: 100px;
     width: 100%;
     border: 0;
     border-radius: 3px;
     box-shadow: 0px 0px 0 1px #404040;
-    position: relative;
+
 }
+
 .post-container .main-post{
     transition-duration: 0.3s;
     background-color: rgb(38,38,38);
@@ -163,12 +164,12 @@ html, body {
     top: 0;
     vertical-align:bottom;
     display: block;
-    height: 70%;
+    height: 200px;
     width: 100%;
     float: top;
     z-index: 1;
     /*box-shadow: 0px 0px 0 1px #262626;*/
-    position: absolute;
+
 }
 
 .post .post-txt-container{
@@ -176,11 +177,32 @@ html, body {
     z-index: 2;
     width: 100%;
     float: bottom;
-    height: 50%;
+    padding: 0 25px 0 25px;
+    min-height: 100px;
     border-radius: 0 0 3px 3px;
     box-shadow: 0px 0px 0 1px #404040;
     background-color: rgb(38,38,38);
-    position: absolute;
+
+}
+
+.post-txt-container .post-txt-container-title{
+    color: snow;
+    font-size: 25px;
+    width: 100%;
+    line-height: 80px;
+}
+
+.post-txt-container .post-txt-container-datetime{
+    color: snow;
+    font-size: 9px;
+    width: 100%;
+    line-height: 60px;
+}
+.post-txt-container .post-txt-container-introduction{
+    color: snow;
+    font-size: 15px;
+    width: 100%;
+    line-height: 1.5;
 }
 
 .post:hover{

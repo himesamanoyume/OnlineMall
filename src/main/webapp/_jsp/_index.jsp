@@ -70,7 +70,7 @@
 
                 </div>
                 <div class="post">
-                    <img src="/_jsp/usericon.png">
+                    <img src="/_jsp/test.png">
                     <div class="post-txt-container">
                         <div class="post-txt-container-title">测试标题测试标题测试标题</div>
                         <div class="post-txt-container-introduction">

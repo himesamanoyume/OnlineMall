@@ -9,26 +9,38 @@ html, body {
     background-color: #333333;
     line-height: 1.5;
 }
-@media screen and (max-width: 975px){
+@media screen and (max-width: 990px){
     .home-container {
         flex-direction: column-reverse;
     }
-}
-@media screen and (max-width: 975px){
     .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
+        position: inherit;
     }
-}
-@media screen and (max-width: 975px){
     .main>.home-container>.post-container{
         padding: 5px 15px 5px 15px;
     }
+    .main>.topTitle{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 50px;
+        line-height: 200px;
+        color: snow;
+        width: 100%;
+        transition-duration: 0.6s;
+        height: 200px;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+    }
+
 }
 
 
 
 .main{
-    /*margin-top: 30px;*/
     display: block;
 }
 .home-container{
@@ -90,7 +102,7 @@ html, body {
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
-    height: 250px;
+    height: 300px;
     width: 100%;
     border: 0;
     border-radius: 3px;
@@ -101,7 +113,7 @@ html, body {
     box-shadow: 0px 0px 0 2px #66ccff;
 }
 
-.topTitleClose{
+.topTitle{
     margin:0 auto;
     text-align: center;
     font-size: 50px;
@@ -112,22 +124,7 @@ html, body {
     transition-duration: 0.6s;
     /*background-color: rgb(38,38,38);*/
 }
-.topTitleOpen{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    font-size: 50px;
-    line-height: 200px;
-    color: snow;
-    width: 100%;
-    transition-duration: 0.6s;
-    height: 200px;
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-}
 
-.topTitleOpen:hover{
+.topTitle:hover{
     color: #66ccff;
 }

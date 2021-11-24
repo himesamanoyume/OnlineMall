@@ -23,24 +23,22 @@
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         window.onload=function (){
-            changeClientWidth();
+
         }
         window.onresize=function(){
-            changeClientWidth();
+
         }
         window.onscroll=function (){
-            changeClientWidth();
+
         }
     </script>
 </head>
-<body data-section="index">
-
-
+<body>
     <main class="main">
         <header class="header">
             <nav class="nav">
-                <div id="blogName" class="blogName">HimeBlog</div>
-                <div id="nav-container" class="nav-container">
+                <div class="blogName">HimeBlog</div>
+                <div class="nav-container">
                     <a class="nav-link">蛤蛤
                         <div class="hover-bar"></div>
                     </a>
@@ -57,7 +55,7 @@
 
             </nav>
         </header>
-        <div id="topTitle" class="topTitleClose">
+        <div class="topTitle">
             HimeBlog
         </div>
         <div class="home-container">

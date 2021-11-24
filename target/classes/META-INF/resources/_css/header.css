@@ -1,4 +1,24 @@
-
+@media screen and (max-width: 990px){
+    .main>.header>.nav>.blogName{
+        padding: 0;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        width: 0;
+        font-size: 25px;
+        transition-duration: 0.2s;
+        color: rgba(0,0,0,0);
+    }
+    .main>.header>.nav>.nav-container{
+        display: flex;
+        display: -webkit-flex;
+        margin:0 auto;
+        width: 80%;
+        justify-content: space-around;
+        transition-duration: 0.4s;
+    }
+}
 .header{
     background-color: rgba(38,38,38,0.35);
     backdrop-filter: blur(4px);
@@ -32,18 +52,6 @@
     -webkit-user-select: none;
     transition-duration: 0.2s;
 }
-.nav .blogName2{
-    padding: 0;
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    width: 0;
-    font-size: 25px;
-    transition-duration: 0.2s;
-    color: rgba(0,0,0,0);
-    /*position: absolute;*/
-}
 
 .blogName:hover{
     color: #66ccff;
@@ -53,14 +61,7 @@
     display: -webkit-flex;
     transition-duration: 0.4s;
 }
-.nav-container2{
-    display: flex;
-    display: -webkit-flex;
-    margin:0 auto;
-    width: 80%;
-    justify-content: space-around;
-    transition-duration: 0.4s;
-}
+
 .nav-link{
     padding: 0 15px 0 15px;
     cursor: pointer;

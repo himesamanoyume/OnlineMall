@@ -7,12 +7,25 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #333333;
+    line-height: 1.5;
 }
 @media screen and (max-width: 975px){
     .home-container {
         flex-direction: column-reverse;
     }
 }
+@media screen and (max-width: 975px){
+    .main>.home-container>.info-container{
+        padding: 5px 15px 5px 15px;
+    }
+}
+@media screen and (max-width: 975px){
+    .main>.home-container>.post-container{
+        padding: 5px 15px 5px 15px;
+    }
+}
+
+
 
 .main{
     /*margin-top: 30px;*/
@@ -20,6 +33,7 @@ html, body {
 }
 .home-container{
     display: flex;
+    display: -webkit-flex;
     margin-left: auto;
     margin-right: auto;
     /*height: 100%;*/
@@ -28,22 +42,28 @@ html, body {
 .post-container{
     width: 100%;
     /*width: 90%;*/
-    /*min-width: 400px;*/
+    min-width: 400px;
     height: 100%;
     border: 0;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 5px 5px 15px;
     /*margin-left: 20%;*/
     border-radius: 3px;
 }
 .info-container{
-    padding: 5px 20px 5px 20px;
-    /*width: 200px;*/
-    top: 70px;
+    padding: 5px 15px 5px 5px;
+    /*min-width: 400px;*/
+    top: 60px;
     height: 100%;
     min-width: 200px;
     position: sticky;
 }
-.info-container .info{
+
+.info-container-inner{
+    height: 100%;
+
+}
+
+.info{
 
     border: 0;
     background-color: rgb(38,38,38);
@@ -54,7 +74,7 @@ html, body {
     margin-bottom: 10px;
 }
 
-.info-container .info-link{
+.info-link{
 
     border: 0;
     background-color: rgb(38,38,38);
@@ -81,11 +101,33 @@ html, body {
     box-shadow: 0px 0px 0 2px #66ccff;
 }
 
-.topTitle{
+.topTitleClose{
+    margin:0 auto;
+    text-align: center;
+    font-size: 50px;
+    line-height: 200px;
+    color: #333333;
+    width: 100%;
+    height: 0;
+    transition-duration: 0.6s;
+    /*background-color: rgb(38,38,38);*/
+}
+.topTitleOpen{
     margin-top: 5px;
     margin-bottom: 5px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 200px;
+    color: snow;
     width: 100%;
+    transition-duration: 0.6s;
     height: 200px;
-    background-color: rgb(38,38,38);
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
 
+.topTitleOpen:hover{
+    color: #66ccff;
+}

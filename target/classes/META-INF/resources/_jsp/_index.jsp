@@ -23,39 +23,42 @@
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         window.onload=function (){
-            changeInfoContainerPosition();
+            changeClientWidth();
         }
         window.onresize=function(){
-            changeInfoContainerPosition();
+            changeClientWidth();
         }
         window.onscroll=function (){
-            changeInfoContainerPosition();
+            changeClientWidth();
         }
     </script>
 </head>
-<body>
+<body data-section="index">
 
 
     <main class="main">
         <header class="header">
             <nav class="nav">
-                <div class="blogName">HimeBlog</div>
-                <a class="nav-link">蛤蛤
-                    <div class="hover-bar"></div>
-                </a>
-                <a class="nav-link">蛤蛤
-                    <div class="hover-bar"></div>
-                </a>
-                <a class="nav-link">蛤蛤
-                    <div class="hover-bar"></div>
-                </a>
-                <a class="nav-link">蛤蛤
-                    <div class="hover-bar"></div>
-                </a>
+                <div id="blogName" class="blogName">HimeBlog</div>
+                <div id="nav-container" class="nav-container">
+                    <a class="nav-link">蛤蛤
+                        <div class="hover-bar"></div>
+                    </a>
+                    <a class="nav-link">蛤蛤
+                        <div class="hover-bar"></div>
+                    </a>
+                    <a class="nav-link">蛤蛤
+                        <div class="hover-bar"></div>
+                    </a>
+                    <a class="nav-link">蛤蛤
+                        <div class="hover-bar"></div>
+                    </a>
+                </div>
+
             </nav>
         </header>
-        <div class="topTitle">
-
+        <div id="topTitle" class="topTitleClose">
+            HimeBlog
         </div>
         <div class="home-container">
             <div class="post-container">
@@ -70,7 +73,7 @@
                 <div class="post"></div>
             </div>
             <aside class="info-container">
-                <div>
+                <div class="info-container-inner">
                     <div class="info"></div>
                     <div class="info-link"></div>
                 </div>

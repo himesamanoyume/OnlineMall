@@ -6,3 +6,10 @@
     color: snow;
     text-align: center;
 }
+.footer > a{
+    text-decoration: none;
+    color: #66ccff;
+}
+.footer > a:hover{
+    text-decoration: underline;
+}

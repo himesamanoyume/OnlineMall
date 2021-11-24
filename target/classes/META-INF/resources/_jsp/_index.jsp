@@ -39,18 +39,24 @@
             <nav class="nav">
                 <div class="blogName">HimeBlog</div>
                 <div class="nav-container">
-                    <a class="nav-link">蛤蛤
+                    <div class="nav-link">主页
                         <div class="hover-bar"></div>
-                    </a>
-                    <a class="nav-link">蛤蛤
+                    </div>
+                    <div class="nav-link">简历
                         <div class="hover-bar"></div>
-                    </a>
-                    <a class="nav-link">蛤蛤
+                    </div>
+                    <div class="nav-link">项目
                         <div class="hover-bar"></div>
-                    </a>
-                    <a class="nav-link">蛤蛤
+                    </div>
+                    <div class="nav-link">笔记
                         <div class="hover-bar"></div>
-                    </a>
+                    </div>
+                    <div class="nav-link">工具
+                        <div class="hover-bar"></div>
+                    </div>
+                    <div class="nav-link">标签
+                        <div class="hover-bar"></div>
+                    </div>
                 </div>
 
             </nav>
@@ -60,10 +66,22 @@
         </div>
         <div class="home-container">
             <div class="post-container">
-                <div class="post"></div>
-                <div class="post"></div>
-                <div class="post"></div>
-                <div class="post"></div>
+                <div class="main-post">
+
+                </div>
+                <div class="post">
+                    <img src="/_jsp/usericon.png">
+                    <div class="post-txt-container"></div>
+                </div>
+                <div class="post">
+
+                </div>
+                <div class="post">
+
+                </div>
+                <div class="post">
+
+                </div>
                 <div class="post"></div>
                 <div class="post"></div>
                 <div class="post"></div>
@@ -72,7 +90,11 @@
             </div>
             <aside class="info-container">
                 <div class="info-container-inner">
-                    <div class="info"></div>
+                    <div class="info">
+                        <img src="/_jsp/usericon.png" class="info-icon">
+                        <div class="info-name">姫様の夢</div>
+                        <div class="info-txt">Princess Dreamland</div>
+                    </div>
                     <div class="info-link"></div>
                 </div>
 

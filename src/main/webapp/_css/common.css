@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition-duration: 0.2s;
 }
 html, body {
+    min-width: 400px;
     width: 100%;
     height: 100%;
     background-color: #333333;
@@ -16,6 +18,13 @@ html, body {
     .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
         position: inherit;
+    }
+    .main>.home-container>.info-container>.info-container-inner>.info>.info-icon{
+        border-radius: 3px;
+        margin-top: 20px;
+        width: auto;
+        height: 180px;
+
     }
     .main>.home-container>.post-container{
         padding: 5px 15px 5px 15px;
@@ -76,14 +85,39 @@ html, body {
 }
 
 .info{
-
+    text-align: center;
     border: 0;
     background-color: rgb(38,38,38);
     width: 100%;
-    height: 250px;
+    /*display: inline-block;*/
+    height: 350px;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px gray ;
+    box-shadow: 0px 0px 0 1px #404040;
     margin-bottom: 10px;
+}
+
+.info-icon{
+    /*margin-top: 20px;*/
+    border-radius: 3px 3px 0 0;
+    width: 100%;
+    height: 180px;
+    border: 0;
+    background-color: #66ccff;
+
+}
+
+.info-name{
+    font-size: 25px;
+    line-height: 50px;
+    width: 100%;
+    color: snow;
+}
+
+.info-txt{
+    font-size: 15px;
+    line-height: 25px;
+    width: 100%;
+    color: snow;
 }
 
 .info-link{
@@ -93,7 +127,7 @@ html, body {
     width: 100%;
     height: 40px;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px gray ;
+    box-shadow: 0px 0px 0 1px #404040;
 }
 
 .post-container .post{
@@ -102,11 +136,51 @@ html, body {
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
-    height: 300px;
+    min-height: 300px;
     width: 100%;
     border: 0;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px dimgray;
+    box-shadow: 0px 0px 0 1px #404040;
+    position: relative;
+}
+.post-container .main-post{
+    transition-duration: 0.3s;
+    background-color: rgb(38,38,38);
+    display: block;
+    margin-bottom: 10px;
+    height: 600px;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0 1px #404040;
+    /*position: relative;*/
+}
+
+.post img{
+    border-radius: 3px 3px 0 0;
+    border: 0;
+    background-color: #66ccff;
+    top: 0;
+    vertical-align:bottom;
+    display: block;
+    height: 70%;
+    width: 100%;
+    float: top;
+    z-index: 1;
+    /*box-shadow: 0px 0px 0 1px #262626;*/
+    position: absolute;
+}
+
+.post .post-txt-container{
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    float: bottom;
+    height: 50%;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0px 0px 0 1px #404040;
+    background-color: rgb(38,38,38);
+    position: absolute;
 }
 
 .post:hover{

@@ -19,7 +19,7 @@
         </c:if>
 
         <c:if test="${urlWhere !='userList' and urlWhere !='orderList'}">
-            <select class="topItem" id="searchStatus">
+            <select class="topItem" id="searchType">
                 <option value="1">书名</option>
                 <option value="2">作者</option>
                 <option value="3">简介</option>
@@ -51,7 +51,7 @@
 
 
         <c:if test="${urlWhere =='userList'}">
-            <select class="topItem" id="searchStatus">
+            <select class="topItem" id="searchType">
                 <option value="1">账号</option>
                 <option value="2">用户名</option>
             </select>

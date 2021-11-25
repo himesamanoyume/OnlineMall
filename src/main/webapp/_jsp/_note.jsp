@@ -25,6 +25,7 @@
         window.onload=function (){
             NavFunc();
             PostOpenDetailFunc();
+            SearchButtonFunc();
         }
         window.onresize=function(){
 
@@ -35,7 +36,7 @@
     </script>
 </head>
 <body>
-    <main class="main">
+    <main class="main" data-url="note" data-type="3">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

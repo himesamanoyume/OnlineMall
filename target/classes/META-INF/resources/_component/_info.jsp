@@ -16,6 +16,12 @@
             <div class="info-name">姫様の夢</div>
             <div class="info-txt">Princess Dreamland</div>
         </div>
+        <c:if test="${urlWhere !='index' and urlWhere !='postDetail'}">
+        <div class="info-link">
+            <input type="text" class="searchBar" id="keyword" value="${keyword}"/>
+            <div class="searchButton">搜索</div>
+        </div>
+        </c:if>
         <div class="info-link"></div>
     </div>
 

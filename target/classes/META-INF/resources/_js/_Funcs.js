@@ -32,3 +32,15 @@ function PostOpenDetailFunc(){
         location.href="/postDetail?postId=" + $(this).attr('data-postId')
     })
 }
+
+function SearchButtonFunc(){
+    $('.searchButton').click(function (){
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage=1"
+    })
+}

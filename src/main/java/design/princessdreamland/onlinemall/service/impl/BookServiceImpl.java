@@ -64,14 +64,13 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             }
         }
 
-        Page<Book> page = new Page<Book>();
-        if (StrUtil.isNotEmpty(currentPage)){
-            page.setCurrent(new Integer(currentPage));
-//            currentPage = "1";
+        Integer current = 1;
+        if(StrUtil.isNotEmpty(currentPage)) {
+            current = new Integer(currentPage);
         }
 
-//        page.setSize(3);
-        page.setSize(20);
+        Page<Book> page = new Page<Book>();
+        page.setCurrent(current);
 
 
         return baseMapper.queryPage(page, book);
@@ -95,14 +94,21 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             }
         }
 
-        Page<Book> page = new Page<Book>();
-        if (StrUtil.isNotEmpty(currentPage)){
-            page.setCurrent(new Integer(currentPage));
-//            currentPage = "1";
+        Integer current = 1;
+        if(StrUtil.isNotEmpty(currentPage)) {
+            current = new Integer(currentPage);
         }
 
-//        page.setSize(3);
-        page.setSize(8);
+        Page<Book> page = new Page<Book>();
+        page.setCurrent(current);
+//        Page<Book> page = new Page<Book>();
+//        if (StrUtil.isNotEmpty(currentPage)){
+//            page.setCurrent(new Integer(currentPage));
+////            currentPage = "1";
+//        }
+//
+////        page.setSize(3);
+//        page.setSize(8);
 
 
         return baseMapper.queryPage(page, book);
@@ -127,14 +133,21 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             }
         }
 
-        Page<Book> page = new Page<Book>();
-        if (StrUtil.isNotEmpty(currentPage)){
-            page.setCurrent(new Integer(currentPage));
-//            currentPage = "1";
+        Integer current = 1;
+        if(StrUtil.isNotEmpty(currentPage)) {
+            current = new Integer(currentPage);
         }
 
-//        page.setSize(3);
-        page.setSize(16);
+        Page<Book> page = new Page<Book>();
+        page.setCurrent(current);
+//        Page<Book> page = new Page<Book>();
+//        if (StrUtil.isNotEmpty(currentPage)){
+//            page.setCurrent(new Integer(currentPage));
+////            currentPage = "1";
+//        }
+//
+////        page.setSize(3);
+//        page.setSize(16);
 
 
         return baseMapper.queryPage(page, book);

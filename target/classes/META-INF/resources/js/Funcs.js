@@ -75,50 +75,72 @@ function LoginInfoFunc(){
 }
 function PageIndexFunc(){
     $('#prePage').click(function(){
-        location.href="/view/index/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) - 1)
+        location.href="/view/index?type="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) - 1)
     })
 
     $('#nextPage').click(function(){
 
-        location.href="/view/index/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) + 1)
+        location.href="/view/index?type="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) + 1)
     })
 }
 function PageSellerBookListFunc(){
     $('#prePage').click(function(){
-        location.href="/view/sellerBookList/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
-            "&status=" + $('#searchStatus').val()
+        location.href="/view/sellerBookList?type="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) - 1)
+            + "&status="
+            + $('#searchStatus').val()
 
     })
 
     $('#nextPage').click(function(){
 
-        location.href="/view/sellerBookList/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
-            "&status=" + $('#searchStatus').val()
+        location.href="/view/sellerBookList?type="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) + 1)
+            + "&status="
+            + $('#searchStatus').val()
     })
 }
 function PageAdminBookListFunc(){
     $('#prePage').click(function(){
-        location.href="/view/adminBookList/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) - 1) +
-            "&status=" + $('#searchStatus').val()
+        location.href="/view/adminBookList?type="
+            + $('#searchType').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) - 1)
+            + "&status="
+            + $('#searchStatus').val()
 
     })
 
     $('#nextPage').click(function(){
 
-        location.href="/view/adminBookList/?searchStatus=" + $('#searchStatus').val() +
-            "&keyword=" + $('#keyword').val() +
-            "&currentPage=" + (parseInt($('#currentPage').text()) + 1) +
-            "&status=" + $('#searchStatus').val()
+        location.href="/view/adminBookList?type="
+            + $('#searchStatus').val()
+            + "&keyword="
+            + $('#keyword').val()
+            + "&currentPage="
+            + (parseInt($('#currentPage').text()) + 1)
+            + "&status="
+            + $('#searchStatus').val()
     })
 }
 function PageUserListFunc(){
@@ -322,8 +344,8 @@ function RegPageFunc(){
 }
 function SellerBookListSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/sellerBookList?searchStatus="
-            + $('#searchStatus').val()
+        location.href="/view/sellerBookList?type="
+            + $('#searchType').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"
@@ -333,8 +355,8 @@ function SellerBookListSearchButtonFunc(){
 }
 function AdminBookListSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/adminBookList?searchStatus="
-            + $('#searchStatus').val()
+        location.href="/view/adminBookList?type="
+            + $('#searchType').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"
@@ -345,17 +367,12 @@ function AdminBookListSearchButtonFunc(){
 function UserListSearchButtonFunc(){
     $('#searchButton').click(function(){
         UserListQueryData(1);
-        // location.href="/view/userList?searchStatus="
-        //     + $('#searchStatus').val()
-        //     + "&keyword="
-        //     + $('#keyword').val()
-        //     + "&currentPage=1"
     })
 }
 function IndexSearchButtonFunc(){
     $('#searchButton').click(function(){
-        location.href="/view/index?searchStatus="
-            + $('#searchStatus').val()
+        location.href="/view/index?type="
+            + $('#searchType').val()
             + "&keyword="
             + $('#keyword').val()
             + "&currentPage=1"

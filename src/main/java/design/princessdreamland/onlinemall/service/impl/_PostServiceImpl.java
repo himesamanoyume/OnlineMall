@@ -32,10 +32,13 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     }
 
     @Override
-    public IPage<_Post> searchPage(String type, String currentPage){
+    public IPage<_Post> searchPage(String type,String keyword, String currentPage){
         _Post post = new _Post();
 
-        if (StrUtil.isNotEmpty(type)){
+        if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
+            post.setTitle(keyword);
+            post.setTypeId(new Integer(type));
+        }else if(StrUtil.isNotEmpty(type)){
             post.setTypeId(new Integer(type));
         }
 

@@ -37,9 +37,9 @@ public class IndexController {
 
     @GetMapping("/post")
     @RequestLog(action="文章页面")
-    public String post(String type, Model model, String currentPage){
+    public String post(String type, Model model,String keyword, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -49,9 +49,9 @@ public class IndexController {
 
     @GetMapping("/project")
     @RequestLog(action="项目页面")
-    public String project(String type,Model model, String currentPage){
+    public String project(String type,Model model,String keyword, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -61,9 +61,9 @@ public class IndexController {
 
     @GetMapping("/note")
     @RequestLog(action="笔记页面")
-    public String note(String type,Model model, String currentPage){
+    public String note(String type,Model model,String keyword, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -73,9 +73,9 @@ public class IndexController {
 
     @GetMapping("/tools")
     @RequestLog(action="工具页面")
-    public String tools(String type,Model model, String currentPage){
+    public String tools(String type,Model model,String keyword, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -85,9 +85,9 @@ public class IndexController {
 
     @GetMapping("/tags")
     @RequestLog(action="项目页面")
-    public String tags(String type,Model model, String currentPage){
+    public String tags(String type,Model model,String keyword, String currentPage){
 
-        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -103,11 +103,5 @@ public class IndexController {
 
         return "/_jsp/_postDetail.jsp";
     }
-
-//    @GetMapping("/")
-//    public void index(HttpServletResponse response) throws IOException {
-//        response.sendRedirect("/view/_index");
-//    }
-
 
 }

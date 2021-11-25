@@ -35,7 +35,8 @@
     </script>
 </head>
 <body>
-    <main class="main">
+<c:set var="urlWhere" value="index"/>
+    <main class="main" data-url="index">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

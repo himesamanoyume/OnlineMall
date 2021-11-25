@@ -15,9 +15,12 @@
         width: 80%;
         justify-content: space-around;
     }
+    .main>.header>.nav>.nav-container>.nav-link{
+        padding: 0 5px 0 5px;
+    }
 }
 .header{
-    background-color: rgba(38,38,38,0.35);
+    background-color: rgba(38,38,38,0.45);
     backdrop-filter: blur(4px);
     height: 60px;
     top: 0;
@@ -62,6 +65,7 @@
 .nav-link{
     padding: 0 15px 0 15px;
     cursor: pointer;
+    text-align: center;
     justify-content: center;
     display: inline-block;
     line-height: 57px;

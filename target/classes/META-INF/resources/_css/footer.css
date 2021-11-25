@@ -1,15 +1,24 @@
 .footer{
     width: 100%;
-    height: 200px;
+    /*height: 200px;*/
+    padding: 90px 0 90px 0;
     background-color: #333333;
-    line-height: 200px;
+    margin: auto;
     color: snow;
+    display: inline-flex;
     text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.footer > a{
+.footer .footer-content{
+    line-height: 40px;
+    padding: 0 20px 0 20px;
+}
+.footer > .footer-content >a{
     text-decoration: none;
+    min-width: 168px;
     color: #66ccff;
 }
-.footer > a:hover{
+.footer >.footer-content> a:hover{
     text-decoration: underline;
 }

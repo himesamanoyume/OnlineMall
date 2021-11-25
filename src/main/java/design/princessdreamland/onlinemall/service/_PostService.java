@@ -11,4 +11,6 @@ public interface _PostService extends IService<_Post> {
     IPage<_Post> searchIndexPage(String type, String currentPage);
 
     IPage<_Post> searchPage(String type, String currentPage);
+
+    _Post queryById(String postId);
 }

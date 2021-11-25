@@ -10,5 +10,7 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface _PostMapper extends BaseMapper<_Post> {
 
-    IPage<_Post> queryPage(Page<_Post> page, @Param("_post")_Post post);
+    IPage<_Post> queryPage(Page<_Post> page, @Param("post")_Post post);
+
+    _Post queryById(String postId);
 }

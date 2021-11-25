@@ -1,23 +1,29 @@
-function navFunc(){
+function NavFunc(){
     $('#nav-index').click(function(){
-        location.href="/view/_index"
+        location.href="/index"
     })
     $('#nav-post').click(function(){
-        location.href="/view/post?type=1&currentPage=1"
+        location.href="/post?type=1&currentPage=1"
     })
     $('#nav-project').click(function(){
-        location.href="/view/project?type=2&currentPage=1"
+        location.href="/project?type=2&currentPage=1"
     })
     $('#nav-note').click(function(){
-        location.href="/view/note?type=3&currentPage=1"
+        location.href="/note?type=3&currentPage=1"
     })
     $('#nav-tools').click(function(){
-        location.href="/view/tools?type=4&currentPage=1"
+        location.href="/tools?type=4&currentPage=1"
     })
     $('#nav-tags').click(function(){
-        location.href="/view/tags?type=5&currentPage=1"
+        location.href="/tags?type=5&currentPage=1"
     })
     $('#nav-resume').click(function(){
-        location.href="/view/resume"
+        location.href="/resume"
+    })
+}
+
+function PostOpenDetailFunc(){
+    $('.post').click(function (){
+        location.href="/postDetail?postId=" + $(this).attr('data-postId')
     })
 }

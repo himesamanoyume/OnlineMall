@@ -23,7 +23,8 @@
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         window.onload=function (){
-            navFunc();
+            NavFunc();
+            PostOpenDetailFunc();
         }
         window.onresize=function(){
 

@@ -48,4 +48,9 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
 
         return baseMapper.queryPage(page,post);
     }
+
+    @Override
+    public _Post queryById(String postId){
+        return baseMapper.queryById(postId);
+    }
 }

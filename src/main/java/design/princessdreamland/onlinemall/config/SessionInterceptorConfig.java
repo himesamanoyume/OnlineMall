@@ -13,7 +13,7 @@ public class SessionInterceptorConfig implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(new SessionInterceptor());
         registration.addPathPatterns("/**");
         registration.excludePathPatterns(
-                "/",
+                "/*",
                 "/favicon.ico",
                 "/view/**",
                 "/img/**",

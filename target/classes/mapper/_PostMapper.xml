@@ -9,41 +9,41 @@
 	</resultMap>
 
 <sql id="cols">
-	post_id,
-	title,
-	article,
-	introduction,
-	publish_time,
-	type_id,
-	deleted,
-	create_user_id,
-	create_time,
-	update_user_id,
-	update_time
+	p.post_id,
+	p.title,
+	p.article,
+	p.introduction,
+	p.publish_time,
+	p.type_id,
+	p.deleted,
+	p.create_user_id,
+	p.create_time,
+	p.update_user_id,
+	p.update_time
 </sql>
 
 
 <sql id="where">
 	<where>
-
-		<if test="_post!=null and _post!='' " >
-			<if test="_post.postId!=null and _post.postId!='' ">
-				AND postId = #{_post.postId}
+		AND deleted = 0
+		<if test="post!=null and post!=''" >
+			<if test="post.postId!=null and post.postId!=''">
+				AND p.post_id = #{post.postId}
 			</if>
-			<if test="_post.title!=null and _post.title!='' ">
-				AND title LIKE CONCAT('%',#{_post.title},'%')
+			<if test="post.title!=null and post.title!=''">
+				AND p.title LIKE CONCAT('%',#{post.title},'%')
 			</if>
-			<if test="_post.article!=null and _post.article!='' ">
-				AND article LIKE CONCAT('%',#{_post.article},'%')
+			<if test="post.article!=null and post.article!=''">
+				AND p.article LIKE CONCAT('%',#{post.article},'%')
 			</if>
-			<if test="_post.introduction!=null and _post.introduction!='' ">
-				AND introduction LIKE CONCAT('%',#{_post.introduction},'%')
+			<if test="post.introduction!=null and post.introduction!=''">
+				AND p.introduction LIKE CONCAT('%',#{post.introduction},'%')
 			</if>
-			<if test="_post.typeId!=null and _post.typeId!='' ">
-				AND type_id = #{_post.typeId}
+			<if test="post.typeId!=null and post.typeId!=''">
+				AND p.type_id LIKE CONCAT('%',#{post.typeId},'%')
 			</if>
-			<if test="_post.publishTime!=null and _post.publishTime!='' ">
-				AND _post.publish_time LIKE CONCAT('%',#{_post.publishTime},'%')
+			<if test="post.publishTime!=null and post.publishTime!=''">
+				AND p.publish_time LIKE CONCAT('%',#{post.publishTime},'%')
 			</if>			
 		</if>
 	
@@ -53,12 +53,20 @@
 	<select id="queryPage" resultMap="_postMap" >
 		SELECT
 		<include refid="cols" />
-		FROM post
+		FROM post p
 		<include refid="where" />
 
 		ORDER BY post_id DESC
 	</select>
 
+	<select id="queryById" resultMap="_postMap" >
+		SELECT
+		<include refid="cols" />
+		FROM post p
+		WHERE post_id = #{postId}
+
+		ORDER BY post_id DESC
+	</select>
 
 
 </mapper>

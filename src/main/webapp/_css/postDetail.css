@@ -17,7 +17,7 @@
 }
 
 .post:hover{
-    box-shadow: 0px 0px 0 0px #66ccff;
+    box-shadow: 0px 0px 0 1px #404040;
 }
 
 .post-detail-title{
@@ -39,7 +39,7 @@
 .post-detail-txt{
     width: 100%;
     color: snow;
-    padding: 40px 0 40px 0;
+    padding: 20px 0 40px 0;
     line-height: 30px;
     font-size: 17px;
 }
@@ -81,4 +81,24 @@
     background-color: #66ccff;
     display: block;
     border-radius: 3px;
+}
+
+.post-detail-txt .code{
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    margin: 20px 0 20px 0;
+    background-color: #333333;
+    line-height: 20px;
+    color: snow;
+}
+
+.post-detail-txt .reference{
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    font-size: 15px;
+    margin: 20px 0 20px 0;
+    background-color: #595959;
+    box-shadow: 5px 0 0 0 #66ccff inset;
+    line-height: 15px;
+    color: snow;
 }

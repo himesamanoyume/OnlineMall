@@ -59,6 +59,42 @@ public class IndexController {
         return "/_jsp/_project.jsp";
     }
 
+    @GetMapping("/note")
+    @RequestLog(action="笔记页面")
+    public String note(String type,Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_note.jsp";
+    }
+
+    @GetMapping("/tools")
+    @RequestLog(action="工具页面")
+    public String tools(String type,Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_tools.jsp";
+    }
+
+    @GetMapping("/tags")
+    @RequestLog(action="项目页面")
+    public String tags(String type,Model model, String currentPage){
+
+        IPage<_Post> postPage = postService.searchPage(type,currentPage);
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_tags.jsp";
+    }
+
     @GetMapping("/postDetail")
     @RequestLog(action="文章详细页面")
     public String postDetail(String postId, Model model){

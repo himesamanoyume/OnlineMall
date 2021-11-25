@@ -11,20 +11,21 @@
 
 <div class="post-page">
     <div class="post-page-container">
-        <c:if test="${currentPage>1}">
-            <button class="post-page-container-button" id="prePage">上一页</button>
+        <c:if test="${totalPages==0}">
+            <div class="post-page-container-nullSearch">找不到任何东西哦</div>
+        </c:if>
+        <c:if test="${totalPages!=0}">
+            <c:if test="${currentPage>1}">
+                <button class="post-page-container-button" id="prePage">上一页</button>
+            </c:if>
+
+            <c:if test="${currentPage!=null}">
+                <div class="post-page-container-currentPage" id="currentPage">第${currentPage}页</div>
+            </c:if>
+            <c:if test="${currentPage<totalPages}">
+                <button class="post-page-container-button" id="nextPage">下一页</button>
+            </c:if>
         </c:if>
 
-        <c:if test="${currentPage!=null}">
-            <div class="post-page-container-button" id="currentPage">第${currentPage}页</div>
-        </c:if>
-
-        <c:if test="${currentPage==null}">
-            <div style="color: snow">找不到任何东西哦</div>
-        </c:if>
-
-        <c:if test="${currentPage<totalPages}">
-            <button class="post-page-container-button" id="nextPage">下一页</button>
-        </c:if>
     </div>
 </div>

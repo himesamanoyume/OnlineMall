@@ -26,6 +26,8 @@
             NavFunc();
             PostOpenDetailFunc();
             SearchButtonFunc();
+            SaveThemeCookie();
+            ThemeSetFunc();
         }
         window.onresize=function(){
 
@@ -35,7 +37,7 @@
         }
     </script>
 </head>
-<body>
+<body id="body" data-theme="auto">
     <main class="main" data-url="post" data-type="1">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">

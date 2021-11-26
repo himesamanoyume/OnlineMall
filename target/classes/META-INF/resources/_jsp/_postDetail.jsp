@@ -23,9 +23,11 @@
     <script src="/_js/jquery.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
-        window.onload=function (){
+        $(document).ready(function(){
+            SaveThemeCookie();
+            ThemeSetFunc();
             NavFunc();
-        }
+        })
         window.onresize=function(){
 
         }
@@ -34,7 +36,7 @@
         }
     </script>
 </head>
-<body>
+<body id="body" data-theme="auto">
 <c:set var="urlWhere" value="postDetail"/>
     <main class="main" data-url="postDetail">
         <%@include file="../_component/_headerAndTitle.jsp" %>

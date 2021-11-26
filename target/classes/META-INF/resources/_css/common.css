@@ -2,13 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition-duration: 0.2s;
 }
 html, body {
     min-width: 400px;
     width: 100%;
     height: 100%;
-    background-color: #333333;
+    background-color: var(--body-bg);
     line-height: 1.5;
 }
 @media screen and (max-width: 990px){
@@ -35,19 +34,67 @@ html, body {
         text-align: center;
         font-size: 50px;
         line-height: 200px;
-        color: snow;
+        color: var(--text-color);
         width: 100%;
         transition-duration: 0.6s;
         height: 200px;
 
     }
     .main>.topTitle:hover{
-        color: #66ccff;
+        color: var(--tianyi-color);
     }
 }
 
+@media (prefers-color-scheme:dark){
+    body[data-theme=auto]{
+        --body-bg:#333333;
+        --post-bg:rgb(38,38,38);
+        --header-bg:rgba(38,38,38,0.45);
+        --post-shadow-color:#404040;
+        --text-color:snow;
+        --text-blogname-color:snow;
+        --tianyi-color:#66ccff;
+        --post-code-bg:#333333;
+        --post-reference-bg:#595959;
+    }
+}
+@media (prefers-color-scheme:light){
+    body[data-theme=auto]{
+        --body-bg:#fff;
+        --post-bg:#ededed;
+        --header-bg:rgba(194,194,194,0.45);
+        --post-shadow-color:#d6d6d6;
+        --text-color:#242424;
+        --text-blogname-color:black;
+        --tianyi-color:#66ccff;
+        --post-code-bg:#333333;
+        --post-reference-bg:#595959;
+    }
+}
 
+body[data-theme=dark]{
+    --body-bg:#333333;
+    --post-bg:rgb(38,38,38);
+    --header-bg:rgba(38,38,38,0.45);
+    --post-shadow-color:#404040;
+    --text-color:snow;
+    --text-blogname-color:snow;
+    --tianyi-color:#66ccff;
+    --post-code-bg:#333333;
+    --post-reference-bg:#595959;
+}
 
+body[data-theme=light]{
+    --body-bg:#fff;
+    --post-bg:#ededed;
+    --header-bg:rgba(194,194,194,0.45);
+    --post-shadow-color:#d6d6d6;
+    --text-color:#242424;
+    --text-blogname-color:black;
+    --tianyi-color:#66ccff;
+    --post-code-bg:#333333;
+    --post-reference-bg:#595959;
+}
 .main{
     display: block;
 }
@@ -86,12 +133,12 @@ html, body {
 .info{
     text-align: center;
     border: 0;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
     width: 100%;
     /*display: inline-block;*/
     height: 350px;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px #404040;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
     margin-bottom: 10px;
 }
 
@@ -101,7 +148,7 @@ html, body {
     width: 100%;
     height: 180px;
     border: 0;
-    background-color: #66ccff;
+    background-color: var(--tianyi-color);
 
 }
 
@@ -109,39 +156,40 @@ html, body {
     font-size: 25px;
     line-height: 50px;
     width: 100%;
-    color: snow;
+    color: var(--text-color);
 }
 
 .info-txt{
     font-size: 15px;
     line-height: 25px;
     width: 100%;
-    color: snow;
+    color: var(--text-color);
 }
 
 .info-link{
     display: inline-flex;
     border: 0;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
     width: 100%;
     height: 40px;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px #404040;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
     margin-bottom: 10px;
 }
 .info-link .searchBar{
     height: 40px;
     width: 80%;
+    font-size: 18px;
     padding: 0 10px 0 10px;
     border: 0;
-    color: snow;
+    color: var(--text-color);
     border-radius: 3px 0 0 3px;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
 }
 
 .info-link .searchBar:focus{
     outline: none;
-    background-color: #333333;
+    background-color: var(--body-bg);
 }
 
 .info-link .searchButton{
@@ -151,12 +199,12 @@ html, body {
     text-align: center;
     cursor: pointer;
     font-size: 15px;
-    color: snow;
+    color: var(--text-color);
 }
 
 .post-container .post{
     transition-duration: 0.3s;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
     cursor: pointer;
     display: block;
     margin-bottom: 10px;
@@ -164,19 +212,19 @@ html, body {
     width: 100%;
     border: 0;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px #404040;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
 }
 
 .post-container .newest-title{
-    transition-duration: 0.3s;
-    background-color: #333333;
+    transition-duration: 0.2s;
+    background-color: var(--body-bg);
     cursor: inherit;
     display: block;
     margin-bottom: 10px;
     height: 200px;
     width: 100%;
     border: 0;
-    color: snow;
+    color: var(--text-color);
     font-size: 50px;
     line-height: 200px;
     text-align: center;
@@ -188,11 +236,11 @@ html, body {
 
 .post-page{
     border: 0;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
     width: 100%;
     height: 40px;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px #404040;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
 }
 
 .post-page .post-page-container{
@@ -205,7 +253,7 @@ html, body {
 }
 .post-page-container-currentPage{
     padding: 0 15px 0 15px;
-    color: snow;
+    color: var(--text-color);
     justify-content: center;
     display: inline-block;
     line-height: 40px;
@@ -218,7 +266,7 @@ html, body {
 .post-page-container-button{
     padding: 0 15px 0 15px;
     cursor: pointer;
-    color: snow;
+    color: var(--text-color);
     justify-content: center;
     display: inline-block;
     line-height: 40px;
@@ -226,7 +274,7 @@ html, body {
 }
 .post-page-container-nullSearch{
     padding: 0 15px 0 15px;
-    color: snow;
+    color: var(--text-color);
     justify-content: center;
     display: inline-block;
     line-height: 40px;
@@ -238,21 +286,21 @@ html, body {
 }
 .post-container .main-post{
     transition-duration: 0.3s;
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
     display: block;
     margin-bottom: 10px;
     height: 600px;
     width: 100%;
     border: 0;
     border-radius: 3px;
-    box-shadow: 0px 0px 0 1px #404040;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
     /*position: relative;*/
 }
 
 .post img{
     border-radius: 3px 3px 0 0;
     border: 0;
-    background-color: #66ccff;
+    background-color: var(--tianyi-color);
     top: 0;
     vertical-align:bottom;
     display: block;
@@ -273,32 +321,32 @@ html, body {
     min-height: 100px;
     border-radius: 0 0 3px 3px;
     /*box-shadow: 0px 0px 0 1px #404040;*/
-    background-color: rgb(38,38,38);
+    background-color: var(--post-bg);
 
 }
 
 .post-txt-container .post-txt-container-title{
-    color: snow;
+    color: var(--text-color);
     font-size: 25px;
     width: 100%;
     line-height: 80px;
 }
 
 .post-txt-container .post-txt-container-datetime{
-    color: snow;
+    color: var(--text-color);
     font-size: 9px;
     width: 100%;
     line-height: 60px;
 }
 .post-txt-container .post-txt-container-introduction{
-    color: snow;
+    color: var(--text-color);
     font-size: 15px;
     width: 100%;
     line-height: 1.5;
 }
 
 .post:hover{
-    box-shadow: 0px 0px 0 2px #66ccff;
+    box-shadow: 0 0 0 2px var(--tianyi-color);
 }
 
 .topTitle{
@@ -306,13 +354,13 @@ html, body {
     text-align: center;
     font-size: 50px;
     line-height: 200px;
-    color: #333333;
+    color: var(--body-bg);
     width: 100%;
     height: 0;
-    transition-duration: 0.6s;
+    transition-duration: 0.4s;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    /*background-color: rgb(38,38,38);*/
+
 }

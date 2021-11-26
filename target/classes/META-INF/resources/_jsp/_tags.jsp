@@ -22,11 +22,13 @@
     <script src="/_js/jquery.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
-        window.onload=function (){
+        $(document).ready(function(){
+            SaveThemeCookie();
+            ThemeSetFunc();
             NavFunc();
             PostOpenDetailFunc();
             SearchButtonFunc();
-        }
+        })
         window.onresize=function(){
 
         }
@@ -35,7 +37,7 @@
         }
     </script>
 </head>
-<body>
+<body id="body" data-theme="auto">
     <main class="main" data-url="tags" data-type="5">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">

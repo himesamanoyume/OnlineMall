@@ -34,6 +34,9 @@
             <div id="nav-resume" class="nav-link">简历
                 <div class="hover-bar"></div>
             </div>
+            <div id="nav-theme" class="nav-link">主题
+                <div class="hover-bar"></div>
+            </div>
         </div>
     </nav>
 </header>

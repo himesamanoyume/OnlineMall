@@ -18,11 +18,32 @@
         </div>
         <c:if test="${urlWhere !='index' and urlWhere !='postDetail'}">
         <div class="info-link">
-            <input type="text" class="searchBar" id="keyword" value="${keyword}"/>
-            <div class="searchButton">搜索</div>
+            <input type="text" class="searchBar" id="keyword"placeholder="模糊搜索标题" value="${keyword}"/>
+            <div id="search" class="searchButton">搜索</div>
         </div>
         </c:if>
-        <div class="info-link"></div>
+        <c:if test="${urlWhere !='postDetail'}">
+            <div class="info-link">
+                <input type="password" class="searchBar" name="password" placeholder="输入密码获取权限" value="${password}"/>
+                <div id="permiSubmit" class="searchButton">提交</div>
+            </div>
+            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 1}">
+                <div class="info-link">
+                    <div class="permi-info">
+                        当前权限:低级
+                    </div>
+
+                </div>
+            </c:if>
+            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">
+                <div class="info-link">
+                    <div class="permi-info">
+                        当前权限:站长
+                    </div>
+
+                </div>
+            </c:if>
+        </c:if>
     </div>
 
 </aside>

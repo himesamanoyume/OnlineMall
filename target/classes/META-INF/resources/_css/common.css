@@ -16,6 +16,7 @@ html, body {
     }
     .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
+        /*max-width: 990px;*/
         position: inherit;
     }
     .main>.home-container>.info-container>.info-container-inner>.info>.info-icon{
@@ -55,6 +56,7 @@ html, body {
         --text-blogname-color:snow;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
+        --post-code-text-color:snow;
         --post-reference-bg:#595959;
     }
 }
@@ -68,10 +70,10 @@ html, body {
         --text-blogname-color:black;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
+        --post-code-text-color:snow;
         --post-reference-bg:#595959;
     }
 }
-
 body[data-theme=dark]{
     --body-bg:#333333;
     --post-bg:rgb(38,38,38);
@@ -81,9 +83,9 @@ body[data-theme=dark]{
     --text-blogname-color:snow;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
+    --post-code-text-color:snow;
     --post-reference-bg:#595959;
 }
-
 body[data-theme=light]{
     --body-bg:#fff;
     --post-bg:#ededed;
@@ -93,6 +95,7 @@ body[data-theme=light]{
     --text-blogname-color:black;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
+    --post-code-text-color:snow;
     --post-reference-bg:#595959;
 }
 .main{
@@ -110,6 +113,7 @@ body[data-theme=light]{
     width: 100%;
     /*width: 90%;*/
     min-width: 400px;
+    /*max-width: 795px;*/
     height: 100%;
     border: 0;
     padding: 5px 5px 5px 15px;
@@ -123,6 +127,7 @@ body[data-theme=light]{
     height: 100%;
     min-width: 200px;
     position: sticky;
+    /*max-width: 200px;*/
 }
 
 .info-container-inner{
@@ -143,9 +148,9 @@ body[data-theme=light]{
 }
 
 .info-icon{
-    /*margin-top: 20px;*/
+    margin-top: 10px;
     border-radius: 3px 3px 0 0;
-    width: 100%;
+    width: 180px;
     height: 180px;
     border: 0;
     background-color: var(--tianyi-color);
@@ -167,7 +172,7 @@ body[data-theme=light]{
 }
 
 .info-link{
-    display: inline-flex;
+    display: flex;
     border: 0;
     background-color: var(--post-bg);
     width: 100%;
@@ -175,6 +180,19 @@ body[data-theme=light]{
     border-radius: 3px;
     box-shadow: 0 0 0 1px var(--post-shadow-color);
     margin-bottom: 10px;
+    justify-content: space-around;
+}
+.info-link .permi-info{
+    height: 100%;
+    /*width: 100%;*/
+    text-align: center;
+    line-height: 40px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    font-size: 15px;
+    color: var(--text-color);
 }
 .info-link .searchBar{
     height: 40px;
@@ -187,6 +205,21 @@ body[data-theme=light]{
     background-color: var(--post-bg);
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    font-size: 16px;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    font-size: 16px;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    font-size: 16px;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    font-size: 16px;
+}
 .info-link .searchBar:focus{
     outline: none;
     background-color: var(--body-bg);

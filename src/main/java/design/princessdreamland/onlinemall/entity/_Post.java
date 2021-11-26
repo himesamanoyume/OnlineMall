@@ -13,4 +13,5 @@ public class _Post extends BaseEntity<_Post>{
     private String introduction;
     private String publishTime;
     private Integer typeId;
+    private Integer status;
 }

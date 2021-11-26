@@ -27,6 +27,7 @@
             ThemeSetFunc();
             NavFunc();
             PostOpenDetailFunc();
+            PermissionButtonFunc();
         })
 
         window.onresize=function(){

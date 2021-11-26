@@ -20,7 +20,7 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     @Override
     public IPage<_Post> searchIndexPage(String type, String currentPage){
         _Post post = new _Post();
-
+        post.setStatus(1);
         Page<_Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
@@ -34,7 +34,7 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     @Override
     public IPage<_Post> searchPage(String type,String keyword, String currentPage){
         _Post post = new _Post();
-
+        post.setStatus(1);
         if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
             post.setTitle(keyword);
             post.setTypeId(new Integer(type));

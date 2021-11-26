@@ -34,7 +34,7 @@ function PostOpenDetailFunc(){
 }
 
 function SearchButtonFunc(){
-    $('.searchButton').click(function (){
+    $('#search').click(function (){
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -44,6 +44,31 @@ function SearchButtonFunc(){
             + "&currentPage=1"
     })
 }
+
+function PermissionButtonFunc(){
+    $('#permiSubmit').click(function(){
+        var password = $('input[name=password]').val();
+
+        password = password.trim();
+        if(password == ''){
+            alert("密码不能为空");
+            return;
+        }
+
+        $.post('/permi/login',{
+            password:password
+        },function(res){
+            if(res && res.permiId){
+                location.href = "/"+$('.main').attr('data-url');
+            }else{
+                alert('获取权限失败')
+            }
+        }).fail(function(res){
+            alert(res.responseJSON.message)
+        })
+    })
+}
+
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')//dark
 
 function ThemeSetFunc(){

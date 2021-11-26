@@ -28,6 +28,7 @@
             SearchButtonFunc();
             SaveThemeCookie();
             ThemeSetFunc();
+            PermissionButtonFunc();
         }
         window.onresize=function(){
 

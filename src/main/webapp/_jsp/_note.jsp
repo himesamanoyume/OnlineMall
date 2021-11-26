@@ -28,6 +28,7 @@
             NavFunc();
             PostOpenDetailFunc();
             SearchButtonFunc();
+            PermissionButtonFunc();
         })
 
         window.onresize=function(){

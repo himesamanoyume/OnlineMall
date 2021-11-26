@@ -3,6 +3,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Book;
+import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.entity._Post;
 import design.princessdreamland.onlinemall.service.BookService;
 import design.princessdreamland.onlinemall.service._PostService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -25,8 +27,9 @@ public class IndexController {
 
     @GetMapping("/index")
     @RequestLog(action="首页页面")
-    public String _index(String type,Model model, String currentPage){
+    public String index(String type, Model model, String currentPage, HttpSession session){
 
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchIndexPage(type,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -37,8 +40,8 @@ public class IndexController {
 
     @GetMapping("/post")
     @RequestLog(action="文章页面")
-    public String post(String type, Model model,String keyword, String currentPage){
-
+    public String post(String type, Model model,String keyword, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -49,8 +52,8 @@ public class IndexController {
 
     @GetMapping("/project")
     @RequestLog(action="项目页面")
-    public String project(String type,Model model,String keyword, String currentPage){
-
+    public String project(String type,Model model,String keyword, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -61,8 +64,8 @@ public class IndexController {
 
     @GetMapping("/note")
     @RequestLog(action="笔记页面")
-    public String note(String type,Model model,String keyword, String currentPage){
-
+    public String note(String type,Model model,String keyword, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -73,8 +76,8 @@ public class IndexController {
 
     @GetMapping("/tools")
     @RequestLog(action="工具页面")
-    public String tools(String type,Model model,String keyword, String currentPage){
-
+    public String tools(String type,Model model,String keyword, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -85,8 +88,8 @@ public class IndexController {
 
     @GetMapping("/tags")
     @RequestLog(action="项目页面")
-    public String tags(String type,Model model,String keyword, String currentPage){
-
+    public String tags(String type,Model model,String keyword, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
         IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -97,8 +100,9 @@ public class IndexController {
 
     @GetMapping("/postDetail")
     @RequestLog(action="文章详细页面")
-    public String postDetail(String postId, Model model){
+    public String postDetail(String postId, Model model, HttpSession session){
         _Post post = postService.queryById(postId);
+        Permi permi = (Permi)session.getAttribute("permi");
         model.addAttribute("post",post);
 
         return "/_jsp/_postDetail.jsp";

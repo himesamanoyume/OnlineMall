@@ -31,9 +31,11 @@
             <div id="nav-tags" class="nav-link">标签
                 <div class="hover-bar"></div>
             </div>
-            <div id="nav-resume" class="nav-link">简历
-                <div class="hover-bar"></div>
-            </div>
+            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 1 or sessionScope.permi.type == 2}">
+                <div id="nav-resume" class="nav-link">简历
+                    <div class="hover-bar"></div>
+                </div>
+            </c:if>
             <div id="nav-theme" class="nav-link">主题
                 <div class="hover-bar"></div>
             </div>

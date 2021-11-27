@@ -6,11 +6,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.entity.Post;
 import design.princessdreamland.onlinemall.mapper.PostMapper;
 import design.princessdreamland.onlinemall.service.PostService;
+import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -97,6 +100,26 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
         post.setUpdateTime(new Date());
         this.updateById(post);
+        return post;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Post addPost(Post post){
+        post.setCreateTime(new Date());
+
+        this.save(post);
+
+        return post;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Post editPost(Post post){
+
+        post.setUpdateTime(new Date());
+        this.updateById(post);
+
         return post;
     }
 }

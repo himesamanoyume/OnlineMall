@@ -27,7 +27,8 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
-
+            ConsolePostOpenDetailFunc();
+            ConsoleAddPostFunc();
             $('#console-set-status').click(function (){
                 $.post('/post/setStatus',{
                     postId:$(this).parent().parent().parent().attr('data-postId')
@@ -42,6 +43,8 @@
                     alert(res.responseJSON.message)
                 })
             });
+
+
         })
         window.onresize=function(){
 

@@ -1,5 +1,7 @@
 package design.princessdreamland.onlinemall.controller;
 
+import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import design.princessdreamland.onlinemall.entity.Post;
@@ -35,5 +37,34 @@ public class PostController {
     public Post setStatus(String postId, HttpSession session){
         Post post = (Post) session.getAttribute("post");
         return postService.setStatus(postId);
+    }
+
+    @PostMapping("/addPost")
+    @ResponseBody
+    public Post addPost(Post post){
+        if (ObjectUtil.isNull(post)){
+            throw new RuntimeException("post参数不能为空");
+        }
+        if (StrUtil.isEmpty(post.getTitle())){
+            throw new RuntimeException("标题不能为空");
+        }
+        postService.addPost(post);
+
+        return post;
+    }
+
+
+    @PostMapping("/editPost")
+    @ResponseBody
+    public Post editPost(Post post){
+        if (ObjectUtil.isNull(post)){
+            throw new RuntimeException("post参数不能为空");
+        }
+        if (StrUtil.isEmpty(post.getTitle())){
+            throw new RuntimeException("标题不能为空");
+        }
+        postService.editPost(post);
+
+        return post;
     }
 }

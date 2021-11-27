@@ -43,7 +43,7 @@
         <div class="home-container">
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
-                    <img src="/_jsp/test.png">
+                    <img src="">
                     <div class="post-txt-container">
                         <div class="post-detail-title">${post.title}</div>
                         <div class="post-detail-postInfo-container">

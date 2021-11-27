@@ -17,4 +17,8 @@ public interface PostService extends IService<Post> {
     Post queryById(String postId);
 
     Post setStatus(String postId);
+
+    Post addPost(Post post);
+
+    Post editPost(Post post);
 }

@@ -131,4 +131,26 @@ public class IndexController {
         return "/_jsp/_console.jsp";
     }
 
+    @GetMapping("/addPost")
+    @RequestLog(action="新增文章页面")
+    public String addPost(HttpSession session) {
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        return "/_jsp/_addPost.jsp";
+    }
+
+    @GetMapping("/editPost")
+    @RequestLog(action="编辑文章页面")
+    public String editPost(String postId, Model model, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        Post post = postService.queryById(postId);
+        model.addAttribute("post",post);
+
+        return "/_jsp/_editPost.jsp";
+    }
 }

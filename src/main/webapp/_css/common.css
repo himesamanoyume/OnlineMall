@@ -18,15 +18,18 @@ html, body {
     .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
         /*max-width: 990px;*/
+        max-width: 100%;
         position: inherit;
     }
     .main>.home-container>.info-container>.info-container-inner>.info>.info-icon{
         margin-top: 20px;
         width: auto;
         height: 180px;
-
+        border-radius: 3px;
     }
     .main>.home-container>.post-container{
+        max-width: 100%;
+        width: 100%;
         padding: 5px 15px 5px 15px;
     }
     .main>.topTitle{
@@ -99,9 +102,6 @@ body[data-theme=light]{
     --post-reference-bg:#595959;
 }
 
-.Contrast{
-        fill: var(--text-color);
-}
 .main{
     display: block;
 }
@@ -111,11 +111,12 @@ body[data-theme=light]{
     margin-left: auto;
     margin-right: auto;
     /*height: 100%;*/
+    width: 100%;
     max-width: 975px;
 }
 .post-container{
-    width: 100%;
-    /*width: 90%;*/
+    max-width: 85%;
+    width: 775px;
     min-width: 400px;
     /*max-width: 795px;*/
     height: 100%;
@@ -125,6 +126,7 @@ body[data-theme=light]{
     border-radius: 3px;
 }
 .info-container{
+    max-width: 20%;
     padding: 5px 15px 5px 5px;
     /*min-width: 400px;*/
     top: 60px;
@@ -153,9 +155,11 @@ body[data-theme=light]{
 
 .info-icon{
     margin-top: 10px;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     width: 180px;
-    height: 180px;
+    /*width: 100%;*/
+
+    /*height: 180px;*/
     border: 0;
     background-color: var(--tianyi-color);
 
@@ -220,21 +224,24 @@ body[data-theme=light]{
     border-radius: 3px 0 0 3px;
     background-color: var(--post-bg);
 }
-
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    font-size: 16px;
+    font-size: 13px;
+    text-align: center;
 }
 
 input:-moz-placeholder, textarea:-moz-placeholder {
-    font-size: 16px;
+    font-size: 13px;
+    text-align: center;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-    font-size: 16px;
+    font-size: 13px;
+    text-align: center;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    font-size: 16px;
+    font-size: 13px;
+    text-align: center;
 }
 .info-link .searchBar:focus{
     outline: none;

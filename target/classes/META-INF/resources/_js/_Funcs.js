@@ -34,6 +34,12 @@ function PostOpenDetailFunc(){
     })
 }
 
+function ConsolePostOpenDetailFunc(){
+    $('#console-edit').click(function (){
+        location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId')
+    })
+}
+
 function SearchButtonFunc(){
     $('#search').click(function (){
         location.href="/"
@@ -71,8 +77,10 @@ function PermissionButtonFunc(){
     })
 }
 
-function ConsoleSetStatusFunc(){
-
+function ConsoleAddPostFunc(){
+    $('#addPost').click(function (){
+        location.href="/addPost"
+    })
 }
 
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')//dark

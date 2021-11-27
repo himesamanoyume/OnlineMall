@@ -11,11 +11,8 @@
 
 <header class="header">
     <nav class="nav">
-        <div class="blogName">HimeBlog</div>
+        <div id="nav-index" class="blogName">HimeBlog</div>
         <div class="nav-container">
-            <div id="nav-index" class="nav-link">主页
-                <div class="hover-bar"></div>
-            </div>
             <div id="nav-post" class="nav-link">文章
                 <div class="hover-bar"></div>
             </div>
@@ -36,13 +33,15 @@
                     <div class="hover-bar"></div>
                 </div>
             </c:if>
-            <div id="nav-theme" class="nav-link">主题
-                <div class="hover-bar"></div>
-            </div>
+            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">
+                <div id="nav-console" class="nav-link">后台
+                    <div class="hover-bar"></div>
+                </div>
+            </c:if>
         </div>
     </nav>
 </header>
 
-<div class="topTitle">
+<div id="topTitle-index" class="topTitle">
     HimeBlog
 </div>

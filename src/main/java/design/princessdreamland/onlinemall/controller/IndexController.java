@@ -108,4 +108,32 @@ public class IndexController {
         return "/_jsp/_postDetail.jsp";
     }
 
+    @GetMapping("/permi/resume")
+    @RequestLog(action="简历页面")
+    public String resume(Model model, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType() && 1!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+
+        return "/_jsp/_resume.jsp";
+    }
+
+    @GetMapping("/permi/console")
+    @RequestLog(action="后台页面")
+    public String console(String type, Model model, String currentPage, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        IPage<_Post> postPage = postService.searchConsolePage(type,currentPage);
+
+
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_console.jsp";
+    }
+
 }

@@ -2,28 +2,29 @@ function NavFunc(){
     $('#nav-index').click(function(){
         location.href="/index"
     })
+    $('#topTitle-index').click(function(){
+        location.href="/index"
+    })
     $('#nav-post').click(function(){
         location.href="/post?type=1"
-        // location.href="/post?type=1&currentPage=1"
     })
     $('#nav-project').click(function(){
-        // location.href="/project?type=2&currentPage=1"
         location.href="/project?type=2"
     })
     $('#nav-note').click(function(){
-        // location.href="/note?type=3&currentPage=1"
         location.href="/note?type=3"
     })
     $('#nav-tools').click(function(){
-        // location.href="/tools?type=4&currentPage=1"
         location.href="/tools?type=4"
     })
     $('#nav-tags').click(function(){
-        // location.href="/tags?type=5&currentPage=1"
         location.href="/tags?type=5"
     })
     $('#nav-resume').click(function(){
-        location.href="/resume"
+        location.href="/permi/resume"
+    })
+    $('#nav-console').click(function(){
+        location.href="/permi/console"
     })
 }
 
@@ -59,6 +60,7 @@ function PermissionButtonFunc(){
             password:password
         },function(res){
             if(res && res.permiId){
+                alert('获取权限成功，导航栏简历按钮已开放')
                 location.href = "/"+$('.main').attr('data-url');
             }else{
                 alert('获取权限失败')
@@ -72,56 +74,41 @@ function PermissionButtonFunc(){
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')//dark
 
 function ThemeSetFunc(){
-
-    $('#nav-theme').click(function (){
-        $('*').css('transition-duration','0.2s');
+    $('#info-theme').click(function (){
         if (mediaQuery.matches) {
             if (getCookie('prefer-theme')){
                 if (getCookie('prefer-theme')=='auto'){
                     $('#body').attr('data-theme','light');
-                    console.log(1)
                 }else{
                     $('#body').attr('data-theme','auto');
-                    console.log(2)
                 }
             }else{
                 if ($('#body').attr('data-theme')=='auto'){
                     $('#body').attr('data-theme','light');
-                    console.log(3)
                 }else{
                     $('#body').attr('data-theme','auto');
-                    console.log(4)
                 }
             }
-
         }else{
             if (getCookie('prefer-theme')){
                 if (getCookie('prefer-theme')=='auto'){
                     $('#body').attr('data-theme','dark');
-                    console.log(5)
                 }else{
                     $('#body').attr('data-theme','auto');
-                    console.log(6)
                 }
             }else {
                 if ($('#body').attr('data-theme')=='auto'){
                     $('#body').attr('data-theme','dark');
-                    console.log(7)
                 }else{
                     $('#body').attr('data-theme','auto');
-                    console.log(8)
                 }
             }
-
         }
-
         setCookie('prefer-theme',$('#body').attr('data-theme'));
     })
-
 }
 
 function SaveThemeCookie(){
-
     if (getCookie('prefer-theme')){
         if (getCookie('prefer-theme')=='light'){
             $('#body').attr('data-theme','light');

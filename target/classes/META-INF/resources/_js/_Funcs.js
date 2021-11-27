@@ -40,6 +40,35 @@ function ConsolePostOpenDetailFunc(){
     })
 }
 
+function editPostFunc(){
+    $('#copyCodeBlock').click(function (){
+        var text = "<div class=\"code\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        alert("复制成功");
+    })
+
+    $('#copyImgBlock').click(function (){
+        var text = "<img title=\"\" src=\"\">";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        alert("复制成功");
+    })
+
+    $('#copyReferenceBlock').click(function (){
+        var text = "<div class=\"reference\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        alert("复制成功");
+    })
+}
+
 function SearchButtonFunc(){
     $('#search').click(function (){
         location.href="/"

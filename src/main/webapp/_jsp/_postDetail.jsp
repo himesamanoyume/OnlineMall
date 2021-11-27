@@ -43,7 +43,7 @@
         <div class="home-container">
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
-                    <img src="">
+                    <img src="${post.topImg}">
                     <div class="post-txt-container">
                         <div class="post-detail-title">${post.title}</div>
                         <div class="post-detail-postInfo-container">
@@ -68,18 +68,8 @@
                         </div>
                         <hr class="hr"/>
                         <div class="post-detail-txt">
-                            <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
                             ${post.article}
-                            <img src="/_jsp/test.png">
-                            <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-                            <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-                            <div class="code">
-                                <p>System.out.println("hello world!");</p>
-                                <p>噜啦啦噜啦啦</p>
-                            </div>
-                            <div class="reference">
-                                哈哈哈哈哈哈
-                            </div>
+                            <img title="看看" src="/_jsp/test.png">
                         </div>
 
                     </div>

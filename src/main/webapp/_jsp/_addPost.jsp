@@ -28,15 +28,18 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
+            editPostFunc();
             $('#savePost').click(function (){
                 var topImg = $('#topImg').val()
                 var title = $('#title').val()
+                var introduction = $('#introduction').val()
                 var publishTime = $('#publishTime').val()
                 var typeId = $('#typeId').val()
                 var article = $('#article').val()
 
                 topImg = topImg.trim()
                 title = title.trim()
+                introduction = introduction.trim()
                 publishTime = publishTime.trim()
                 typeId = typeId.trim()
                 article = article.trim()
@@ -49,6 +52,7 @@
                 $.post('/post/addPost',{
                     topImg:topImg,
                     title:title,
+                    introduction:introduction,
                     publishTime:publishTime,
                     typeId:typeId,
                     article:article
@@ -76,26 +80,7 @@
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
-
-                <div class="post">
-                    <input id="topImg" class="post-edit-topImg" placeholder="图片地址">
-                    <div class="post-txt-container">
-                        <input id="title" class="post-edit-title" placeholder="标题名">
-                        <div class="post-detail-postInfo-container">
-                            <input id="publishTime" class="post-edit-datetime" type="date">
-                            <select id="typeId" class="post-edit-tags">
-                                <option value="1">文章</option>
-                                <option value="2">项目</option>
-                                <option value="3">笔记</option>
-                                <option value="4">工具</option>
-                                <option value="5">标签</option>
-                            </select>
-
-                        </div>
-                        <hr class="hr"/>
-                        <textarea id="article" class="post-edit-txt" placeholder="正文"></textarea>
-                    </div>
-                </div>
+                <%@include file="../_component/_post.jsp" %>
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>

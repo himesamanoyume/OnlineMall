@@ -18,7 +18,6 @@
         @import "/_css/common.css";
         @import "/_css/header.css";
         @import "/_css/footer.css";
-        @import "/_css/postDetail.css";
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
@@ -40,7 +39,7 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="resume"/>
-    <main class="main" data-url="permi/resume">
+    <main class="main" data-url="resume">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

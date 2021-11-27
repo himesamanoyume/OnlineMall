@@ -108,7 +108,7 @@ public class IndexController {
         return "/_jsp/_postDetail.jsp";
     }
 
-    @GetMapping("/permi/resume")
+    @GetMapping("/resume")
     @RequestLog(action="简历页面")
     public String resume(Model model, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
@@ -119,7 +119,7 @@ public class IndexController {
         return "/_jsp/_resume.jsp";
     }
 
-    @GetMapping("/permi/console")
+    @GetMapping("/console")
     @RequestLog(action="后台页面")
     public String console(String type, Model model, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");

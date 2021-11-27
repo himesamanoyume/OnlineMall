@@ -21,10 +21,10 @@ function NavFunc(){
         location.href="/tags?type=5"
     })
     $('#nav-resume').click(function(){
-        location.href="/permi/resume"
+        location.href="/resume"
     })
     $('#nav-console').click(function(){
-        location.href="/permi/console"
+        location.href="/console"
     })
 }
 
@@ -69,6 +69,10 @@ function PermissionButtonFunc(){
             alert(res.responseJSON.message)
         })
     })
+}
+
+function ConsoleSetStatusFunc(){
+
 }
 
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')//dark

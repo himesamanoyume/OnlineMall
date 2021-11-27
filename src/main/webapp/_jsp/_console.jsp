@@ -27,6 +27,21 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
+
+            $('#console-set-status').click(function (){
+                $.post('/post/setStatus',{
+                    postId:$(this).parent().parent().parent().attr('data-postId')
+                },function (res){
+                    if (res&&res.postId){
+                        alert("状态改变成功")
+                        location.reload();
+                    }else{
+                        alert("失败")
+                    }
+                }).fail(function (res){
+                    alert(res.responseJSON.message)
+                })
+            });
         })
         window.onresize=function(){
 
@@ -38,7 +53,7 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="console"/>
-    <main class="main" data-url="permi/console">
+    <main class="main" data-url="console">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

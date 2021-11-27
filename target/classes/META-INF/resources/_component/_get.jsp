@@ -36,10 +36,10 @@
             <div class="post-txt-container-console-container">
                 <div id="console-edit" class="console-container-button">编辑</div>
                 <c:if test="${item.status==0}">
-                    <div id="console-set-open" class="console-container-button">设为开放</div>
+                    <div id="console-set-status" class="console-container-button">设为开放</div>
                 </c:if>
                 <c:if test="${item.status==1}">
-                    <div id="console-set-hidden" class="console-container-button">设为隐藏</div>
+                    <div id="console-set-status" class="console-container-button">设为隐藏</div>
                 </c:if>
             </div>
             </c:if>

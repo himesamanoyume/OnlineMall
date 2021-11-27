@@ -8,6 +8,7 @@ import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.mapper.PermiMapper;
 import design.princessdreamland.onlinemall.service.PermiService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -41,4 +42,6 @@ public class PermiServiceImpl extends ServiceImpl<PermiMapper, Permi> implements
         session.setAttribute("permi",loginUser);
         return loginUser;
     }
+
+
 }

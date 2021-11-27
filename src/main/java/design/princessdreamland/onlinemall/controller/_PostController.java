@@ -7,8 +7,11 @@ import design.princessdreamland.onlinemall.service._PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @ResponseBody
@@ -26,5 +29,11 @@ public class _PostController {
         page.setSize(10);
 
         return postService.queryPage(page, post);
+    }
+
+    @PostMapping("/setStatus")
+    public _Post setStatus(String postId, HttpSession session){
+        _Post post = (_Post) session.getAttribute("post");
+        return postService.setStatus(postId);
     }
 }

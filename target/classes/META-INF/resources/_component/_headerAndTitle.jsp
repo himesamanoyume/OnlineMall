@@ -11,7 +11,9 @@
 
 <header class="header">
     <nav class="nav">
-        <div id="nav-index" class="blogName">HimeBlog</div>
+        <div id="nav-index" class="blogName" title="首页">
+            HimeBlog
+        </div>
         <div class="nav-container">
             <div id="nav-post" class="nav-link">文章
                 <div class="hover-bar"></div>
@@ -42,6 +44,6 @@
     </nav>
 </header>
 
-<div id="topTitle-index" class="topTitle">
+<div id="topTitle-index" class="topTitle" title="首页">
     HimeBlog
 </div>

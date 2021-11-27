@@ -6,10 +6,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import design.princessdreamland.onlinemall.entity.Permi;
-import design.princessdreamland.onlinemall.entity._Post;
-import design.princessdreamland.onlinemall.mapper._PostMapper;
-import design.princessdreamland.onlinemall.service._PostService;
+import design.princessdreamland.onlinemall.entity.Post;
+import design.princessdreamland.onlinemall.mapper.PostMapper;
+import design.princessdreamland.onlinemall.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,21 +16,21 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 @Service
-public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements _PostService {
+public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements PostService {
 
     @Autowired
     private HttpSession session;
 
     @Override
-    public IPage<_Post> queryPage(Page<_Post> page,_Post post){
+    public IPage<Post> queryPage(Page<Post> page, Post post){
         return baseMapper.queryPage(page,post);
     }
 
     @Override
-    public IPage<_Post> searchIndexPage(String type, String currentPage){
-        _Post post = new _Post();
+    public IPage<Post> searchIndexPage(String type, String currentPage){
+        Post post = new Post();
         post.setStatus(1);
-        Page<_Post> page = new Page<>();
+        Page<Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
         }
@@ -42,10 +41,10 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     }
 
     @Override
-    public IPage<_Post> searchConsolePage(String type, String currentPage){
-        _Post post = new _Post();
+    public IPage<Post> searchConsolePage(String type, String currentPage){
+        Post post = new Post();
 //        post.setStatus(1);
-        Page<_Post> page = new Page<>();
+        Page<Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
         }
@@ -56,8 +55,8 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     }
 
     @Override
-    public IPage<_Post> searchPage(String type,String keyword, String currentPage){
-        _Post post = new _Post();
+    public IPage<Post> searchPage(String type, String keyword, String currentPage){
+        Post post = new Post();
         post.setStatus(1);
         if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
             post.setTitle(keyword);
@@ -66,7 +65,7 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
             post.setTypeId(new Integer(type));
         }
 
-        Page<_Post> page = new Page<>();
+        Page<Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
         }
@@ -77,15 +76,15 @@ public class _PostServiceImpl extends ServiceImpl<_PostMapper, _Post> implements
     }
 
     @Override
-    public _Post queryById(String postId){
+    public Post queryById(String postId){
         return baseMapper.queryById(postId);
     }
 
     @Override
-    public _Post setStatus(String postId){
-        QueryWrapper<_Post> queryWrapper = new QueryWrapper<>();
+    public Post setStatus(String postId){
+        QueryWrapper<Post> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("post_id",postId);
-        _Post post = this.getOne(queryWrapper);
+        Post post = this.getOne(queryWrapper);
 
         if (ObjectUtil.isNull(post)){
             throw new RuntimeException("文章不存在或者没有操作权限");

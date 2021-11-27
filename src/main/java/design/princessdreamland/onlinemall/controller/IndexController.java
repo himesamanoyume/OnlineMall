@@ -1,21 +1,16 @@
 package design.princessdreamland.onlinemall.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import design.princessdreamland.onlinemall.annotation.RequestLog;
-import design.princessdreamland.onlinemall.entity.Book;
 import design.princessdreamland.onlinemall.entity.Permi;
-import design.princessdreamland.onlinemall.entity._Post;
-import design.princessdreamland.onlinemall.service.BookService;
-import design.princessdreamland.onlinemall.service._PostService;
+import design.princessdreamland.onlinemall.entity.Post;
+import design.princessdreamland.onlinemall.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
 
 @Controller
@@ -23,14 +18,14 @@ import java.io.IOException;
 public class IndexController {
 
     @Autowired
-    private _PostService postService;
+    private PostService postService;
 
     @GetMapping("/index")
     @RequestLog(action="首页页面")
     public String index(String type, Model model, String currentPage, HttpSession session){
 
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchIndexPage(type,currentPage);
+        IPage<Post> postPage = postService.searchIndexPage(type,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -42,7 +37,7 @@ public class IndexController {
     @RequestLog(action="文章页面")
     public String post(String type, Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
+        IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -54,7 +49,7 @@ public class IndexController {
     @RequestLog(action="项目页面")
     public String project(String type,Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
+        IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -66,7 +61,7 @@ public class IndexController {
     @RequestLog(action="笔记页面")
     public String note(String type,Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
+        IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -78,7 +73,7 @@ public class IndexController {
     @RequestLog(action="工具页面")
     public String tools(String type,Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
+        IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -90,7 +85,7 @@ public class IndexController {
     @RequestLog(action="项目页面")
     public String tags(String type,Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<_Post> postPage = postService.searchPage(type,keyword,currentPage);
+        IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -101,7 +96,7 @@ public class IndexController {
     @GetMapping("/postDetail")
     @RequestLog(action="文章详细页面")
     public String postDetail(String postId, Model model, HttpSession session){
-        _Post post = postService.queryById(postId);
+        Post post = postService.queryById(postId);
         Permi permi = (Permi)session.getAttribute("permi");
         model.addAttribute("post",post);
 
@@ -126,7 +121,7 @@ public class IndexController {
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
-        IPage<_Post> postPage = postService.searchConsolePage(type,currentPage);
+        IPage<Post> postPage = postService.searchConsolePage(type,currentPage);
 
 
         model.addAttribute("postList",postPage.getRecords());

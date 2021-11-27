@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="design.princessdreamland.onlinemall.mapper._PostMapper">
+<mapper namespace="design.princessdreamland.onlinemall.mapper.PostMapper">
 
-	<resultMap type="design.princessdreamland.onlinemall.entity._Post" id="_postMap">
+	<resultMap type="design.princessdreamland.onlinemall.entity.Post" id="postMap">
 		<id property="postId" column="post_id" />
 
 	</resultMap>
@@ -54,7 +54,7 @@
 	</where>
 </sql>
 
-	<select id="queryPage" resultMap="_postMap" >
+	<select id="queryPage" resultMap="postMap" >
 		SELECT
 		<include refid="cols" />
 		FROM post p
@@ -63,7 +63,7 @@
 		ORDER BY post_id DESC
 	</select>
 
-	<select id="queryById" resultMap="_postMap" >
+	<select id="queryById" resultMap="postMap" >
 		SELECT
 		<include refid="cols" />
 		FROM post p

@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 @Data
-public class _Post extends BaseEntity<_Post>{
+public class Post extends BaseEntity<Post>{
     @TableId(type = IdType.AUTO)
     private Integer postId;
     private String title;

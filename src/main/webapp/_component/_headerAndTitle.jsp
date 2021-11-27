@@ -15,28 +15,35 @@
             HimeBlog
         </div>
         <div class="nav-container">
-            <div id="nav-post" class="nav-link">文章
+            <div class="nav-content">
+                <div id="nav-post" class="nav-link">文章</div>
                 <div class="hover-bar"></div>
             </div>
-            <div id="nav-project" class="nav-link">项目
+            <div class="nav-content">
+                <div id="nav-project" class="nav-link">项目</div>
                 <div class="hover-bar"></div>
             </div>
-            <div id="nav-note" class="nav-link">笔记
+            <div class="nav-content">
+                <div id="nav-note" class="nav-link">笔记</div>
                 <div class="hover-bar"></div>
             </div>
-            <div id="nav-tools" class="nav-link">工具
+            <div class="nav-content">
+                <div id="nav-tools" class="nav-link">工具</div>
                 <div class="hover-bar"></div>
             </div>
-            <div id="nav-tags" class="nav-link">标签
+            <div class="nav-content">
+                <div id="nav-tags" class="nav-link">标签</div>
                 <div class="hover-bar"></div>
             </div>
             <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 1 or sessionScope.permi.type == 2}">
-                <div id="nav-resume" class="nav-link">简历
+                <div class="nav-content">
+                    <div id="nav-resume" class="nav-link">简历</div>
                     <div class="hover-bar"></div>
                 </div>
             </c:if>
             <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">
-                <div id="nav-console" class="nav-link">后台
+                <div class="nav-content">
+                    <div id="nav-console" class="nav-link">后台</div>
                     <div class="hover-bar"></div>
                 </div>
             </c:if>

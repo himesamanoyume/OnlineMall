@@ -15,9 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HimeBlog</title>
     <style>
-        @import "/_css/common.css";
-        @import "/_css/header.css";
-        @import "/_css/footer.css";
+        <%@include file="../_component/_style.jsp" %>
         @import "/_css/postDetail.css";
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>

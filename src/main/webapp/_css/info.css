@@ -1,0 +1,139 @@
+.info-container{
+    max-width: 20%;
+    padding: 5px 15px 5px 5px;
+    /*min-width: 400px;*/
+    top: 60px;
+    height: 100%;
+    min-width: 200px;
+    position: sticky;
+    /*max-width: 200px;*/
+}
+
+.info-container-inner{
+    height: 100%;
+
+}
+
+.info{
+    text-align: center;
+    border: 0;
+    background-color: var(--post-bg);
+    width: 100%;
+    /*display: inline-block;*/
+    height: 350px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
+    margin-bottom: 10px;
+}
+
+.info-icon{
+    /*margin-top: 10px;*/
+    border-radius: 3px 3px 0 0;
+    width: 180px;
+    /*width: 100%;*/
+
+    /*height: 180px;*/
+    border: 0;
+    background-color: var(--tianyi-color);
+
+}
+
+.info-name{
+    font-size: 25px;
+    line-height: 50px;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.info-txt{
+    font-size: 15px;
+    line-height: 25px;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.info-link{
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 0;
+    background-color: var(--post-bg);
+    width: 100%;
+    min-height: 40px;
+    /*height: 40px;*/
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--post-shadow-color);
+    margin-bottom: 10px;
+    justify-content: space-around;
+}
+
+
+.info-link .permi-info{
+    height: 100%;
+    /*width: 100%;*/
+    padding: 0 15px 0 15px;
+    text-align: center;
+    line-height: 40px;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.info-link .link-button{
+    height: 40px;
+    border: 0;
+    width: 33.3%;
+    /*width: 100%;*/
+    /*margin: 0 15px 0 15px;*/
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+}
+
+.link-button .info-hover-bar{
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    margin: 0 auto;
+    height: 2px;
+    background-color: var(--tianyi-color);
+    transition-duration: 0.3s;
+}
+.link-button:hover .info-hover-bar{
+    width: 100%;
+}
+
+.info-link .searchBar{
+    height: 40px;
+    width: 80%;
+    font-size: 18px;
+    padding: 0 10px 0 10px;
+    border: 0;
+    color: var(--text-color);
+    border-radius: 3px 0 0 3px;
+    background-color: var(--post-bg);
+}
+.info-link .searchButton{
+    height: 40px;
+    width: 20%;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--text-color);
+}
+.searchButton > .info-hover-bar{
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    margin: 0 auto;
+    height: 2px;
+    background-color: var(--tianyi-color);
+    transition-duration: 0.3s;
+}
+.searchButton:hover > .info-hover-bar{
+    width: 100%;
+}

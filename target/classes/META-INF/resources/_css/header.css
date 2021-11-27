@@ -13,6 +13,8 @@
     .main>.header>.nav>.nav-container{
         margin:0 auto;
         width: 80%;
+        /*display: inline-flex;*/
+        /*display: -webkit-inline-flex;*/
         justify-content: space-around;
     }
     .main>.header>.nav>.nav-container>.nav-link{
@@ -61,31 +63,30 @@
     display: -webkit-flex;
     transition-duration: 0.2s;
 }
-
+.nav-content{
+    width: 62px;
+    height: 60px;
+}
 .nav-link{
     padding: 0 15px 0 15px;
     cursor: pointer;
     text-align: center;
     justify-content: center;
-    display: inline-block;
+    /*display: inline-block;*/
     line-height: 57px;
-    min-width: 62px;
+    min-width: 32px;
     transition-duration: 0.2s;
-
 }
-.nav-link:hover > .hover-bar{
+.nav-content:hover >.hover-bar{
     width: 100%;
 }
-
 .nav-link:hover{
     color: var(--tianyi-color);
 }
-
-.hover-bar{
+.nav-content .hover-bar{
     width: 0%;
     margin: 0 auto;
     height: 3px;
     background-color: var(--tianyi-color);
     transition-duration: 0.3s;
-
 }

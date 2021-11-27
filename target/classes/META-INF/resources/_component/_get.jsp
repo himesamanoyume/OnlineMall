@@ -11,7 +11,7 @@
 
 <c:forEach items="${postList}" var="item">
     <div class="post" data-postId="${item.postId}">
-        <img>
+        <img src="${item.topImg}">
         <div class="post-txt-container">
             <div class="post-txt-container-title">
                     ${item.title}

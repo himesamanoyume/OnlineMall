@@ -47,7 +47,8 @@ function editPostFunc(){
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        alert("复制成功");
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,2000)
     })
 
     $('#copyImgBlock').click(function (){
@@ -56,7 +57,8 @@ function editPostFunc(){
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        alert("复制成功");
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,2000)
     })
 
     $('#copyReferenceBlock').click(function (){
@@ -65,8 +67,18 @@ function editPostFunc(){
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        alert("复制成功");
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,1100)
     })
+}
+
+function InfoPrompt(str){
+    var prompt = "<div id='tempPrompt' class=\"info-link\"><div class=\"permi-info\">"+ str +"</div></div>"
+    $('#info-container-inner').append(prompt)
+}
+
+function RemoveInfoPrompt(){
+    document.getElementById("tempPrompt").remove()
 }
 
 function SearchButtonFunc(){

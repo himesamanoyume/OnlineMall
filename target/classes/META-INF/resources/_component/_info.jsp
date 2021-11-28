@@ -70,6 +70,13 @@
                 </div>
             </div>
         </c:if>
+        <c:if test="${sessionScope.permi==null}">
+            <div class="info-link">
+                <div class="permi-info">
+                    当前权限:无
+                </div>
+            </div>
+        </c:if>
         <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 1}">
             <div class="info-link">
                 <div class="permi-info">

@@ -56,7 +56,8 @@ html, body {
         --header-bg:rgba(38,38,38,0.45);
         --post-shadow-color:#404040;
         --text-color:#d9d9d9;
-        --text-blogname-color:#d9d9d9;
+        --text-blogname-color:#ffffff;
+        --page-color:#fff;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -71,6 +72,7 @@ html, body {
         --post-shadow-color:#d6d6d6;
         --text-color:#666699;
         --text-blogname-color:#666699;
+        --page-color:#474769;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -84,6 +86,7 @@ body[data-theme=dark]{
     --post-shadow-color:#404040;
     --text-color:#d9d9d9;
     --text-blogname-color:#d9d9d9;
+    --page-color:#fff;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -96,6 +99,7 @@ body[data-theme=light]{
     --post-shadow-color:#d6d6d6;
     --text-color:#666699;
     --text-blogname-color:#666699;
+    --page-color:#474769;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -198,19 +202,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 0 30px 0 30px;
     display: flex;
     display: -webkit-flex;
-    transition-duration: 0.4s;
-    justify-content: space-around;
+    transition-duration: 0.2s;
+    justify-content: center;
+    text-align: center;
 }
 .post-page-container-currentPage{
     padding: 0 15px 0 15px;
-    color: var(--text-color);
-    justify-content: center;
+    color: var(--page-color);
     line-height: 40px;
-    min-width: 62px;
+    width: 55px;
+    transition-duration: 0.2s;
+    box-shadow: 0 0 0 0 var(--tianyi-color) inset;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
+}
+.post-page-container-currentPage:hover{
+    box-shadow: 0 -2px 0 0 var(--tianyi-color) inset;
 }
 .post-page-container-button{
     padding: 0 15px 0 15px;
@@ -218,15 +227,22 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     justify-content: center;
     line-height: 40px;
-    min-width: 62px;
+    width: 55px;
+    transition-duration: 0.2s;
+    box-shadow: 0 0 0 0 var(--tianyi-color) inset;
+    /*position: relative;*/
 }
+.post-page-container-button:hover{
+    box-shadow: 0 -2px 0 0 var(--tianyi-color) inset;
+}
+
 .post-page-container-nullSearch{
     padding: 0 15px 0 15px;
     color: var(--text-color);
     justify-content: center;
     display: inline-block;
     line-height: 40px;
-    min-width: 62px;
+    min-width: 55px;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

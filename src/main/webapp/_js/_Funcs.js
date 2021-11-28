@@ -174,6 +174,8 @@ function SaveThemeCookie(){
     setCookie('prefer-theme',$('#body').attr('data-theme'));
 }
 
+
+
 /**
  * 写入cookie
  * @param name  cookie 名

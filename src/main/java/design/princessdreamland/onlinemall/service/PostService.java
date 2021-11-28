@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import design.princessdreamland.onlinemall.entity.Post;
 
+import javax.servlet.http.HttpSession;
+
 public interface PostService extends IService<Post> {
     IPage<Post> queryPage(Page<Post> page, Post post);
 
@@ -21,4 +23,6 @@ public interface PostService extends IService<Post> {
     Post addPost(Post post);
 
     Post editPost(Post post);
+
+    Post delete(String postId);
 }

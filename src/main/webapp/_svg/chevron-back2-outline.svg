@@ -1,0 +1,13 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" class="ionicon">
+ <title>Chevron Forward</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="819" width="1662" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(180 175.99999999999997,256) " id="svg_1" d="m104,112l144,144l-144,144" stroke-width="48" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"/>
+  <path transform="rotate(180 350,256) " id="svg_2" d="m278,112l144,144l-144,144" stroke-width="48" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"/>
+ </g>
+</svg>

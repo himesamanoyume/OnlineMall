@@ -26,14 +26,9 @@
             NavFunc();
             PostOpenDetailFunc();
             PermissionButtonFunc();
+
         })
 
-        window.onresize=function(){
-
-        }
-        window.onscroll=function (){
-
-        }
     </script>
 </head>
 <body id="body" data-theme="auto">

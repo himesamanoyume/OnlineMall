@@ -27,12 +27,65 @@
             SaveThemeCookie();
             ThemeSetFunc();
             PermissionButtonFunc();
-        }
-        window.onresize=function(){
-
-        }
-        window.onscroll=function (){
-
+            PageFunc();
+            function PageFunc(){
+                $('#prePage').click(function(){
+                    var page = ${currentPage} - 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#nextPage').click(function(){
+                    var page = ${currentPage} + 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#firstPage').click(function(){
+                    var page = 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#lastPage').click(function(){
+                    var page = ${totalPages};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPre2Page').click(function(){
+                    var page = ${totalPages-2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPrePage').click(function(){
+                    var page = ${totalPages-1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNextPage').click(function(){
+                    var page = ${totalPages+1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNext2Page').click(function(){
+                    var page = ${totalPages+2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+            }
         }
     </script>
 </head>

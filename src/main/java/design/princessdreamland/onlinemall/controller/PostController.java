@@ -4,6 +4,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.entity.Post;
 import design.princessdreamland.onlinemall.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,13 +36,30 @@ public class PostController {
 
     @PostMapping("/setStatus")
     public Post setStatus(String postId, HttpSession session){
-        Post post = (Post) session.getAttribute("post");
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
         return postService.setStatus(postId);
+    }
+
+    @PostMapping("/delete")
+    public Post delete(String postId, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        return postService.delete(postId);
     }
 
     @PostMapping("/addPost")
     @ResponseBody
-    public Post addPost(Post post){
+    public Post addPost(Post post, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
         if (ObjectUtil.isNull(post)){
             throw new RuntimeException("post参数不能为空");
         }
@@ -56,7 +74,11 @@ public class PostController {
 
     @PostMapping("/editPost")
     @ResponseBody
-    public Post editPost(Post post){
+    public Post editPost(Post post, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
         if (ObjectUtil.isNull(post)){
             throw new RuntimeException("post参数不能为空");
         }

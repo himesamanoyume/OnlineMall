@@ -27,29 +27,99 @@
             NavFunc();
             ConsolePostOpenDetailFunc();
             ConsoleAddPostFunc();
-            $('body').on('click', '.console-container-set-status-button', function (){
-                $.post('/post/setStatus',{
-                    postId:$(this).parent().parent().parent().attr('data-postId')
-                },function (res){
-                    if (res&&res.postId){
-                        alert("状态改变成功")
-                        location.reload();
-                    }else{
-                        alert("失败")
-                    }
-                }).fail(function (res){
-                    alert(res.responseJSON.message)
-                })
-            });
+            ConsoleContorlPostFunc();
+            function ConsoleContorlPostFunc(){
+                $('body').on('click', '.console-container-set-status-button', function (){
+                    $.post('/post/setStatus',{
+                        postId:$(this).parent().parent().parent().attr('data-postId')
+                    },function (res){
+                        if (res&&res.postId){
+                            alert("状态改变成功")
+                            location.reload();
+                        }else{
+                            alert("失败")
+                        }
+                    }).fail(function (res){
+                        alert(res.responseJSON.message)
+                    })
+                });
 
+                $('body').on('click', '.console-container-delete-button', function (){
+                    $.post('/post/delete',{
+                        postId:$(this).parent().parent().parent().attr('data-postId')
+                    },function (res){
+                        if (res&&res.postId){
+                            alert("状态改变成功")
+                            location.reload();
+                        }else{
+                            alert("失败")
+                        }
+                    }).fail(function (res){
+                        alert(res.responseJSON.message)
+                    })
+                });
 
+            }
+            PageFunc();
+            function PageFunc(){
+                $('#prePage').click(function(){
+                    var page = ${currentPage} - 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#nextPage').click(function(){
+                    var page = ${currentPage} + 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#firstPage').click(function(){
+                    var page = 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#lastPage').click(function(){
+                    var page = ${totalPages};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPre2Page').click(function(){
+                    var page = ${totalPages-2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPrePage').click(function(){
+                    var page = ${totalPages-1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNextPage').click(function(){
+                    var page = ${totalPages+1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNext2Page').click(function(){
+                    var page = ${totalPages+2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+            }
         })
-        window.onresize=function(){
-
-        }
-        window.onscroll=function (){
-
-        }
     </script>
 </head>
 <body id="body" data-theme="auto">

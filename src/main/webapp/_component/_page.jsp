@@ -16,14 +16,14 @@
         </c:if>
         <c:if test="${totalPages!=0}">
             <c:if test="${currentPage>1}">
-                <button class="post-page-container-button" id="prePage">上一页</button>
+                <div class="post-page-container-button" id="prePage">上一页</div>
             </c:if>
 
             <c:if test="${currentPage!=null}">
                 <div class="post-page-container-currentPage" id="currentPage">第${currentPage}页</div>
             </c:if>
             <c:if test="${currentPage<totalPages}">
-                <button class="post-page-container-button" id="nextPage">下一页</button>
+                <div class="post-page-container-button" id="nextPage">下一页</div>
             </c:if>
         </c:if>
 

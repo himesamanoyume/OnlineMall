@@ -55,8 +55,8 @@ html, body {
         --post-bg:rgb(38,38,38);
         --header-bg:rgba(38,38,38,0.45);
         --post-shadow-color:#404040;
-        --text-color:snow;
-        --text-blogname-color:snow;
+        --text-color:#d9d9d9;
+        --text-blogname-color:#d9d9d9;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -69,8 +69,8 @@ html, body {
         --post-bg:#f2eff2;
         --header-bg:rgba(194,194,194,0.45);
         --post-shadow-color:#d6d6d6;
-        --text-color:#242424;
-        --text-blogname-color:black;
+        --text-color:#666699;
+        --text-blogname-color:#666699;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -82,8 +82,8 @@ body[data-theme=dark]{
     --post-bg:rgb(38,38,38);
     --header-bg:rgba(38,38,38,0.45);
     --post-shadow-color:#404040;
-    --text-color:snow;
-    --text-blogname-color:snow;
+    --text-color:#d9d9d9;
+    --text-blogname-color:#d9d9d9;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -94,8 +94,8 @@ body[data-theme=light]{
     --post-bg:#f2eff2;
     --header-bg:rgba(194,194,194,0.45);
     --post-shadow-color:#d6d6d6;
-    --text-color:#242424;
-    --text-blogname-color:black;
+    --text-color:#666699;
+    --text-blogname-color:#666699;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -205,7 +205,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 0 15px 0 15px;
     color: var(--text-color);
     justify-content: center;
-    display: inline-block;
     line-height: 40px;
     min-width: 62px;
     user-select: none;
@@ -218,7 +217,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     cursor: pointer;
     color: var(--text-color);
     justify-content: center;
-    display: inline-block;
     line-height: 40px;
     min-width: 62px;
 }
@@ -300,19 +298,76 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: flex;
     display: -webkit-flex;
     transition-duration: 0.4s;
+    text-align: center;
     justify-content: space-around;
 }
 
-.post-txt-container-console-container .console-container-button{
+.post-txt-container-console-container .console-container-set-status-button{
     padding: 0 15px 0 15px;
     cursor: pointer;
     color: var(--text-color);
     justify-content: center;
     display: inline-block;
+    position: relative;
     line-height: 40px;
+    width: 31.3%;
     min-width: 62px;
 }
-
+.console-container-set-status-button .hover-bar{
+    width: 0%;
+    margin: 0 auto;
+    height: 1px;
+    position: absolute;
+    background-color: var(--tianyi-color);
+    transition-duration: 0.3s;
+}
+.console-container-set-status-button:hover > .hover-bar{
+    width: 90%;
+}
+.post-txt-container-console-container .console-container-edit-button{
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+    color: var(--text-color);
+    justify-content: center;
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    width: 31.3%;
+    min-width: 62px;
+}
+.console-container-edit-button .hover-bar{
+    width: 0%;
+    margin: 0 auto;
+    height: 1px;
+    position: absolute;
+    background-color: var(--tianyi-color);
+    transition-duration: 0.3s;
+}
+.console-container-edit-button:hover > .hover-bar{
+    width: 90%;
+}
+.post-txt-container-console-container .console-container-delete-button{
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+    color: var(--text-color);
+    justify-content: center;
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    width: 31.3%;
+    min-width: 62px;
+}
+.console-container-delete-button .hover-bar{
+    width: 0%;
+    margin: 0 auto;
+    height: 1px;
+    position: absolute;
+    background-color: var(--tianyi-color);
+    transition-duration: 0.3s;
+}
+.console-container-delete-button:hover > .hover-bar{
+    width: 90%;
+}
 .post:hover{
     box-shadow: 0 0 0 2px var(--tianyi-color);
 }

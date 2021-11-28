@@ -27,7 +27,7 @@
             NavFunc();
             ConsolePostOpenDetailFunc();
             ConsoleAddPostFunc();
-            $('#console-set-status').click(function (){
+            $('body').on('click', '.console-container-set-status-button', function (){
                 $.post('/post/setStatus',{
                     postId:$(this).parent().parent().parent().attr('data-postId')
                 },function (res){

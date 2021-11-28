@@ -35,7 +35,7 @@ function PostOpenDetailFunc(){
 }
 
 function ConsolePostOpenDetailFunc(){
-    $('#console-edit').click(function (){
+    $('body').on('click', '.console-container-edit-button', function (){
         location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId')
     })
 }

@@ -34,12 +34,21 @@
             </c:if>
             <c:if test="${urlWhere == 'console'}">
             <div class="post-txt-container-console-container">
-                <div id="console-edit" class="console-container-button">编辑</div>
+                <div class="console-container-edit-button">编辑
+                    <div class="hover-bar"></div>
+                </div>
+                <div class="console-container-delete-button">删除
+                    <div class="hover-bar"></div>
+                </div>
                 <c:if test="${item.status==0}">
-                    <div id="console-set-status" class="console-container-button">设为开放</div>
+                    <div class="console-container-set-status-button">设为开放
+                        <div class="hover-bar"></div>
+                    </div>
                 </c:if>
                 <c:if test="${item.status==1}">
-                    <div id="console-set-status" class="console-container-button">设为隐藏</div>
+                    <div class="console-container-set-status-button">设为隐藏
+                        <div class="hover-bar"></div>
+                    </div>
                 </c:if>
             </div>
             </c:if>

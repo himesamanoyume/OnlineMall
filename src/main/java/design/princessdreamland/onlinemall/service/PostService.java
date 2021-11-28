@@ -24,5 +24,4 @@ public interface PostService extends IService<Post> {
 
     Post editPost(Post post);
 
-    Post delete(String postId);
 }

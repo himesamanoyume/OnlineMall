@@ -44,21 +44,6 @@
                     })
                 });
 
-                $('body').on('click', '.console-container-delete-button', function (){
-                    $.post('/post/delete',{
-                        postId:$(this).parent().parent().parent().attr('data-postId')
-                    },function (res){
-                        if (res&&res.postId){
-                            alert("状态改变成功")
-                            location.reload();
-                        }else{
-                            alert("失败")
-                        }
-                    }).fail(function (res){
-                        alert(res.responseJSON.message)
-                    })
-                });
-
             }
             PageFunc();
             function PageFunc(){

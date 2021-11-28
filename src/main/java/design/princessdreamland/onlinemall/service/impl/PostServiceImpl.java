@@ -106,24 +106,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Post delete(String postId){
-        QueryWrapper<Post> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("post_id",postId);
-        Post post = this.getOne(queryWrapper);
-
-        if (ObjectUtil.isNull(post)){
-            throw new RuntimeException("文章不存在或者没有操作权限");
-        }
-
-        post.setDeleted(1);
-
-        post.setUpdateTime(new Date());
-        this.updateById(post);
-        return post;
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class)
     public Post addPost(Post post){
         post.setCreateTime(new Date());
 

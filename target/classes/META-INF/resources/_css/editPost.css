@@ -3,7 +3,7 @@
     text-align: center;
     margin: 30px 0 30px 0;
     font-size: 20px;
-    border: 1px solid;
+    border: 1px solid var(--text-color);
     color: var(--text-color);
     background-color: var(--post-bg);
 }
@@ -17,7 +17,7 @@
     text-align: center;
     margin: 30px 0 30px 0;
     font-size: 20px;
-    border: 1px solid;
+    border: 1px solid var(--text-color);
     background-color: var(--post-bg);
     color: var(--text-color);
 }
@@ -31,21 +31,22 @@
     height: 40px;
     line-height: 30px;
     background-color: var(--body-bg);
-    border: 1px solid;
+    border: 1px solid var(--text-color);
 }
 .post-edit-tags{
     color: var(--text-color);
     height: 40px;
     line-height: 30px;
     background-color: var(--body-bg);
-    border: 1px solid;
+    border: 1px solid var(--text-color);
 }
 .post-edit-txt{
     width: 100%;
     height: 500px;
     margin: 30px 0 30px 0;
     font-size: 20px;
-    border: 1px solid;
+    border: 1px solid var(--text-color);
+    transition-duration: 0s;
     resize: vertical;
     background-color: var(--post-bg);
     color: var(--text-color);
@@ -61,8 +62,9 @@
     height: 100px;
     margin: 30px 0 30px 0;
     font-size: 20px;
-    border: 1px solid;
+    border: 1px solid var(--text-color);
     resize: vertical;
+    transition-duration: 0s;
     background-color: var(--post-bg);
     color: var(--text-color);
 }

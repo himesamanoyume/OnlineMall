@@ -26,7 +26,7 @@
 
 <sql id="where">
 	<where>
-		AND deleted = 0
+		AND p.deleted = 0
 		<if test="post!=null and post!=''" >
 			<if test="post.postId!=null and post.postId!=''">
 				AND p.post_id = #{post.postId}

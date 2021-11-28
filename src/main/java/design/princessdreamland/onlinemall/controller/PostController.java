@@ -43,15 +43,6 @@ public class PostController {
         return postService.setStatus(postId);
     }
 
-    @PostMapping("/delete")
-    public Post delete(String postId, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
-        if (2!=permi.getType()){
-            throw new RuntimeException("没有访问权限");
-        }
-        return postService.delete(postId);
-    }
-
     @PostMapping("/addPost")
     @ResponseBody
     public Post addPost(Post post, HttpSession session){

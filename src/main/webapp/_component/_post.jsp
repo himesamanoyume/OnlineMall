@@ -10,8 +10,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="post" <c:if test="${urlWhere == 'editPost'}"> data-postId="${post.postId}"</c:if>>
-    <input id="topImg" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}"> value="${post.topImg}"</c:if> placeholder="头图图片地址">
     <div class="post-txt-container">
+        <input id="topImg" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}"> value="${post.topImg}"</c:if> placeholder="头图图片地址">
         <input id="tempInput" style="position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;">
         <input id="title" class="post-edit-title" <c:if test="${urlWhere == 'editPost'}"> value="${post.title}"</c:if> placeholder="标题名">
         <div class="post-detail-postInfo-container">

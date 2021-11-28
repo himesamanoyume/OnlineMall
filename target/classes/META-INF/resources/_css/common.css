@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition-duration:0.2s;
 }
 html, body {
     min-width: 400px;
@@ -9,7 +10,7 @@ html, body {
     height: 100%;
     background-color: var(--body-bg);
     line-height: 1.5;
-    transition-duration:0.2s
+    transition-duration:0.2s;
 }
 @media screen and (max-width: 990px){
     .home-container {
@@ -57,7 +58,8 @@ html, body {
         --post-shadow-color:#404040;
         --text-color:#d9d9d9;
         --text-blogname-color:#ffffff;
-        --page-color:#fff;
+        --page-button-color:#fff;
+        --page-current-color:#717585;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -72,7 +74,8 @@ html, body {
         --post-shadow-color:#d6d6d6;
         --text-color:#666699;
         --text-blogname-color:#666699;
-        --page-color:#474769;
+        --page-button-color:#474769;
+        --page-current-color:#b1b6ce;
         --tianyi-color:#66ccff;
         --post-code-bg:#333333;
         --post-code-text-color:snow;
@@ -86,7 +89,8 @@ body[data-theme=dark]{
     --post-shadow-color:#404040;
     --text-color:#d9d9d9;
     --text-blogname-color:#d9d9d9;
-    --page-color:#fff;
+    --page-button-color:#fff;
+    --page-current-color:#717585;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -99,7 +103,8 @@ body[data-theme=light]{
     --post-shadow-color:#d6d6d6;
     --text-color:#666699;
     --text-blogname-color:#666699;
-    --page-color:#474769;
+    --page-button-color:#474769;
+    --page-current-color:#b1b6ce;
     --tianyi-color:#66ccff;
     --post-code-bg:#333333;
     --post-code-text-color:snow;
@@ -124,6 +129,7 @@ body[data-theme=light]{
     min-width: 400px;
     /*max-width: 795px;*/
     height: 100%;
+    transition-duration: 0s;
     border: 0;
     padding: 5px 5px 5px 15px;
     /*margin-left: 20%;*/
@@ -157,7 +163,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 
 .post-container .post{
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     background-color: var(--post-bg);
     cursor: pointer;
     display: block;
@@ -208,7 +214,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .post-page-container-currentPage{
     padding: 0 15px 0 15px;
-    color: var(--page-color);
+    color: var(--page-current-color);
     line-height: 40px;
     width: 55px;
     transition-duration: 0.2s;
@@ -224,7 +230,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post-page-container-button{
     padding: 0 15px 0 15px;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--page-button-color);
     justify-content: center;
     line-height: 40px;
     width: 55px;
@@ -249,7 +255,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-user-select: none;
 }
 .post-container .main-post{
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     background-color: var(--post-bg);
     display: block;
     margin-bottom: 10px;
@@ -292,6 +298,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post-txt-container .post-txt-container-title{
     color: var(--text-color);
     font-size: 25px;
+    font-weight: bold;
     width: 100%;
     line-height: 80px;
 }
@@ -313,7 +320,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding: 0 30px 0 30px;
     display: flex;
     display: -webkit-flex;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     text-align: center;
     justify-content: space-around;
 }
@@ -324,21 +331,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     justify-content: center;
     display: inline-block;
-    position: relative;
+    box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
     width: 31.3%;
     min-width: 62px;
 }
-.console-container-set-status-button .hover-bar{
-    width: 0%;
-    margin: 0 auto;
-    height: 1px;
-    position: absolute;
-    background-color: var(--tianyi-color);
-    transition-duration: 0.3s;
-}
-.console-container-set-status-button:hover > .hover-bar{
-    width: 90%;
+.console-container-set-status-button:hover{
+    box-shadow: 0 -3px 0 0 #66ccff inset;
 }
 .post-txt-container-console-container .console-container-edit-button{
     padding: 0 15px 0 15px;
@@ -346,21 +345,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     justify-content: center;
     display: inline-block;
-    position: relative;
+    box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
     width: 31.3%;
     min-width: 62px;
 }
-.console-container-edit-button .hover-bar{
-    width: 0%;
-    margin: 0 auto;
-    height: 1px;
-    position: absolute;
-    background-color: var(--tianyi-color);
-    transition-duration: 0.3s;
-}
-.console-container-edit-button:hover > .hover-bar{
-    width: 90%;
+
+.console-container-edit-button:hover{
+    box-shadow: 0 -3px 0 0 #66ccff inset;
 }
 .post-txt-container-console-container .console-container-delete-button{
     padding: 0 15px 0 15px;
@@ -368,21 +360,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     justify-content: center;
     display: inline-block;
-    position: relative;
+    box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
     width: 31.3%;
     min-width: 62px;
 }
-.console-container-delete-button .hover-bar{
-    width: 0%;
-    margin: 0 auto;
-    height: 1px;
-    position: absolute;
-    background-color: var(--tianyi-color);
-    transition-duration: 0.3s;
-}
-.console-container-delete-button:hover > .hover-bar{
-    width: 90%;
+.console-container-delete-button:hover{
+    box-shadow: 0 -3px 0 0 #66ccff inset;
 }
 .post:hover{
     box-shadow: 0 0 0 2px var(--tianyi-color);
@@ -397,7 +381,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     width: 100%;
     height: 0;
     overflow: hidden;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

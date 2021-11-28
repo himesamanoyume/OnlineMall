@@ -113,6 +113,31 @@
                     <div class="info-hover-bar"></div>
                 </div>
             </div>
+            <div class="info-link">
+                <div class="link-button" id="copyImgBlock">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
+                        <title>复制图片块</title>
+                        <rect x="48" y="80" width="416" height="352" rx="48" ry="48" fill="none" stroke="var(--text-color)" stroke-linejoin="round" stroke-width="32"/>
+                        <circle cx="336" cy="176" r="32" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
+                        <path d="M304 335.79l-90.66-90.49a32 32 0 00-43.87-1.3L48 352M224 432l123.34-123.34a32 32 0 0143.11-2L464 368" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                    </svg>
+                    <div class="info-hover-bar"></div>
+                </div>
+                <div class="link-button" id="copyCodeBlock">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
+                        <title>复制代码块</title>
+                        <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M160 368L32 256l128-112M352 368l128-112-128-112"/>
+                    </svg>
+                    <div class="info-hover-bar"></div>
+                </div>
+                <div class="link-button" id="copyReferenceBlock">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
+                        <title>复制引用块</title>
+                        <path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                    </svg>
+                    <div class="info-hover-bar"></div>
+                </div>
+            </div>
         </c:if>
         <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2 and urlWhere=='editPost'}">
             <div class="info-link">

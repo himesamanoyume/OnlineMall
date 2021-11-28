@@ -6,6 +6,7 @@
     height: 100%;
     min-width: 200px;
     position: sticky;
+    transition-duration: 0s;
     /*max-width: 200px;*/
 }
 
@@ -100,7 +101,7 @@
     margin: 0 auto;
     height: 2px;
     background-color: var(--tianyi-color);
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 .link-button:hover .info-hover-bar{
     width: 100%;
@@ -132,7 +133,7 @@
     margin: 0 auto;
     height: 2px;
     background-color: var(--tianyi-color);
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 .searchButton:hover > .info-hover-bar{
     width: 100%;

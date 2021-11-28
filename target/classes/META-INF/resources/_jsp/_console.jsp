@@ -91,28 +91,28 @@
                         + page;
                 });
                 $('#currentPre2Page').click(function(){
-                    var page = ${totalPages-2};
+                    var page = ${currentPage-2};
                     location.href="/"
                         + $('.main').attr('data-url')
                         + "?&currentPage="
                         + page;
                 });
                 $('#currentPrePage').click(function(){
-                    var page = ${totalPages-1};
+                    var page = ${currentPage-1};
                     location.href="/"
                         + $('.main').attr('data-url')
                         + "?&currentPage="
                         + page;
                 });
                 $('#currentNextPage').click(function(){
-                    var page = ${totalPages+1};
+                    var page = ${currentPage+1};
                     location.href="/"
                         + $('.main').attr('data-url')
                         + "?&currentPage="
                         + page;
                 });
                 $('#currentNext2Page').click(function(){
-                    var page = ${totalPages+2};
+                    var page = ${currentPage+2};
                     location.href="/"
                         + $('.main').attr('data-url')
                         + "?&currentPage="

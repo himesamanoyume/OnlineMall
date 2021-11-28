@@ -9,6 +9,7 @@ public class Post extends BaseEntity<Post>{
     @TableId(type = IdType.AUTO)
     private Integer postId;
     private String topImg;
+    private String keyword;
     private String title;
     private String article;
     private String introduction;

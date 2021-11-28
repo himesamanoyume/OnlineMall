@@ -106,27 +106,28 @@
             </div>
         </c:if>
         <c:if test="${(sessionScope.permi!=null and sessionScope.permi.type == 2)and (urlWhere=='addPost' or urlWhere=='editPost')}">
-            <c:if test="${urlWhere=='addPost'}">
-                <div class="info-link">
-                    <div class="link-button" id="savePost">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
-                            <title>保存</title>
-                            <path d="M380.93 57.37A32 32 0 00358.3 48H94.22A46.21 46.21 0 0048 94.22v323.56A46.21 46.21 0 0094.22 464h323.56A46.36 46.36 0 00464 417.78V153.7a32 32 0 00-9.37-22.63zM256 416a64 64 0 1164-64 63.92 63.92 0 01-64 64zm48-224H112a16 16 0 01-16-16v-64a16 16 0 0116-16h192a16 16 0 0116 16v64a16 16 0 01-16 16z" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
-                        </svg>
-                        <div class="info-hover-bar"></div>
-                    </div>
+
+            <div class="info-link">
+                <div class="link-button" title="保存" <c:if test="${urlWhere=='addPost'}">id="savePost"</c:if><c:if test="${urlWhere=='editPost'}">id="saveEdit"</c:if>>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
+                        <title>保存</title>
+                        <path d="M380.93 57.37A32 32 0 00358.3 48H94.22A46.21 46.21 0 0048 94.22v323.56A46.21 46.21 0 0094.22 464h323.56A46.36 46.36 0 00464 417.78V153.7a32 32 0 00-9.37-22.63zM256 416a64 64 0 1164-64 63.92 63.92 0 01-64 64zm48-224H112a16 16 0 01-16-16v-64a16 16 0 0116-16h192a16 16 0 0116 16v64a16 16 0 01-16 16z" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                    </svg>
+                    <div class="info-hover-bar"></div>
                 </div>
-            </c:if>
-            <c:if test="${urlWhere=='editPost'}">
-                <div class="info-link">
-                    <div class="link-button" title="保存" id="saveEdit">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
-                            <path d="M380.93 57.37A32 32 0 00358.3 48H94.22A46.21 46.21 0 0048 94.22v323.56A46.21 46.21 0 0094.22 464h323.56A46.36 46.36 0 00464 417.78V153.7a32 32 0 00-9.37-22.63zM256 416a64 64 0 1164-64 63.92 63.92 0 01-64 64zm48-224H112a16 16 0 01-16-16v-64a16 16 0 0116-16h192a16 16 0 0116 16v64a16 16 0 01-16 16z" fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
-                        </svg>
-                        <div class="info-hover-bar"></div>
-                    </div>
+            </div>
+
+            <div class="info-link">
+                <input id="imgName" type="text" class="nameBar" placeholder="输入图片名"/>
+                <input id="file" type="file" class="fileButton" accept="image/*" multiple="multiple"/>
+                <div id="uploadImg" title="图片上传" class="searchButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
+                        <path fill="none" stroke="var(--text-color)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 249.38L256 170l80 79.38M256 181.03V342"/>
+                        <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="var(--text-color)" stroke-miterlimit="10" stroke-width="32"/>
+                    </svg>
+                    <div class="info-hover-bar"></div>
                 </div>
-            </c:if>
+            </div>
             <div class="info-link">
                 <div class="link-button" title="复制图片块" id="copyImgBlock">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">

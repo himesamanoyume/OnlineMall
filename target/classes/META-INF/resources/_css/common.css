@@ -158,10 +158,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 13px;
     text-align: center;
 }
-.info-link .searchBar:focus{
-    outline: none;
-    background-color: var(--body-bg);
-}
+
 
 
 

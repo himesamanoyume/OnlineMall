@@ -26,6 +26,7 @@ public class SessionInterceptorConfig implements WebMvcConfigurer {
                 "/user/reg",
                 "/error",
                 "/upload/**",
+                "/Img/**",
                 "/_css/**",
                 "/_component/**",
                 "/_js/**",

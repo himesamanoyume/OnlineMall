@@ -117,6 +117,37 @@
     border-radius: 3px 0 0 3px;
     background-color: var(--post-bg);
 }
+
+.info-link .nameBar{
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 10px 0 10px;
+    border: 0;
+    color: var(--text-color);
+    border-radius: 3px 0 0 3px;
+    background-color: var(--post-bg);
+}
+.info-link .searchBar:focus{
+    outline: none;
+    background-color: var(--body-bg);
+}
+.info-link .nameBar:focus{
+    outline: none;
+    background-color: var(--body-bg);
+}
+
+.info-link .fileButton{
+    height: 40px;
+    width: 100%;
+    border: 0;
+    margin: auto;
+    /*position: relative;*/
+    text-align: center;
+    /*cursor: pointer;*/
+    font-size: 15px;
+    color: var(--text-color);
+}
 .info-link .searchButton{
     height: 40px;
     width: 20%;

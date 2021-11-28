@@ -10,6 +10,8 @@
 
 <sql id="cols">
 	p.post_id,
+	p.top_img,
+	p.keyword,
 	p.title,
 	p.article,
 	p.introduction,
@@ -30,6 +32,12 @@
 		<if test="post!=null and post!=''" >
 			<if test="post.postId!=null and post.postId!=''">
 				AND p.post_id = #{post.postId}
+			</if>
+			<if test="post.topImg!=null and post.topImg!=''">
+				AND p.top_img LIKE CONCAT('%',#{post.topImg},'%')
+			</if>
+			<if test="post.keyword!=null and post.keyword!=''">
+				AND p.keyword LIKE CONCAT('%',#{post.keyword},'%')
 			</if>
 			<if test="post.title!=null and post.title!=''">
 				AND p.title LIKE CONCAT('%',#{post.title},'%')

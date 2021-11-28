@@ -13,18 +13,44 @@ import java.io.IOException;
 @ResponseBody
 public class UploadController {
 
+
+
     @PostMapping("/uploadFile")
     public String uploadFile(MultipartFile file)  throws Exception, IOException {
 
 //        System.out.println(file.getOriginalFilename());
 //        return "file";
         String originalFileNameString = file.getOriginalFilename();
-        String  typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
+        String typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
         String fileName = System.currentTimeMillis() + typeStr;
 //
         File saveFile = new File(UploadPathConfig.UPLOAD_PATH + fileName);
         file.transferTo(saveFile);
 //
         return "/upload/" + fileName;
+    }
+
+    @PostMapping("/uploadImg")
+    public String uploadImg(MultipartFile file,String keyword,String name) throws Exception,IOException{
+
+//        System.out.println(keyword +" "+name);
+//        return "file";
+
+
+//        String originalFileNameString = file.getOriginalFilename();
+//        String typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
+        String typeStr = ".png";
+
+
+        File directory = new File(UploadPathConfig.UPLOAD_PATH);
+        if (!directory.exists()){
+            directory.mkdir();
+        }
+        String fileName = keyword +"-"+ name + typeStr;
+        File saveFile = new File( UploadPathConfig.UPLOAD_PATH+ fileName);
+        file.transferTo(saveFile);
+
+
+        return "/Img/" + fileName;
     }
 }

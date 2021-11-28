@@ -29,6 +29,7 @@
             editPostFunc();
             $('#saveEdit').click(function (){
                 var topImg = $('#topImg').val()
+                var keyword = $('#keyword').val()
                 var title = $('#title').val()
                 var introduction = $('#introduction').val()
                 var publishTime = $('#publishTime').val()
@@ -36,6 +37,7 @@
                 var article = $('#article').val()
 
                 topImg = topImg.trim()
+                keyword = keyword.trim()
                 title = title.trim()
                 introduction = introduction.trim()
                 publishTime = publishTime.trim()
@@ -46,6 +48,10 @@
                     alert("标题不能为空")
                     return
                 }
+                if(!keyword){
+                    alert("关键字不能为空")
+                    return
+                }
                 if(typeId==0){
                     typeId = ${post.typeId}
                 }
@@ -53,6 +59,7 @@
                 $.post('/post/editPost',{
                     postId:${post.postId},
                     topImg:topImg,
+                    keyword:keyword,
                     title:title,
                     introduction:introduction,
                     publishTime:publishTime,
@@ -67,13 +74,42 @@
                     alert(res.responseJSON.message)
                 })
             })
+            var data;
+            $('#file').change(function (){
+                var file = $(this)[0].files[0];
+                data = new FormData()
+                data.append("file",file)
+            });
+            $('#uploadImg').click(function (){
+                var keyword = $('#keyword').val()
+                var name = $('#imgName').val()
+
+                keyword = keyword.trim();
+                name = name.trim();
+
+                if (!keyword){
+                    alert("keyword不能为空")
+                    return
+                }
+                if (!name){
+                    alert("name不能为空")
+                    return;
+                }
+                data.append("keyword",keyword)
+                data.append("name",name)
+                $.ajax({
+                    url:'/uploadImg',
+                    data:data,
+                    type:'POST',
+                    processData: false,
+                    contentType: false,
+                    success: function(res){
+                        alert("上传成功")
+                    }
+                })
+            });
         })
-        window.onresize=function(){
 
-        }
-        window.onscroll=function (){
-
-        }
     </script>
 </head>
 <body id="body" data-theme="auto">

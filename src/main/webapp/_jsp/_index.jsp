@@ -43,17 +43,6 @@
                 <div class="newest-title">
                     最新文章
                 </div>
-                <div class="post">
-                    <img src="/_jsp/test.png">
-                    <div class="post-txt-container">
-                        <div class="post-txt-container-title">测试标题测试标题测试标题</div>
-                        <div class="post-txt-container-introduction">
-                            好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介好长的简介
-                        </div>
-                        <div class="post-txt-container-datetime">2021-11-24</div>
-
-                    </div>
-                </div>
                 <%@include file="../_component/_get.jsp" %>
 
             </div>

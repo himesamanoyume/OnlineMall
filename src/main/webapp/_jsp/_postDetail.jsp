@@ -26,12 +26,6 @@
             ThemeSetFunc();
             NavFunc();
         })
-        window.onresize=function(){
-
-        }
-        window.onscroll=function (){
-
-        }
     </script>
 </head>
 <body id="body" data-theme="auto">
@@ -67,7 +61,7 @@
                         <hr class="hr"/>
                         <div class="post-detail-txt">
                             ${post.article}
-                            <img title="看看" src="/_jsp/test.png">
+
                         </div>
 
                     </div>

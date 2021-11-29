@@ -118,7 +118,7 @@
         limit 0,1
         ) img_src
         FROM book b
-        LEFT JOIN user su ON su.user_id = b.seller_id AND su.deleted = 0
+        LEFT JOIN user su ON su.user_id = b.6seller_id AND su.deleted = 0
         LEFT JOIN user cu ON cu.user_id = b.create_user_id AND cu.deleted = 0
         LEFT JOIN user uu ON uu.user_id = b.update_user_id AND uu.deleted = 0
 

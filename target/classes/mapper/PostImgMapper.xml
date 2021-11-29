@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="design.princessdreamland.onlinemall.mapper.PostImgMapper">
+
+	<resultMap type="design.princessdreamland.onlinemall.entity.PostImg" id="postImgMap">
+		<id property="postImgId" column="post_img_id" />
+	</resultMap>
+
+<sql id="cols">
+	pi.post_img_id,
+	pi.keyword,
+	pi.name,
+	pi.deleted
+
+</sql>
+
+
+<sql id="where">
+	<where>
+		AND p.deleted = 0
+		<if test="postImg!=null and postImg!=''" >
+			<if test="postImg.postImgId!=null and postImg.postImgId!=''">
+				AND pi.post_img_id = #{postImg.postImgId}
+			</if>
+			<if test="post.keyword!=null and post.keyword!=''">
+				AND pi.keyword LIKE CONCAT('%',#{postImg.keyword},'%')
+			</if>
+			<if test="post.title!=null and post.title!=''">
+				AND pi.name LIKE CONCAT('%',#{postImg.name},'%')
+			</if>
+		</if>
+	</where>
+</sql>
+
+	<select id="queryPage" resultMap="postImgMap" >
+		SELECT
+		<include refid="cols" />
+		FROM postImg pi
+		WHERE keyword = #{keyword}
+
+		ORDER BY post_id
+	</select>
+
+	<select id="queryById" resultMap="postImgMap" >
+		SELECT
+		<include refid="cols" />
+		FROM postImg pi
+		WHERE post_img_id = #{postImgId}
+
+		ORDER BY post_img_id
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+

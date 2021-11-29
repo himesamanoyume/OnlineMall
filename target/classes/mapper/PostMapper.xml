@@ -5,7 +5,6 @@
 
 	<resultMap type="design.princessdreamland.onlinemall.entity.Post" id="postMap">
 		<id property="postId" column="post_id" />
-
 	</resultMap>
 
 <sql id="cols">

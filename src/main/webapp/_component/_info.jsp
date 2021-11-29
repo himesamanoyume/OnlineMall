@@ -71,7 +71,7 @@
         <c:if test="${sessionScope.permi==null}">
             <div class="info-link">
                 <div class="permi-info">
-                    当前权限:无
+                    当前权限:游客
                 </div>
             </div>
         </c:if>

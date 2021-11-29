@@ -15,6 +15,7 @@ public class SessionInterceptorConfig implements WebMvcConfigurer {
         registration.excludePathPatterns(
                 "/*",
                 "/post/**",
+                "/postImg/**",
                 "/permi/**",
                 "/_svg/**",
                 "/favicon.ico",

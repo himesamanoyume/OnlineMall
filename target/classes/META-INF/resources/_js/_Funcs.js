@@ -40,7 +40,7 @@ function ConsolePostOpenDetailFunc(){
     })
 }
 
-function ConsoleBackTopFunc(){
+function BackTopFunc(){
     $('#backTop').click(function (){
         $("html,body").animate({scrollTop:"0px"},400);
     })

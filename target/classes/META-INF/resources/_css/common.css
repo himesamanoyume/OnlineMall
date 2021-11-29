@@ -227,6 +227,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*.post-page-container-currentPage:hover{*/
 /*    box-shadow: 0 -2px 0 0 var(--tianyi-color) inset;*/
 /*}*/
+.post-page-container-content-left{
+    height: 40px;
+    width: calc((100% - 55px)/2);
+    justify-content: right;
+    display: flex;
+}
+.post-page-container-content-right{
+    height: 40px;
+    width: calc((100% - 55px)/2);
+    justify-content: left;
+    display: flex;
+}
 .post-page-container-button{
     padding: 0 15px 0 15px;
     cursor: pointer;

@@ -11,7 +11,9 @@
 
 <c:forEach items="${postList}" var="item">
     <div class="post" data-postId="${item.postId}">
-        <img src="${item.topImg}">
+        <div class="post-Img-container">
+            <c:if test="${item.topImg!=null}"><img src="../Img/${item.keyword}/${item.topImg}"></c:if>
+        </div>
         <div class="post-txt-container">
             <div class="post-txt-container-title">
                     ${item.title}
@@ -22,32 +24,25 @@
             <div class="post-txt-container-datetime">
                     ${item.publishTime}
             </div>
-            <c:if test="${item.status==1 and urlWhere == 'console'}">
-                <div class="post-txt-container-introduction">
-                    状态：开放/标签：<c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">标签</c:if>
-                </div>
-            </c:if>
-            <c:if test="${item.status==0 and urlWhere == 'console'}">
-                <div class="post-txt-container-introduction">
-                    状态：隐藏/标签：<c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">标签</c:if>
-                </div>
-            </c:if>
             <c:if test="${urlWhere == 'console'}">
-            <div class="post-txt-container-console-container">
-                <div class="console-container-edit-button">
-                    编辑
+                <div class="post-txt-container-introduction">
+                    <c:if test="${item.status==1}">状态：开放/标签：</c:if><c:if test="${item.status==0}">状态：隐藏/标签：</c:if><c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">标签</c:if>/关键字：${item.keyword}
                 </div>
-                <c:if test="${item.status==0}">
-                    <div class="console-container-set-status-button">
-                        设为开放
+                <div class="post-txt-container-console-container">
+                    <div class="console-container-edit-button">
+                        编辑
                     </div>
-                </c:if>
-                <c:if test="${item.status==1}">
-                    <div class="console-container-set-status-button">
-                        设为隐藏
-                    </div>
-                </c:if>
-            </div>
+                    <c:if test="${item.status==0}">
+                        <div class="console-container-set-status-button">
+                            设为开放
+                        </div>
+                    </c:if>
+                    <c:if test="${item.status==1}">
+                        <div class="console-container-set-status-button">
+                            设为隐藏
+                        </div>
+                    </c:if>
+                </div>
             </c:if>
         </div>
     </div>

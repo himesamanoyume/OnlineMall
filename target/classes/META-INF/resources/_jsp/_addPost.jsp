@@ -27,6 +27,40 @@
             ThemeSetFunc();
             NavFunc();
             editPostFunc();
+            function editPostFunc(){
+                $('#copyCodeBlock').click(function (){
+                    var text = "<div class=\"code\"><p></p></div>";
+                    var input = document.getElementById("tempInput");
+                    input.value = text;
+                    input.select(); // 选中文本
+                    document.execCommand("copy"); // 执行浏览器复制命令
+                    InfoPrompt("复制成功")
+                    setTimeout(RemoveInfoPrompt,2000)
+                })
+
+                $('#copyImgBlock').click(function (){
+                    var keyword = "${post.keyword}"
+                    var text = "<img src='../Img/"
+                        + keyword
+                        + "/NAME.TYPE'>"
+                    var input = document.getElementById("tempInput");
+                    input.value = text;
+                    input.select(); // 选中文本
+                    document.execCommand("copy"); // 执行浏览器复制命令
+                    InfoPrompt("复制成功")
+                    setTimeout(RemoveInfoPrompt,2000)
+                })
+
+                $('#copyReferenceBlock').click(function (){
+                    var text = "<div class=\"reference\"><p></p></div>";
+                    var input = document.getElementById("tempInput");
+                    input.value = text;
+                    input.select(); // 选中文本
+                    document.execCommand("copy"); // 执行浏览器复制命令
+                    InfoPrompt("复制成功")
+                    setTimeout(RemoveInfoPrompt,1100)
+                })
+            }
             $('#savePost').click(function (){
                 var topImg = $('#topImg').val()
                 var keyword = $('#keyword').val()

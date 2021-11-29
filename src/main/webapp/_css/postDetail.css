@@ -74,8 +74,25 @@
     -ms-user-select: none;
     -webkit-user-select: none;
 }
-.post-detail-txt img{
+.post-Img-container{
     width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    border: 0;
+    /*margin: 20px 0 20px 0;*/
+    display: block;
+}
+.post-Img-container img{
+    width: 100%;
+    border: 0;
+    /*margin: 20px 0 20px 0;*/
+    background-color: var(--tianyi-color);
+    display: block;
+    border-radius: 3px;
+}
+
+.post-detail-txt img{
+    max-width: 100%;
     border: 0;
     margin: 20px 0 20px 0;
     background-color: var(--tianyi-color);

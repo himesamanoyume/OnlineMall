@@ -40,37 +40,7 @@ function ConsolePostOpenDetailFunc(){
     })
 }
 
-function editPostFunc(){
-    $('#copyCodeBlock').click(function (){
-        var text = "<div class=\"code\"><p></p></div>";
-        var input = document.getElementById("tempInput");
-        input.value = text;
-        input.select(); // 选中文本
-        document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,2000)
-    })
 
-    $('#copyImgBlock').click(function (){
-        var text = "<img title=\"\" src=\"\">";
-        var input = document.getElementById("tempInput");
-        input.value = text;
-        input.select(); // 选中文本
-        document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,2000)
-    })
-
-    $('#copyReferenceBlock').click(function (){
-        var text = "<div class=\"reference\"><p></p></div>";
-        var input = document.getElementById("tempInput");
-        input.value = text;
-        input.select(); // 选中文本
-        document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,1100)
-    })
-}
 
 function InfoPrompt(str){
     var prompt = "<div id='tempPrompt' class=\"info-link\"><div class=\"permi-info\">"+ str +"</div></div>"

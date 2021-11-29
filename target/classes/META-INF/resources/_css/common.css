@@ -266,21 +266,36 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: 0 0 0 1px var(--post-shadow-color);
     /*position: relative;*/
 }
-
-.post img{
-    border-radius: 3px 3px 0 0;
-    border: 0;
-    background-color: var(--tianyi-color);
-    top: 0;
-    vertical-align:bottom;
-    display: block;
-    /*height: 200px;*/
+.post-Img-container{
     width: 100%;
-    float: top;
-    z-index: 1;
-    /*box-shadow: 0px 0px 0 1px #262626;*/
-
+    max-height: 200px;
+    overflow: hidden;
+    border: 0;
+    /*margin: 20px 0 20px 0;*/
+    display: block;
 }
+.post-Img-container img{
+    width: 100%;
+    border: 0;
+    /*margin: 20px 0 20px 0;*/
+    background-color: var(--tianyi-color);
+    display: block;
+    border-radius: 3px;
+}
+/*.post img{*/
+/*    border-radius: 3px 3px 0 0;*/
+/*    border: 0;*/
+/*    background-color: var(--tianyi-color);*/
+/*    top: 0;*/
+/*    vertical-align:bottom;*/
+/*    display: block;*/
+/*    !*height: 200px;*!*/
+/*    max-width: 100%;*/
+/*    float: top;*/
+/*    !*z-index: 1;*!*/
+/*    !*box-shadow: 0px 0px 0 1px #262626;*!*/
+
+/*}*/
 
 .post .post-txt-container{
     bottom: 0;

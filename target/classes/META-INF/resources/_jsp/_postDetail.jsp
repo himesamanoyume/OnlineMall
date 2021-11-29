@@ -35,7 +35,9 @@
         <div class="home-container">
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
-                    <img src="${post.topImg}">
+                    <div class="post-Img-container">
+                        <c:if test="${post.topImg!=null}"><img src="../Img/${post.keyword}/${post.topImg}"></c:if>
+                    </div>
                     <div class="post-txt-container">
                         <div class="post-detail-title">${post.title}</div>
                         <div class="post-detail-postInfo-container">

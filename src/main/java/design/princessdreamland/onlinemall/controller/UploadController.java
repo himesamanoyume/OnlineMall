@@ -37,20 +37,24 @@ public class UploadController {
 //        return "file";
 
 
-//        String originalFileNameString = file.getOriginalFilename();
-//        String typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
-        String typeStr = ".png";
+        String originalFileNameString = file.getOriginalFilename();
+        String typeStr = originalFileNameString.substring(originalFileNameString.lastIndexOf('.'));
+//        String typeStr = ".png";
 
 
         File directory = new File(UploadPathConfig.UPLOAD_PATH);
         if (!directory.exists()){
             directory.mkdir();
         }
-        String fileName = keyword +"-"+ name + typeStr;
-        File saveFile = new File( UploadPathConfig.UPLOAD_PATH+ fileName);
+        File keywordDirectory = new File(directory+"/"+keyword);
+        if (!keywordDirectory.exists()){
+            keywordDirectory.mkdir();
+        }
+        String fileName = name + typeStr;
+        File saveFile = new File( keywordDirectory +"/"+ fileName);
         file.transferTo(saveFile);
 
 
-        return "/Img/" + fileName;
+        return fileName;
     }
 }

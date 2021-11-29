@@ -11,11 +11,13 @@
 
 <aside class="info-container">
     <div id="info-container-inner" class="info-container-inner">
-        <div class="info">
-            <img src="/_jsp/usericon.png" class="info-icon">
-            <div class="info-name">姫様の夢</div>
-            <div class="info-txt">Princess Dreamland</div>
-        </div>
+        <c:if test="${urlWhere!='editPost' and urlWhere!='addPost' and urlWhere!='console'}">
+            <div class="info">
+                <img src="/_jsp/usericon.png" class="info-icon">
+                <div class="info-name">姫様の夢</div>
+                <div class="info-txt">Princess Dreamland</div>
+            </div>
+        </c:if>
         <c:if test="${urlWhere !='index' and urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost'}">
         <div class="info-link">
             <input type="text" class="searchBar" id="keyword" placeholder="模糊搜索标题" value="${keyword}"/>

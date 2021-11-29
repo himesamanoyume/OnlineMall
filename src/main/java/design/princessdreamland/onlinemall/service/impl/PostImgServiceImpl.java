@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Service
 public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
@@ -18,6 +19,11 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
 
     @Autowired
     private HttpSession session;
+
+    @Override
+    public List<PostImg> queryList(PostImg postImg){
+        return baseMapper.queryList(postImg);
+    }
 
     @Override
     public IPage<PostImg> queryPage(Page<PostImg> page,PostImg postImg){
@@ -30,15 +36,13 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
     }
 
     @Override
-    public IPage<PostImg> searchPage(String keyword,String currentPage){
+    public IPage<PostImg> searchPage(String keyword){
         PostImg postImg = new PostImg();
         if (StrUtil.isNotEmpty(keyword)){
             postImg.setKeyword(keyword);
         }
         Page<PostImg> page = new Page<>();
-        page.setCurrent(new Integer(currentPage));
-
-        page.setSize(30);
+//        page.setSize(30);
 
         return baseMapper.queryPage(page,postImg);
     }

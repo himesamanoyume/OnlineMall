@@ -7,8 +7,12 @@ import design.princessdreamland.onlinemall.entity.PostImg;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface PostImgMapper extends BaseMapper<PostImg> {
+
+    List<PostImg> queryList(@Param("postImg") PostImg postImg);
 
     IPage<PostImg> queryPage(Page<PostImg> page, @Param("postImg")PostImg postImg);
 

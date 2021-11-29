@@ -27,6 +27,7 @@
             ThemeSetFunc();
             NavFunc();
             editPostFunc();
+            queryImgFunc();
             function editPostFunc(){
                 $('#copyCodeBlock').click(function (){
                     var text = "<div class=\"code\"><p></p></div>";
@@ -35,7 +36,7 @@
                     input.select(); // 选中文本
                     document.execCommand("copy"); // 执行浏览器复制命令
                     InfoPrompt("复制成功")
-                    setTimeout(RemoveInfoPrompt,2000)
+                    setTimeout(RemoveInfoPrompt,1100)
                 })
 
                 $('#copyImgBlock').click(function (){
@@ -48,7 +49,7 @@
                     input.select(); // 选中文本
                     document.execCommand("copy"); // 执行浏览器复制命令
                     InfoPrompt("复制成功")
-                    setTimeout(RemoveInfoPrompt,2000)
+                    setTimeout(RemoveInfoPrompt,1100)
                 })
 
                 $('#copyReferenceBlock').click(function (){

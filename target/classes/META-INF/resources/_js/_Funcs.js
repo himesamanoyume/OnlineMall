@@ -40,6 +40,37 @@ function ConsolePostOpenDetailFunc(){
     })
 }
 
+function queryImgFunc(){
+    $('#queryKeywordImg').click(function (){
+        var data = new FormData()
+        var keyword = $('#keyword').val()
+        // var currentPage = 1
+        keyword = keyword.trim()
+        // currentPage = currentPage.trim()
+        if (!keyword){
+            alert("keyword不能为空")
+            return
+        }
+
+        // console.log(keyword)
+        data.append("keyword",keyword)
+        // data.append("currentPage",currentPage)
+        $.ajax({
+            url:'/postImg/queryList',
+            data:data,
+            type:'GET',
+            processData: false,
+            contentType: false,
+            success: function(res){
+                alert(res)
+            },
+            error:function (res){
+                alert(res)
+            }
+        })
+    })
+}
+
 function BackTopFunc(){
     $('#backTop').click(function (){
         $("html,body").animate({scrollTop:"0px"},400);

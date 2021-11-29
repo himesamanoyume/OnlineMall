@@ -12,7 +12,7 @@
 <div class="post" <c:if test="${urlWhere == 'editPost'}"> data-postId="${post.postId}"</c:if>>
     <div class="post-txt-container">
         <input id="topImg" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}"> value="${post.topImg}"</c:if> placeholder="NAME.TYPE">
-        <input id="keyword" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}"> value="${post.keyword}"</c:if> placeholder="关键字">
+        <input id="keyword" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}">style="pointer-events: none;" value="${post.keyword}"</c:if> placeholder="关键字">
 
         <input id="tempInput" style="position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;">
         <input id="title" class="post-edit-title" <c:if test="${urlWhere == 'editPost'}"> value="${post.title}"</c:if> placeholder="标题名">

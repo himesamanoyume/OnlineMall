@@ -26,7 +26,66 @@
             NavFunc();
             PostOpenDetailFunc();
             PermissionButtonFunc();
-
+            SearchButtonFunc();
+            PageFunc();
+            function PageFunc(){
+                $('#prePage').click(function(){
+                    var page = ${currentPage} - 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#nextPage').click(function(){
+                    var page = ${currentPage} + 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#firstPage').click(function(){
+                    var page = 1;
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#lastPage').click(function(){
+                    var page = ${totalPages};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPre2Page').click(function(){
+                    var page = ${currentPage-2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentPrePage').click(function(){
+                    var page = ${currentPage-1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNextPage').click(function(){
+                    var page = ${currentPage+1};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+                $('#currentNext2Page').click(function(){
+                    var page = ${currentPage+2};
+                    location.href="/"
+                        + $('.main').attr('data-url')
+                        + "?&currentPage="
+                        + page;
+                });
+            }
         })
 
     </script>
@@ -37,14 +96,17 @@
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
-                <div class="main-post">
+                <c:if test="${currentPage<=1}">
+                    <div class="main-post">
 
-                </div>
+                    </div>
+                </c:if>
+
                 <div class="newest-title">
                     最新文章
                 </div>
                 <%@include file="../_component/_get.jsp" %>
-
+                <%@include file="../_component/_page.jsp" %>
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>

@@ -18,7 +18,7 @@
                 <div class="info-txt">Princess Dreamland</div>
             </div>
         </c:if>
-        <c:if test="${urlWhere !='index' and urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost'}">
+        <c:if test="${urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost'}">
         <div class="info-link">
             <input type="text" class="searchBar" id="keyword" placeholder="模糊搜索标题" value="${keyword}"/>
             <div id="search" title="搜索" class="searchButton">

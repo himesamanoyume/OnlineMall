@@ -25,6 +25,7 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
+            SearchButtonFunc();
             ConsolePostOpenDetailFunc();
             ConsoleAddPostFunc();
             ConsoleContorlPostFunc();

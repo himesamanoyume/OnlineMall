@@ -1,6 +1,9 @@
 package design.princessdreamland.onlinemall.controller;
 
 import design.princessdreamland.onlinemall.config.UploadPathConfig;
+import design.princessdreamland.onlinemall.entity.PostImg;
+import design.princessdreamland.onlinemall.service.PostImgService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,7 +16,8 @@ import java.io.IOException;
 @ResponseBody
 public class UploadController {
 
-
+    @Autowired
+    private PostImgService postImgService;
 
     @PostMapping("/uploadFile")
     public String uploadFile(MultipartFile file)  throws Exception, IOException {
@@ -53,7 +57,11 @@ public class UploadController {
         String fileName = name + typeStr;
         File saveFile = new File( keywordDirectory +"/"+ fileName);
         file.transferTo(saveFile);
+        PostImg postImg = new PostImg();
+        postImg.setKeyword(keyword);
+        postImg.setName(fileName);
 
+        postImgService.addPostImg(postImg);
 
         return fileName;
     }

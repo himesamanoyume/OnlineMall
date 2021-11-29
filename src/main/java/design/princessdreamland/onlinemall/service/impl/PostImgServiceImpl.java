@@ -9,8 +9,10 @@ import design.princessdreamland.onlinemall.mapper.PostImgMapper;
 import design.princessdreamland.onlinemall.service.PostImgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -26,8 +28,8 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
     }
 
     @Override
-    public IPage<PostImg> queryPage(Page<PostImg> page,PostImg postImg){
-        return baseMapper.queryPage(page,postImg);
+    public IPage<PostImg> queryPage(Page<PostImg> page,PostImg postImg,String keyword){
+        return baseMapper.queryPage(page,postImg,keyword);
     }
 
     @Override
@@ -38,13 +40,22 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
     @Override
     public IPage<PostImg> searchPage(String keyword){
         PostImg postImg = new PostImg();
-        if (StrUtil.isNotEmpty(keyword)){
-            postImg.setKeyword(keyword);
-        }
+        postImg.setKeyword(keyword);
+
         Page<PostImg> page = new Page<>();
+//        page.setCurrent(new Integer(1));
 //        page.setSize(30);
 
-        return baseMapper.queryPage(page,postImg);
+        return baseMapper.queryPage(page,postImg,keyword);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public PostImg addPostImg(PostImg postImg){
+        postImg.setCreateTime(new Date());
+        this.save(postImg);
+
+        return postImg;
     }
 
 }

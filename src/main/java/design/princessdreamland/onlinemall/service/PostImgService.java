@@ -11,10 +11,12 @@ public interface PostImgService extends IService<PostImg> {
 
     List<PostImg> queryList(PostImg postImg);
 
-    IPage<PostImg> queryPage(Page<PostImg> page,PostImg postImg);
+    IPage<PostImg> queryPage(Page<PostImg> page,PostImg postImg,String keyword);
 
     PostImg queryById(String postImgId);
 
     IPage<PostImg> searchPage(String keyword);
+
+    PostImg addPostImg(PostImg postImg);
 
 }

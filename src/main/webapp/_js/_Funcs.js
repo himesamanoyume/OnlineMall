@@ -43,26 +43,26 @@ function ConsolePostOpenDetailFunc(){
 function queryImgFunc(){
     $('#queryKeywordImg').click(function (){
         var data = new FormData()
+        var imgURL = window.location.host;
         var keyword = $('#keyword').val()
-        // var currentPage = 1
         keyword = keyword.trim()
-        // currentPage = currentPage.trim()
         if (!keyword){
             alert("keyword不能为空")
             return
         }
 
-        // console.log(keyword)
         data.append("keyword",keyword)
-        // data.append("currentPage",currentPage)
         $.ajax({
-            url:'/postImg/queryList',
+            url:'/searchImg',
             data:data,
-            type:'GET',
+            type:'POST',
             processData: false,
             contentType: false,
             success: function(res){
-                alert(res)
+                for (var i=0;i<res.length;i++){
+                    console.log("keyword:"+res[i].keyword+",name:"+res[i].name+",url:http://"+imgURL+"/Img/"+res[i].keyword+"/"+res[i].name)
+                }
+                alert("控制台已打印出图片信息")
             },
             error:function (res){
                 alert(res)

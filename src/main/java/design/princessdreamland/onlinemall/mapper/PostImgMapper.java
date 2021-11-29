@@ -14,7 +14,7 @@ public interface PostImgMapper extends BaseMapper<PostImg> {
 
     List<PostImg> queryList(@Param("postImg") PostImg postImg);
 
-    IPage<PostImg> queryPage(Page<PostImg> page, @Param("postImg")PostImg postImg);
+    IPage<PostImg> queryPage(Page<PostImg> page, @Param("postImg")PostImg postImg,String keyword);
 
     PostImg queryById(String postImgId);
 

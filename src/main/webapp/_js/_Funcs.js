@@ -40,7 +40,21 @@ function ConsolePostOpenDetailFunc(){
     })
 }
 
+function BackTopFunc(){
+    $('#backTop').click(function (){
+        $("html,body").animate({scrollTop:"0px"},400);
+    })
+}
 
+function EditAndDetailFunc(){
+    $('#goDetail').click(function (){
+        location.href="/postDetail?postId=" + $('.post').attr('data-postId')
+    })
+
+    $('#goEdit').click(function (){
+        location.href="/editPost?postId=" + $('.post').attr('data-postId')
+    })
+}
 
 function InfoPrompt(str){
     var prompt = "<div id='tempPrompt' class=\"info-link\"><div class=\"permi-info\">"+ str +"</div></div>"

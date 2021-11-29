@@ -25,6 +25,7 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
+            EditAndDetailFunc();
         })
     </script>
 </head>

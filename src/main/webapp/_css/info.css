@@ -90,21 +90,12 @@
     /*margin: 0 15px 0 15px;*/
     text-align: center;
     cursor: pointer;
-    position: relative;
+    box-shadow: 0 0 0 0 #66ccff inset;
     justify-content: center;
 }
 
-.link-button .info-hover-bar{
-    width: 0%;
-    bottom: 0;
-    position: absolute;
-    margin: 0 auto;
-    height: 2px;
-    background-color: var(--tianyi-color);
-    transition-duration: 0.2s;
-}
-.link-button:hover .info-hover-bar{
-    width: 100%;
+.link-button:hover{
+    box-shadow: 0 -2px 0 0 #66ccff inset;
 }
 
 .info-link .searchBar{
@@ -156,16 +147,9 @@
     cursor: pointer;
     font-size: 15px;
     color: var(--text-color);
+    box-shadow: 0 0 0 0 #66ccff inset;
 }
-.searchButton > .info-hover-bar{
-    width: 0%;
-    bottom: 0;
-    position: absolute;
-    margin: 0 auto;
-    height: 2px;
-    background-color: var(--tianyi-color);
-    transition-duration: 0.2s;
-}
-.searchButton:hover > .info-hover-bar{
-    width: 100%;
+
+.searchButton:hover{
+    box-shadow: 0 -2px 0 0 #66ccff inset;
 }

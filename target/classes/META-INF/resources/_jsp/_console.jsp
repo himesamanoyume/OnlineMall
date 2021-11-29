@@ -28,6 +28,7 @@
             ConsolePostOpenDetailFunc();
             ConsoleAddPostFunc();
             ConsoleContorlPostFunc();
+            ConsoleBackTopFunc();
             function ConsoleContorlPostFunc(){
                 $('body').on('click', '.console-container-set-status-button', function (){
                     $.post('/post/setStatus',{

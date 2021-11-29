@@ -27,6 +27,7 @@
             ThemeSetFunc();
             NavFunc();
             editPostFunc();
+            EditAndDetailFunc();
             function editPostFunc(){
                 $('#copyCodeBlock').click(function (){
                     var text = "<div class=\"code\"><p></p></div>";

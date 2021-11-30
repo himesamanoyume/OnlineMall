@@ -19,7 +19,7 @@
 }
 
 .post-container .post-noblue{
-    transition-duration: 0.2s;
+
     background-color:var(--post-bg);
     padding: 15px 20px 15px 20px;
     display: inline-flex;
@@ -39,7 +39,7 @@
 }
 
 .post-container .post-important{
-    transition-duration: 0.2s;
+
     background-color:var(--post-important-bg);
     padding: 15px 20px 15px 20px;
     cursor: inherit;

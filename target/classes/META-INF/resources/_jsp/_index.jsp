@@ -145,7 +145,7 @@
                 </c:if>
 
                 <div class="newest-title">
-                    最新文章
+                    最新发布
                 </div>
                 <%@include file="../_component/_get.jsp" %>
                 <%@include file="../_component/_page.jsp" %>

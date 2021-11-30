@@ -65,7 +65,7 @@
                     setTimeout(RemoveInfoPrompt,1100)
                 })
 
-                $('#savePost').click(function (){
+                $('#saveEdit').click(function (){
                     var topImg = $('#topImg').val()
                     var keyword = $('#postKeyword').val()
                     var title = $('#title').val()
@@ -91,8 +91,8 @@
                         return
                     }
                     if (topImg==''){
-                        // console.log("null")
-                        $.post('/post/addPost',{
+                        $.post('/post/editPost',{
+                            postId:${post.postId},
                             keyword:keyword,
                             title:title,
                             introduction:introduction,
@@ -101,14 +101,15 @@
                             article:article
                         },function (res){
                             if (res && res.postId){
-                                alert("新增文章成功")
+                                alert("编辑文章成功")
                                 location.href="/console";
                             }
                         }).fail(function (res){
                             alert(res.responseJSON.message)
                         })
                     }else {
-                        $.post('/post/addPost',{
+                        $.post('/post/editPost',{
+                            postId:${post.postId},
                             topImg:topImg,
                             keyword:keyword,
                             title:title,
@@ -136,7 +137,7 @@
                 });
 
                 $('#uploadImg').click(function (){
-                    var keyword = $('#keyword').val()
+                    var keyword = $('#postKeyword').val()
                     var name = $('#imgName').val()
 
                     keyword = keyword.trim();

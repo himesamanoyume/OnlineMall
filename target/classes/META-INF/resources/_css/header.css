@@ -7,7 +7,7 @@
         -webkit-user-select: none;
         width: 0;
         font-size: 25px;
-        /*transition-duration: 0.2s;*/
+
         color: rgba(0,0,0,0);
     }
     .main>.header>.nav>.nav-container{

@@ -29,7 +29,7 @@
             ThemeSetFunc();
             NavFunc();
             editPostFunc();
-            queryImgFunc();
+
             function editPostFunc(){
                 $('#copyCodeBlock').click(function (){
                     var text = "<div class=\"code\"><p></p></div>";
@@ -63,103 +63,105 @@
                     InfoPrompt("复制成功")
                     setTimeout(RemoveInfoPrompt,1100)
                 })
-            }
-            $('#savePost').click(function (){
-                var topImg = $('#topImg').val()
-                var keyword = $('#postKeyword').val()
-                var title = $('#title').val()
-                var introduction = $('#introduction').val()
-                var publishTime = $('#publishTime').val()
-                var typeId = $('#typeId').val()
-                var article = $('#article').val()
 
-                topImg = topImg.trim()
-                keyword = keyword.trim()
-                title = title.trim()
-                introduction = introduction.trim()
-                publishTime = publishTime.trim()
-                typeId = typeId.trim()
-                article = article.trim()
+                $('#savePost').click(function (){
+                    var topImg = $('#topImg').val()
+                    var keyword = $('#postKeyword').val()
+                    var title = $('#title').val()
+                    var introduction = $('#introduction').val()
+                    var publishTime = $('#publishTime').val()
+                    var typeId = $('#typeId').val()
+                    var article = $('#article').val()
 
-                if(!title){
-                    alert("标题不能为空")
-                    return
-                }
-                if(!keyword){
-                    alert("关键字不能为空")
-                    return
-                }
-                if (topImg==''){
-                    // console.log("null")
-                    $.post('/post/addPost',{
-                        keyword:keyword,
-                        title:title,
-                        introduction:introduction,
-                        publishTime:publishTime,
-                        typeId:typeId,
-                        article:article
-                    },function (res){
-                        if (res && res.postId){
-                            alert("新增文章成功")
-                            location.href="/console";
-                        }
-                    }).fail(function (res){
-                        alert(res.responseJSON.message)
-                    })
-                }else {
-                    $.post('/post/addPost',{
-                        topImg:topImg,
-                        keyword:keyword,
-                        title:title,
-                        introduction:introduction,
-                        publishTime:publishTime,
-                        typeId:typeId,
-                        article:article
-                    },function (res){
-                        if (res && res.postId){
-                            alert("新增文章成功")
-                            location.href="/console";
-                        }
-                    }).fail(function (res){
-                        alert(res.responseJSON.message)
-                    })
-                }
+                    topImg = topImg.trim()
+                    keyword = keyword.trim()
+                    title = title.trim()
+                    introduction = introduction.trim()
+                    publishTime = publishTime.trim()
+                    typeId = typeId.trim()
+                    article = article.trim()
 
-            });
-            var data;
-            $('#file').change(function (){
-                var file = $(this)[0].files[0];
-                data = new FormData()
-                data.append("file",file)
-            });
-            $('#uploadImg').click(function (){
-                var keyword = $('#keyword').val()
-                var name = $('#imgName').val()
-
-                keyword = keyword.trim();
-                name = name.trim();
-
-                if (!keyword){
-                    alert("keyword不能为空")
-                    return
-                }
-                if (!name){
-                    alert("name不能为空")
-                    return;
-                }
-                data.append("keyword",keyword)
-                data.append("name",name)
-                $.ajax({
-                    url:'/uploadImg',
-                    data:data,
-                    type:'POST',
-                    processData: false,
-                    contentType: false,
-                    success: function(res){
-                        alert("上传成功")
+                    if(!title){
+                        alert("标题不能为空")
+                        return
                     }
-                })
-            });
+                    if(!keyword){
+                        alert("关键字不能为空")
+                        return
+                    }
+                    if (topImg==''){
+                        // console.log("null")
+                        $.post('/post/addPost',{
+                            keyword:keyword,
+                            title:title,
+                            introduction:introduction,
+                            publishTime:publishTime,
+                            typeId:typeId,
+                            article:article
+                        },function (res){
+                            if (res && res.postId){
+                                alert("新增文章成功")
+                                location.href="/console";
+                            }
+                        }).fail(function (res){
+                            alert(res.responseJSON.message)
+                        })
+                    }else {
+                        $.post('/post/addPost',{
+                            topImg:topImg,
+                            keyword:keyword,
+                            title:title,
+                            introduction:introduction,
+                            publishTime:publishTime,
+                            typeId:typeId,
+                            article:article
+                        },function (res){
+                            if (res && res.postId){
+                                alert("新增文章成功")
+                                location.href="/console";
+                            }
+                        }).fail(function (res){
+                            alert(res.responseJSON.message)
+                        })
+                    }
+
+                });
+                var data;
+                $('#file').change(function (){
+                    var file = $(this)[0].files[0];
+                    data = new FormData()
+                    data.append("file",file)
+                });
+                $('#uploadImg').click(function (){
+                    var keyword = $('#postKeyword').val()
+                    var name = $('#imgName').val()
+
+                    keyword = keyword.trim();
+                    name = name.trim();
+
+                    if (!keyword){
+                        alert("keyword不能为空")
+                        return
+                    }
+                    if (!name){
+                        alert("name不能为空")
+                        return;
+                    }
+                    data.append("keyword",keyword)
+                    data.append("name",name)
+                    $.ajax({
+                        url:'/uploadImg',
+                        data:data,
+                        type:'POST',
+                        processData: false,
+                        contentType: false,
+                        success: function(res){
+                            alert("上传成功")
+                        }
+                    })
+                });
+            }
+
         })
     </script>
 </head>

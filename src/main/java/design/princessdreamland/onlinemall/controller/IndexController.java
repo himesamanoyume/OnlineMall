@@ -149,6 +149,7 @@ public class IndexController {
             throw new RuntimeException("没有访问权限");
         }
         Post post = postService.queryById(postId);
+
         model.addAttribute("post",post);
 
         return "/_jsp/_editPost.jsp";

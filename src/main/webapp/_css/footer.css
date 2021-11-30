@@ -7,7 +7,7 @@
     color: var(--text-color);
     display: inline-flex;
     text-align: center;
-    transition-duration: 0.2s;
+
     justify-content: center;
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;

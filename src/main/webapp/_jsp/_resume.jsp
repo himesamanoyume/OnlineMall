@@ -18,9 +18,11 @@
         <%@include file="../_component/_style.jsp" %>
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
+    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
+            InitFunc();
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();

@@ -19,9 +19,11 @@
         @import "/_css/postDetail.css";
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
+    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
+            InitFunc();
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
@@ -37,7 +39,7 @@
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
                     <div class="post-Img-container">
-                        <c:if test="${post.topImg!=null}"><img src="../Img/${post.keyword}/${post.topImg}"></c:if>
+                        <c:if test="${post.topImg!=null}"><img class="lazy" data-src="../Img/${post.keyword}/${post.topImg}"></c:if>
                     </div>
                     <div class="post-txt-container">
                         <div class="post-detail-title">${post.title}</div>

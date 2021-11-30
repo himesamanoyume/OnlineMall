@@ -1,11 +1,38 @@
 
 function InitFunc(){
-    // console.log(getCookie("input-keyword"))
     if (getCookie("input-keyword")){
         $('.main').attr("data-keyword",getCookie("input-keyword"))
         $('#keyword').attr("value",getCookie("input-keyword"))
         delCookie("input-keyword")
     }
+    var nowUrl = $('.main').attr("data-url")
+    if (nowUrl=='post') {
+        $('#nav-post').css("color", "#66ccff")
+    }else if (nowUrl=='project') {
+        $('#nav-project').css("color", "#66ccff")
+    }else if (nowUrl=='note') {
+        $('#nav-note').css("color","#66ccff")
+    }else if (nowUrl=='tools') {
+        $('#nav-tools').css("color", "#66ccff")
+    }else if (nowUrl=='tags') {
+        $('#nav-tags').css("color", "#66ccff")
+    }else if (nowUrl=='resume') {
+        $('#nav-resume').css("color", "#66ccff")
+    }else if (nowUrl=='console'){
+        $('#nav-console').css("color", "#66ccff")
+    }
+
+    $('.lazy').Lazy({
+        effect: "fadeIn",
+        effectTime: 500,
+        threshold: 0
+        // scrollDirection: 'vertical',
+        // effect: 'fadeIn',
+        // visibleOnly: true,
+        // effectTime: 500,
+        // threshold: 0
+    });
+
 }
 
 
@@ -83,7 +110,7 @@ function queryImgFunc(){
     $('#queryKeywordImg').click(function (){
         var data = new FormData()
         var imgURL = window.location.host;
-        var keyword = $('#keyword').val()
+        var keyword = $('#postKeyword').val()
         keyword = keyword.trim()
         if (!keyword){
             alert("keyword不能为空")
@@ -101,7 +128,7 @@ function queryImgFunc(){
                 for (var i=0;i<res.length;i++){
                     console.log("keyword:"+res[i].keyword+",name:"+res[i].name+",url:http://"+imgURL+"/Img/"+res[i].keyword+"/"+res[i].name)
                 }
-                alert("控制台已打印出图片信息")
+                // alert("控制台已打印出图片信息")
             },
             error:function (res){
                 alert(res)

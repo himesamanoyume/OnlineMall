@@ -20,9 +20,11 @@
         @import "/_css/editPost.css";
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
+    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
+            InitFunc();
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
@@ -41,7 +43,7 @@
 
                 $('#copyImgBlock').click(function (){
                     var keyword = "${post.keyword}"
-                    var text = "<img src='../Img/"
+                    var text = "<img class='lazy' data-src='../Img/"
                         + keyword
                         + "/NAME.TYPE'>"
                     var input = document.getElementById("tempInput");
@@ -64,7 +66,7 @@
             }
             $('#savePost').click(function (){
                 var topImg = $('#topImg').val()
-                var keyword = $('#keyword').val()
+                var keyword = $('#postKeyword').val()
                 var title = $('#title').val()
                 var introduction = $('#introduction').val()
                 var publishTime = $('#publishTime').val()

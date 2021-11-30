@@ -18,15 +18,16 @@
         <%@include file="../_component/_style.jsp" %>
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
+    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         window.onload=function (){
             InitFunc();
+            SaveThemeCookie();
+            ThemeSetFunc();
             NavFunc();
             PostOpenDetailFunc();
             SearchButtonFunc();
-            SaveThemeCookie();
-            ThemeSetFunc();
             PermissionButtonFunc();
             PageFunc();
             function PageFunc(){

@@ -36,7 +36,7 @@
     display: flex;
     display: -webkit-flex;
     top: 0;
-    height: 60px;
+    min-height: 60px;
     line-height: 60px;
     color: var(--text-color);
 }
@@ -70,7 +70,7 @@
     justify-content: center;
     /*display: inline-block;*/
     line-height: 57px;
-    min-width: 32px;
+    min-width: 62px;
 }
 .nav-content:hover >.hover-bar{
     width: 100%;

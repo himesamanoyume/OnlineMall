@@ -33,7 +33,7 @@
     background-color: var(--body-bg);
     border: 1px solid var(--text-color);
 }
-.post-edit-tags{
+.post-edit-dynamic{
     color: var(--text-color);
     height: 40px;
     line-height: 30px;

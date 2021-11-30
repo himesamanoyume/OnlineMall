@@ -141,6 +141,7 @@
     </script>
 </head>
 <body id="body" data-theme="auto">
+<c:set var="urlWhere" value="note"/>
     <main class="main" data-url="note" data-type="3" data-keyword="">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">

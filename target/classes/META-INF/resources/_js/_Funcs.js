@@ -14,8 +14,8 @@ function InitFunc(){
         $('#nav-note').css("color","#66ccff")
     }else if (nowUrl=='tools') {
         $('#nav-tools').css("color", "#66ccff")
-    }else if (nowUrl=='tags') {
-        $('#nav-tags').css("color", "#66ccff")
+    }else if (nowUrl=='dynamic') {
+        $('#nav-dynamic').css("color", "#66ccff")
     }else if (nowUrl=='resume') {
         $('#nav-resume').css("color", "#66ccff")
     }else if (nowUrl=='console'){
@@ -73,11 +73,11 @@ function NavFunc(){
         }
         location.href="/tools?type=4"
     })
-    $('#nav-tags').click(function(){
+    $('#nav-dynamic').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
-        location.href="/tags?type=5"
+        location.href="/dynamic?type=5"
     })
     $('#nav-resume').click(function(){
         if (getCookie("input-keyword")){

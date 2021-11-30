@@ -10,6 +10,8 @@
     transition-duration: 0.2s;
     justify-content: center;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
 }
 .footer .footer-content{
     line-height: 40px;

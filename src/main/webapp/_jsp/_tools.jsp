@@ -140,6 +140,7 @@
     </script>
 </head>
 <body id="body" data-theme="auto">
+<c:set var="urlWhere" value="tools"/>
     <main class="main" data-url="tools" data-type="4" data-keyword="">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">

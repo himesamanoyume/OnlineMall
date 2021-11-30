@@ -16,6 +16,7 @@
     <title>HimeBlog</title>
     <style>
         <%@include file="../_component/_style.jsp" %>
+        @import "/_css/postDetail.css";
     </style>
     <script src="/_js/jquery.js" type="text/javascript"></script>
     <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
@@ -26,7 +27,7 @@
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
-            PostOpenDetailFunc();
+            // PostOpenDetailFunc();
             SearchButtonFunc();
             PermissionButtonFunc();
             PageFunc();
@@ -141,7 +142,8 @@
     </script>
 </head>
 <body id="body" data-theme="auto">
-    <main class="main" data-url="tags" data-type="5" data-keyword="">
+<c:set var="urlWhere" value="dynamic"/>
+    <main class="main" data-url="dynamic" data-type="5" data-keyword="">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

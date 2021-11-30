@@ -18,7 +18,7 @@
         <input id="title" class="post-edit-title" <c:if test="${urlWhere == 'editPost'}"> value="${post.title}"</c:if> placeholder="标题名">
         <div class="post-detail-postInfo-container">
             <input id="publishTime" class="post-edit-datetime" type="date" <c:if test="${urlWhere == 'editPost'}"> value="${post.publishTime}"</c:if>>
-            <select id="typeId" class="post-edit-tags">
+            <select id="typeId" class="post-edit-dynamic">
                 <c:if test="${urlWhere == 'editPost'}">
                 <option value="0">
                     <c:if test="${post.typeId == 1}">
@@ -34,7 +34,7 @@
                         工具
                     </c:if>
                     <c:if test="${post.typeId == 5}">
-                        标签
+                        动态
                     </c:if>
                 </option>
                 </c:if>
@@ -42,7 +42,7 @@
                 <option value="2">项目</option>
                 <option value="3">笔记</option>
                 <option value="4">工具</option>
-                <option value="5">标签</option>
+                <option value="5">动态</option>
             </select>
         </div>
         <hr class="hr"/>

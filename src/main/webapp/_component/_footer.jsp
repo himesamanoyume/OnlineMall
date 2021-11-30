@@ -11,10 +11,13 @@
 
 <div class="footer">
     <div class="footer-content">
-        Copyright 2021©  @姫様の夢
+        Copyright 2021© @姫様の夢
     </div>
     <div class="footer-content">
         <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008786号</a>
+    </div>
+    <div class="footer-content">
+        HimeBlog Ver1.46
     </div>
 
 </div>

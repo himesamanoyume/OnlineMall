@@ -32,7 +32,7 @@
                 <div class="hover-bar"></div>
             </div>
             <div class="nav-content">
-                <div id="nav-tags" class="nav-link">标签</div>
+                <div id="nav-dynamic" class="nav-link">动态</div>
                 <div class="hover-bar"></div>
             </div>
             <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 1 or sessionScope.permi.type == 2}">

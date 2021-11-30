@@ -65,7 +65,7 @@
                     setTimeout(RemoveInfoPrompt,1100)
                 })
 
-                $('#saveEdit').click(function (){
+                $('#savePost').click(function (){
                     var topImg = $('#topImg').val()
                     var keyword = $('#postKeyword').val()
                     var title = $('#title').val()
@@ -90,28 +90,43 @@
                         alert("关键字不能为空")
                         return
                     }
-                    if(typeId==0){
-                        typeId = ${post.typeId}
+                    if (topImg==''){
+                        // console.log("null")
+                        $.post('/post/addPost',{
+                            keyword:keyword,
+                            title:title,
+                            introduction:introduction,
+                            publishTime:publishTime,
+                            typeId:typeId,
+                            article:article
+                        },function (res){
+                            if (res && res.postId){
+                                alert("新增文章成功")
+                                location.href="/console";
+                            }
+                        }).fail(function (res){
+                            alert(res.responseJSON.message)
+                        })
+                    }else {
+                        $.post('/post/addPost',{
+                            topImg:topImg,
+                            keyword:keyword,
+                            title:title,
+                            introduction:introduction,
+                            publishTime:publishTime,
+                            typeId:typeId,
+                            article:article
+                        },function (res){
+                            if (res && res.postId){
+                                alert("新增文章成功")
+                                location.href="/console";
+                            }
+                        }).fail(function (res){
+                            alert(res.responseJSON.message)
+                        })
                     }
 
-                    $.post('/post/editPost',{
-                        postId:${post.postId},
-                        topImg:topImg,
-                        keyword:keyword,
-                        title:title,
-                        introduction:introduction,
-                        publishTime:publishTime,
-                        typeId:typeId,
-                        article:article
-                    },function (res){
-                        if (res && res.postId){
-                            alert("编辑文章成功")
-                            location.reload();
-                        }
-                    }).fail(function (res){
-                        alert(res.responseJSON.message)
-                    })
-                })
+                });
 
                 var data;
                 $('#file').change(function (){

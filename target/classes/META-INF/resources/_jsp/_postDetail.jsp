@@ -45,7 +45,7 @@
                         <div class="post-detail-title">${post.title}</div>
                         <div class="post-detail-postInfo-container">
                             <div class="post-detail-datetime">${post.publishTime}</div>
-                            <div class="post-detail-tags">
+                            <div class="post-detail-dynamic">
                                 <c:if test="${post.typeId == 1}">
                                     文章
                                 </c:if>

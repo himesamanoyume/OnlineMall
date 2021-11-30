@@ -81,16 +81,16 @@ public class IndexController {
         return "/_jsp/_tools.jsp";
     }
 
-    @GetMapping("/tags")
+    @GetMapping("/dynamic")
     @RequestLog(action="项目页面")
-    public String tags(String type,Model model,String keyword, String currentPage, HttpSession session){
+    public String dynamic(String type,Model model,String keyword, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
 
-        return "/_jsp/_tags.jsp";
+        return "/_jsp/_dynamic.jsp";
     }
 
     @GetMapping("/postDetail")

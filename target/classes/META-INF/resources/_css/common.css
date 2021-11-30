@@ -67,6 +67,7 @@ html, body {
         --post-code-bg:#333333;
         --post-code-text-color:snow;
         --post-reference-bg:#595959;
+        --post-important-bg:#474769;
     }
 }
 @media (prefers-color-scheme:light){
@@ -83,6 +84,7 @@ html, body {
         --post-code-bg:#333333;
         --post-code-text-color:snow;
         --post-reference-bg:#595959;
+        --post-important-bg:rgb(194,194,194);
     }
 }
 body[data-theme=dark]{
@@ -98,6 +100,7 @@ body[data-theme=dark]{
     --post-code-bg:#333333;
     --post-code-text-color:snow;
     --post-reference-bg:#595959;
+    --post-important-bg:#474769;
 }
 body[data-theme=light]{
     --body-bg:#fff;
@@ -112,6 +115,7 @@ body[data-theme=light]{
     --post-code-bg:#333333;
     --post-code-text-color:snow;
     --post-reference-bg:#595959;
+    --post-important-bg:rgb(194,194,194);
 }
 
 .main{
@@ -335,13 +339,19 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     font-size: 9px;
     width: 100%;
-    line-height: 60px;
+    line-height: 40px;
 }
 .post-txt-container .post-txt-container-introduction{
+    margin: 10px 0 20px 0;
     color: var(--text-color);
     font-size: 15px;
     width: 100%;
+    /*display: flex;*/
     line-height: 1.5;
+}
+.post-txt-container-introduction img{
+    width: 80%;
+    border-radius: 3px;
 }
 .post-txt-container .post-txt-container-console-container{
     height: 40px;

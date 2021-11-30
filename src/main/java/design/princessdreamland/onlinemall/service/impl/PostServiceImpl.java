@@ -30,9 +30,14 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    public IPage<Post> searchIndexPage(String type, String currentPage){
+    public IPage<Post> searchIndexPage(String type,String keyword, String currentPage){
         Post post = new Post();
         post.setStatus(1);
+
+        if (StrUtil.isNotEmpty(keyword)){
+            post.setTitle(keyword);
+        }
+
         Page<Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
@@ -44,9 +49,13 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    public IPage<Post> searchConsolePage(String type, String currentPage){
+    public IPage<Post> searchConsolePage(String type,String keyword, String currentPage){
         Post post = new Post();
-//        post.setStatus(1);
+
+        if (StrUtil.isNotEmpty(keyword)){
+            post.setTitle(keyword);
+        }
+
         Page<Post> page = new Page<>();
         if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
@@ -59,7 +68,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
     @Override
     public IPage<Post> searchPage(String type, String keyword, String currentPage){
+
         Post post = new Post();
+
         post.setStatus(1);
         if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(keyword)){
             post.setTitle(keyword);

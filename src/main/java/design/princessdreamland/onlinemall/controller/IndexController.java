@@ -22,10 +22,10 @@ public class IndexController {
 
     @GetMapping("/index")
     @RequestLog(action="首页页面")
-    public String index(String type, Model model, String currentPage, HttpSession session){
+    public String index(String type,String keyword, Model model, String currentPage, HttpSession session){
 
         Permi permi = (Permi)session.getAttribute("permi");
-        IPage<Post> postPage = postService.searchIndexPage(type,currentPage);
+        IPage<Post> postPage = postService.searchIndexPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -116,12 +116,12 @@ public class IndexController {
 
     @GetMapping("/console")
     @RequestLog(action="后台页面")
-    public String console(String type, Model model, String currentPage, HttpSession session){
+    public String console(String type,String keyword, Model model, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
-        IPage<Post> postPage = postService.searchConsolePage(type,currentPage);
+        IPage<Post> postPage = postService.searchConsolePage(type,keyword,currentPage);
 
 
         model.addAttribute("postList",postPage.getRecords());

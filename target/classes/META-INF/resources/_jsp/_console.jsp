@@ -22,6 +22,7 @@
     <script src="/_js/_Funcs.js" type="text/javascript"></script>
     <script>
         $(document).ready(function(){
+            InitFunc();
             SaveThemeCookie();
             ThemeSetFunc();
             NavFunc();
@@ -50,59 +51,96 @@
             PageFunc();
             function PageFunc(){
                 $('#prePage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage} - 1;
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#nextPage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage} + 1;
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#firstPage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = 1;
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#lastPage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${totalPages};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPre2Page').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage-2};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPrePage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage-1};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNextPage').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage+1};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNext2Page').click(function(){
+                    setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage+2};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?&currentPage="
+                        + "?keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
                         + page;
                 });
             }
@@ -111,7 +149,7 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="console"/>
-    <main class="main" data-url="console">
+    <main class="main" data-url="console" data-keyword="">
         <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">

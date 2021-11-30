@@ -1,29 +1,67 @@
+
+function InitFunc(){
+    // console.log(getCookie("input-keyword"))
+    if (getCookie("input-keyword")){
+        $('.main').attr("data-keyword",getCookie("input-keyword"))
+        $('#keyword').attr("value",getCookie("input-keyword"))
+        delCookie("input-keyword")
+    }
+}
+
+
 function NavFunc(){
     $('#nav-index').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/index"
     })
     $('#topTitle-index').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/index"
     })
     $('#nav-post').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/post?type=1"
     })
     $('#nav-project').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/project?type=2"
     })
     $('#nav-note').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/note?type=3"
     })
     $('#nav-tools').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/tools?type=4"
     })
     $('#nav-tags').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/tags?type=5"
     })
     $('#nav-resume').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/resume"
     })
     $('#nav-console').click(function(){
+        if (getCookie("input-keyword")){
+            delCookie("input-keyword")
+        }
         location.href="/console"
     })
 }
@@ -35,6 +73,7 @@ function PostOpenDetailFunc(){
 }
 
 function ConsolePostOpenDetailFunc(){
+
     $('body').on('click', '.console-container-edit-button', function (){
         location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId')
     })
@@ -71,6 +110,8 @@ function queryImgFunc(){
     })
 }
 
+
+
 function BackTopFunc(){
     $('#backTop').click(function (){
         $("html,body").animate({scrollTop:"0px"},400);
@@ -98,13 +139,25 @@ function RemoveInfoPrompt(){
 
 function SearchButtonFunc(){
     $('#search').click(function (){
-        location.href="/"
-            + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + $('#keyword').val()
-            + "&currentPage=1"
+        setCookie("input-keyword",$('#keyword').val())
+        if ( $('.main').attr('data-url')=='index' || $('.main').attr('data-url')=='console'){
+
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type=&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage=1"
+        }else {
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage=1"
+        }
     })
 }
 

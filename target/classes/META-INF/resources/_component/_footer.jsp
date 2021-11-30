@@ -14,10 +14,10 @@
         Copyright 2021© @姫様の夢
     </div>
     <div class="footer-content">
-        <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008786号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008786号-1</a>
     </div>
     <div class="footer-content">
-        HimeBlog Ver1.48
+        HimeBlog Ver1.49
     </div>
 
 </div>

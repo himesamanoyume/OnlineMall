@@ -271,16 +271,37 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-user-select: none;
 }
 .post-container .main-post{
-
-    background-color: var(--post-bg);
+    text-align: center;
+    background-color:var(--post-bg);
+    padding: 15px 20px 15px 20px;
     display: block;
+    cursor: inherit;
     margin-bottom: 10px;
-    height: 600px;
+    min-height: 400px;
     width: 100%;
     border: 0;
+    color:var(--text-color);
     border-radius: 3px;
     box-shadow: 0 0 0 1px var(--post-shadow-color);
     /*position: relative;*/
+}
+.main-post-container{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+.main-post-content{
+    text-align: left;
+    margin: 5px 20px 5px 20px;
+    /*display: inline-flex;*/
+}
+.main-post-content-txt{
+    margin: 20px 20px 20px 20px;
+    /*display: inline-flex;*/
+
 }
 .post-Img-container{
     width: 100%;

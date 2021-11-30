@@ -42,6 +42,9 @@
                             设为隐藏
                         </div>
                     </c:if>
+                    <div class="console-container-delete-button">
+                        删除
+                    </div>
                 </div>
             </c:if>
         </div>

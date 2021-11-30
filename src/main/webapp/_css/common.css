@@ -361,7 +361,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
-    width: 50%;
+    width: 40%;
     min-width: 62px;
 }
 .console-container-set-status-button:hover{
@@ -375,10 +375,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
-    width: 50%;
+    width: 40%;
     min-width: 62px;
 }
-
+.post-txt-container-console-container .console-container-delete-button{
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+    /*color: var(--text-color);*/
+    color: crimson;
+    justify-content: center;
+    display: inline-block;
+    box-shadow: 0 0 0 0 crimson inset;
+    line-height: 40px;
+    width: 20%;
+    min-width: 62px;
+}
+.console-container-delete-button:hover{
+    box-shadow: 0 -3px 0 0 crimson inset;
+}
 .console-container-edit-button:hover{
     box-shadow: 0 -3px 0 0 #66ccff inset;
 }

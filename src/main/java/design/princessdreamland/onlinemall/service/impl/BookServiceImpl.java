@@ -281,7 +281,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
             }
             if(!exists) {
                 QueryWrapper<BookImg> queryWrapper = new QueryWrapper<BookImg>();
-                queryWrapper.eq("img_src", item);
+                queryWrapper.eq("book_img_id", item);
                 bookImgService.remove(queryWrapper);
             }
 

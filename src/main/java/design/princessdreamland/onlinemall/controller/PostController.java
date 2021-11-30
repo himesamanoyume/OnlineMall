@@ -80,4 +80,14 @@ public class PostController {
 
         return post;
     }
+
+    @PostMapping("/deletePost")
+    @ResponseBody
+    public Post deletePost(String postId, HttpSession session){
+        Permi permi = (Permi)session.getAttribute("permi");
+        if (2!=permi.getType()){
+            throw new RuntimeException("没有访问权限");
+        }
+        return postService.deletePost(postId);
+    }
 }

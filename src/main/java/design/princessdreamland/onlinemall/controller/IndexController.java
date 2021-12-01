@@ -24,7 +24,7 @@ public class IndexController {
     @RequestLog(action="首页页面")
     public String index(String type,String keyword, Model model, String currentPage, HttpSession session){
 
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchIndexPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -36,7 +36,7 @@ public class IndexController {
     @GetMapping("/post")
     @RequestLog(action="文章页面")
     public String post(String type, Model model,String keyword, String currentPage, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -48,7 +48,7 @@ public class IndexController {
     @GetMapping("/project")
     @RequestLog(action="项目页面")
     public String project(String type,Model model,String keyword, String currentPage, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -60,7 +60,7 @@ public class IndexController {
     @GetMapping("/note")
     @RequestLog(action="笔记页面")
     public String note(String type,Model model,String keyword, String currentPage, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -72,7 +72,7 @@ public class IndexController {
     @GetMapping("/tools")
     @RequestLog(action="工具页面")
     public String tools(String type,Model model,String keyword, String currentPage, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -84,7 +84,7 @@ public class IndexController {
     @GetMapping("/dynamic")
     @RequestLog(action="项目页面")
     public String dynamic(String type,Model model,String keyword, String currentPage, HttpSession session){
-        Permi permi = (Permi)session.getAttribute("permi");
+
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -97,7 +97,7 @@ public class IndexController {
     @RequestLog(action="文章详细页面")
     public String postDetail(String postId, Model model, HttpSession session){
         Post post = postService.queryById(postId);
-        Permi permi = (Permi)session.getAttribute("permi");
+
         model.addAttribute("post",post);
 
         return "/_jsp/_postDetail.jsp";
@@ -105,7 +105,7 @@ public class IndexController {
 
     @GetMapping("/resume")
     @RequestLog(action="简历页面")
-    public String resume(Model model, HttpSession session){
+    public String resume(HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
         if (2!=permi.getType() && 1!=permi.getType()){
             throw new RuntimeException("没有访问权限");

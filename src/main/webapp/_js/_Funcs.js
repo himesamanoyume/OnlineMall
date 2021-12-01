@@ -172,9 +172,7 @@ function SearchButtonFunc(){
         setCookie("input-keyword",$('#keyword').val())
         if ( $('.main').attr('data-url')=='index' || $('.main').attr('data-url')=='console'){
 
-            location.href="/"
-                + $('.main').attr('data-url')
-                + "?type=&keyword="
+            location.href="/?type=&keyword="
                 + getCookie("input-keyword")
                 // + $('#keyword').val()
                 + "&currentPage=1"

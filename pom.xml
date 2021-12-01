@@ -10,9 +10,9 @@
     </parent>
     <groupId>design.princessdreamland</groupId>
     <artifactId>onlinemall</artifactId>
-    <version>1.02</version>
-    <name>onlinemall</name>
-    <description>OnlineMall</description>
+    <version>1.49</version>
+    <name>HimeBlog</name>
+    <description>HimeBlog</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

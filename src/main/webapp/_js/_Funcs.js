@@ -25,7 +25,10 @@ function InitFunc(){
     $('.lazy').Lazy({
         effect: "fadeIn",
         effectTime: 500,
-        threshold: 0
+        threshold: 0,
+        onError: function(element) {
+            console.log(element);
+        }
         // scrollDirection: 'vertical',
         // effect: 'fadeIn',
         // visibleOnly: true,

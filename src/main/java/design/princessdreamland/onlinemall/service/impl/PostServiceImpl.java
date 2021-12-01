@@ -10,7 +10,7 @@ import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.entity.Post;
 import design.princessdreamland.onlinemall.mapper.PostMapper;
 import design.princessdreamland.onlinemall.service.PostService;
-import javafx.geometry.Pos;
+//import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -13,7 +13,7 @@
     <div id="info-container-inner" class="info-container-inner">
         <c:if test="${urlWhere!='editPost' and urlWhere!='addPost' and urlWhere!='console'}">
             <div class="info">
-                <img data-src="/_jsp/usericon.png" class="info-icon lazy">
+                <img src="/_jsp/usericon.png" class="info-icon">
                 <div class="info-name">姫様の夢</div>
                 <div class="info-txt">Princess Dreamland</div>
             </div>

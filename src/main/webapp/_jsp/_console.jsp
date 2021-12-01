@@ -158,6 +158,16 @@
                         + "&currentPage="
                         + page;
                 });
+                $('.lazy').Lazy({
+                    effect: "fadeIn",
+                    effectTime: 500,
+                    threshold: 0
+                    // scrollDirection: 'vertical',
+                    // effect: 'fadeIn',
+                    // visibleOnly: true,
+                    // effectTime: 500,
+                    // threshold: 0
+                });
             }
         })
     </script>

@@ -41,7 +41,7 @@
         <div class="home-container">
             <div class="post-container">
                 <div class="post-important">
-                    <h1>个人简历</h1>
+                    <h1>黎铮平 个人简历</h1>
                 </div>
                 <div class="post-noblue">
                     <div class="post-resume-content">

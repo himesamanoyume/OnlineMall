@@ -43,9 +43,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(2);
+        page.setSize(5);
 
-        return baseMapper.queryPage(page,post);
+        return baseMapper.queryIndexPage(page,post);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(2);
+        page.setSize(20);
 
         return baseMapper.queryPage(page,post);
     }
@@ -84,7 +84,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(2);
+        page.setSize(8);
 
         return baseMapper.queryPage(page,post);
     }

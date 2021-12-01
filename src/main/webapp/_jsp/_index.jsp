@@ -35,101 +35,82 @@
                 $('#prePage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage} - 1;
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "?&currentPage="
-                            + page;
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "?&currentPage="
+                        + page;
                 });
                 $('#nextPage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage} + 1;
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
-
-
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#firstPage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = 1;
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#lastPage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${totalPages};
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#currentPre2Page').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage-2};
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#currentPrePage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage-1};
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#currentNextPage').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage+1};
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
                 $('#currentNext2Page').click(function(){
                     setCookie("input-keyword",$('#keyword').val())
                     var page = ${currentPage+2};
-
-                        location.href="/?type="
-                            + "&keyword="
-                            + getCookie("input-keyword")
-                            // + $('#keyword').val()
-                            + "&currentPage="
-                            + page;
-
+                    location.href="/?type="
+                        + "&keyword="
+                        + getCookie("input-keyword")
+                        // + $('#keyword').val()
+                        + "&currentPage="
+                        + page;
                 });
             }
         })

@@ -13,4 +13,6 @@ public interface PostMapper extends BaseMapper<Post> {
     IPage<Post> queryPage(Page<Post> page, @Param("post") Post post);
 
     Post queryById(String postId);
+
+    IPage<Post> queryIndexPage(Page<Post> page, @Param("post") Post post);
 }

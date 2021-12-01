@@ -60,12 +60,57 @@
 	
 	</where>
 </sql>
+<sql id="whereIndex">
+		<where>
+			AND p.deleted = 0
+ 			AND p.type_id != 5
+			<if test="post!=null and post!=''" >
+				<if test="post.postId!=null and post.postId!=''">
+					AND p.post_id = #{post.postId}
+				</if>
+				<if test="post.topImg!=null and post.topImg!=''">
+					AND p.top_img LIKE CONCAT('%',#{post.topImg},'%')
+				</if>
+				<if test="post.keyword!=null and post.keyword!=''">
+					AND p.keyword LIKE CONCAT('%',#{post.keyword},'%')
+				</if>
+				<if test="post.title!=null and post.title!=''">
+					AND p.title LIKE CONCAT('%',#{post.title},'%')
+				</if>
+				<if test="post.article!=null and post.article!=''">
+					AND p.article LIKE CONCAT('%',#{post.article},'%')
+				</if>
+				<if test="post.introduction!=null and post.introduction!=''">
+					AND p.introduction LIKE CONCAT('%',#{post.introduction},'%')
+				</if>
+				<if test="post.typeId!=null and post.typeId!=''">
+					AND p.type_id LIKE CONCAT('%',#{post.typeId},'%')
+				</if>
+				<if test="post.status!=null and post.status!=''">
+					AND p.status LIKE CONCAT('%',#{post.status},'%')
+				</if>
+				<if test="post.publishTime!=null and post.publishTime!=''">
+					AND p.publish_time LIKE CONCAT('%',#{post.publishTime},'%')
+				</if>
+			</if>
+
+		</where>
+	</sql>
 
 	<select id="queryPage" resultMap="postMap" >
 		SELECT
 		<include refid="cols" />
 		FROM post p
 		<include refid="where" />
+
+		ORDER BY post_id DESC
+	</select>
+
+	<select id="queryIndexPage" resultMap="postMap" >
+		SELECT
+		<include refid="cols" />
+		FROM post p
+		<include refid="whereIndex" />
 
 		ORDER BY post_id DESC
 	</select>

@@ -170,13 +170,21 @@ function RemoveInfoPrompt(){
 function SearchButtonFunc(){
     $('#search').click(function (){
         setCookie("input-keyword",$('#keyword').val())
-        if ( $('.main').attr('data-url')=='index' || $('.main').attr('data-url')=='console'){
+        if ( $('.main').attr('data-url')=='index'){
 
             location.href="/?type=&keyword="
                 + getCookie("input-keyword")
                 // + $('#keyword').val()
                 + "&currentPage=1"
-        }else {
+        }else if($('.main').attr('data-url')=='console'){
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage=1"
+        }else{
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="

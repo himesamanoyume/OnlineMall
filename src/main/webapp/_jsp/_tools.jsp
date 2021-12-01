@@ -42,7 +42,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#nextPage').click(function(){
@@ -55,7 +55,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#firstPage').click(function(){
@@ -68,7 +68,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#lastPage').click(function(){
@@ -81,7 +81,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPre2Page').click(function(){
@@ -94,7 +94,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPrePage').click(function(){
@@ -107,7 +107,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNextPage').click(function(){
@@ -120,7 +120,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNext2Page').click(function(){
@@ -133,7 +133,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
             }

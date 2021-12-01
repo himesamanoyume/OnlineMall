@@ -41,9 +41,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#nextPage').click(function(){
@@ -54,9 +53,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#firstPage').click(function(){
@@ -67,9 +65,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#lastPage').click(function(){
@@ -80,9 +77,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPre2Page').click(function(){
@@ -93,9 +89,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentPrePage').click(function(){
@@ -106,9 +101,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNextPage').click(function(){
@@ -119,9 +113,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#currentNext2Page').click(function(){
@@ -132,9 +125,8 @@
                         + "?type="
                         + $('.main').attr('data-type')
                         + "&keyword="
-                        + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
             }

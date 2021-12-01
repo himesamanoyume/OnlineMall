@@ -11,7 +11,7 @@
 
 <c:forEach items="${postList}" var="item">
     <c:if test="${urlWhere!='dynamic'}">
-        <c:if test="${item.typeId!=5 or urlWhere=='console'}">
+
             <div class="post" data-postId="${item.postId}">
             <div class="post-Img-container">
                 <c:if test="${item.topImg!=null}"><img class="lazy" data-src="./Img/${item.keyword}/${item.topImg}"></c:if>
@@ -51,7 +51,8 @@
                 </c:if>
             </div>
         </div>
-        </c:if>
+
+
     </c:if>
     <c:if test="${urlWhere == 'dynamic'}">
         <div class="post" data-postId="${item.postId}">

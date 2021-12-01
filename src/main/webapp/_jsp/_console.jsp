@@ -130,7 +130,8 @@
                     var page = ${currentPage-1};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?keyword="
+                        + "?type="
+                        + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
                         + "&currentPage="
@@ -141,7 +142,8 @@
                     var page = ${currentPage+1};
                     location.href="/"
                         + $('.main').attr('data-url')
-                        + "?keyword="
+                        + "?type="
+                        + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
                         + "&currentPage="

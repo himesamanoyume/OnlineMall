@@ -17,7 +17,7 @@
         <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008786号-1</a>
     </div>
     <div class="footer-content">
-        HimeBlog Ver1.504
+        HimeBlog Ver1.51
     </div>
 
 </div>

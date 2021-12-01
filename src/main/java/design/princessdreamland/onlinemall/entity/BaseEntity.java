@@ -18,14 +18,14 @@ public class BaseEntity<T> {
     private Integer createUserId;
 
     @TableField(exist = false)
-    private User createUser;
+    private Permi createUser;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     private Integer updateUserId;
     @TableField(exist = false)
-    private User updateUser;
+    private Permi updateUser;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateTime;

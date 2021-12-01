@@ -44,13 +44,13 @@ function NavFunc(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
-        location.href="/index"
+        location.href="/"
     })
     $('#topTitle-index').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
-        location.href="/index"
+        location.href="/"
     })
     $('#nav-post').click(function(){
         if (getCookie("input-keyword")){
@@ -206,7 +206,12 @@ function PermissionButtonFunc(){
         },function(res){
             if(res && res.permiId){
                 alert('获取权限成功，导航栏简历按钮已开放')
-                location.href = "/"+$('.main').attr('data-url');
+                if ($('.main').attr('data-url')=='index'){
+                    location.href = "/";
+                }else {
+                    location.href = "/"+$('.main').attr('data-url')+"?type="+$('.main').attr('data-type');
+                }
+
             }else{
                 alert('获取权限失败')
             }

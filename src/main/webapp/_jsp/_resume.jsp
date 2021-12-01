@@ -131,6 +131,9 @@
                         </div>
                         <p>项目代码耦合性低，简洁美观，注释完善</p>
                     </div>
+                    <div class="post-resume-link-container">
+                        <a class="link" href="/postDetail?postId=20">查看详细</a>
+                    </div>
                 </div>
                 <div class="post">
                     <h3>Easy Chat (简易聊天室) - PC端</h3>
@@ -182,6 +185,9 @@
                         </div>
                         <p>通过算法解决了HTTP通信特性导致的消息内容缺失</p>
                     </div>
+                    <div class="post-resume-link-container">
+                        <a class="link" href="/postDetail?postId=21">查看详细</a>
+                    </div>
                 </div>
                 <div class="post">
                     <h3>Tower Defender (塔防) - PC端</h3>
@@ -214,6 +220,9 @@
                             </svg>
                         </div>
                         <p>实现了防御塔花费金币升级，自动攻击范围内最靠前的敌人等功能</p>
+                    </div>
+                    <div class="post-resume-link-container">
+                        <a class="link" href="/postDetail?postId=22">查看详细</a>
                     </div>
                 </div>
                 <div class="post">

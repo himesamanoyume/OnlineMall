@@ -20,7 +20,7 @@ public class IndexController {
     @Autowired
     private PostService postService;
 
-    @GetMapping("/index")
+    @GetMapping("/")
     @RequestLog(action="首页页面")
     public String index(String type,String keyword, Model model, String currentPage, HttpSession session){
 

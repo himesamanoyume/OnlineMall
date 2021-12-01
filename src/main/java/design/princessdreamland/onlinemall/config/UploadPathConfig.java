@@ -16,30 +16,30 @@ import java.io.File;
 public class UploadPathConfig implements WebMvcConfigurer {
 
     //获取文件夹路径
-    public static final String UPLOAD_PATH = ClassUtils
-            .getDefaultClassLoader()
-            .getResource("")
-            .getPath() + "../Img/";
+//    public static final String UPLOAD_PATH = ClassUtils
+//            .getDefaultClassLoader()
+//            .getResource("")
+//            .getPath() + "../Img/";
 
 //    public static final String UPLOAD_PATH = ClassUtils
 //            .getDefaultClassLoader()
 //            .getResource("")
 //            .getPath() + "../upload/";
 
-//    public static final String UPLOAD_PATH = "/www/wwwroot/princessdreamland.design/upload/";
-
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/upload/**")
-//                .addResourceLocations("file:"+ UPLOAD_PATH);
-//    }
+    public static final String UPLOAD_PATH = "/www/wwwroot/princessdreamland.design/Img/";
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        String upload = System.getProperty("user.dir");
-        String upload_path = upload + "/Img/";
         registry.addResourceHandler("/Img/**")
-                .addResourceLocations("file:"+ upload_path);
+                .addResourceLocations("file:"+ UPLOAD_PATH);
     }
+
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        String upload = System.getProperty("user.dir");
+//        String upload_path = upload + "/Img/";
+//        registry.addResourceHandler("/Img/**")
+//                .addResourceLocations("file:"+ upload_path);
+//    }
 
 }

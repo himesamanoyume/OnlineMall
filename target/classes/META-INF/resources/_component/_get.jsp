@@ -14,7 +14,7 @@
         <c:if test="${item.typeId!=5 or urlWhere=='console'}">
             <div class="post" data-postId="${item.postId}">
             <div class="post-Img-container">
-                <c:if test="${item.topImg!=null}"><img class="lazy" data-src="../Img/${item.keyword}/${item.topImg}"></c:if>
+                <c:if test="${item.topImg!=null}"><img class="lazy" data-src="./Img/${item.keyword}/${item.topImg}"></c:if>
             </div>
             <div class="post-txt-container">
                 <div class="post-txt-container-title">

@@ -40,7 +40,7 @@
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
                     <div class="post-Img-container">
-                        <c:if test="${post.topImg!=null}"><img class="lazy" data-src="../Img/${post.keyword}/${post.topImg}"></c:if>
+                        <c:if test="${post.topImg!=null}"><img class="lazy" data-src="./Img/${post.keyword}/${post.topImg}"></c:if>
                     </div>
                     <div class="post-txt-container">
                         <div class="post-detail-title">${post.title}</div>

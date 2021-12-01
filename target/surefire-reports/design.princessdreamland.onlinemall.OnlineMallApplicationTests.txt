@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: design.princessdreamland.onlinemall.OnlineMallApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.706 s - in design.princessdreamland.onlinemall.OnlineMallApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.027 s - in design.princessdreamland.onlinemall.OnlineMallApplicationTests

@@ -21,7 +21,12 @@
                         ${item.title}
                 </div>
                 <div class="post-txt-container-introduction">
+                    <c:if test="${item.typeId!=5}">
                         ${item.introduction}
+                    </c:if>
+                    <c:if test="${item.typeId==5}">
+                        ${item.article}
+                    </c:if>
                 </div>
                 <div class="post-txt-container-datetime">
                         ${item.publishTime}

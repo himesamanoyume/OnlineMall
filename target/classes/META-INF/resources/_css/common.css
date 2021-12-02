@@ -305,7 +305,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     z-index: 2;
     width: 100%;
     padding: 0 25px 0 25px;
-    min-height: 100px;
+    min-height: 60px;
     border-radius: 0 0 3px 3px;
     background-color: var(--post-bg);
 }
@@ -326,7 +326,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     line-height: 40px;
 }
 .post-txt-container .post-txt-container-introduction{
-    margin: 10px 0 20px 0;
+    margin: 20px 0 5px 0;
     color: var(--text-color);
     font-size: 15px;
     width: 100%;
@@ -338,10 +338,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .post-txt-container .post-txt-container-console-container{
     height: 40px;
-    padding: 0 30px 0 30px;
     display: flex;
     display: -webkit-flex;
-
     text-align: center;
     justify-content: space-around;
 }
@@ -354,7 +352,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
-    width: 40%;
+    width: 50%;
     min-width: 62px;
 }
 .console-container-set-status-button:hover{
@@ -368,7 +366,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
-    width: 40%;
+    width: 30%;
     min-width: 62px;
 }
 .post-txt-container-console-container .console-container-delete-button{

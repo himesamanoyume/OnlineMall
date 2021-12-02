@@ -92,6 +92,9 @@
                         alert("关键字不能为空")
                         return
                     }
+                    if(typeId == null){
+                        typeId = ${post.typeId}
+                    }
                     if (topImg==''){
                         $.post('/post/editPost',{
                             postId:${post.postId},

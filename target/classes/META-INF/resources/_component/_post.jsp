@@ -20,23 +20,21 @@
             <input id="publishTime" class="post-edit-datetime" type="date" <c:if test="${urlWhere == 'editPost'}"> value="${post.publishTime}"</c:if>>
             <select id="typeId" class="post-edit-dynamic">
                 <c:if test="${urlWhere == 'editPost'}">
-                <option value="0">
                     <c:if test="${post.typeId == 1}">
-                        文章
+                        <option value="">文章</option>
                     </c:if>
                     <c:if test="${post.typeId == 2}">
-                        项目
+                        <option value="">项目</option>
                     </c:if>
                     <c:if test="${post.typeId == 3}">
-                        笔记
+                        <option value="">笔记</option>
                     </c:if>
                     <c:if test="${post.typeId == 4}">
-                        工具
+                        <option value="">工具</option>
                     </c:if>
                     <c:if test="${post.typeId == 5}">
-                        动态
+                        <option value="">动态</option>
                     </c:if>
-                </option>
                 </c:if>
                 <option value="1">文章</option>
                 <option value="2">项目</option>

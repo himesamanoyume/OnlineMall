@@ -345,7 +345,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .post-txt-container-console-container .console-container-set-status-button{
-    padding: 0 15px 0 15px;
+    padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--text-color);
     justify-content: center;
@@ -359,7 +359,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: 0 -3px 0 0 #66ccff inset;
 }
 .post-txt-container-console-container .console-container-edit-button{
-    padding: 0 15px 0 15px;
+    padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--text-color);
     justify-content: center;
@@ -370,7 +370,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     min-width: 62px;
 }
 .post-txt-container-console-container .console-container-delete-button{
-    padding: 0 15px 0 15px;
+    padding: 0 5px 0 5px;
     cursor: pointer;
     color: crimson;
     justify-content: center;

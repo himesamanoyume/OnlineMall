@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     transition-duration:0.2s;
+
+
+
 }
 html, body {
-    min-width: 400px;
     width: 100%;
-    /*height: 100%;*/
     background-color: var(--body-bg);
     line-height: 1.5;
     display: block;
@@ -18,14 +19,12 @@ html, body {
     }
     .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
-        /*max-width: 990px;*/
         max-width: 100%;
         position: inherit;
     }
     .main>.home-container>.info-container>.info-container-inner>.info>.info-icon{
         margin-top: 20px;
-        width: auto;
-        height: 180px;
+        max-height: 180px;
         border-radius: 3px;
     }
     .main>.home-container>.info-container>.info-container-inner>.info-link>.link-button{
@@ -40,8 +39,7 @@ html, body {
         margin-top: 5px;
         margin-bottom: 5px;
         text-align: center;
-        font-size: 50px;
-        /*line-height: 200px;*/
+        font-size: 12vw;
         color: var(--text-color);
         width: 100%;
         transition-duration: 0.4s;
@@ -120,26 +118,24 @@ body[data-theme=light]{
 
 .main{
     display: block;
+
 }
 .home-container{
+    padding-top: 20px;
     display: flex;
     display: -webkit-flex;
     margin: 0 auto 0 auto;
     width: 100%;
     max-width: 975px;
-
+    word-break: break-all;
 }
 .post-container{
     max-width: 85%;
     width: 775px;
-    min-width: 400px;
-    /*max-width: 795px;*/
     height: 100%;
     transition-duration: 0s;
     border: 0;
     padding: 5px 5px 5px 15px;
-    /*margin-left: 20%;*/
-    /*border-radius: 3px;*/
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -179,17 +175,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .post-container .newest-title{
-
     background-color: var(--body-bg);
     cursor: inherit;
     display: block;
-    margin-bottom: 10px;
-    height: 200px;
+    margin: 75px 0 75px 0;
+    min-height: 100px;
     width: 100%;
     border: 0;
     color: var(--text-color);
     font-size: 50px;
-    line-height: 200px;
     text-align: center;
     user-select: none;
     -moz-user-select: none;
@@ -220,16 +214,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--page-current-color);
     line-height: 40px;
     width: 55px;
-
-    /*box-shadow: 0 0 0 0 var(--tianyi-color) inset;*/
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
 }
-/*.post-page-container-currentPage:hover{*/
-/*    box-shadow: 0 -2px 0 0 var(--tianyi-color) inset;*/
-/*}*/
 .post-page-container-content-left{
     height: 40px;
     width: calc((100% - 55px)/2);
@@ -249,9 +238,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     justify-content: center;
     line-height: 40px;
     width: 55px;
-
     box-shadow: 0 0 0 0 var(--tianyi-color) inset;
-    /*position: relative;*/
 }
 .post-page-container-button:hover{
     box-shadow: 0 -2px 0 0 var(--tianyi-color) inset;
@@ -272,7 +259,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post-container .main-post{
     text-align: center;
     background-color:var(--post-bg);
-    padding: 15px 20px 15px 20px;
+    padding: 15px 0 15px 0;
     display: block;
     cursor: inherit;
     margin-bottom: 10px;
@@ -282,7 +269,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color:var(--text-color);
     border-radius: 3px;
     box-shadow: 0 0 0 1px var(--post-shadow-color);
-    /*position: relative;*/
 }
 .main-post-container{
     width: 100%;
@@ -295,11 +281,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .main-post-content{
     text-align: left;
     margin: 5px 20px 5px 20px;
-    /*display: inline-flex;*/
 }
 .main-post-content-txt{
-    margin: 20px 20px 20px 20px;
-    /*display: inline-flex;*/
+    margin: 8px 10px 8px 10px;
 
 }
 .post-Img-container{
@@ -307,43 +291,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     max-height: 200px;
     overflow: hidden;
     border: 0;
-    /*margin: 20px 0 20px 0;*/
     display: block;
 }
 .post-Img-container img{
     width: 100%;
     border: 0;
-    /*margin: 20px 0 20px 0;*/
     background-color: var(--tianyi-color);
     display: block;
     border-radius: 3px;
 }
-/*.post img{*/
-/*    border-radius: 3px 3px 0 0;*/
-/*    border: 0;*/
-/*    background-color: var(--tianyi-color);*/
-/*    top: 0;*/
-/*    vertical-align:bottom;*/
-/*    display: block;*/
-/*    !*height: 200px;*!*/
-/*    max-width: 100%;*/
-/*    float: top;*/
-/*    !*z-index: 1;*!*/
-/*    !*box-shadow: 0px 0px 0 1px #262626;*!*/
-
-/*}*/
-
 .post .post-txt-container{
     bottom: 0;
     z-index: 2;
     width: 100%;
-    /*float: bottom;*/
     padding: 0 25px 0 25px;
     min-height: 100px;
     border-radius: 0 0 3px 3px;
-    /*box-shadow: 0px 0px 0 1px #404040;*/
     background-color: var(--post-bg);
-
 }
 
 .post-txt-container .post-txt-container-title{
@@ -366,7 +330,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: var(--text-color);
     font-size: 15px;
     width: 100%;
-    /*display: flex;*/
     line-height: 1.5;
 }
 .post-txt-container-introduction img{
@@ -411,7 +374,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post-txt-container-console-container .console-container-delete-button{
     padding: 0 15px 0 15px;
     cursor: pointer;
-    /*color: var(--text-color);*/
     color: crimson;
     justify-content: center;
     display: inline-block;
@@ -430,11 +392,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post:hover{
     box-shadow: 0 0 0 2px var(--tianyi-color);
 }
+@font-face {
+    font-family: TrumpGothicPro-Bold;
+    src: url("/_css/TrumpGothicPro-Bold.ttf");
+}
 
 .topTitle{
     margin:auto;
     text-align: center;
-    font-size: 50px;
+    font-family: TrumpGothicPro-Bold;
+    font-size: 8vw;
     line-height: 200px;
     color: var(--body-bg);
     width: 100%;

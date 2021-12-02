@@ -9,10 +9,10 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<header class="header">
+<div class="header">
     <nav class="nav">
         <div id="nav-index" class="blogName" title="首页">
-            HimeBlog
+            HIMEBLOG
         </div>
         <div class="nav-container">
             <div class="nav-content">
@@ -49,8 +49,8 @@
             </c:if>
         </div>
     </nav>
-</header>
+</div>
 
 <div id="topTitle-index" class="topTitle" title="首页">
-    HimeBlog
+    HIMEBLOG
 </div>

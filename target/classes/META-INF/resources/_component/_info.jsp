@@ -13,9 +13,10 @@
     <div id="info-container-inner" class="info-container-inner">
         <c:if test="${urlWhere!='editPost' and urlWhere!='addPost' and urlWhere!='console'}">
             <div class="info">
-                <img src="/_jsp/usericon.png" class="info-icon">
+                <img src="/_jsp/usericon.webp" class="info-icon">
                 <div class="info-name">姫様の夢</div>
                 <div class="info-txt">Princess Dreamland</div>
+                <div class="info-txt">"Who care?"</div>
             </div>
         </c:if>
         <c:if test="${urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost' and urlWhere!='dynamic'}">

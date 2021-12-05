@@ -125,28 +125,26 @@
             <div class="post-container">
                 <c:if test="${currentPage<=1}">
                     <div class="main-post">
+                        <img class="lazy" data-src="/_jsp/indexMain.webp">
                         <h2>关于本站</h2>
                         <div class="main-post-content">
                             <p>编写时间：8天 (2021.11.23 16:37 - 2021.12.01 02:16)</p>
                             <p>正式上线：2021年12月1日</p>
-
-                            <div class="main-post-content-txt">
-                                <p>本站使用基于Spring Boot框架，使用MySQL数据库搭建的JSP项目，前身为学校跨行业实训课程中作为作业的网上商城项目，
-                                    由此项目学习实践掌握到了建立该站所需的知识，并一直希望有一个属于自己能完全控制的博客网站，于是此站诞生了</p>
-                            </div>
                             <div class="main-post-content-txt">
                                 <p>本站建立首要目标就是手机端浏览体验更佳，因此整体布局借鉴了我一位群友的博客风格，并支持lazyload以及深色/浅色
                                     主题切换，博客内部模糊搜索，支持站长进入后台系统即时修改文章内容，但暂不支持评论</p>
                             </div>
-
                             <div class="main-post-content-txt">
                                 <p>拥有低级权限密码的浏览者可以提升权限，将可开启导航栏中的隐藏项目</p>
+                                <p>由于本项目内含有个人信息，故不进行开源</p>
                             </div>
 
 
                             <h3>个人信息</h3>
                             <div class="main-post-content-txt">
-                                <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅</p>
+                                <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅，日本商业动画作画MAD观赏爱好者</p>
+                                <h4>喜欢的画师</h4>
+                                <p>rurudo,玉之けだま,...</p>
                             </div>
 
                         </div>

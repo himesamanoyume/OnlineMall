@@ -259,7 +259,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .post-container .main-post{
     text-align: center;
     background-color:var(--post-bg);
-    padding: 15px 0 15px 0;
+    padding: 0 0 15px 0;
     display: block;
     cursor: inherit;
     margin-bottom: 10px;
@@ -270,6 +270,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     border-radius: 3px;
     box-shadow: 0 0 0 1px var(--post-shadow-color);
 }
+
+.main-post img{
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    border: 0;
+}
+
 .main-post-container{
     width: 100%;
     display: inline-flex;

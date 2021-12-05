@@ -29,6 +29,7 @@
             ThemeSetFunc();
             NavFunc();
             EditAndDetailFunc();
+            BackTopFunc();
         })
     </script>
 </head>

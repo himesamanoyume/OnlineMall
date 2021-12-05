@@ -22,6 +22,7 @@ function InitFunc(){
         $('#nav-console').css("color", "#66ccff")
     }
 
+
     $('.lazy').Lazy({
         effect: "fadeIn",
         effectTime: 500,
@@ -91,6 +92,9 @@ function NavFunc(){
     $('#nav-console').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
+        }
+        if (getCookie('console-type')){
+            delCookie('console-type')
         }
         location.href="/console"
     })

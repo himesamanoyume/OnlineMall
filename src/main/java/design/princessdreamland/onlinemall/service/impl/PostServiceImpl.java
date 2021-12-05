@@ -57,11 +57,14 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         }
 
         Page<Post> page = new Page<>();
-        if (StrUtil.isNotEmpty(currentPage)){
+        if (StrUtil.isNotEmpty(type) && StrUtil.isNotEmpty(currentPage)){
+            post.setTypeId(new Integer(type));
+            page.setCurrent(new Integer(currentPage));
+        }else if (StrUtil.isNotEmpty(currentPage)){
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(20);
+        page.setSize(2);
 
         return baseMapper.queryPage(page,post);
     }

@@ -143,6 +143,7 @@
                             <h3>个人信息</h3>
                             <div class="main-post-content-txt">
                                 <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅，日本商业动画作画MAD观赏爱好者</p>
+                                <p>头像画师<a href="https://www.pixiv.net/users/1198913" target="_blank">@ほし</a></p>
                                 <h4>喜欢的画师</h4>
                                 <p>rurudo,玉之けだま,...</p>
                             </div>

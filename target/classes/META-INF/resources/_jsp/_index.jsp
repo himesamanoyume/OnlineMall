@@ -39,7 +39,7 @@
                         + "&keyword="
                         + getCookie("input-keyword")
                         // + $('#keyword').val()
-                        + "?&currentPage="
+                        + "&currentPage="
                         + page;
                 });
                 $('#nextPage').click(function(){

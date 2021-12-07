@@ -144,9 +144,9 @@
                             <div class="main-post-content-txt">
                                 <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅，日本商业动画作画MAD观赏爱好者</p>
                                 <p>头像画师<a href="https://www.pixiv.net/users/1198913" target="_blank">@ほし</a></p>
-                                <h4>喜欢的画师</h4>
+                                <h4>喜欢的插画画师</h4>
                                 <p><a href="https://www.pixiv.net/users/25760573" target="_blank">@rurudo</a>,<a href="https://www.pixiv.net/users/16731" target="_blank">@玉之けだま</a>,等..</p>
-                                <h4>喜欢的原画师</h4>
+                                <h4>喜欢的动画原画师</h4>
                                 <p>中村丰，阿部望，金子秀一</p>
                             </div>
 

@@ -113,6 +113,7 @@
                         + page;
                 });
             }
+
         })
 
     </script>
@@ -124,35 +125,32 @@
         <div class="home-container">
             <div class="post-container">
                 <c:if test="${currentPage<=1}">
-                    <div class="main-post">
-                        <img class="lazy" data-src="/_jsp/indexMain.webp">
-                        <h2>关于本站</h2>
-                        <div class="main-post-content">
-                            <p>编写时间：8天 (2021.11.23 16:37 - 2021.12.01 02:16)</p>
-                            <p>正式上线：2021年12月1日</p>
-                            <div class="main-post-content-txt">
-                                本站建立首要目标就是手机端浏览体验更佳，因此整体布局借鉴了我一位群友的博客风格，并支持<span class="highlight">Lazyload</span>以及<span class="highlight">深色/浅色
-                                主题切换</span>，博客内部模糊搜索，支持站长进入<span class="highlight">后台系统</span>即时修改文章内容，但暂不支持评论
-                            </div>
-                            <div class="main-post-content-txt">
-                                拥有<span class="highlight">低级权限密码</span>的浏览者可以提升权限，将可开启导航栏中的隐藏项目
-                                <p>由于本项目内含有个人信息，故不进行开源</p>
-                            </div>
-
-
-                            <h3>个人信息</h3>
-                            <div class="main-post-content-txt">
-                                <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅，日本商业动画作画MAD观赏爱好者</p>
-                                <p>头像画师<a href="https://www.pixiv.net/users/1198913" target="_blank">@ほし</a></p>
-                                <h4>喜欢的插画画师</h4>
-                                <p><a href="https://www.pixiv.net/users/25760573" target="_blank">@rurudo</a>,<a href="https://www.pixiv.net/users/16731" target="_blank">@玉之けだま</a>,等..</p>
-                                <h4>喜欢的动画原画师</h4>
-                                <p>中村丰，阿部望，金子秀一</p>
-                            </div>
-
-                        </div>
-
-                    </div>
+                    ${misc}
+<%--                    <div class="main-post">--%>
+<%--                        <img class="lazy" data-src="/_jsp/indexMain.webp">--%>
+<%--                        <h2>关于本站</h2>--%>
+<%--                        <div class="main-post-content">--%>
+<%--                            <p>编写时间：8天 (2021.11.23 16:37 - 2021.12.01 02:16)</p>--%>
+<%--                            <p>正式上线：2021年12月1日</p>--%>
+<%--                            <div class="main-post-content-txt">--%>
+<%--                                本站建立首要目标就是手机端浏览体验更佳，因此整体布局借鉴了我一位群友的博客风格，并支持<span class="highlight">Lazyload</span>以及<span class="highlight">深色/浅色--%>
+<%--                                主题切换</span>，博客内部模糊搜索，支持站长进入<span class="highlight">后台系统</span>即时修改文章内容，但暂不支持评论--%>
+<%--                            </div>--%>
+<%--                            <div class="main-post-content-txt">--%>
+<%--                                拥有<span class="highlight">低级权限密码</span>的浏览者可以提升权限，将可开启导航栏中的隐藏项目--%>
+<%--                                <p>由于本项目内含有个人信息，故不进行开源</p>--%>
+<%--                            </div>--%>
+<%--                            <h3>个人信息</h3>--%>
+<%--                            <div class="main-post-content-txt">--%>
+<%--                                <p>FPS游戏爱好者，PC DIY知识储备OK，动漫宅，日本商业动画作画MAD观赏爱好者</p>--%>
+<%--                                <p>头像画师<a href="https://www.pixiv.net/users/1198913" target="_blank">@ほし</a></p>--%>
+<%--                                <h4>喜欢的插画画师</h4>--%>
+<%--                                <p><a href="https://www.pixiv.net/users/25760573" target="_blank">@rurudo</a>,<a href="https://www.pixiv.net/users/16731" target="_blank">@玉之けだま</a>,等..</p>--%>
+<%--                                <h4>喜欢的动画原画师</h4>--%>
+<%--                                <p>中村丰，阿部望，金子秀一</p>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                 </c:if>
 
                 <div class="newest-title">

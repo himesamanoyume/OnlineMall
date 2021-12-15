@@ -17,11 +17,7 @@
 	p.publish_time,
 	p.type_id,
 	p.status,
-	p.deleted,
-	p.create_user_id,
-	p.create_time,
-	p.update_user_id,
-	p.update_time
+	p.deleted
 </sql>
 
 

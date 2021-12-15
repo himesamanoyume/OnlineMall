@@ -10,7 +10,7 @@
     </parent>
     <groupId>design.princessdreamland</groupId>
     <artifactId>onlinemall</artifactId>
-    <version>1.542</version>
+    <version>1.55</version>
     <name>HimeBlog</name>
     <description>HimeBlog</description>
     <properties>

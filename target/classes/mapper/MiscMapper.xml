@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="design.princessdreamland.onlinemall.mapper.MiscMapper">
+
+	<resultMap type="design.princessdreamland.onlinemall.entity.Misc" id="miscMap">
+		<id property="miscId" column="misc_id" />
+
+	</resultMap>
+
+<sql id="cols">
+	m.misc_id,
+	m.text,
+	m.deleted
+</sql>
+
+
+<sql id="where">
+	<where>
+		AND deleted = 0
+		<if test="misc!=null and misc!=''" >
+			<if test="misc.miscId!=null and misc.miscId!=''">
+				AND m.misc_id = #{misc.miscId}
+			</if>
+			<if test="misc.text!=null and misc.text!=''">
+				AND m.text = #{misc.text}
+			</if>
+		</if>
+	
+	</where>
+</sql>
+
+	<select id="queryList" resultMap="miscMap" >
+		SELECT
+		<include refid="cols" />
+		FROM misc m
+		<include refid="where" />
+
+		ORDER BY m.misc_id DESC
+	</select>
+
+	<select id="queryPage" resultMap="miscMap" >
+		SELECT
+		<include refid="cols" />
+		FROM misc m
+		<include refid="where" />
+
+		ORDER BY m.misc_id DESC
+	</select>
+
+	<select id="queryById" resultMap="miscMap" >
+		SELECT
+		<include refid="cols" />
+		FROM misc m
+		WHERE misc_id = #{miscId}
+
+		ORDER BY misc_id DESC
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+

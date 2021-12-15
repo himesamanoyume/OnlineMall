@@ -113,7 +113,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             post.setStatus(0);
         }
 
-        post.setUpdateTime(new Date());
         this.updateById(post);
         return post;
     }
@@ -121,10 +120,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Post addPost(Post post){
-        post.setCreateTime(new Date());
-
         this.save(post);
-
         return post;
     }
 
@@ -132,7 +128,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     @Transactional(rollbackFor = Exception.class)
     public Post editPost(Post post){
 
-        post.setUpdateTime(new Date());
         this.updateById(post);
 
         return post;
@@ -148,7 +143,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             throw new RuntimeException("文章不存在或者没有操作权限");
         }
 
-        post.setUpdateTime(new Date());
         this.updateById(post);
         this.removeById(postId);
 

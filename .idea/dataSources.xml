@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="03102ddf-eaae-45a2-8b5f-a71c0e58ef47">
+    <data-source source="LOCAL" name="MySQL - @localhost" uuid="03102ddf-eaae-45a2-8b5f-a71c0e58ef47">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -15,7 +15,7 @@
       <jdbc-url>jdbc:mysql://47.106.183.112:3306/hime</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="ser" uuid="95d158f7-6dc8-472b-b5a0-b909d3e0c24e">
+    <data-source source="LOCAL" name="ser" uuid="40ca5c2a-505e-4d89-a113-168db0144435">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

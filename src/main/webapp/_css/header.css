@@ -18,8 +18,12 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .main>.header>.nav>.nav-container>.nav-link{
+    .main>.header>.nav>.nav-container>.nav-content>.nav-link{
         padding: 0 5px 0 5px;
+        min-width: 42px;
+    }
+    .main>.header>.nav>.nav-container>.nav-content{
+        width: 42px;
     }
 }
 .header{

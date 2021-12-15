@@ -1,8 +1,10 @@
 package design.princessdreamland.onlinemall.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import design.princessdreamland.onlinemall.annotation.RequestLog;
+import design.princessdreamland.onlinemall.entity.Misc;
 import design.princessdreamland.onlinemall.entity.Permi;
 import design.princessdreamland.onlinemall.entity.Post;
+import design.princessdreamland.onlinemall.service.MiscService;
 import design.princessdreamland.onlinemall.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,12 +22,16 @@ public class IndexController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private MiscService miscService;
+
     @GetMapping("/")
     @RequestLog(action="首页页面")
     public String index(String type,String keyword, Model model, String currentPage, HttpSession session){
 
-
         IPage<Post> postPage = postService.searchIndexPage(type,keyword,currentPage);
+        Misc misc = miscService.queryById("1");
+        model.addAttribute("misc",misc.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -105,12 +111,13 @@ public class IndexController {
 
     @GetMapping("/resume")
     @RequestLog(action="简历页面")
-    public String resume(HttpSession session){
+    public String resume(HttpSession session,Model model){
         Permi permi = (Permi)session.getAttribute("permi");
         if (2!=permi.getType() && 1!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
-
+        Misc misc = miscService.queryById("2");
+        model.addAttribute("misc",misc.getText());
         return "/_jsp/_resume.jsp";
     }
 

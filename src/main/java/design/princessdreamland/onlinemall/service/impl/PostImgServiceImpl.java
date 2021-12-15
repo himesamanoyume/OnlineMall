@@ -52,7 +52,7 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg>
     @Override
     @Transactional(rollbackFor = Exception.class)
     public PostImg addPostImg(PostImg postImg){
-        postImg.setCreateTime(new Date());
+//        postImg.setCreateTime(new Date());
         this.save(postImg);
 
         return postImg;

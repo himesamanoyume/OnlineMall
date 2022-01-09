@@ -297,11 +297,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin: 8px 10px 8px 10px;
 
 }
-.main-post-content-txt .a{
+a{
     text-decoration: none;
     color: var(--tianyi-color);
 }
-
+a:hover{
+    text-decoration: underline;
+}
 .post-Img-container{
     width: 100%;
     max-height: 200px;

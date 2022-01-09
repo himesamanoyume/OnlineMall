@@ -17,10 +17,10 @@
     padding: 0 20px 0 20px;
 }
 .footer > .footer-content >a{
-    text-decoration: none;
+    /*text-decoration: none;*/
     min-width: 168px;
-    color: var(--tianyi-color);
+    /*color: var(--tianyi-color);*/
 }
-.footer >.footer-content> a:hover{
-    text-decoration: underline;
-}
+/*.footer >.footer-content> a:hover{*/
+/*    text-decoration: underline;*/
+/*}*/

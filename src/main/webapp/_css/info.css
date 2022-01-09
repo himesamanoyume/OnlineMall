@@ -45,6 +45,12 @@
     width: 100%;
     color: var(--text-color);
 }
+.info-resume{
+    font-size: 10px;
+    line-height: 25px;
+    width: 100%;
+    color: var(--text-color);
+}
 
 .info-link{
     display: inline-flex;

@@ -20,10 +20,10 @@
     }
     .main>.header>.nav>.nav-container>.nav-content>.nav-link{
         padding: 0 5px 0 5px;
-        min-width: 42px;
+        min-width: 45px;
     }
     .main>.header>.nav>.nav-container>.nav-content{
-        width: 42px;
+        width: 45px;
     }
 }
 .header{

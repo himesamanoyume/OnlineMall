@@ -14,7 +14,7 @@ html, body {
     .home-container {
         flex-direction: column-reverse;
     }
-    .main>.home-containerhome-container>.info-container{
+    .main>.home-container>.info-container{
         padding: 5px 15px 5px 15px;
         max-width: 100%;
         position: inherit;

@@ -67,8 +67,7 @@
                         </div>
                         <hr class="hr"/>
                         <div class="post-detail-txt">
-                            ${post.article}
-
+                            <pre>${post.article}</pre>
                         </div>
 
                     </div>

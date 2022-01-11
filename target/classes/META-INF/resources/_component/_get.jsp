@@ -21,19 +21,21 @@
                         ${item.title}
                 </div>
                 <div class="post-txt-container-introduction">
+
                     <c:if test="${item.typeId!=5}">
-                        ${item.introduction}
+                        <pre>${item.introduction}</pre>
                     </c:if>
                     <c:if test="${item.typeId==5}">
-                        ${item.article}
+                        <pre>${item.article}</pre>
                     </c:if>
+
                 </div>
                 <div class="post-txt-container-datetime">
                         ${item.publishTime}
                 </div>
                 <c:if test="${urlWhere == 'console'}">
                     <div class="post-txt-container-introduction">
-                        <c:if test="${item.status==1}">状态：开放/标签：</c:if><c:if test="${item.status==0}">状态：隐藏/标签：</c:if><c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">动态</c:if>/关键字：${item.keyword}
+                        <pre><c:if test="${item.status==1}">状态：开放/标签：</c:if><c:if test="${item.status==0}">状态：隐藏/标签：</c:if><c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">动态</c:if>/关键字：${item.keyword}</pre>
                     </div>
                     <div class="post-txt-container-console-container">
                         <div class="console-container-edit-button">
@@ -66,7 +68,7 @@
             </div>
             <div class="post-txt-container">
                 <div class="post-txt-container-introduction">
-                        ${item.article}
+                    <pre>${item.article}</pre>
                 </div>
                 <div class="post-txt-container-datetime">
                         ${item.publishTime}

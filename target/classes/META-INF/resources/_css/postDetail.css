@@ -43,9 +43,7 @@
     line-height: 30px;
     font-size: 17px;
 }
-.post-detail-txt p{
-    padding: 10px 0 10px 0;
-}
+
 .post-detail-postInfo-container{
     width: 100%;
     margin:0 auto;
@@ -86,7 +84,6 @@
     display: block;
     border-radius: 3px;
 }
-
 .post-detail-txt img{
     max-width: 100%;
     border: 0;
@@ -95,7 +92,6 @@
     display: block;
     border-radius: 3px;
 }
-
 .post-detail-txt .code{
     width: 100%;
     padding: 15px 20px 15px 20px;
@@ -104,7 +100,6 @@
     line-height: 20px;
     color: var(--post-code-text-color);
 }
-
 .post-detail-txt .reference{
     width: 100%;
     padding: 15px 20px 15px 20px;

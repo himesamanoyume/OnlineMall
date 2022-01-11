@@ -31,6 +31,8 @@ public class IndexController {
 
         IPage<Post> postPage = postService.searchIndexPage(type,keyword,currentPage);
         Misc misc = miscService.queryById("1");
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         model.addAttribute("misc",misc.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -42,7 +44,8 @@ public class IndexController {
     @GetMapping("/post")
     @RequestLog(action="文章页面")
     public String post(String type, Model model,String keyword, String currentPage, HttpSession session){
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -54,7 +57,8 @@ public class IndexController {
     @GetMapping("/project")
     @RequestLog(action="项目页面")
     public String project(String type,Model model,String keyword, String currentPage, HttpSession session){
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -66,7 +70,8 @@ public class IndexController {
     @GetMapping("/note")
     @RequestLog(action="笔记页面")
     public String note(String type,Model model,String keyword, String currentPage, HttpSession session){
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -78,7 +83,8 @@ public class IndexController {
     @GetMapping("/tools")
     @RequestLog(action="工具页面")
     public String tools(String type,Model model,String keyword, String currentPage, HttpSession session){
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -90,7 +96,8 @@ public class IndexController {
     @GetMapping("/dynamic")
     @RequestLog(action="项目页面")
     public String dynamic(String type,Model model,String keyword, String currentPage, HttpSession session){
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -103,7 +110,8 @@ public class IndexController {
     @RequestLog(action="文章详细页面")
     public String postDetail(String postId, Model model, HttpSession session){
         Post post = postService.queryById(postId);
-
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         model.addAttribute("post",post);
 
         return "/_jsp/_postDetail.jsp";
@@ -112,6 +120,8 @@ public class IndexController {
     @GetMapping("/resume")
     @RequestLog(action="简历页面")
     public String resume(HttpSession session,Model model){
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         Permi permi = (Permi)session.getAttribute("permi");
         if (2!=permi.getType() && 1!=permi.getType()){
             throw new RuntimeException("没有访问权限");
@@ -125,6 +135,8 @@ public class IndexController {
     @RequestLog(action="后台页面")
     public String console(String type,String keyword, Model model, String currentPage, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
@@ -140,8 +152,10 @@ public class IndexController {
 
     @GetMapping("/addPost")
     @RequestLog(action="新增文章页面")
-    public String addPost(HttpSession session) {
+    public String addPost(HttpSession session,Model model) {
         Permi permi = (Permi)session.getAttribute("permi");
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
@@ -152,6 +166,8 @@ public class IndexController {
     @RequestLog(action="编辑文章页面")
     public String editPost(String postId, Model model, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
+        Misc footer = miscService.queryById("3");
+        model.addAttribute("footer",footer.getText());
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }

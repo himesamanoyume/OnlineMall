@@ -280,6 +280,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     background-color: var(--post-important-bg);
     color: var(--text-color);
 }
+.highlight-red{
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+    background-color: crimson;
+    color: var(--post-code-text-color);
+}
+.highlight-green{
+    border-radius: 5px;
+    padding: 0 4px 0 4px;
+    background-color: lightseagreen;
+    color: var(--post-code-text-color);
+}
 .main-post-container{
     width: 100%;
     display: inline-flex;
@@ -380,7 +392,7 @@ pre{
     display: inline-block;
     box-shadow: 0 0 0 0 #66ccff inset;
     line-height: 40px;
-    width: 50%;
+    width: 30%;
     min-width: 62px;
 }
 .console-container-set-status-button:hover{

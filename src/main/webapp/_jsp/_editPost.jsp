@@ -107,7 +107,7 @@
                         },function (res){
                             if (res && res.postId){
                                 alert("编辑文章成功")
-                                location.href="/console";
+                                location.href="/postDetail?postId="+${post.postId};
                             }
                         }).fail(function (res){
                             alert(res.responseJSON.message)
@@ -125,7 +125,7 @@
                         },function (res){
                             if (res && res.postId){
                                 alert("新增文章成功")
-                                location.href="/console";
+                                location.href="/postDetail?postId="+${post.postId};
                             }
                         }).fail(function (res){
                             alert(res.responseJSON.message)

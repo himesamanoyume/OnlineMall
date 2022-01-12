@@ -34,6 +34,7 @@
             ThemeSetFunc();
             NavFunc();
             SearchButtonFunc();
+            ConsolePostOpenEditFunc();
             ConsolePostOpenDetailFunc();
             ConsoleAddPostFunc();
             ConsoleContorlPostFunc();

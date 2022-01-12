@@ -89,7 +89,7 @@ function NavFunc(){
         }
         location.href="/resume"
     })
-    $('#nav-console').click(function(){
+    $('#info-console').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
@@ -106,10 +106,17 @@ function PostOpenDetailFunc(){
     })
 }
 
-function ConsolePostOpenDetailFunc(){
+function ConsolePostOpenEditFunc(){
 
     $('body').on('click', '.console-container-edit-button', function (){
         location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId')
+    })
+}
+
+function ConsolePostOpenDetailFunc(){
+
+    $('body').on('click', '.console-container-edit-button', function (){
+        location.href="/postDetail?postId=" + $(this).parent().parent().parent().attr('data-postId')
     })
 }
 

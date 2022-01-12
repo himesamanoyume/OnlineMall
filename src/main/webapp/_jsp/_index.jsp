@@ -14,6 +14,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../_jsp/favicon.ico">
+    <meta content="HimeBlog" name="title">
+    <meta content="Himesamanoyume" name="author-name1">
+    <meta content="Princess Dreamland" name="author-name2">
     <title>HimeBlog</title>
     <style>
         <%@include file="../_component/_style.jsp" %>

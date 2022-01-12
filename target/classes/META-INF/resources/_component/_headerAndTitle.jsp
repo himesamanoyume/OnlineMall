@@ -41,12 +41,12 @@
                     <div class="hover-bar"></div>
                 </div>
             </c:if>
-            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">
-                <div class="nav-content">
-                    <div id="nav-console" class="nav-link">后台</div>
-                    <div class="hover-bar"></div>
-                </div>
-            </c:if>
+<%--            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">--%>
+<%--                <div class="nav-content">--%>
+<%--                    <div id="nav-console" class="nav-link">后台</div>--%>
+<%--                    <div class="hover-bar"></div>--%>
+<%--                </div>--%>
+<%--            </c:if>--%>
         </div>
     </nav>
 </div>

@@ -111,6 +111,10 @@ public class IndexController {
     public String postDetail(String postId, Model model, HttpSession session){
         Post post = postService.queryById(postId);
         Misc footer = miscService.queryById("3");
+        if (post.getStatus()==0){
+            model.addAttribute("footer",footer.getText());
+            return "/_jsp/_error.jsp";
+        }
         model.addAttribute("footer",footer.getText());
         model.addAttribute("post",post);
 

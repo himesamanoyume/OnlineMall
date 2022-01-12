@@ -115,7 +115,7 @@ function ConsolePostOpenEditFunc(){
 
 function ConsolePostOpenDetailFunc(){
 
-    $('body').on('click', '.console-container-edit-button', function (){
+    $('body').on('click', '.console-container-detail-button', function (){
         location.href="/postDetail?postId=" + $(this).parent().parent().parent().attr('data-postId')
     })
 }

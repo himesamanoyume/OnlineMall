@@ -9,7 +9,7 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="header">
+<header class="header">
     <nav class="nav">
         <div id="nav-index" class="blogName" title="首页">
             HIMEBLOG
@@ -41,15 +41,9 @@
                     <div class="hover-bar"></div>
                 </div>
             </c:if>
-<%--            <c:if test="${sessionScope.permi!=null and sessionScope.permi.type == 2}">--%>
-<%--                <div class="nav-content">--%>
-<%--                    <div id="nav-console" class="nav-link">后台</div>--%>
-<%--                    <div class="hover-bar"></div>--%>
-<%--                </div>--%>
-<%--            </c:if>--%>
         </div>
     </nav>
-</div>
+</header>
 
 <div id="topTitle-index" class="topTitle" title="首页">
     HIMEBLOG

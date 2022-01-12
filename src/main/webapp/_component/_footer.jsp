@@ -9,7 +9,7 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="footer">
+<footer class="footer">
     ${footer}
 <%--    <div class="footer-content">--%>
 <%--        Copyright 2021-2022© @姫様の夢--%>
@@ -23,4 +23,4 @@
 <%--    <div class="footer-content">--%>
 <%--        HimeBlog Ver1.57--%>
 <%--    </div>--%>
-</div>
+</footer>

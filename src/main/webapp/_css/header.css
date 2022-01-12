@@ -20,16 +20,18 @@
     }
     .main>.header>.nav>.nav-container>.nav-content>.nav-link{
         padding: 0 5px 0 5px;
-        min-width: 45px;
+        min-width: 50px;
     }
     .main>.header>.nav>.nav-container>.nav-content{
-        width: 45px;
+        width: 50px;
     }
 }
 .header{
     background-color: var(--header-bg);
     backdrop-filter: blur(4px);
     min-height: 60px;
+    display: block;
+    flex: 0 0 auto;
     top: 0;
     left: 0;
     right: 0;

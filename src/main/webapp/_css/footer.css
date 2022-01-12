@@ -2,11 +2,10 @@
     width: 100%;
     padding: 40px 0 40px 0;
     background-color: var(--body-bg);
-    margin: auto;
+    margin:auto;
     color: var(--text-color);
     display: inline-flex;
     text-align: center;
-
     justify-content: center;
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;

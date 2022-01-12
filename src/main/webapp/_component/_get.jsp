@@ -43,7 +43,7 @@
                         <div class="console-container-edit-button">
                             编辑
                         </div>
-                        <div class="console-container-edit-button">
+                        <div class="console-container-detail-button">
                             查看
                         </div>
                         <c:if test="${item.status==0}">

@@ -3,7 +3,7 @@
         flex-direction: column;
     }
 }
-.post-container .post{
+.post{
 
     background-color:var(--post-bg);
     cursor: inherit;

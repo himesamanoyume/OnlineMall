@@ -48,7 +48,7 @@
     color: var(--text-color);
 }
 
-.nav .blogName{
+.blogName{
     padding: 0 40px 0 40px;
     font-size: 35px;
     font-family: TrumpGothicPro-Bold;
@@ -85,7 +85,7 @@
 .nav-link:hover{
     color: var(--tianyi-color);
 }
-.nav-content .hover-bar{
+.hover-bar{
     width: 0%;
     margin: 0 auto;
     height: 3px;

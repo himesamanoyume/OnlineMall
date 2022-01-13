@@ -4,7 +4,8 @@
     top: 60px;
     height: 100%;
     position: sticky;
-    /*transition-duration: 0s;*/
+    /*transition-duration:0.2s*/
+    transition-duration: 0s;
 }
 
 .info-container-inner{

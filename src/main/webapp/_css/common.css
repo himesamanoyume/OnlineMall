@@ -2,10 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition-duration:0.2s;
-}
-p{
-    transition-duration:0.2s;
+    transition-duration:0.1s;
 }
 html{
     height: 100%;
@@ -13,13 +10,12 @@ html{
 }
 body {
     width: 100%;
-    /*height: 100%;*/
     min-height: 100%;
     background-color: var(--body-bg);
     line-height: 1.5;
     flex-direction: column;
     display: flex;
-    /*transition-duration:0.2s;*/
+
 }
 @media screen and (max-width: 990px){
     .home-container {
@@ -50,7 +46,7 @@ body {
         font-size: 10vmax;
         color: var(--text-color);
         width: 100%;
-        transition-duration: 0.4s;
+        transition-duration: 0.2s;
         height: 200px;
 
     }
@@ -142,7 +138,7 @@ body[data-theme=light]{
     max-width: 85%;
     width: 775px;
     height: 100%;
-    /*transition-duration: 0s;*/
+    /*transition-duration:0.2s;*/
     border: 0;
     padding: 20px 5px 5px 15px;
 }
@@ -170,7 +166,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 
 
-.post-container .post{
+.post{
 
     background-color: var(--post-bg);
     cursor: pointer;
@@ -183,7 +179,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: 0 0 0 1px var(--post-shadow-color);
 }
 
-.post-container .newest-title{
+.newest-title{
     background-color: var(--body-bg);
     cursor: inherit;
     display: block;
@@ -210,7 +206,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: 0 0 0 1px var(--post-shadow-color);
 }
 
-.post-page .post-page-container{
+.post-page-container{
     height: 40px;
     display: flex;
     display: -webkit-flex;
@@ -264,7 +260,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -ms-user-select: none;
     -webkit-user-select: none;
 }
-.post-container .main-post{
+.main-post{
     text-align: center;
     background-color:var(--post-bg);
     padding: 0 0 15px 0;
@@ -342,7 +338,7 @@ a:hover{
     display: block;
     border-radius: 3px;
 }
-.post .post-txt-container{
+.post-txt-container{
     bottom: 0;
     width: 100%;
     padding: 0 25px 0 25px;
@@ -351,7 +347,7 @@ a:hover{
     background-color: var(--post-bg);
 }
 
-.post-txt-container .post-txt-container-title{
+.post-txt-container-title{
     color: var(--text-color);
     font-size: 25px;
     font-weight: bold;
@@ -359,13 +355,13 @@ a:hover{
     margin: 20px 0 10px 0;
 }
 
-.post-txt-container .post-txt-container-datetime{
+.post-txt-container-datetime{
     color: var(--text-color);
     font-size: 9px;
     width: 100%;
     line-height: 40px;
 }
-.post-txt-container .post-txt-container-introduction{
+.post-txt-container-introduction{
     margin: 20px 0 5px 0;
     color: var(--text-color);
     font-size: 15px;
@@ -388,15 +384,14 @@ pre{
     word-break: break-all;
     word-wrap: break-word;
 }
-.post-txt-container .post-txt-container-console-container{
+.post-txt-container-console-container{
     height: 40px;
     display: flex;
     display: -webkit-flex;
     text-align: center;
     justify-content: space-around;
 }
-
-.post-txt-container-console-container .console-container-set-status-button{
+.console-container-set-status-button{
     padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--text-color);
@@ -410,7 +405,7 @@ pre{
 .console-container-set-status-button:hover{
     box-shadow: 0 -3px 0 0 #66ccff inset;
 }
-.post-txt-container-console-container .console-container-edit-button{
+.console-container-edit-button{
     padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--text-color);
@@ -421,8 +416,7 @@ pre{
     width: 30%;
     min-width: 62px;
 }
-
-.post-txt-container-console-container .console-container-detail-button{
+.console-container-detail-button{
     padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--text-color);
@@ -433,7 +427,7 @@ pre{
     width: 30%;
     min-width: 62px;
 }
-.post-txt-container-console-container .console-container-delete-button{
+.console-container-delete-button{
     padding: 0 5px 0 5px;
     cursor: pointer;
     color: crimson;
@@ -513,7 +507,7 @@ pre{
 
 }
 
-.post-page .console-type-container{
+.console-type-container{
     height: 40px;
     /*padding: 0 30px 0 30px;*/
     padding: 0 5px 0 5px;
@@ -523,7 +517,7 @@ pre{
     text-align: center;
 }
 
-.console-type-container .console-container-button{
+.console-container-button{
     padding: 0 5px 0 5px;
     cursor: pointer;
     color: var(--page-button-color);

@@ -13,8 +13,8 @@
     flex: 0 0 auto;
     /*z-index: 1;*/
 }
-.footer .footer-content{
-    line-height: 40px;
+.footer-content{
+    line-height: 30px;
     padding: 0 20px 0 20px;
 }
 .footer > .footer-content >a{

@@ -1,4 +1,4 @@
-.post-container .post{
+.post{
     background-color:var(--post-bg);
     padding: 15px 20px 15px 20px;
     display: block;
@@ -13,7 +13,7 @@
     word-break: break-all;
 }
 
-.post-container .post-noblue{
+.post-noblue{
     word-break: break-all;
     background-color:var(--post-bg);
     padding: 15px 20px 15px 20px;
@@ -31,7 +31,7 @@
     border-radius: 0 2px 2px 0;
 }
 
-.post-container .post-important{
+.post-important{
     word-break: break-all;
     background-color:var(--post-important-bg);
     padding: 15px 20px 15px 20px;

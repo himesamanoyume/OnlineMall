@@ -48,7 +48,12 @@
                         <c:if test="${post.topImg!=null}"><img class="lazy" data-src="./Img/${post.keyword}/${post.topImg}"></c:if>
                     </div>
                     <div class="post-txt-container">
-                        <div class="post-detail-title">${post.title}</div>
+                        <c:if test="${post.typeId == 5}">
+                            <div class="post-detail-title">动态详细</div>
+                        </c:if>
+                        <c:if test="${post.typeId != 5}">
+                            <div class="post-detail-title">${post.title}</div>
+                        </c:if>
                         <div class="post-detail-postInfo-container">
                             <div class="post-detail-datetime">${post.publishTime}</div>
                             <div class="post-detail-dynamic">
@@ -65,7 +70,7 @@
                                     工具
                                 </c:if>
                                 <c:if test="${post.typeId == 5}">
-                                    标签
+                                    动态
                                 </c:if>
                             </div>
                         </div>

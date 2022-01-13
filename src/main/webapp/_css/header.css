@@ -1,5 +1,5 @@
 @media screen and (max-width: 990px){
-    .main>.header>.nav>.blogName{
+    body>.header>.nav>.blogName{
         padding: 0;
         user-select: none;
         -moz-user-select: none;
@@ -10,7 +10,7 @@
 
         color: rgba(0,0,0,0);
     }
-    .main>.header>.nav>.nav-container{
+    body>.header>.nav>.nav-container{
         margin:0 auto;
         width: 100%;
         display: inline-flex;
@@ -18,11 +18,11 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .main>.header>.nav>.nav-container>.nav-content>.nav-link{
+    body>.header>.nav>.nav-container>.nav-content>.nav-link{
         padding: 0 5px 0 5px;
         min-width: 50px;
     }
-    .main>.header>.nav>.nav-container>.nav-content{
+    body>.header>.nav>.nav-container>.nav-content{
         width: 50px;
     }
 }
@@ -31,7 +31,7 @@
     backdrop-filter: blur(4px);
     min-height: 60px;
     display: block;
-    flex: 0 0 auto;
+    flex:0 0 auto;
     top: 0;
     left: 0;
     right: 0;

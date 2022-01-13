@@ -35,8 +35,9 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="error"/>
+    <%@include file="../_component/_headerAndTitle.jsp" %>
     <main class="main" data-url="error">
-        <%@include file="../_component/_headerAndTitle.jsp" %>
+
         <div class="home-container">
             <div class="post-container">
                 <div class="errorTitle">
@@ -50,9 +51,8 @@
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>
-        <%@include file="../_component/_footer.jsp" %>
     </main>
-
+    <%@include file="../_component/_footer.jsp" %>
 
 
 </body>

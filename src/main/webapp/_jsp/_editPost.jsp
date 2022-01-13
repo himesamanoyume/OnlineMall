@@ -177,18 +177,16 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="editPost"/>
+<%@include file="../_component/_headerAndTitle.jsp" %>
     <main class="main" data-url="editPost">
-        <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
                 <%@include file="../_component/_post.jsp" %>
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>
-
-        <%@include file="../_component/_footer.jsp" %>
     </main>
-
+<%@include file="../_component/_footer.jsp" %>
 
 
 </body>

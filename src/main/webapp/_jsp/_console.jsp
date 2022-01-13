@@ -359,8 +359,9 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="console"/>
+<%@include file="../_component/_headerAndTitle.jsp" %>
     <main class="main" data-url="console" data-keyword="" data-type="">
-        <%@include file="../_component/_headerAndTitle.jsp" %>
+
         <div class="home-container">
             <div class="post-container">
                 <div class="post-page">
@@ -391,9 +392,9 @@
             <%@include file="../_component/_info.jsp" %>
         </div>
 
-        <%@include file="../_component/_footer.jsp" %>
-    </main>
 
+    </main>
+<%@include file="../_component/_footer.jsp" %>
 
 
 </body>

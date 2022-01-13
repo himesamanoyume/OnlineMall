@@ -36,8 +36,9 @@
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="resume"/>
+<%@include file="../_component/_headerAndTitle.jsp" %>
     <main class="main" data-url="resume">
-        <%@include file="../_component/_headerAndTitle.jsp" %>
+
         <div class="home-container">
             <div class="post-container">
                 ${misc}
@@ -295,8 +296,8 @@
             <%@include file="../_component/_info.jsp" %>
         </div>
 
-        <%@include file="../_component/_footer.jsp" %>
     </main>
+<%@include file="../_component/_footer.jsp" %>
 
 
 

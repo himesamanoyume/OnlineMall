@@ -15,29 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>页面已删除 | HimeBlog</title>
     <link rel="shortcut icon" href="../_jsp/favicon.ico">
-    <style>
-        <%@include file="../_component/_style.jsp" %>
-    </style>
-    <script src="/_js/jquery.js" type="text/javascript"></script>
-    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
-    <script src="/_js/_Funcs.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function(){
-            InitFunc();
-            SaveThemeCookie();
-            ThemeSetFunc();
-            NavFunc();
-            SearchButtonFunc();
-            PermissionButtonFunc();
-        })
-
-    </script>
+    ${head}
 </head>
 <body id="body" data-theme="auto">
 <c:set var="urlWhere" value="error"/>
     <%@include file="../_component/_headerAndTitle.jsp" %>
     <main class="main" data-url="error">
-
         <div class="home-container">
             <div class="post-container">
                 <div class="errorTitle">
@@ -47,14 +30,11 @@
                     <p>该页面已被删除了哦~</p>
                     <p><a href="/" >返回主页</a></p>
                 </div>
-
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>
     </main>
     <%@include file="../_component/_footer.jsp" %>
-
-
 </body>
 </html>
 

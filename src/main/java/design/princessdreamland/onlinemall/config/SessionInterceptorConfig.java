@@ -34,8 +34,8 @@ public class SessionInterceptorConfig implements WebMvcConfigurer {
                 "/_component/**",
                 "/_js/**",
                 "/_jsp/**",
-                "/res/**",
-                "/update/**"
+                "/res/**"
+
         );
     }
 }

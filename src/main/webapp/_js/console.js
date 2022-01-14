@@ -1,0 +1,14 @@
+$(document).ready(function(){
+    InitFunc();
+    SaveThemeCookie();
+    ThemeSetFunc();
+    NavFunc();
+    SearchButtonFunc();
+    ConsolePostOpenEditFunc();
+    ConsolePostOpenDetailFunc();
+    ConsoleAddPostFunc();
+    ConsoleControlPostFunc();
+    BackTopFunc();
+    ConsolePageFunc();
+    ConsoleTypeFunc();
+})

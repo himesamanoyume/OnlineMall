@@ -27,11 +27,14 @@ public class UploadPathConfig implements WebMvcConfigurer {
 //            .getPath() + "../upload/";
 
     public static final String UPLOAD_PATH = "/www/wwwroot/princessdreamland.design/Img/";
-
+    public static final String RES_PATH = "/www/wwwroot/princessdreamland.design/res/";
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/Img/**")
                 .addResourceLocations("file:"+ UPLOAD_PATH);
+
+        registry.addResourceHandler("/res/**")
+                .addResourceLocations("file:"+ RES_PATH);
     }
 
 //    @Override

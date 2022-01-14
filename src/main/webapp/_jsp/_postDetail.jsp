@@ -19,28 +19,12 @@
     <meta content="Princess Dreamland" name="author-name2">
     <meta content="${post.title}" name="post-title">
     <link rel="shortcut icon" href="../_jsp/favicon.ico">
-    <style>
-        <%@include file="../_component/_style.jsp" %>
-        @import "/_css/postDetail.css";
-    </style>
-    <script src="/_js/jquery.js" type="text/javascript"></script>
-    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
-    <script src="/_js/_Funcs.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function(){
-            InitFunc();
-            SaveThemeCookie();
-            ThemeSetFunc();
-            NavFunc();
-            EditAndDetailFunc();
-            BackTopFunc();
-        })
-    </script>
+    ${head}
 </head>
 <body id="body" data-theme="auto">
+<%@include file="../_component/_headerAndTitle.jsp" %>
 <c:set var="urlWhere" value="postDetail"/>
     <main class="main" data-url="postDetail">
-        <%@include file="../_component/_headerAndTitle.jsp" %>
         <div class="home-container">
             <div class="post-container">
                 <div class="post" data-postId="${post.postId}">
@@ -78,20 +62,14 @@
                         <div class="post-detail-txt">
                             <pre>${post.article}</pre>
                         </div>
-
                     </div>
                 </div>
                 <%@include file="../_component/_get.jsp" %>
-
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>
-
-        <%@include file="../_component/_footer.jsp" %>
     </main>
-
-
-
+<%@include file="../_component/_footer.jsp" %>
 </body>
 </html>
 

@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    InitFunc();
+    SaveThemeCookie();
+    ThemeSetFunc();
+    NavFunc();
+    PostOpenDetailFunc();
+    SearchButtonFunc();
+    PermissionButtonFunc();
+    PageFunc();
+})

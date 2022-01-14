@@ -151,8 +151,6 @@ function queryImgFunc(){
     })
 }
 
-
-
 function BackTopFunc(){
     $('#backTop').click(function (){
         $("html,body").animate({scrollTop:"0px"},400);
@@ -294,7 +292,868 @@ function SaveThemeCookie(){
     setCookie('prefer-theme',$('#body').attr('data-theme'));
 }
 
+function IndexPageFunc(){
+    $('#prePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage - 1;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#nextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage + 1;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#firstPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = 1;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#lastPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = totalPages;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPre2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-2;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPrePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-1;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+1;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNext2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+2;
+        location.href="/?type="
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+}
 
+function PageFunc(){
+    $('#prePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage - 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#nextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage + 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#firstPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#lastPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = totalPages;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPre2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-2;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPrePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNext2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+2;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+}
+
+function NoSearchPageFunc(){
+    $('#prePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage - 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#nextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage + 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#firstPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = 1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#lastPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = totalPages;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPre2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-2;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPrePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+1;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNext2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+2;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + "&currentPage="
+            + page;
+    });
+}
+
+function editPostFunc(){
+    $('#copyCodeBlock').click(function (){
+        var text = "<div class=\"code\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,2000)
+    })
+
+    $('#copyImgBlock').click(function (){
+        var keyword = post_keyword
+        var text = "<img class='lazy' data-src='../Img/"
+            + keyword
+            + "/NAME.TYPE'>"
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,2000)
+    })
+
+    $('#copyReferenceBlock').click(function (){
+        var text = "<div class=\"reference\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,1100)
+    })
+
+    $('#saveEdit').click(function (){
+        var topImg = $('#topImg').val()
+        var keyword = $('#postKeyword').val()
+        var title = $('#title').val()
+        var introduction = $('#introduction').val()
+        var publishTime = $('#publishTime').val()
+        var typeId = $('#typeId').val()
+        var article = $('#article').val()
+
+        topImg = topImg.trim()
+        keyword = keyword.trim()
+        title = title.trim()
+        introduction = introduction.trim()
+        publishTime = publishTime.trim()
+        typeId = typeId.trim()
+        article = article.trim()
+
+        if(!title){
+            alert("标题不能为空")
+            return
+        }
+        if(!keyword){
+            alert("关键字不能为空")
+            return
+        }
+        if(typeId == null){
+            typeId = post_typeId
+        }
+        if (topImg==''){
+            $.post('/post/editPost',{
+                postId:post_postId,
+                keyword:keyword,
+                title:title,
+                introduction:introduction,
+                publishTime:publishTime,
+                typeId:typeId,
+                article:article
+            },function (res){
+                if (res && res.postId){
+                    alert("编辑文章成功")
+                    location.href="/postDetail?postId="+post_postId;
+                }
+            }).fail(function (res){
+                alert(res.responseJSON.message)
+            })
+        }else {
+            $.post('/post/editPost',{
+                postId:post_postId,
+                topImg:topImg,
+                keyword:keyword,
+                title:title,
+                introduction:introduction,
+                publishTime:publishTime,
+                typeId:typeId,
+                article:article
+            },function (res){
+                if (res && res.postId){
+                    alert("新增文章成功")
+                    location.href="/postDetail?postId="+post_postId;
+                }
+            }).fail(function (res){
+                alert(res.responseJSON.message)
+            })
+        }
+
+    });
+
+    var data;
+    $('#file').change(function (){
+        var file = $(this)[0].files[0];
+        data = new FormData()
+        data.append("file",file)
+    });
+
+    $('#uploadImg').click(function (){
+        var keyword = $('#postKeyword').val()
+        var name = $('#imgName').val()
+
+        keyword = keyword.trim();
+        name = name.trim();
+
+        if (!keyword){
+            alert("keyword不能为空")
+            return
+        }
+        if (!name){
+            alert("name不能为空")
+            return;
+        }
+        data.append("keyword",keyword)
+        data.append("name",name)
+        $.ajax({
+            url:'/uploadImg',
+            data:data,
+            type:'POST',
+            processData: false,
+            contentType: false,
+            success: function(res){
+                alert("上传成功")
+            }
+        })
+    });
+}
+
+function addPostFunc(){
+
+    $('#copyCodeBlock').click(function (){
+        var text = "<div class=\"code\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,1100)
+    })
+    $('#copyImgBlock').click(function (){
+        var keyword = "${post.keyword}"
+        var text = "<img class='lazy' data-src='../Img/"
+            + keyword
+            + "/NAME.TYPE'>"
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,1100)
+    })
+    $('#copyReferenceBlock').click(function (){
+        var text = "<div class=\"reference\"><p></p></div>";
+        var input = document.getElementById("tempInput");
+        input.value = text;
+        input.select(); // 选中文本
+        document.execCommand("copy"); // 执行浏览器复制命令
+        InfoPrompt("复制成功")
+        setTimeout(RemoveInfoPrompt,1100)
+    })
+
+    $('#savePost').click(function (){
+        var topImg = $('#topImg').val()
+        var keyword = $('#postKeyword').val()
+        var title = $('#title').val()
+        var introduction = $('#introduction').val()
+        var publishTime = $('#publishTime').val()
+        var typeId = $('#typeId').val()
+        var article = $('#article').val()
+        topImg = topImg.trim()
+        keyword = keyword.trim()
+        title = title.trim()
+        introduction = introduction.trim()
+        publishTime = publishTime.trim()
+        typeId = typeId.trim()
+        article = article.trim()
+        if(!title){
+            alert("标题不能为空")
+            return
+        }
+        if(!keyword){
+            alert("关键字不能为空")
+            return
+        }
+        if (topImg==''){
+            // console.log("null")
+            $.post('/post/addPost',{
+                keyword:keyword,
+                title:title,
+                introduction:introduction,
+                publishTime:publishTime,
+                typeId:typeId,
+                article:article
+            },function (res){
+                if (res && res.postId){
+                    alert("新增文章成功")
+                    location.href="/console";
+                }
+            }).fail(function (res){
+                alert(res.responseJSON.message)
+            })
+        }else {
+            $.post('/post/addPost',{
+                topImg:topImg,
+                keyword:keyword,
+                title:title,
+                introduction:introduction,
+                publishTime:publishTime,
+                typeId:typeId,
+                article:article
+            },function (res){
+                if (res && res.postId){
+                    alert("新增文章成功")
+                    location.href="/console";
+                }
+            }).fail(function (res){
+                alert(res.responseJSON.message)
+            })
+        }
+    });
+    var data;
+
+    $('#file').change(function (){
+        var file = $(this)[0].files[0];
+        data = new FormData()
+        data.append("file",file)
+    });
+
+    $('#uploadImg').click(function (){
+        var keyword = $('#postKeyword').val()
+        var name = $('#imgName').val()
+        keyword = keyword.trim();
+        name = name.trim();
+        if (!keyword){
+            alert("keyword不能为空")
+            return
+        }
+        if (!name){
+            alert("name不能为空")
+            return;
+        }
+        data.append("keyword",keyword)
+        data.append("name",name)
+        $.ajax({
+            url:'/uploadImg',
+            data:data,
+            type:'POST',
+            processData: false,
+            contentType: false,
+            success: function(res){
+                alert("上传成功")
+            }
+        })
+    });
+}
+
+function ConsoleControlPostFunc(){
+    $('body').on('click', '.console-container-set-status-button', function (){
+        $.post('/post/setStatus',{
+            postId:$(this).parent().parent().parent().attr('data-postId')
+        },function (res){
+            if (res&&res.postId){
+                alert("状态改变成功")
+                location.reload();
+            }else{
+                alert("失败")
+            }
+        }).fail(function (res){
+            alert(res.responseJSON.message)
+        })
+    });
+    $('body').on('click', '.console-container-delete-button', function (){
+        $.post('/post/deletePost',{
+            postId:$(this).parent().parent().parent().attr('data-postId')
+        },function (res){
+            if (res&&res.postId){
+                alert("删除文章成功")
+                location.reload();
+            }else{
+                alert("失败")
+            }
+        }).fail(function (res){
+            alert(res.responseJSON.message)
+        })
+    });
+}
+
+function ConsoleTypeFunc(){
+    $('#type0').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+    $('#type1').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','1')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+    $('#type2').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','2')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+    $('#type3').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','3')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+    $('#type4').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','4')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+    $('#type5').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        $('.main').attr('data-type','5')
+        setCookie("console-type",$('.main').attr('data-type'))
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?type="
+            + $('.main').attr('data-type')
+            + "&keyword="
+            + getCookie("input-keyword")
+            // + $('#keyword').val()
+            + "&currentPage=1"
+    });
+}
+
+function ConsolePageFunc(){
+    $('#prePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage - 1;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#nextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage + 1;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#firstPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = 1;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#lastPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = totalPages;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#currentPre2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-2;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#currentPrePage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-1;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#currentNextPage').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+1;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+
+    });
+    $('#currentNext2Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+2;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
+                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+}
 
 /**
  * 写入cookie

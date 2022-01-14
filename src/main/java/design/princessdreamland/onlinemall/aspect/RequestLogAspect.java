@@ -40,8 +40,8 @@ public class RequestLogAspect {
 		}
 		
 		
-		log.info("方法调用: {}, 操作类型: {}, 入参: {}, 返回值: {}", methodName, action
-				, JSONUtil.toJsonStr(joinpoint.getArgs()), JSONUtil.toJsonStr(res));
+		log.info("方法调用: {}, 操作类型: {},返回值: {}", methodName, action
+				, JSONUtil.toJsonStr(res));
 	}
 	
 

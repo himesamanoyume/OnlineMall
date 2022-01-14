@@ -43,6 +43,13 @@
     line-height: 30px;
     font-size: 17px;
 }
+pre > img{
+    cursor: pointer;
+}
+
+.post-Img-container > img{
+    cursor: pointer;
+}
 
 .post-detail-postInfo-container{
     width: 100%;

@@ -15,130 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>笔记 | HimeBlog</title>
     <link rel="shortcut icon" href="../_jsp/favicon.ico">
-    <style>
-        <%@include file="../_component/_style.jsp" %>
-    </style>
-    <script src="/_js/jquery.js" type="text/javascript"></script>
-    <script src="/_js/jquery.lazy.min.js" type="text/javascript"></script>
-    <script src="/_js/_Funcs.js" type="text/javascript"></script>
+    ${head}
     <script>
-        $(document).ready(function(){
-            InitFunc();
-            SaveThemeCookie();
-            ThemeSetFunc();
-            NavFunc();
-            PostOpenDetailFunc();
-            SearchButtonFunc();
-            PermissionButtonFunc();
-            PageFunc();
-            function PageFunc(){
-                $('#prePage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage} - 1;
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#nextPage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage} + 1;
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#firstPage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = 1;
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#lastPage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${totalPages};
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#currentPre2Page').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage-2};
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#currentPrePage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage-1};
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#currentNextPage').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage+1};
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-                $('#currentNext2Page').click(function(){
-                    setCookie("input-keyword",$('#keyword').val())
-                    var page = ${currentPage+2};
-                    location.href="/"
-                        + $('.main').attr('data-url')
-                        + "?type="
-                        + $('.main').attr('data-type')
-                        + "&keyword="
-                        + getCookie("input-keyword")
-                        // + $('#keyword').val()
-                        + "&currentPage="
-                        + page;
-                });
-            }
-        })
-
+        var currentPage = ${currentPage};
+        var totalPages = ${totalPages};
     </script>
 </head>
 <body id="body" data-theme="auto">
@@ -147,7 +27,6 @@
     <main class="main" data-url="note" data-type="3" data-keyword="">
         <div class="home-container">
             <div class="post-container">
-
                 <%@include file="../_component/_get.jsp" %>
                 <%@include file="../_component/_page.jsp" %>
             </div>
@@ -155,8 +34,6 @@
         </div>
     </main>
 <%@include file="../_component/_footer.jsp" %>
-
-
 </body>
 </html>
 

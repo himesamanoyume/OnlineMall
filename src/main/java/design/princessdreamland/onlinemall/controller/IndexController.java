@@ -32,6 +32,8 @@ public class IndexController {
         IPage<Post> postPage = postService.searchIndexPage(type,keyword,currentPage);
         Misc misc = miscService.queryById("1");
         Misc footer = miscService.queryById("3");
+        Misc head = miscService.queryById("6");
+        model.addAttribute("head",head.getText());
         model.addAttribute("footer",footer.getText());
         model.addAttribute("misc",misc.getText());
         model.addAttribute("postList",postPage.getRecords());
@@ -47,6 +49,8 @@ public class IndexController {
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
+        Misc head = miscService.queryById("12");
+        model.addAttribute("head",head.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -60,6 +64,8 @@ public class IndexController {
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
+        Misc head = miscService.queryById("13");
+        model.addAttribute("head",head.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -73,6 +79,8 @@ public class IndexController {
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
+        Misc head = miscService.queryById("9");
+        model.addAttribute("head",head.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -86,6 +94,8 @@ public class IndexController {
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
+        Misc head = miscService.queryById("15");
+        model.addAttribute("head",head.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -99,6 +109,8 @@ public class IndexController {
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchPage(type,keyword,currentPage);
+        Misc head = miscService.queryById("11");
+        model.addAttribute("head",head.getText());
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
         model.addAttribute("totalPages",postPage.getPages());
@@ -112,9 +124,13 @@ public class IndexController {
         Post post = postService.queryById(postId);
         Misc footer = miscService.queryById("3");
         if (post.getStatus()==0){
+            Misc head = miscService.queryById("7");
+            model.addAttribute("head",head.getText());
             model.addAttribute("footer",footer.getText());
             return "/_jsp/_error.jsp";
         }
+        Misc head = miscService.queryById("5");
+        model.addAttribute("head",head.getText());
         model.addAttribute("footer",footer.getText());
         model.addAttribute("post",post);
 
@@ -130,6 +146,8 @@ public class IndexController {
         if (2!=permi.getType() && 1!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
+        Misc head = miscService.queryById("14");
+        model.addAttribute("head",head.getText());
         Misc misc = miscService.queryById("2");
         model.addAttribute("misc",misc.getText());
         return "/_jsp/_resume.jsp";
@@ -145,7 +163,8 @@ public class IndexController {
             throw new RuntimeException("没有访问权限");
         }
         IPage<Post> postPage = postService.searchConsolePage(type,keyword,currentPage);
-
+        Misc head = miscService.queryById("10");
+        model.addAttribute("head",head.getText());
 
         model.addAttribute("postList",postPage.getRecords());
         model.addAttribute("currentPage",postPage.getCurrent());
@@ -160,6 +179,8 @@ public class IndexController {
         Permi permi = (Permi)session.getAttribute("permi");
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
+        Misc head = miscService.queryById("8");
+        model.addAttribute("head",head.getText());
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");
         }
@@ -171,6 +192,8 @@ public class IndexController {
     public String editPost(String postId, Model model, HttpSession session){
         Permi permi = (Permi)session.getAttribute("permi");
         Misc footer = miscService.queryById("3");
+        Misc head = miscService.queryById("4");
+        model.addAttribute("head",head.getText());
         model.addAttribute("footer",footer.getText());
         if (2!=permi.getType()){
             throw new RuntimeException("没有访问权限");

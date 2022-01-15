@@ -3,7 +3,6 @@ $(document).ready(function(){
     SaveThemeCookie();
     ThemeSetFunc();
     NavFunc();
-    SearchButtonFunc();
     PermissionButtonFunc();
     NoSearchPageFunc();
 })

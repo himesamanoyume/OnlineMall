@@ -42,7 +42,7 @@
                             <div class="post-detail-datetime">${post.publishTime}</div>
                             <div class="post-detail-dynamic">
                                 <c:if test="${post.typeId == 1}">
-                                    文章
+                                    随笔
                                 </c:if>
                                 <c:if test="${post.typeId == 2}">
                                     项目

@@ -19,18 +19,18 @@
                 <div id="nav-post" class="nav-link">文章</div>
                 <div class="hover-bar"></div>
             </div>
-            <div class="nav-content">
-                <div id="nav-project" class="nav-link">项目</div>
-                <div class="hover-bar"></div>
-            </div>
-            <div class="nav-content">
-                <div id="nav-note" class="nav-link">笔记</div>
-                <div class="hover-bar"></div>
-            </div>
-            <div class="nav-content">
-                <div id="nav-tools" class="nav-link">工具</div>
-                <div class="hover-bar"></div>
-            </div>
+<%--            <div class="nav-content">--%>
+<%--                <div id="nav-project" class="nav-link">项目</div>--%>
+<%--                <div class="hover-bar"></div>--%>
+<%--            </div>--%>
+<%--            <div class="nav-content">--%>
+<%--                <div id="nav-note" class="nav-link">笔记</div>--%>
+<%--                <div class="hover-bar"></div>--%>
+<%--            </div>--%>
+<%--            <div class="nav-content">--%>
+<%--                <div id="nav-tools" class="nav-link">工具</div>--%>
+<%--                <div class="hover-bar"></div>--%>
+<%--            </div>--%>
             <div class="nav-content">
                 <div id="nav-dynamic" class="nav-link">动态</div>
                 <div class="hover-bar"></div>

@@ -36,7 +36,7 @@
                 <c:if test="${urlWhere == 'console'}">
                     <div class="post-txt-container-introduction">
                         <pre>状态：<c:if test="${item.status==1}"><span class="highlight-green">开放</span></c:if><c:if test="${item.status==0}"><span class="highlight-red">隐藏</span></c:if></pre>
-                        <pre>标签：<span class="highlight"><c:if test="${item.typeId==1}">文章</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">动态</c:if></span></pre>
+                        <pre>标签：<span class="highlight"><c:if test="${item.typeId==1}">随笔</c:if><c:if test="${item.typeId==2}">项目</c:if><c:if test="${item.typeId==3}">笔记</c:if><c:if test="${item.typeId==4}">工具</c:if><c:if test="${item.typeId==5}">动态</c:if></span></pre>
                         <pre>关键字：<span class="highlight">${item.keyword}</span></pre>
                     </div>
                     <div class="post-txt-container-console-container">

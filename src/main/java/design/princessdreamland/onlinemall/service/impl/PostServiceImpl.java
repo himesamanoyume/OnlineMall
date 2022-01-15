@@ -30,7 +30,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    public IPage<Post> searchIndexPage(String type,String keyword, String currentPage){
+    public IPage<Post> searchIndexPage(String keyword, String currentPage,Integer size){
         Post post = new Post();
         post.setStatus(1);
 
@@ -43,13 +43,13 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(5);
+        page.setSize(size);
 
         return baseMapper.queryIndexPage(page,post);
     }
 
     @Override
-    public IPage<Post> searchConsolePage(String type,String keyword, String currentPage){
+    public IPage<Post> searchConsolePage(String type,String keyword, String currentPage,Integer size){
         Post post = new Post();
 
         if (StrUtil.isNotEmpty(keyword)){
@@ -64,13 +64,13 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(15);
+        page.setSize(size);
 
         return baseMapper.queryPage(page,post);
     }
 
     @Override
-    public IPage<Post> searchPage(String type, String keyword, String currentPage){
+    public IPage<Post> searchPage(String type, String keyword, String currentPage,Integer size){
 
         Post post = new Post();
 
@@ -87,7 +87,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
             page.setCurrent(new Integer(currentPage));
         }
 
-        page.setSize(8);
+        page.setSize(size);
 
         return baseMapper.queryPage(page,post);
     }

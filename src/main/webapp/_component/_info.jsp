@@ -19,7 +19,7 @@
                 <div class="info-txt">"Who care?"</div>
             </div>
         </c:if>
-        <c:if test="${urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost' and urlWhere!='dynamic'}">
+        <c:if test="${urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost' and urlWhere!='dynamic' and urlWhere!='index' and urlWhere!='error'}">
         <div class="info-link">
             <input type="text" class="searchBar" id="keyword" placeholder="模糊搜索标题" value="${keyword}"/>
             <div id="search" title="搜索" class="searchButton">

@@ -39,7 +39,6 @@ function InitFunc(){
 
 }
 
-
 function NavFunc(){
     $('#nav-index').click(function(){
         if (getCookie("input-keyword")){
@@ -57,31 +56,13 @@ function NavFunc(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
-        location.href="/post?type=1"
-    })
-    $('#nav-project').click(function(){
-        if (getCookie("input-keyword")){
-            delCookie("input-keyword")
-        }
-        location.href="/project?type=2"
-    })
-    $('#nav-note').click(function(){
-        if (getCookie("input-keyword")){
-            delCookie("input-keyword")
-        }
-        location.href="/note?type=3"
-    })
-    $('#nav-tools').click(function(){
-        if (getCookie("input-keyword")){
-            delCookie("input-keyword")
-        }
-        location.href="/tools?type=4"
+        location.href="/post"
     })
     $('#nav-dynamic').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword")
         }
-        location.href="/dynamic?type=5"
+        location.href="/dynamic"
     })
     $('#nav-resume').click(function(){
         if (getCookie("input-keyword")){
@@ -180,10 +161,8 @@ function SearchButtonFunc(){
     $('#search').click(function (){
         setCookie("input-keyword",$('#keyword').val())
         if ( $('.main').attr('data-url')=='index'){
-
-            location.href="/?type=&keyword="
+            location.href="/?keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage=1"
         }else if($('.main').attr('data-url')=='console'){
             location.href="/"
@@ -191,7 +170,6 @@ function SearchButtonFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage=1"
         }else{
             location.href="/"
@@ -292,100 +270,14 @@ function SaveThemeCookie(){
     setCookie('prefer-theme',$('#body').attr('data-theme'));
 }
 
-function IndexPageFunc(){
-    $('#prePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage - 1;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#nextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage + 1;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#firstPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = 1;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#lastPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = totalPages;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#currentPre2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage-2;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#currentPrePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage-1;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#currentNextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage+1;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-    $('#currentNext2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        var page = currentPage+2;
-        location.href="/?type="
-            + "&keyword="
-            + getCookie("input-keyword")
-            // + $('#keyword').val()
-            + "&currentPage="
-            + page;
-    });
-}
-
 function PageFunc(){
     $('#prePage').click(function(){
         setCookie("input-keyword",$('#keyword').val())
         var page = currentPage - 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -394,11 +286,8 @@ function PageFunc(){
         var page = currentPage + 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -407,11 +296,8 @@ function PageFunc(){
         var page = 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -420,11 +306,18 @@ function PageFunc(){
         var page = totalPages;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentPre3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-3;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?keyword="
+            + getCookie("input-keyword")
             + "&currentPage="
             + page;
     });
@@ -433,11 +326,8 @@ function PageFunc(){
         var page = currentPage-2;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -446,11 +336,8 @@ function PageFunc(){
         var page = currentPage-1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -459,11 +346,8 @@ function PageFunc(){
         var page = currentPage+1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
             + "&currentPage="
             + page;
     });
@@ -472,11 +356,18 @@ function PageFunc(){
         var page = currentPage+2;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
+            + "?keyword="
             + getCookie("input-keyword")
-            // + $('#keyword').val()
+            + "&currentPage="
+            + page;
+    });
+    $('#currentNext3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+3;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?keyword="
+            + getCookie("input-keyword")
             + "&currentPage="
             + page;
     });
@@ -488,10 +379,7 @@ function NoSearchPageFunc(){
         var page = currentPage - 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#nextPage').click(function(){
@@ -499,10 +387,7 @@ function NoSearchPageFunc(){
         var page = currentPage + 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#firstPage').click(function(){
@@ -510,10 +395,7 @@ function NoSearchPageFunc(){
         var page = 1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#lastPage').click(function(){
@@ -521,10 +403,7 @@ function NoSearchPageFunc(){
         var page = totalPages;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#currentPre2Page').click(function(){
@@ -532,10 +411,15 @@ function NoSearchPageFunc(){
         var page = currentPage-2;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
+            + page;
+    });
+    $('#currentPre3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-3;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?currentPage="
             + page;
     });
     $('#currentPrePage').click(function(){
@@ -543,10 +427,7 @@ function NoSearchPageFunc(){
         var page = currentPage-1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#currentNextPage').click(function(){
@@ -554,10 +435,7 @@ function NoSearchPageFunc(){
         var page = currentPage+1;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
             + page;
     });
     $('#currentNext2Page').click(function(){
@@ -565,10 +443,15 @@ function NoSearchPageFunc(){
         var page = currentPage+2;
         location.href="/"
             + $('.main').attr('data-url')
-            + "?type="
-            + $('.main').attr('data-type')
-            + "&keyword="
-            + "&currentPage="
+            + "?currentPage="
+            + page;
+    });
+    $('#currentNext3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+3;
+        location.href="/"
+            + $('.main').attr('data-url')
+            + "?currentPage="
             + page;
     });
 }
@@ -963,7 +846,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -972,7 +854,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -988,7 +869,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -997,7 +877,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -1013,7 +892,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1022,7 +900,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -1038,7 +915,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1047,7 +923,29 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#currentPre3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage-3;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
                 + "&currentPage="
                 + page;
         }
@@ -1063,7 +961,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1072,7 +969,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -1088,7 +984,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1097,7 +992,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -1113,7 +1007,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1122,7 +1015,6 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }
@@ -1139,7 +1031,6 @@ function ConsolePageFunc(){
                 + $('.main').attr('data-type')
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
                 + "&currentPage="
                 + page;
         }else{
@@ -1148,7 +1039,29 @@ function ConsolePageFunc(){
                 + "?type="
                 + "&keyword="
                 + getCookie("input-keyword")
-                // + $('#keyword').val()
+                + "&currentPage="
+                + page;
+        }
+    });
+    $('#currentNext3Page').click(function(){
+        setCookie("input-keyword",$('#keyword').val())
+        var page = currentPage+3;
+        if (getCookie("console-type")){
+            $('.main').attr('data-type',getCookie("console-type"))
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + $('.main').attr('data-type')
+                + "&keyword="
+                + getCookie("input-keyword")
+                + "&currentPage="
+                + page;
+        }else{
+            location.href="/"
+                + $('.main').attr('data-url')
+                + "?type="
+                + "&keyword="
+                + getCookie("input-keyword")
                 + "&currentPage="
                 + page;
         }

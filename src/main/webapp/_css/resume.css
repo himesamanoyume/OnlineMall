@@ -8,11 +8,12 @@
     width: 100%;
     border: 0;
     color:var(--text-color);
-    border-radius: 0 2px 2px 0;
     box-shadow: 4px 0 0 0 #66ccff inset;
     word-break: break-all;
 }
-
+.post:hover{
+    box-shadow: 4px 0 0 0 #66ccff inset;
+}
 .post-noblue{
     word-break: break-all;
     background-color:var(--post-bg);
@@ -28,9 +29,10 @@
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     color:var(--text-color);
-    border-radius: 0 2px 2px 0;
 }
-
+.post-container{
+    box-shadow: 0 0 0 0 var(--post-bg) inset;
+}
 .post-important{
     word-break: break-all;
     background-color:var(--post-important-bg);
@@ -43,7 +45,6 @@
     width: 100%;
     border: 0;
     color:var(--text-color);
-    border-radius: 0 2px 2px 0;
     box-shadow: 4px 0 0 0 #66ccff inset;
 }
 .post-resume-container{

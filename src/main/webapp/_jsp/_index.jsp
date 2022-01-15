@@ -39,7 +39,6 @@
                     最新发布
                 </div>
                 <%@include file="../_component/_get.jsp" %>
-                <%@include file="../_component/_page.jsp" %>
             </div>
             <%@include file="../_component/_info.jsp" %>
         </div>

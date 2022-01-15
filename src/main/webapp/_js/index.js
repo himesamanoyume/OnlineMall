@@ -5,7 +5,5 @@ $(document).ready(function(){
     NavFunc();
     PostOpenDetailFunc();
     PermissionButtonFunc();
-    SearchButtonFunc();
-    IndexPageFunc();
 })
 

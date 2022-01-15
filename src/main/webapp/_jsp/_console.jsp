@@ -27,13 +27,13 @@
     <main class="main" data-url="console" data-keyword="" data-type="">
         <div class="home-container">
             <div class="post-container">
-                <div class="post-page">
+                <div class="post-type">
                     <div class="console-type-container">
                         <div class="console-container-button" id="type0">
                             全部
                         </div>
                         <div class="console-container-button" id="type1">
-                            文章
+                            随笔
                         </div>
                         <div class="console-container-button" id="type2">
                             项目

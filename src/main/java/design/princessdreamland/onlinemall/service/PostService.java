@@ -10,11 +10,11 @@ import javax.servlet.http.HttpSession;
 public interface PostService extends IService<Post> {
     IPage<Post> queryPage(Page<Post> page, Post post);
 
-    IPage<Post> searchIndexPage(String type ,String keyword, String currentPage);
+    IPage<Post> searchIndexPage(String keyword, String currentPage,Integer size);
 
-    IPage<Post> searchConsolePage(String type,String keyword, String currentPage);
+    IPage<Post> searchConsolePage(String type,String keyword, String currentPage,Integer size);
 
-    IPage<Post> searchPage(String type, String keyword, String currentPage);
+    IPage<Post> searchPage(String type, String keyword, String currentPage,Integer size);
 
     Post queryById(String postId);
 

@@ -21,7 +21,7 @@
             <select id="typeId" class="post-edit-dynamic">
                 <c:if test="${urlWhere == 'editPost'}">
                     <c:if test="${post.typeId == 1}">
-                        <option value="">文章</option>
+                        <option value="">随笔</option>
                     </c:if>
                     <c:if test="${post.typeId == 2}">
                         <option value="">项目</option>
@@ -36,7 +36,7 @@
                         <option value="">动态</option>
                     </c:if>
                 </c:if>
-                <option value="1">文章</option>
+                <option value="1">随笔</option>
                 <option value="2">项目</option>
                 <option value="3">笔记</option>
                 <option value="4">工具</option>

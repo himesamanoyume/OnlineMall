@@ -23,7 +23,7 @@
                         </svg>
                     </div>
                 </c:if>
-                <c:if test="${currentPage!=null and (currentPage-3)>0}">
+                <c:if test="${currentPage!=null and (currentPage-4)>0}">
                     <div class="post-page-container-button" id="firstPage">1</div>
                     <div class="post-page-container-currentPage">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
@@ -33,6 +33,9 @@
                             <circle fill="var(--page-current-color)" cx="96" cy="256" r="48"/>
                         </svg>
                     </div>
+                </c:if>
+                <c:if test="${currentPage!=null and (currentPage-3)>0 and (currentPage-4)!=1}">
+                    <div class="post-page-container-button" id="currentPre3Page">${currentPage-3}</div>
                 </c:if>
                 <c:if test="${currentPage!=null and (currentPage-2)>0}">
                     <div class="post-page-container-button" id="currentPre2Page">${currentPage-2}</div>
@@ -51,7 +54,10 @@
                 <c:if test="${currentPage!=null and (currentPage+2)<=totalPages}">
                     <div class="post-page-container-button" id="currentNext2Page">${currentPage+2}</div>
                 </c:if>
-                <c:if test="${currentPage!=null and (currentPage+3)<=totalPages}">
+                <c:if test="${currentPage!=null and (currentPage+3)<=totalPages and (currentPage+4)!=totalPages}">
+                    <div class="post-page-container-button" id="currentNext3Page">${currentPage+3}</div>
+                </c:if>
+                <c:if test="${currentPage!=null and (currentPage+4)<=totalPages}">
                     <div class="post-page-container-currentPage">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="40px">
                             <title>省略</title>

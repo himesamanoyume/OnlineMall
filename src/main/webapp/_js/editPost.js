@@ -3,7 +3,7 @@ $(document).ready(function(){
     SaveThemeCookie();
     ThemeSetFunc();
     NavFunc();
-    editPostFunc();
+    EditPostFunc();
     EditAndDetailFunc();
     queryImgFunc();
 })

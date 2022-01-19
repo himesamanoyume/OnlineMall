@@ -4,7 +4,6 @@
     }
 }
 .post{
-
     background-color:var(--post-bg);
     cursor: inherit;
     display: block;
@@ -15,7 +14,7 @@
 }
 
 .post:hover{
-    box-shadow: 0 0 0 0 var(--tianyi-color) inset;
+    box-shadow: 0 0 0 0 var(--tianyi-color) inset,4px 4px 14px -13px var(--post-shadow-color);
 }
 .post:hover >.post-txt-container > .post-txt-container-title{
     color: var(--text-color);
@@ -34,7 +33,7 @@
 .hr{
     margin: 20px 0 20px 0;
     width: 100%;
-    border: 1px solid var(--post-shadow-color);
+    border: 1px solid var(--text-color);
 }
 .post-detail-txt{
     width: 100%;

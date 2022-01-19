@@ -2,7 +2,7 @@
     width: 100%;
     padding: 50px 0 20px 0;
     background-color: var(--body-bg);
-    margin:auto;
+    margin:10px auto;
     color: var(--text-color);
     display: inline-flex;
     text-align: center;

@@ -3,5 +3,5 @@ $(document).ready(function(){
     SaveThemeCookie();
     ThemeSetFunc();
     NavFunc();
-    addPostFunc();
+    AddPostFunc();
 })

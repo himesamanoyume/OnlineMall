@@ -1,33 +1,24 @@
 
 function InitFunc(){
     if (getCookie("input-keyword")){
-        $('.main').attr("data-keyword",getCookie("input-keyword"))
-        $('#keyword').attr("value",getCookie("input-keyword"))
-        delCookie("input-keyword")
+        $('.main').attr("data-keyword",getCookie("input-keyword"));
+        $('#keyword').attr("value",getCookie("input-keyword"));
+        delCookie("input-keyword");
     }
-    var nowUrl = $('.main').attr("data-url")
+    var nowUrl = $('.main').attr("data-url");
     if (nowUrl=='post') {
-        $('#nav-post').css("color", "#66ccff")
-    }else if (nowUrl=='project') {
-        $('#nav-project').css("color", "#66ccff")
-    }else if (nowUrl=='note') {
-        $('#nav-note').css("color","#66ccff")
-    }else if (nowUrl=='tools') {
-        $('#nav-tools').css("color", "#66ccff")
+        $('#nav-post').css("color", "var(--tianyi-color)");
     }else if (nowUrl=='dynamic') {
-        $('#nav-dynamic').css("color", "#66ccff")
+        $('#nav-dynamic').css("color", "var(--tianyi-color)");
     }else if (nowUrl=='resume') {
-        $('#nav-resume').css("color", "#66ccff")
-    }else if (nowUrl=='console'){
-        $('#nav-console').css("color", "#66ccff")
+        $('#nav-resume').css("color", "var(--tianyi-color)");
     }
-
 
     $('.lazy').Lazy({
         effect: "fadeIn",
         effectTime: 500,
         threshold: 0,
-        onError: function(element) {
+        onError: function(element){
             console.log(element);
         }
         // scrollDirection: 'vertical',
@@ -42,77 +33,75 @@ function InitFunc(){
 function NavFunc(){
     $('#nav-index').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
-        location.href="/"
-    })
+        location.href="/";
+    });
     $('#topTitle-index').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
-        location.href="/"
-    })
+        location.href="/";
+    });
     $('#nav-post').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
         location.href="/post"
-    })
+    });
     $('#nav-dynamic').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
-        location.href="/dynamic"
-    })
+        location.href="/dynamic";
+    });
     $('#nav-resume').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
-        location.href="/resume"
-    })
+        location.href="/resume";
+    });
     $('#info-console').click(function(){
         if (getCookie("input-keyword")){
-            delCookie("input-keyword")
+            delCookie("input-keyword");
         }
         if (getCookie('console-type')){
-            delCookie('console-type')
+            delCookie('console-type');
         }
-        location.href="/console"
-    })
+        location.href="/console";
+    });
 }
 
 function PostOpenDetailFunc(){
     $('.post').click(function (){
-        location.href="/postDetail?postId=" + $(this).attr('data-postId')
+        location.href="/postDetail?postId=" + $(this).attr('data-postId');
     })
 }
 
 function ConsolePostOpenEditFunc(){
-
     $('body').on('click', '.console-container-edit-button', function (){
-        location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId')
+        location.href="/editPost?postId=" + $(this).parent().parent().parent().attr('data-postId');
     })
 }
 
 function ConsolePostOpenDetailFunc(){
-
     $('body').on('click', '.console-container-detail-button', function (){
-        location.href="/postDetail?postId=" + $(this).parent().parent().parent().attr('data-postId')
+        location.href="/postDetail?postId=" + $(this).parent().parent().parent().attr('data-postId');
     })
 }
 
 function queryImgFunc(){
     $('#queryKeywordImg').click(function (){
-        var data = new FormData()
+        var data = new FormData();
         var imgURL = window.location.host;
-        var keyword = $('#postKeyword').val()
-        keyword = keyword.trim()
+        var keyword = $('#postKeyword').val();
+        keyword = keyword.trim();
         if (!keyword){
-            alert("keyword不能为空")
-            return
-        }
+            alert("keyword不能为空");
+            return;
+        };
 
-        data.append("keyword",keyword)
+        data.append("keyword",keyword);
         $.ajax({
             url:'/searchImg',
             data:data,
@@ -121,12 +110,12 @@ function queryImgFunc(){
             contentType: false,
             success: function(res){
                 for (var i=0;i<res.length;i++){
-                    console.log("keyword:"+res[i].keyword+",name:"+res[i].name+",url:http://"+imgURL+"/Img/"+res[i].keyword+"/"+res[i].name)
+                    console.log("keyword:"+res[i].keyword+",name:"+res[i].name+",url:http://"+imgURL+"/Img/"+res[i].keyword+"/"+res[i].name);
                 }
                 // alert("控制台已打印出图片信息")
             },
             error:function (res){
-                alert(res)
+                alert(res);
             }
         })
     })
@@ -140,26 +129,26 @@ function BackTopFunc(){
 
 function EditAndDetailFunc(){
     $('#goDetail').click(function (){
-        location.href="/postDetail?postId=" + $('.post').attr('data-postId')
-    })
+        location.href="/postDetail?postId=" + $('.post').attr('data-postId');
+    });
 
     $('#goEdit').click(function (){
-        location.href="/editPost?postId=" + $('.post').attr('data-postId')
-    })
+        location.href="/editPost?postId=" + $('.post').attr('data-postId');
+    });
 }
 
 function InfoPrompt(str){
-    var prompt = "<div id='tempPrompt' class=\"info-link\"><div class=\"permi-info\">"+ str +"</div></div>"
-    $('#info-container-inner').append(prompt)
+    var prompt = "<div id='tempPrompt' class=\"info-link\"><div class=\"permi-info\">"+ str +"</div></div>";
+    $('#info-container-inner').append(prompt);
 }
 
 function RemoveInfoPrompt(){
-    document.getElementById("tempPrompt").remove()
+    document.getElementById("tempPrompt").remove();
 }
 
 function SearchButtonFunc(){
     $('#search').click(function (){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         if ( $('.main').attr('data-url')=='index'){
             location.href="/?keyword="
                 + getCookie("input-keyword")
@@ -187,7 +176,6 @@ function SearchButtonFunc(){
 function PermissionButtonFunc(){
     $('#permiSubmit').click(function(){
         var password = $('input[name=password]').val();
-
         password = password.trim();
         if(password == ''){
             alert("密码不能为空");
@@ -198,7 +186,7 @@ function PermissionButtonFunc(){
             password:password
         },function(res){
             if(res && res.permiId){
-                alert('获取权限成功，导航栏简历按钮已开放')
+                alert('获取权限成功，导航栏简历按钮已开放');
                 if ($('.main').attr('data-url')=='index'){
                     location.href = "/";
                 }else {
@@ -206,21 +194,21 @@ function PermissionButtonFunc(){
                 }
 
             }else{
-                alert('获取权限失败')
+                alert('获取权限失败');
             }
         }).fail(function(res){
-            alert(res.responseJSON.message)
+            alert(res.responseJSON.message);
         })
     })
 }
 
 function ConsoleAddPostFunc(){
     $('#addPost').click(function (){
-        location.href="/addPost"
+        location.href="/addPost";
     })
 }
 
-const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')//dark
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');//dark
 
 function ThemeSetFunc(){
     $('#info-theme').click(function (){
@@ -272,7 +260,7 @@ function SaveThemeCookie(){
 
 function PageFunc(){
     $('#prePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage - 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -282,7 +270,7 @@ function PageFunc(){
             + page;
     });
     $('#nextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage + 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -292,7 +280,7 @@ function PageFunc(){
             + page;
     });
     $('#firstPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -302,7 +290,7 @@ function PageFunc(){
             + page;
     });
     $('#lastPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = totalPages;
         location.href="/"
             + $('.main').attr('data-url')
@@ -312,7 +300,7 @@ function PageFunc(){
             + page;
     });
     $('#currentPre3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-3;
         location.href="/"
             + $('.main').attr('data-url')
@@ -322,7 +310,7 @@ function PageFunc(){
             + page;
     });
     $('#currentPre2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-2;
         location.href="/"
             + $('.main').attr('data-url')
@@ -332,7 +320,7 @@ function PageFunc(){
             + page;
     });
     $('#currentPrePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -342,7 +330,7 @@ function PageFunc(){
             + page;
     });
     $('#currentNextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -352,7 +340,7 @@ function PageFunc(){
             + page;
     });
     $('#currentNext2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+2;
         location.href="/"
             + $('.main').attr('data-url')
@@ -362,7 +350,7 @@ function PageFunc(){
             + page;
     });
     $('#currentNext3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+3;
         location.href="/"
             + $('.main').attr('data-url')
@@ -375,7 +363,7 @@ function PageFunc(){
 
 function NoSearchPageFunc(){
     $('#prePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage - 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -383,7 +371,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#nextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage + 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -391,7 +379,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#firstPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = 1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -399,7 +387,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#lastPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = totalPages;
         location.href="/"
             + $('.main').attr('data-url')
@@ -407,7 +395,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentPre2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-2;
         location.href="/"
             + $('.main').attr('data-url')
@@ -415,7 +403,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentPre3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-3;
         location.href="/"
             + $('.main').attr('data-url')
@@ -423,7 +411,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentPrePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -431,7 +419,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentNextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+1;
         location.href="/"
             + $('.main').attr('data-url')
@@ -439,7 +427,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentNext2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+2;
         location.href="/"
             + $('.main').attr('data-url')
@@ -447,7 +435,7 @@ function NoSearchPageFunc(){
             + page;
     });
     $('#currentNext3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+3;
         location.href="/"
             + $('.main').attr('data-url')
@@ -456,67 +444,67 @@ function NoSearchPageFunc(){
     });
 }
 
-function editPostFunc(){
+function EditPostFunc(){
     $('#copyCodeBlock').click(function (){
-        var text = "<div class=\"code\"><p></p></div>";
+        var text = "<div class=\"code\"></div>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,2000)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,2000);
+    });
 
     $('#copyImgBlock').click(function (){
-        var keyword = post_keyword
+        var keyword = post_keyword;
         var text = "<img class='lazy' data-src='../Img/"
             + keyword
-            + "/NAME.TYPE'>"
+            + "/NAME.TYPE'>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,2000)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,2000);
+    });
 
     $('#copyReferenceBlock').click(function (){
-        var text = "<div class=\"reference\"><p></p></div>";
+        var text = "<div class=\"reference\"></div>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,1100)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,1100);
+    });
 
     $('#saveEdit').click(function (){
-        var topImg = $('#topImg').val()
-        var keyword = $('#postKeyword').val()
-        var title = $('#title').val()
-        var introduction = $('#introduction').val()
-        var publishTime = $('#publishTime').val()
-        var typeId = $('#typeId').val()
-        var article = $('#article').val()
+        var topImg = $('#topImg').val();
+        var keyword = $('#postKeyword').val();
+        var title = $('#title').val();
+        var introduction = $('#introduction').val();
+        var publishTime = $('#publishTime').val();
+        var typeId = $('#typeId').val();
+        var article = $('#article').val();
 
-        topImg = topImg.trim()
-        keyword = keyword.trim()
-        title = title.trim()
-        introduction = introduction.trim()
-        publishTime = publishTime.trim()
-        typeId = typeId.trim()
-        article = article.trim()
+        topImg = topImg.trim();
+        keyword = keyword.trim();
+        title = title.trim();
+        introduction = introduction.trim();
+        publishTime = publishTime.trim();
+        typeId = typeId.trim();
+        article = article.trim();
 
         if(!title){
-            alert("标题不能为空")
-            return
+            alert("标题不能为空");
+            return;
         }
         if(!keyword){
-            alert("关键字不能为空")
-            return
+            alert("关键字不能为空");
+            return;
         }
         if(typeId == null){
-            typeId = post_typeId
+            typeId = post_typeId;
         }
         if (topImg==''){
             $.post('/post/editPost',{
@@ -529,11 +517,11 @@ function editPostFunc(){
                 article:article
             },function (res){
                 if (res && res.postId){
-                    alert("编辑文章成功")
+                    alert("编辑文章成功");
                     location.href="/postDetail?postId="+post_postId;
                 }
             }).fail(function (res){
-                alert(res.responseJSON.message)
+                alert(res.responseJSON.message);
             })
         }else {
             $.post('/post/editPost',{
@@ -547,11 +535,11 @@ function editPostFunc(){
                 article:article
             },function (res){
                 if (res && res.postId){
-                    alert("新增文章成功")
+                    alert("新增文章成功");
                     location.href="/postDetail?postId="+post_postId;
                 }
             }).fail(function (res){
-                alert(res.responseJSON.message)
+                alert(res.responseJSON.message);
             })
         }
 
@@ -560,27 +548,27 @@ function editPostFunc(){
     var data;
     $('#file').change(function (){
         var file = $(this)[0].files[0];
-        data = new FormData()
-        data.append("file",file)
+        data = new FormData();
+        data.append("file",file);
     });
 
     $('#uploadImg').click(function (){
-        var keyword = $('#postKeyword').val()
-        var name = $('#imgName').val()
+        var keyword = $('#postKeyword').val();
+        var name = $('#imgName').val();
 
         keyword = keyword.trim();
         name = name.trim();
 
         if (!keyword){
-            alert("keyword不能为空")
-            return
-        }
-        if (!name){
-            alert("name不能为空")
+            alert("keyword不能为空");
             return;
         }
-        data.append("keyword",keyword)
-        data.append("name",name)
+        if (!name){
+            alert("name不能为空");
+            return;;
+        }
+        data.append("keyword",keyword);
+        data.append("name",name);
         $.ajax({
             url:'/uploadImg',
             data:data,
@@ -588,67 +576,67 @@ function editPostFunc(){
             processData: false,
             contentType: false,
             success: function(res){
-                alert("上传成功")
+                alert("上传成功");
             }
         })
     });
 }
 
-function addPostFunc(){
+function AddPostFunc(){
 
     $('#copyCodeBlock').click(function (){
-        var text = "<div class=\"code\"><p></p></div>";
+        var text = "<div class=\"code\"></div>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,1100)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,1100);
+    });
     $('#copyImgBlock').click(function (){
-        var keyword = "${post.keyword}"
+        var keyword = "${post.keyword}";
         var text = "<img class='lazy' data-src='../Img/"
             + keyword
-            + "/NAME.TYPE'>"
+            + "/NAME.TYPE'>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,1100)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,1100);
+    });
     $('#copyReferenceBlock').click(function (){
-        var text = "<div class=\"reference\"><p></p></div>";
+        var text = "<div class=\"reference\"></div>";
         var input = document.getElementById("tempInput");
         input.value = text;
         input.select(); // 选中文本
         document.execCommand("copy"); // 执行浏览器复制命令
-        InfoPrompt("复制成功")
-        setTimeout(RemoveInfoPrompt,1100)
-    })
+        InfoPrompt("复制成功");
+        setTimeout(RemoveInfoPrompt,1100);
+    });
 
     $('#savePost').click(function (){
-        var topImg = $('#topImg').val()
-        var keyword = $('#postKeyword').val()
-        var title = $('#title').val()
-        var introduction = $('#introduction').val()
-        var publishTime = $('#publishTime').val()
-        var typeId = $('#typeId').val()
-        var article = $('#article').val()
-        topImg = topImg.trim()
-        keyword = keyword.trim()
-        title = title.trim()
-        introduction = introduction.trim()
-        publishTime = publishTime.trim()
-        typeId = typeId.trim()
-        article = article.trim()
+        var topImg = $('#topImg').val();
+        var keyword = $('#postKeyword').val();
+        var title = $('#title').val();
+        var introduction = $('#introduction').val();
+        var publishTime = $('#publishTime').val();
+        var typeId = $('#typeId').val();
+        var article = $('#article').val();
+        topImg = topImg.trim();
+        keyword = keyword.trim();
+        title = title.trim();
+        introduction = introduction.trim();
+        publishTime = publishTime.trim();
+        typeId = typeId.trim();
+        article = article.trim();
         if(!title){
-            alert("标题不能为空")
-            return
+            alert("标题不能为空");
+            return;
         }
         if(!keyword){
-            alert("关键字不能为空")
-            return
+            alert("关键字不能为空");
+            return;
         }
         if (topImg==''){
             // console.log("null")
@@ -661,11 +649,11 @@ function addPostFunc(){
                 article:article
             },function (res){
                 if (res && res.postId){
-                    alert("新增文章成功")
+                    alert("新增文章成功");
                     location.href="/console";
                 }
             }).fail(function (res){
-                alert(res.responseJSON.message)
+                alert(res.responseJSON.message);
             })
         }else {
             $.post('/post/addPost',{
@@ -678,11 +666,11 @@ function addPostFunc(){
                 article:article
             },function (res){
                 if (res && res.postId){
-                    alert("新增文章成功")
+                    alert("新增文章成功");
                     location.href="/console";
                 }
             }).fail(function (res){
-                alert(res.responseJSON.message)
+                alert(res.responseJSON.message);
             })
         }
     });
@@ -690,25 +678,25 @@ function addPostFunc(){
 
     $('#file').change(function (){
         var file = $(this)[0].files[0];
-        data = new FormData()
-        data.append("file",file)
+        data = new FormData();
+        data.append("file",file);
     });
 
     $('#uploadImg').click(function (){
-        var keyword = $('#postKeyword').val()
-        var name = $('#imgName').val()
+        var keyword = $('#postKeyword').val();
+        var name = $('#imgName').val();
         keyword = keyword.trim();
         name = name.trim();
         if (!keyword){
-            alert("keyword不能为空")
-            return
-        }
-        if (!name){
-            alert("name不能为空")
+            alert("keyword不能为空");
             return;
         }
-        data.append("keyword",keyword)
-        data.append("name",name)
+        if (!name){
+            alert("name不能为空");
+            return;;
+        }
+        data.append("keyword",keyword);
+        data.append("name",name);
         $.ajax({
             url:'/uploadImg',
             data:data,
@@ -716,7 +704,7 @@ function addPostFunc(){
             processData: false,
             contentType: false,
             success: function(res){
-                alert("上传成功")
+                alert("上传成功");
             }
         })
     });
@@ -728,13 +716,13 @@ function ConsoleControlPostFunc(){
             postId:$(this).parent().parent().parent().attr('data-postId')
         },function (res){
             if (res&&res.postId){
-                alert("状态改变成功")
+                alert("状态改变成功");
                 location.reload();
             }else{
-                alert("失败")
+                alert("失败");
             }
         }).fail(function (res){
-            alert(res.responseJSON.message)
+            alert(res.responseJSON.message);
         })
     });
     $('body').on('click', '.console-container-delete-button', function (){
@@ -742,22 +730,22 @@ function ConsoleControlPostFunc(){
             postId:$(this).parent().parent().parent().attr('data-postId')
         },function (res){
             if (res&&res.postId){
-                alert("删除文章成功")
+                alert("删除文章成功");
                 location.reload();
             }else{
-                alert("失败")
+                alert("失败");
             }
         }).fail(function (res){
-            alert(res.responseJSON.message)
+            alert(res.responseJSON.message);
         })
     });
 }
 
 function ConsoleTypeFunc(){
     $('#type0').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -768,9 +756,9 @@ function ConsoleTypeFunc(){
             + "&currentPage=1"
     });
     $('#type1').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','1')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','1');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -781,9 +769,9 @@ function ConsoleTypeFunc(){
             + "&currentPage=1"
     });
     $('#type2').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','2')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','2');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -794,9 +782,9 @@ function ConsoleTypeFunc(){
             + "&currentPage=1"
     });
     $('#type3').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','3')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','3');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -807,9 +795,9 @@ function ConsoleTypeFunc(){
             + "&currentPage=1"
     });
     $('#type4').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','4')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','4');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -820,9 +808,9 @@ function ConsoleTypeFunc(){
             + "&currentPage=1"
     });
     $('#type5').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
-        $('.main').attr('data-type','5')
-        setCookie("console-type",$('.main').attr('data-type'))
+        setCookie("input-keyword",$('#keyword').val());
+        $('.main').attr('data-type','5');
+        setCookie("console-type",$('.main').attr('data-type'));
         location.href="/"
             + $('.main').attr('data-url')
             + "?type="
@@ -836,10 +824,10 @@ function ConsoleTypeFunc(){
 
 function ConsolePageFunc(){
     $('#prePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage - 1;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -859,10 +847,10 @@ function ConsolePageFunc(){
         }
     });
     $('#nextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage + 1;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -882,10 +870,10 @@ function ConsolePageFunc(){
         }
     });
     $('#firstPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = 1;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -905,10 +893,10 @@ function ConsolePageFunc(){
         }
     });
     $('#lastPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = totalPages;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -928,10 +916,10 @@ function ConsolePageFunc(){
         }
     });
     $('#currentPre3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-3;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -951,10 +939,10 @@ function ConsolePageFunc(){
         }
     });
     $('#currentPre2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-2;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -974,10 +962,10 @@ function ConsolePageFunc(){
         }
     });
     $('#currentPrePage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage-1;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -997,10 +985,10 @@ function ConsolePageFunc(){
         }
     });
     $('#currentNextPage').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+1;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -1021,10 +1009,10 @@ function ConsolePageFunc(){
 
     });
     $('#currentNext2Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+2;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="
@@ -1044,10 +1032,10 @@ function ConsolePageFunc(){
         }
     });
     $('#currentNext3Page').click(function(){
-        setCookie("input-keyword",$('#keyword').val())
+        setCookie("input-keyword",$('#keyword').val());
         var page = currentPage+3;
         if (getCookie("console-type")){
-            $('.main').attr('data-type',getCookie("console-type"))
+            $('.main').attr('data-type',getCookie("console-type"));
             location.href="/"
                 + $('.main').attr('data-url')
                 + "?type="

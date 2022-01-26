@@ -77,7 +77,7 @@
     text-align: center;
     justify-content: center;
     line-height: 57px;
-    min-width: 62px;
+    min-width: 64px;
 }
 .nav-content:hover >.hover-bar{
     width: 100%;

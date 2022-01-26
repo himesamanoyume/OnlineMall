@@ -18,6 +18,7 @@
 
 .info{
     text-align: center;
+    backdrop-filter: blur(4px);
     border: 0;
     background-color: var(--post-bg);
     width: 100%;
@@ -57,6 +58,7 @@
 }
 
 .info-link{
+    backdrop-filter: blur(4px);
     display: inline-flex;
     flex-wrap: wrap;
     border: 0;

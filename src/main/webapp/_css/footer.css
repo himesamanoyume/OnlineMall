@@ -1,8 +1,9 @@
 .footer{
     width: 100%;
-    padding: 50px 0 20px 0;
-    background-color: var(--body-bg);
-    margin:10px auto;
+    padding: 40px 0 20px 0;
+    /*margin:10px 0 0 0;*/
+    background-color: var(--footer-bg);
+    backdrop-filter: blur(4px);
     color: var(--text-color);
     display: inline-flex;
     text-align: center;

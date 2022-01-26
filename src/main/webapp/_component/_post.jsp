@@ -15,7 +15,7 @@
         <input id="postKeyword" class="post-edit-topImg" <c:if test="${urlWhere == 'editPost'}">style="pointer-events: none;" value="${post.keyword}"</c:if> placeholder="关键字">
 
         <input id="tempInput" style="position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;">
-        <input id="title" class="post-edit-title" <c:if test="${urlWhere == 'editPost'}"> value="${post.title}"</c:if> placeholder="标题名">
+        <textarea id="title" class="post-edit-title" placeholder="标题名"><c:if test="${urlWhere == 'editPost'}">${post.title}</c:if></textarea>
         <div class="post-detail-postInfo-container">
             <input id="publishTime" class="post-edit-datetime" type="date" <c:if test="${urlWhere == 'editPost'}"> value="${post.publishTime}"</c:if>>
             <select id="typeId" class="post-edit-dynamic">

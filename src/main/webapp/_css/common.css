@@ -207,7 +207,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .newest-title{
-    background-color: var(--body-bg);
     cursor: inherit;
     display: block;
     margin: 75px 0 75px 0;
@@ -295,6 +294,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .main-post{
     text-align: center;
     background-color:var(--post-bg);
+    backdrop-filter: blur(4px);
     padding: 0 0 15px 0;
     display: block;
     cursor: inherit;

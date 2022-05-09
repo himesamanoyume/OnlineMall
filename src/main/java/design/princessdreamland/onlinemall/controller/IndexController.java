@@ -42,7 +42,23 @@ public class IndexController {
 
         return "/_jsp/_index.jsp";
     }
+    @GetMapping("/t")
+    @RequestLog(action="首页页面")
+    public String t(String keyword, Model model){
 
+        IPage<Post> postPage = postService.searchIndexPage(keyword,"1",5);
+        Misc misc = miscService.queryById("1");
+        Misc footer = miscService.queryById("3");
+        Misc head = miscService.queryById("6");
+        model.addAttribute("head",head.getText());
+        model.addAttribute("footer",footer.getText());
+        model.addAttribute("misc",misc.getText());
+        model.addAttribute("postList",postPage.getRecords());
+        model.addAttribute("currentPage",postPage.getCurrent());
+        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_indexTemp.jsp";
+    }
     @GetMapping("/post")
     @RequestLog(action="文章页面")
     public String post(Model model,String keyword, String currentPage){

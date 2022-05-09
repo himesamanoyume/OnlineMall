@@ -38,6 +38,7 @@
     width: 100%;
     z-index: 9999;
     position: sticky;
+    box-shadow: 0 6px 24px -14px var(--post-shadow-color);
 }
 .nav{
     display: flex;
@@ -91,4 +92,5 @@
     height: 3px;
     background-color: var(--tianyi-color);
     transition-duration: 0.3s;
+    box-shadow: 0 -5px 25px 1px var(--tianyi-color);
 }

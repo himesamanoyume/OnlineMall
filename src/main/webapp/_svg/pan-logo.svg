@@ -1,0 +1,15 @@
+<svg width="320" height="120" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <text style="cursor: move;" transform="matrix(2.6899399999999996,0,0,2.5054699999999994,-927.8063808956147,-464.29014268684386) " stroke="#000" xml:space="preserve" text-anchor="start" font-family="'Reem Kufi'" font-size="24" id="svg_1" y="219.66614" x="348.785989" stroke-width="0" fill="#000000">HIMEPAN</text>
+  <rect transform="rotate(45 55.05022048950198,86.03755950927733) " stroke="#000" id="svg_8" height="15" width="10.62004" y="78.537477" x="49.740169" stroke-width="0" fill="#ffffff"/>
+  <rect transform="rotate(45 130.4923095703125,86.96109771728516) " id="svg_9" height="15" width="11.150371" y="79.46109" x="124.917128" stroke-width="0" fill="#ffffff" stroke="#000"/>
+  <rect transform="rotate(45 249.22610473632812,88.39859008789061) " stroke="#000" id="svg_11" height="15" width="10.62004" y="80.898587" x="243.916089" stroke-width="0" fill="#ffffff"/>
+  <rect transform="rotate(45 298.6160583496094,83.8503952026367) " id="svg_12" height="19.772971" width="10.62004" y="73.963912" x="293.306034" stroke-width="0" fill="#ffffff" stroke="#000"/>
+  <rect transform="rotate(45 184.44120788574222,44.35096740722657) " id="svg_13" height="18.66648" width="11.199833" y="35.017726" x="178.841292" stroke-width="0" fill="#ffffff" stroke="#000"/>
+  <line transform="rotate(-45 51.640918731689425,81.22466278076172) " stroke="#000" id="svg_15" y2="81.224597" x2="62.529439" y1="81.224597" x1="40.752449" fill="none"/>
+  <line transform="rotate(-45 245.94860839843747,84.63935852050778) " stroke="#000" id="svg_16" y2="84.639357" x2="256.584249" y1="84.639357" x1="235.312169" fill="none"/>
+  <line transform="rotate(-45 125.86691284179683,83.52885437011716) " id="svg_17" y2="83.528857" x2="138.135619" y1="83.528857" x1="113.598192" fill="none" stroke="#000"/>
+  <line transform="rotate(-45 294.94961547851557,80.27674102783197) " id="svg_18" y2="80.27674" x2="311.949609" y1="80.27674" x1="277.949609" stroke="#000" fill="none"/>
+  <line transform="rotate(-45 189.5165252685547,46.80650329589845) " id="svg_19" y2="46.806507" x2="206.516511" y1="46.806507" x1="172.516511" stroke="#000" fill="none"/>
+ </g>
+</svg>

@@ -1,4 +1,5 @@
 package design.princessdreamland.onlinemall.controller;
+
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import design.princessdreamland.onlinemall.annotation.RequestLog;
 import design.princessdreamland.onlinemall.entity.Misc;
@@ -9,6 +10,7 @@ import design.princessdreamland.onlinemall.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,7 +18,8 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@RequestMapping("/")
+@CrossOrigin
+//@RequestMapping("/")
 public class IndexController {
 
     @Autowired
@@ -26,7 +29,17 @@ public class IndexController {
     private MiscService miscService;
 
     @GetMapping("/")
-    @RequestLog(action="首页页面")
+    @RequestLog(action="中心页面")
+    public String center(Model model){
+        Misc footer = miscService.queryById("3");
+        Misc head = miscService.queryById("16");
+        model.addAttribute("head",head.getText());
+        model.addAttribute("footer",footer.getText());
+        return "/_jsp/_center.jsp";
+    }
+
+    @GetMapping("/blog")
+    @RequestLog(action="博客首页页面")
     public String index(String keyword, Model model){
 
         IPage<Post> postPage = postService.searchIndexPage(keyword,"1",5);
@@ -42,6 +55,25 @@ public class IndexController {
 
         return "/_jsp/_index.jsp";
     }
+
+    @GetMapping("/pan")
+    @RequestLog(action="博客首页页面")
+    public String pan(String keyword, Model model){
+
+//        IPage<Post> postPage = postService.searchIndexPage(keyword,"1",5);
+//        Misc misc = miscService.queryById("1");
+        Misc footer = miscService.queryById("3");
+        Misc head = miscService.queryById("6");
+        model.addAttribute("head",head.getText());
+        model.addAttribute("footer",footer.getText());
+//        model.addAttribute("misc",misc.getText());
+//        model.addAttribute("postList",postPage.getRecords());
+//        model.addAttribute("currentPage",postPage.getCurrent());
+//        model.addAttribute("totalPages",postPage.getPages());
+
+        return "/_jsp/_pan.jsp";
+    }
+
     @GetMapping("/t")
     @RequestLog(action="首页页面")
     public String t(String keyword, Model model){
@@ -62,6 +94,7 @@ public class IndexController {
     @GetMapping("/post")
     @RequestLog(action="文章页面")
     public String post(Model model,String keyword, String currentPage){
+
         Misc footer = miscService.queryById("3");
         model.addAttribute("footer",footer.getText());
         IPage<Post> postPage = postService.searchIndexPage(keyword,currentPage,8);

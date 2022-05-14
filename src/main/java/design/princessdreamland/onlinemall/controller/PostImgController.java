@@ -22,7 +22,7 @@ import java.util.List;
 
 @Controller
 @ResponseBody
-@RequestMapping("/")
+@RequestMapping("/postImg")
 public class PostImgController {
 
     @Autowired

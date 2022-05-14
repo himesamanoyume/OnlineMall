@@ -425,7 +425,7 @@ pre{
     display: inline-block;
     box-shadow: 0 0 0 0 var(--tianyi-color) inset;
     line-height: 40px;
-    width: 30%;
+    width: 35%;
     min-width: 62px;
 }
 .console-container-set-status-button:hover{
@@ -439,7 +439,7 @@ pre{
     display: inline-block;
     box-shadow: 0 0 0 0 var(--tianyi-color) inset;
     line-height: 40px;
-    width: 30%;
+    width: 20%;
     min-width: 62px;
 }
 .console-container-detail-button{
@@ -450,7 +450,7 @@ pre{
     display: inline-block;
     box-shadow: 0 0 0 0 var(--tianyi-color) inset;
     line-height: 40px;
-    width: 30%;
+    width: 20%;
     min-width: 62px;
 }
 .console-container-delete-button{
@@ -483,6 +483,11 @@ pre{
 @font-face {
     font-family: TrumpGothicPro-Bold;
     src: url("https://princessdreamland.design/res/css/TrumpGothicPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: Reem-Kufi;
+    src: url("https://princessdreamland.design/res/css/Reem-Kufi-Regular.ttf");
 }
 /*@font-face {*/
 /*    font-family: HanYiWenHei;*/

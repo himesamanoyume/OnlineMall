@@ -16,7 +16,6 @@
                 <img src="/_jsp/usericon.webp" class="info-icon">
                 <div class="info-name">姫様の夢</div>
                 <div class="info-txt">Princess Dreamland</div>
-                <div class="info-txt">"Who care?"</div>
             </div>
         </c:if>
         <c:if test="${urlWhere !='postDetail' and urlWhere!='resume' and urlWhere!='editPost' and urlWhere!='dynamic' and urlWhere!='index' and urlWhere!='error'}">

@@ -1,4 +1,13 @@
-
+function Center(){
+    $('#center-blog').click(function(){
+        location.href = "/blog";
+        }
+    );
+    $('#center-pan').click(function(){
+            location.href = "/pan";
+        }
+    );
+}
 function InitFunc(){
     if (getCookie("input-keyword")){
         $('.main').attr("data-keyword",getCookie("input-keyword"));
@@ -29,19 +38,18 @@ function InitFunc(){
     });
 
 }
-
 function NavFunc(){
     $('#nav-index').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword");
         }
-        location.href="/";
+        location.href="/blog";
     });
     $('#topTitle-index').click(function(){
         if (getCookie("input-keyword")){
             delCookie("input-keyword");
         }
-        location.href="/";
+        location.href="/blog";
     });
     $('#nav-post').click(function(){
         if (getCookie("input-keyword")){

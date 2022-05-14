@@ -22,5 +22,12 @@
       <jdbc-url>jdbc:mysql://princessdreamland.design:3306/hime</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="winSQL" uuid="9d1b15df-0932-493f-b3f1-bb4ca7afe839">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://princessdreamland.design:3306/hime</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

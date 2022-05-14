@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="design.princessdreamland.onlinemall.mapper.PanFileMapper">
+
+	<resultMap type="design.princessdreamland.onlinemall.entity.PanFile" id="panFileMap">
+		<id property="fileName" column="file_name" />
+	</resultMap>
+	<resultMap type="design.princessdreamland.onlinemall.entity.PanFile" id="panFileIdMap">
+		<id property="panFileId" column="pan_file_id" />
+	</resultMap>
+
+<sql id="cols">
+	pf.pan_file_id,
+	pf.file_name
+</sql>
+
+
+<sql id="where">
+	<where>
+		AND pf.deleted = 0
+		<if test="panFile!=null and panFile!=''" >
+			<if test="panFile.panFileId!=null and panFile.panFileId!=''">
+				AND pf.pan_file_id = #{panFile.panFileId}
+			</if>
+			<if test="panFile.fileName!=null and panFile.fileName!=''">
+				AND pf.file_name LIKE CONCAT('%',#{panFile.fileName},'%')
+			</if>
+		</if>
+	</where>
+</sql>
+	<select id="queryList" resultMap="panFileIdMap" >
+		SELECT
+		<include refid="cols" />
+		FROM pan_file pf
+		<include refid="where" />
+
+		ORDER BY pf.pan_file_id
+	</select>
+
+	<select id="queryPage" resultMap="panFileMap" >
+		SELECT
+		<include refid="cols" />
+		FROM pan_file pf
+		WHERE pf.file_name = #{fileName}
+
+		ORDER BY pf.pan_file_id
+	</select>
+
+	<select id="queryById" resultMap="panFileIdMap" >
+		SELECT
+		<include refid="cols" />
+		FROM pan_file pf
+		<include refid="where" />
+
+		ORDER BY pf.pan_file_id
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
